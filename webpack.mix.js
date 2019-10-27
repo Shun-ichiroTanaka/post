@@ -14,15 +14,6 @@ let mix = require('laravel-mix');
 mix.setResourceRoot('');
 mix.js('resources/js/app.js', 'public/js')
 mix.sass('resources/sass/app.scss', 'public/css')
-mix.options({
-        autoprefixer: {
-            options: {
-                // IE11対応のベンダープレフィックスを出力
-                grid: true,
-                browsers: ['last 6 versions']
-            }
-        }
-    })
 mix.autoload({
     "jquery": ['$', 'window.jQuery'],
     "vue": ['Vue', 'window.Vue']

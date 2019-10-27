@@ -2,3 +2,114 @@
 
 /* header
 ----------------------------------------------------------------- */
+.l-header {
+  //   position: relative;
+  //           box-sizing: border-box;
+  height: 50px;
+  color: #e7e7e7;
+  font-family: "PT Sans", sans-serif;
+  font-size: 100%;
+  background: #343642;
+  //   -webkit-box-sizing: border-box;
+  //      -moz-box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  input,
+  textarea {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  input::-ms-clear,
+  textarea::-ms-clear {
+    display: none;
+  }
+  a {
+    color: $emeraldo;
+    text-decoration: none;
+  }
+
+  &::after {
+    /* clearfix */
+    content: "";
+    clear: both;
+    display: table;
+  }
+  &__title {
+    margin-left: 30px;
+    font-size: 1.5rem;
+    line-height: 50px;
+    & a {
+      color: #fff;
+    }
+  }
+  &__nav {
+    float: right;
+    width: 44px;
+    height: 100%;
+    margin-right: 5%;
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-menu.svg") no-repeat center center;
+    cursor: pointer;
+    & a {
+      display: block;
+      height: 50px;
+      padding-left: 5%;
+      color: #fff;
+      line-height: 50px;
+      background: #292a34;
+      border-top: 1px solid #3b3d4b;
+    }
+  }
+}
+
+
+
+
+
+@media only screen and (min-width: 768px) {
+  .l-header {
+    height: 80px;
+    &__title {
+      font-size: 1.7rem;
+      line-height: 80px;
+    }
+    &__nav {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: auto;
+      height: 80px;
+      background: none;
+      cursor: auto;
+
+      & ul {
+        width: auto;
+        line-height: 80px;
+      }
+      & li {
+        display: inline-block;
+        margin-left: 1em;
+      }
+      & li:nth-last-child(2) {
+        margin-left: 2em;
+      }
+      & a {
+        display: inline-block;
+        height: auto;
+        line-height: normal;
+        background: transparent;
+      }
+    }
+
+    & a.l-header__signin,
+    & a.l-header__signup {
+      padding: .6em 1em;
+      border: 1px solid rgba(255, 255, 255, .6);
+      border-radius: 50em;
+    }
+    & a.l-header__signup {
+      background: $emeraldo;
+      border: none;
+    }
+  }
+}

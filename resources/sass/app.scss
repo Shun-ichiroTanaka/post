@@ -1,8 +1,7 @@
 @charset "utf-8";
 
 @import url("https://fonts.googleapis.com/css?family=Nunito");
-@import "variables";
-@import "~bootstrap/scss/bootstrap";
+// @import "~bootstrap/scss/bootstrap";
 
 
 // ================================
@@ -42,8 +41,8 @@
 @import "object/project/about";
 @import "object/project/archive";
 @import "object/project/article";
+@import "object/project/auth";
 @import "object/project/community";
-@import "object/project/login";
 @import "object/project/guidance";
 @import "object/project/home";
 @import "object/project/notfound";
@@ -51,6 +50,7 @@
 @import "object/project/pickup";
 @import "object/project/search";
 @import "object/project/slider";
+
 
 // utility
 @import "object/utility/align";
