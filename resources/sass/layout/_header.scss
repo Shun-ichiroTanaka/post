@@ -106,6 +106,9 @@
       padding: .6em 1em;
       border: 1px solid rgba(255, 255, 255, .6);
       border-radius: 50em;
+      &:hover {
+        border: 1px solid $emeraldo;
+      }
     }
     & a.l-header__signup {
       background: $emeraldo;

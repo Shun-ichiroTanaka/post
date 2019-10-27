@@ -11,6 +11,9 @@ body {
   -webkit-box-direction: normal;
           flex-direction: column;
   min-height: 100%;
+  background: #f5f5f5 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .b-wrapper {
@@ -308,6 +311,11 @@ table {
     border-radius: 50em;
   }
 
+  .l-header a.l-header__signin:hover,
+  .l-header a.l-header__signup:hover {
+    border: 1px solid #2db697;
+  }
+
   .l-header a.l-header__signup {
     background: #2db697;
     border: none;
@@ -338,8 +346,103 @@ table {
 /* article
 ----------------------------------------------------------------- */
 
-/* login
------------------------------------------------------------------ */
+/* p-auth__form */
+
+.p-auth__form {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  padding: 30px;
+  margin: 0 auto 100px;
+  text-align: center;
+  background: #fff;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.p-auth__form-thumbnail {
+  box-sizing: border-box;
+  width: 150px;
+  height: 150px;
+  padding: 27px 24px;
+  margin: 0 auto 30px;
+  background: #2db697;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  border-top-left-radius: 100%;
+}
+
+.p-auth__form-thumbnail img {
+  display: block;
+  width: 100%;
+}
+
+.p-auth__form input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  margin: 0 0 15px;
+  font-size: 14px;
+  background: #f2f2f2;
+  border: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  outline: 0;
+}
+
+.p-auth__form button {
+  width: 100%;
+  padding: 15px;
+  color: #fff;
+  font-size: 14px;
+  background: #2db697;
+  border: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  outline: 0;
+  -webkit-transition: all .3 ease;
+  transition: all .3 ease;
+  cursor: pointer;
+}
+
+.p-auth__form-question {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+.p-auth__form-question a {
+  color: #2db697;
+  text-decoration: none;
+}
+
+.p-auth__form-register {
+  display: none;
+}
+
+.p-auth__title {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 50px auto;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.p-auth__title h1 {
+  padding: 0;
+  margin: 0 0 15px;
+  color: #1a1a1a;
+  font-size: 36px;
+  font-weight: 300;
+}
 
 /* community
 ----------------------------------------------------------------- */

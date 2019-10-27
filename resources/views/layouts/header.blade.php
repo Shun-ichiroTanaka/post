@@ -9,6 +9,7 @@
                 <li>
                     <a class="l-header__signin" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
+                <li>
                 @if (Route::has('register'))
                     <li>
                         <a class="l-header__signup" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -26,6 +27,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
                         </div>
                     </li>
+
                 @endguest
 			</ul>
 		</nav>
