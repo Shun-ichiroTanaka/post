@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -73,5 +73,17 @@
             </div>
         </div>
     </div>
+</div> --}}
+
+<div class="p-auth__title"><h1>Register Form</h1></div>
+<div class="p-auth__form">
+  <div class="p-auth__form-thumbnail"><img src="/img/auth/p-auth__login-bg.svg"/></div>
+  <form class="p-auth__form-register">
+    <input type="text" placeholder="name"/>
+    <input type="password" placeholder="password"/>
+    <input type="text" placeholder="email address"/>
+    <button>create</button>
+    <p class="p-auth__form-question">Already registered? <a href="#">Sign In</a></p>
+  </form>
 </div>
 @endsection

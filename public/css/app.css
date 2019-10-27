@@ -346,8 +346,6 @@ table {
 /* article
 ----------------------------------------------------------------- */
 
-/* p-auth__form */
-
 .p-auth__form {
   position: relative;
   z-index: 1;
@@ -380,21 +378,6 @@ table {
   width: 100%;
 }
 
-.p-auth__form input {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 15px;
-  margin: 0 0 15px;
-  font-size: 14px;
-  background: #f2f2f2;
-  border: 0;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 3px;
-  outline: 0;
-}
-
 .p-auth__form button {
   width: 100%;
   padding: 15px;
@@ -418,13 +401,43 @@ table {
   font-size: 12px;
 }
 
-.p-auth__form-question a {
+.p-auth__form-question__link {
   color: #2db697;
   text-decoration: none;
 }
 
+.p-auth__form-login input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  margin: 0 0 15px;
+  font-size: 14px;
+  background: #f2f2f2;
+  border: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  outline: 0;
+}
+
 .p-auth__form-register {
   display: none;
+}
+
+.p-auth__form-check {
+  text-align: left;
+}
+
+.p-auth__form-check-box {
+  position: relative;
+  padding: 0;
+}
+
+.p-auth__form-check-title {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 1em;
 }
 
 .p-auth__title {
@@ -446,6 +459,16 @@ table {
 
 /* community
 ----------------------------------------------------------------- */
+
+.u-space__a__pt-5 {
+  display: inline-block;
+  padding-top: 5px;
+}
+
+.u-space__a__pt-10 {
+  display: inline-block;
+  padding-top: 10px;
+}
 
 
 /*# sourceMappingURL=app.css.map*/

@@ -8,93 +8,98 @@
 // =================================================
 // login
 // =================================================
-/* p-auth__form */
-.p-auth__form {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  padding: 30px;
-  margin: 0 auto 100px;
-  text-align: center;
-  background: #fff;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 3px;
-}
-.p-auth__form-thumbnail {
-  box-sizing: border-box;
-  width: 150px;
-  height: 150px;
-  padding: 27px 24px;
-  margin: 0 auto 30px;
-  background: $emeraldo;
-  border-top-right-radius: 100%;
-  border-bottom-right-radius: 100%;
-  border-bottom-left-radius: 100%;
-  border-top-left-radius: 100%;
-}
-.p-auth__form-thumbnail img {
-  display: block;
-  width: 100%;
-}
-.p-auth__form input {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 15px;
-  margin: 0 0 15px;
-  font-size: 14px;
-  background: #f2f2f2;
-  border: 0;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 3px;
-  outline: 0;
-}
-.p-auth__form button {
-  width: 100%;
-  padding: 15px;
-  color: #fff;
-  font-size: 14px;
-  background: $emeraldo;
-  border: 0;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 3px;
-  outline: 0;
-  transition: all .3 ease;
-  cursor: pointer;
-}
-.p-auth__form-question {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-.p-auth__form-question a {
-  color: $emeraldo;
-  text-decoration: none;
-}
-.p-auth__form-register {
-  display: none;
-}
+.p-auth {
+  &__form {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    padding: 30px;
+    margin: 0 auto 100px;
+    text-align: center;
+    background: #fff;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    &-thumbnail {
+      box-sizing: border-box;
+      width: 150px;
+      height: 150px;
+      padding: 27px 24px;
+      margin: 0 auto 30px;
+      background: $emeraldo;
+      border-top-right-radius: 100%;
+      border-bottom-right-radius: 100%;
+      border-bottom-left-radius: 100%;
+      border-top-left-radius: 100%;
+    }
+    &-thumbnail img {
+      display: block;
+      width: 100%;
+    }
+
+    & button {
+      width: 100%;
+      padding: 15px;
+      color: #fff;
+      font-size: 14px;
+      background: $emeraldo;
+      border: 0;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+      border-top-left-radius: 3px;
+      outline: 0;
+      transition: all .3 ease;
+      cursor: pointer;
+    }
+    &-question {
+      margin: 15px 0 0;
+      color: #b3b3b3;
+      font-size: 12px;
+    }
+    &-question__link {
+      color: $emeraldo;
+      text-decoration: none;
+    }
+    &-login {
+      input {
+          @include auth-form__input
+      }
+    }
+    &-register {
+      display: none;
+    }
+    &-check {
+      text-align: left;
+      &-box {
+        position: relative;
+        padding: 0;
+      }
+      &-title {
+        display: inline-block;
+        margin-bottom: 10px;
+        font-size: 1em;
+      }
+    }
+  }
 
 
-.p-auth__title {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 50px auto;
-  font-family: "Roboto", sans-serif;
-  text-align: center;
+  &__title {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 50px auto;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
 
-  & h1 {
-    padding: 0;
-    margin: 0 0 15px;
-    color: #1a1a1a;
-    font-size: 36px;
-    font-weight: 300;
+    & h1 {
+      padding: 0;
+      margin: 0 0 15px;
+      color: #1a1a1a;
+      font-size: 36px;
+      font-weight: 300;
+    }
   }
 }
 
