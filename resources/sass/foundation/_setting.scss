@@ -1,0 +1,103 @@
+@charset "utf-8";
+//0 = My, 1 = HTML5 , 2 = Eric, 3 = YUI, 4 = Normalize, ohter Universal Selector
+$resetCSS: 4;
+
+// ===================================================================
+// 基本値
+// ===================================================================
+// 画像パス
+$img_path: "../img";
+
+// width
+$width-xs: 320px;
+$width-sm: 400px;
+$width-md: 780px;
+$width-lg: 1160px;
+$width-xl: 2000px;
+$widthSidebar: 250px;
+
+// mediaquery
+$breakpoint-xxs: 400px;
+$breakpoint-sm: 768px;
+$breakpoint-md: ($breakpoint-sm + 1);
+$breakpoint-lg: $width-lg;
+
+// height
+$heightHeaderSp: 60px;
+$heightHeaderPc: 196px;
+
+// margin, padding
+$spaceBase: 20px;
+$spaceBaseSp: (20px / 2);
+$spaceBasePc: 30px;
+
+// フォントサイズ
+$fontsizeBaseSp: 1.2rem;
+$fontsizeBasePc: 1.6rem;
+$fontsizeXsSp: 1rem;
+$fontsizeXsPc: 1.2rem;
+
+// line-height
+$lhBaseSp: 1.38;
+$lhBasePc: 1.62;
+$lhTitle: 1.4;
+
+
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-size-base: .9rem;
+$line-height-base: 1.6;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+.blue {
+  color: $blue;
+}
+.indigo {
+  color: $indigo;
+}
+.purple {
+  color: $purple;
+}
+.pink {
+  color: $pink;
+}
+.red {
+  color: $red;
+}
+.orange {
+  color: $orange;
+}
+.yellow {
+  color: $yellow;
+}
+.green {
+  color: $green;
+}
+.teal {
+  color: $teal;
+}
+.cyan {
+  color: $cyan;
+}
+
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-size-base: .9rem;
+$line-height-base: 1.6;
+$fa-font-path: "../webfonts";
