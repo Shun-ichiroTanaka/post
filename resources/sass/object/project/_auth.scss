@@ -68,7 +68,9 @@
       }
     }
     &-register {
-      display: none;
+              input {
+          @include auth-form__input
+      }
     }
     &-check {
       text-align: left;
