@@ -436,6 +436,21 @@ table {
   outline: 0;
 }
 
+.p-auth__form-email input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  margin: 0 0 15px;
+  font-size: 14px;
+  background: #f2f2f2;
+  border: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  outline: 0;
+}
+
 .p-auth__form-check {
   text-align: left;
 }

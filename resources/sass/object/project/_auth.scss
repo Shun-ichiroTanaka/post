@@ -68,7 +68,12 @@
       }
     }
     &-register {
-              input {
+        input {
+          @include auth-form__input
+      }
+    }
+    &-email {
+        input {
           @include auth-form__input
       }
     }
