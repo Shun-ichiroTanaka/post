@@ -16,7 +16,20 @@
                     </li>
                 @endif
                 @else
-                    <li>{{ Auth::user()->name }}</li>
+                    <li><a href="{{ route('post.index') }}">Post</a></li>
+                    <li class="l-header-dropdown">
+                        <ul>
+                            <li>
+                                <a href="#"><img src="/img/user.svg" alt="" width="30px"></a>
+                                <ul>
+                                    <li>{{ Auth::user()->name }}</li>
+                                    <li><a href="{{ route('mypage.index') }}">Mypage</a>
+                                    <li><a href="{{ route('profile.index') }}">Profile</a></li>
+                                    <li><a href="{{ route('setting.index') }}">Setting</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
                     <li>
                         <div>
                             <a class="l-header__signup" href="{{ route('logout') }}"
@@ -27,6 +40,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
                         </div>
                     </li>
+
 
                 @endguest
 			</ul>

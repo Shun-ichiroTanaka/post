@@ -27,7 +27,8 @@
     </div>
 
 <!-- Scripts -->
+{{-- vueを用いるためこの位置 --}}
 <script src="{{ mix('js/app.js') }}" defer></script>
-
+@include('sweetalert::alert')
 </body>
 </html>

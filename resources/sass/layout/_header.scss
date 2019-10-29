@@ -5,7 +5,7 @@
 .l-header {
   //   position: relative;
   //           box-sizing: border-box;
-  height: 50px;
+  height: 40px;
   color: #e7e7e7;
   font-family: "PT Sans", sans-serif;
   font-size: 100%;
@@ -38,7 +38,7 @@
   &__title {
     margin-left: 30px;
     font-size: 1.5rem;
-    line-height: 50px;
+    line-height: 40px;
     & a {
       color: #fff;
     }
@@ -52,10 +52,10 @@
     cursor: pointer;
     & a {
       display: block;
-      height: 50px;
+      height: 40px;
       padding-left: 5%;
       color: #fff;
-      line-height: 50px;
+      line-height: 40px;
       background: #292a34;
       border-top: 1px solid #3b3d4b;
     }
@@ -68,23 +68,23 @@
 
 @media only screen and (min-width: 768px) {
   .l-header {
-    height: 80px;
+    height: 60px;
     &__title {
       font-size: 1.7rem;
-      line-height: 80px;
+      line-height: 60px;
     }
     &__nav {
       position: absolute;
       top: 0;
       right: 0;
       width: auto;
-      height: 80px;
+      height: 60px;
       background: none;
       cursor: auto;
 
       & ul {
         width: auto;
-        line-height: 80px;
+        line-height: 60px;
       }
       & li {
         display: inline-block;
@@ -105,7 +105,7 @@
     & a.l-header__signup {
       padding: .6em 1em;
       border: 1px solid rgba(255, 255, 255, .6);
-      border-radius: 50em;
+      border-radius: 40em;
       &:hover {
         border: 1px solid $emeraldo;
       }
@@ -115,4 +115,87 @@
       border: none;
     }
   }
+}
+
+
+
+a,
+a:visited {
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.l-header-dropdown > ul > li > a {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.l-header-dropdown li ul {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: 0;
+  font: bold 12px "Open Sans Condensed", sans-serif;
+  text-align: center;
+  list-style: none;
+          transition: max-height .4s linear;
+
+  -webkit-transition: max-height .4s linear;
+     -moz-transition: max-height .4s linear;;
+}
+
+.l-header-dropdown li ul li {
+  background-color: #292a34;;
+}
+
+.l-header-dropdown li ul li a {
+  display: block;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.l-header-dropdown li ul li:nth-child(odd) {
+  /* zebra stripes */
+  background-color: #292a34;
+}
+
+.l-header-dropdown li ul li:hover {
+  background-color: #292a34;
+}
+
+.l-header-dropdown li ul li:first-child {
+  position: relative;
+  margin-top: 10px;
+  border-radius: 3px 3px 0 0;
+}
+// ドロップダウンのマーク
+.l-header-dropdown li ul li:first-child:before {
+  /* the pointer tip */
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  margin-left: -5px;
+  border: 5px solid transparent;
+  border-bottom-color: #292a34;
+}
+
+.l-header-dropdown li ul li:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+/* This will trigger the CSS */
+/* transition animation on hover */
+
+.l-header-dropdown li:hover ul {
+  max-height: 300px; /* Increase when adding more dropdown items */
 }
