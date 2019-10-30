@@ -26,9 +26,9 @@
                                 </p>
                                 <ul>
                                     <li>{{ Auth::user()->name }}</li>
-                                    <li><a href="{{ route('mypage.index') }}">Mypage</a>
-                                    <li><a href="{{ route('profile.index') }}">Profile</a></li>
-                                    <li><a href="{{ route('setting.index') }}">Setting</a></li>
+                                    {{-- <li><a href="{{ route('mypage.index') }}">{{ __('Mypage') }}</a> --}}
+                                    <li><a href="{{ route('user.profile', Auth::user()->id ) }}">{{ __('Profile') }}</a></li>
+                                    {{-- <li><a href="{{ route('setting.index') }}">{{ __('Setting') }}</a></li> --}}
                                 </ul>
                             </li>
                         </ul>

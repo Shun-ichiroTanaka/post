@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -11,9 +13,18 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function profile($id)
     {
-        return view('profile.profile');
+        $user = User::find($id);
+
+        if ($user) {
+            return view('user.profile')->withUser($user);
+        } else {
+            // URLからidをいじって他のユーザーページにアクセスしないように例外処理
+            // ＝自分のid以外にアクセスさせない
+            return redirect()->back();
+        }
+
     }
 
     /**
@@ -56,7 +67,18 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (Auth::user()) {
+            $user = User::find(Auth::user()->id);
+
+            if ($user) {
+                return view('user.edit')->withUser($user);
+            } else {
+                return redirect()->back();
+            }
+
+        } else {
+            return redirect()->back();
+        }
     }
 
     /**
@@ -78,6 +100,16 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+    {
+        //
+    }
+
+    public function passwordEdit()
+    {
+        //
+    }
+
+    public function passwordUpdate()
     {
         //
     }
