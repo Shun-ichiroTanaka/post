@@ -14,6 +14,8 @@ componentで投稿一覧を表示
 <div id="app">
     <div class="l-container">
         <div class="l-container__left-mypage">
+            <p><img src="{{ Auth::user()->avatar }}" alt="" style="width:50px; height:50px; border-radius:50%" border-radius="50%"></p>
+            <a href="/profile">{{ Auth::user()->name }}</a>
             {{-- <h3><a href="{{ route('user.store') }}">{{ 'edit profile' }}</a></h3> --}}
             {{-- <h3><a href="{{ route('user.edit') }}">{{ 'edit profile' }}</a></h3> --}}
         </div>

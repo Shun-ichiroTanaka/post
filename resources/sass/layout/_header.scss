@@ -90,9 +90,6 @@
         display: inline-block;
         margin-left: 1em;
       }
-      & li:nth-last-child(2) {
-        margin-left: 2em;
-      }
       & a {
         display: inline-block;
         height: auto;
@@ -119,83 +116,97 @@
 
 
 
-a,
-a:visited {
-  text-decoration: none;
-  outline: none;
-}
 
-a:hover {
-  text-decoration: underline;
-}
+.l-header-dropdown {
+  a,
+  a:visited {
+    text-decoration: none;
+    outline: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  & > ul > li > a {
+    color: inherit;
+    text-decoration: none !important;
+  }
+
+  & li ul {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    font: bold 12px "Open Sans Condensed", sans-serif;
+    text-align: center;
+    list-style: none;
+            transition: max-height .4s linear;
+
+    -webkit-transition: max-height .4s linear;
+       -moz-transition: max-height .4s linear;;
+  }
+
+  & li ul li {
+    background-color: #292a34;
+  }
+
+  & li ul li a {
+    display: block;
+    color: #fff !important;
+    text-decoration: none !important;
+    &:hover {
+      background-color: #444555;
+    }
+  }
 
 
-.l-header-dropdown > ul > li > a {
-  color: inherit;
-  text-decoration: none !important;
-}
 
-.l-header-dropdown li ul {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  max-height: 0;
-  font: bold 12px "Open Sans Condensed", sans-serif;
-  text-align: center;
-  list-style: none;
-          transition: max-height .4s linear;
+  & li ul li:first-child {
+    position: relative;
+    margin-top: 10px;
+    border-radius: 3px 3px 0 0;
+    // ドロップダウンのマーク
+    &:before {
+      /* the pointer tip */
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      width: 1px;
+      height: 1px;
+      margin-left: -5px;
+      border: 5px solid transparent;
+      border-bottom-color: #292a34;
+    }
+  }
 
-  -webkit-transition: max-height .4s linear;
-     -moz-transition: max-height .4s linear;;
-}
 
-.l-header-dropdown li ul li {
-  background-color: #292a34;;
-}
+  & li ul li:last-child {
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
 
-.l-header-dropdown li ul li a {
-  display: block;
-  color: #fff !important;
-  text-decoration: none !important;
-}
+  /* This will trigger the CSS */
+  /* transition animation on hover */
 
-.l-header-dropdown li ul li:nth-child(odd) {
-  /* zebra stripes */
-  background-color: #292a34;
-}
+  & li:hover ul {
+    max-height: 300px; /* Increase when adding more dropdown items */
+  }
+  &__child {
+    &-user {
+      display: flex;
+      align-items: center;
+      line-height: 60px;
 
-.l-header-dropdown li ul li:hover {
-  background-color: #292a34;
-}
-
-.l-header-dropdown li ul li:first-child {
-  position: relative;
-  margin-top: 10px;
-  border-radius: 3px 3px 0 0;
-}
-// ドロップダウンのマーク
-.l-header-dropdown li ul li:first-child:before {
-  /* the pointer tip */
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  width: 1px;
-  height: 1px;
-  margin-left: -5px;
-  border: 5px solid transparent;
-  border-bottom-color: #292a34;
-}
-
-.l-header-dropdown li ul li:last-child {
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-
-/* This will trigger the CSS */
-/* transition animation on hover */
-
-.l-header-dropdown li:hover ul {
-  max-height: 300px; /* Increase when adding more dropdown items */
+      &__img {
+        display: block;
+      }
+      &__arrow {
+        display: block;
+        font-size: .2em;
+      }
+    }
+  }
 }

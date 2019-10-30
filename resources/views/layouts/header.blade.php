@@ -19,8 +19,11 @@
                     <li><a href="{{ route('post.index') }}">Post</a></li>
                     <li class="l-header-dropdown">
                         <ul>
-                            <li>
-                                <a href="#"><img src="/img/user.svg" alt="" width="30px"></a>
+                            <li class="l-header-dropdown__child">
+                                <p href="#" class="l-header-dropdown__child-user">
+                                    <img class="l-header-dropdown__child-user__img" src="{{ Auth::user()->avatar }}" alt="user-image" style="width:40px; height:40px; border-radius:50%">
+                                    <span class="l-header-dropdown__child-user__arrow">▼</span>
+                                </p>
                                 <ul>
                                     <li>{{ Auth::user()->name }}</li>
                                     <li><a href="{{ route('mypage.index') }}">Mypage</a>

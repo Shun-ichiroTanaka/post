@@ -29,7 +29,10 @@ post-componentで投稿一覧を表示
                   全ての投稿一覧
               </allposts-component>
         </main>
-        <div class="l-container__right"></div>
+        <div class="l-container__right">
+            <div class="l-container__right-profile">
+            </div>
+        </div>
     </div>
 </div>
 @endsection

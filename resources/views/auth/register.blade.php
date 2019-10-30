@@ -5,7 +5,7 @@
 <div class="p-auth__title"><h1>{{ __('Register') }}</h1></div>
 <div class="p-auth__form">
   <div class="p-auth__form-thumbnail"><img src="/img/auth/p-auth__register-bg.svg"/></div>
-  <form class="p-auth__form-register" method="POST" action="{{ route('register') }}">
+  <form class="p-auth__form-register" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
   @csrf
 
 　　{{-- 　名前　　 --}}
@@ -28,6 +28,18 @@
         </span>
     @enderror
 </div>
+
+　　 {{-- 　ユーザー画像　　 --}}
+<div>
+    <label for="avatar">{{ __('user image') }}</label>
+    <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
+    @error('avatar')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
+</div>
+
 
 
 　　{{-- パスワード --}}

@@ -293,10 +293,6 @@ table {
     margin-left: 1em;
   }
 
-  .l-header__nav li:nth-last-child(2) {
-    margin-left: 2em;
-  }
-
   .l-header__nav a {
     display: inline-block;
     height: auto;
@@ -322,13 +318,18 @@ table {
   }
 }
 
-a,
-a:visited {
+.l-header-dropdown {
+  /* This will trigger the CSS */
+  /* transition animation on hover */
+}
+
+.l-header-dropdown a,
+.l-header-dropdown a:visited {
   text-decoration: none;
   outline: none;
 }
 
-a:hover {
+.l-header-dropdown a:hover {
   text-decoration: underline;
 }
 
@@ -364,13 +365,8 @@ a:hover {
   text-decoration: none !important;
 }
 
-.l-header-dropdown li ul li:nth-child(odd) {
-  /* zebra stripes */
-  background-color: #292a34;
-}
-
-.l-header-dropdown li ul li:hover {
-  background-color: #292a34;
+.l-header-dropdown li ul li a:hover {
+  background-color: #444555;
 }
 
 .l-header-dropdown li ul li:first-child {
@@ -397,13 +393,26 @@ a:hover {
   border-bottom-left-radius: 3px;
 }
 
-/* This will trigger the CSS */
-
-/* transition animation on hover */
-
 .l-header-dropdown li:hover ul {
   max-height: 300px;
   /* Increase when adding more dropdown items */
+}
+
+.l-header-dropdown__child-user {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  line-height: 60px;
+}
+
+.l-header-dropdown__child-user__img {
+  display: block;
+}
+
+.l-header-dropdown__child-user__arrow {
+  display: block;
+  font-size: .2em;
 }
 
 .l-container {
@@ -452,6 +461,11 @@ a:hover {
   height: 100vh;
   margin-top: 0;
   background: #bba2a2;
+}
+
+.l-container__right-profile {
+  display: -webkit-box;
+  display: flex;
 }
 
 /* button

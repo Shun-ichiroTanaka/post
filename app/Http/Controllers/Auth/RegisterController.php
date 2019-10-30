@@ -51,7 +51,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:4', 'confirmed'],
+            'avatar' => ['sometimes', 'image', 'mimes:jpg,jpeg,bmp,svg,png', 'max:5000']
         ]);
     }
 
@@ -63,10 +64,44 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        // ユーザー画像も選択されて登録する場合の処理
+        if (request()->has('avatar')) {
+            // →アップロードするファイル名を取得するため、getClientOriginalName()を使う
+            // →アップロードするファイルの一時的な名を取得するため、getFilename()を使う
+            // →アップロードされたファイルのパスを取得の場合、getRealPath()を使う
+            // →アップロードされたファイルのサイズを取得の場合、getClientSize()を使う
+            // →アップロードされたファイルのmimeタイプを取得の場合、getClientMimeType()を使う
+            // →アップロードされたファイルの拡張子を取得の場合、getClientOriginalExtension()を使う
+
+            // avatarにアップロードされたファイルを$avataruploadedに入れる
+            $avataruploaded = request()->file('avatar');
+            $avatarname = time().'.'. $avataruploaded->getClientOriginalExtension();
+            $avatarpath = public_path('/img/');
+
+            // moveはmove_uploaded_file()関数のこと
+            // クライアントからのリクエストでアップロードされたファイルの保存場所を変更する際に使用するのがmove_uploaded_file関数です。
+            // アップロードされたファイルはまず、/tmpなどの一時フォルダに保存されます。
+            // そのままでは、一定の時間が経つと一時フォルダの中身は削除されるので、アップロードされたファイルを今後使用する場合は
+            // 勝手に削除される可能性がない専用のディレクトリに保存する必要がありるため、その際にmove()メソッドを利用（ファイルを記載したパスまで移動）
+            // move(アップロードしたファイルのファイル名, ファイルの移動先)
+            $avataruploaded->move($avatarpath, $avatarname);
+
+            return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-        ]);
+            'avatar' => '/img/' . $avatarname,
+            ]);
+
+        } else {
+
+            // ユーザー画像を登録しなかった場合、名前とメールアドレスとパスワードだけを登録する(ユーザー画像はデフォルト)
+            return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            ]);
+
+        }
     }
 }
