@@ -6,25 +6,17 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+
+class AvatarController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function profile($id)
+    public function index()
     {
-        $user = User::find($id);
-
-        if ($user) {
-            return view('user.profile')->withUser($user);
-        } else {
-            // URLからidをいじって他のユーザーページにアクセスしないように例外処理
-            // ＝自分のid以外にアクセスさせない
-            return redirect()->back();
-        }
-
+        //
     }
 
     /**
@@ -71,7 +63,7 @@ class UserController extends Controller
             $user = User::find(Auth::user()->id);
 
             if ($user) {
-                return view('user.edit')->withUser($user);
+                return view('avatar.edit')->withUser($user);
             } else {
                 return redirect()->back();
             }
@@ -80,7 +72,6 @@ class UserController extends Controller
             return redirect()->back();
         }
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -88,38 +79,24 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // ユーザー画像のアップデート
     public function update(Request $request)
     {
         $user = User::find(Auth::user()->id);
 
-        if ($user) {
+        if ($request->hasfile('avatar')) {
+            $file = $request->file('avatar');
+            $extension = $file->getClientOriginalExtension(); //getting avatar extension
+            $filename = time() . '.' . $extension;
+            $file->move('img/avatar/' , $filename);
+            $user->avatar = $filename;
 
-            $validate = null;
-            if(Auth::user()->email === $request['email']){
-                $validate = $request->validate([
-                  'name' => 'required|min:2',
-                  'email' => 'required|email',
-                ]);
-            } else {
-                $validate = $request->validate([
-                  'name' => 'required|min:2',
-                  'email' => 'required|email|unique:users|',
-                ]);
-            }
-
-            if($validate) {
-                $user->name = $request['name'];
-                $user->email = $request['email'];
-                $user->save();
-                return redirect()->back()->with('flash_message', 'プロフィールを変更しました!');
-
-            } else {
-                return redirect()->back();
-            }
-
-        } else {
-            return redirect()->back();
         }
+
+        $user->save();
+        $user->avatar = $request['avatar'];
+        return redirect()->back()->with('flash_message', 'プロフィール画像を更新しました!');
+
     }
 
     /**
@@ -132,16 +109,4 @@ class UserController extends Controller
     {
         //
     }
-
-    public function passwordEdit()
-    {
-        //
-    }
-
-    public function passwordUpdate()
-    {
-        //
-    }
-
-
 }

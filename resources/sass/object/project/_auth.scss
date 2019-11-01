@@ -32,6 +32,20 @@
       border-bottom-right-radius: 100%;
       border-bottom-left-radius: 100%;
       border-top-left-radius: 100%;
+      &__update {
+        img{
+        box-sizing: border-box;
+        width: 150px;
+        height: 150px;
+        padding: 27px 24px;
+        margin: 0 auto 30px;
+        background: none;
+        border-top-right-radius: 100%;
+        border-bottom-right-radius: 100%;
+        border-bottom-left-radius: 100%;
+        border-top-left-radius: 100%;
+        }
+      }
     }
     &-thumbnail img {
       display: block;
@@ -64,17 +78,17 @@
     }
     &-login {
       input {
-          @include auth-form__input
+        @include auth-form__input;
       }
     }
     &-register {
-        input {
-          @include auth-form__input
+      input {
+        @include auth-form__input;
       }
     }
     &-email {
-        input {
-          @include auth-form__input
+      input {
+        @include auth-form__input;
       }
     }
     &-check {

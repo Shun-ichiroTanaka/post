@@ -519,6 +519,19 @@ table {
   border-top-left-radius: 100%;
 }
 
+.p-auth__form-thumbnail__update img {
+  box-sizing: border-box;
+  width: 150px;
+  height: 150px;
+  padding: 27px 24px;
+  margin: 0 auto 30px;
+  background: none;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  border-top-left-radius: 100%;
+}
+
 .p-auth__form-thumbnail img {
   display: block;
   width: 100%;

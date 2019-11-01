@@ -21,13 +21,14 @@
                         <ul>
                             <li class="l-header-dropdown__child">
                                 <p href="#" class="l-header-dropdown__child-user">
-                                    <img class="l-header-dropdown__child-user__img" src="{{ Auth::user()->avatar }}" alt="user-image" style="width:40px; height:40px; border-radius:50%">
+                                    <img class="l-header-dropdown__child-user__img" src="{{ asset('/img/avatar/'.$user['avatar']) }}" alt="user-image" style="width:40px; height:40px; border-radius:50%">
                                     <span class="l-header-dropdown__child-user__arrow">▼</span>
                                 </p>
                                 <ul>
                                     <li>{{ Auth::user()->name }}</li>
                                     {{-- <li><a href="{{ route('mypage.index') }}">{{ __('Mypage') }}</a> --}}
                                     <li><a href="{{ route('user.profile', Auth::user()->id ) }}">{{ __('Profile') }}</a></li>
+                                    <li><a href="{{ route('user.edit', Auth::user()->id ) }}">{{ __('Edit Profiles') }}</a></li>
                                     {{-- <li><a href="{{ route('setting.index') }}">{{ __('Setting') }}</a></li> --}}
                                 </ul>
                             </li>

@@ -76,7 +76,7 @@ class RegisterController extends Controller
             // avatarにアップロードされたファイルを$avataruploadedに入れる
             $avataruploaded = request()->file('avatar');
             $avatarname = time().'.'. $avataruploaded->getClientOriginalExtension();
-            $avatarpath = public_path('/img/');
+            $avatarpath = public_path('/img/avatar/');
 
             // moveはmove_uploaded_file()関数のこと
             // クライアントからのリクエストでアップロードされたファイルの保存場所を変更する際に使用するのがmove_uploaded_file関数です。
@@ -90,7 +90,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'avatar' => '/img/' . $avatarname,
+            'avatar' => '/img/avatar/' . $avatarname,
             ]);
 
         } else {
