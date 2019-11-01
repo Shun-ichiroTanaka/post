@@ -15,7 +15,9 @@ componentで投稿一覧を表示
     <div class="l-container">
         <div class="l-container__left-mypage">
             <h1>{{ $user['name'] }}</h1>
-            <a href="{{ route('avatar.edit') }}"><img src="{{ Auth::user()->avatar }}" alt="" style="width:50px; height:50px; border-radius:50%" border-radius="50%"></a>
+            <img src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}" alt="" style="width:50px; height:50px; border-radius:50%" border-radius="50%">
+            <a href="{{ route('avatar.edit') }}"><i class="fas fa-images"></i></a>
+            <a href="{{ route('user.edit') }}">プロフィール編集</a>
         </div>
         <main class="l-container__main-mypage">
             {{-- userの投稿一覧 --}}

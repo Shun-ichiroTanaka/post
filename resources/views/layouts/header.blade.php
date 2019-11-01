@@ -21,7 +21,7 @@
                         <ul>
                             <li class="l-header-dropdown__child">
                                 <p href="#" class="l-header-dropdown__child-user">
-                                    <img class="l-header-dropdown__child-user__img" src="{{ asset('/img/avatar/'.$user['avatar']) }}" alt="user-image" style="width:40px; height:40px; border-radius:50%">
+                                    <img class="l-header-dropdown__child-user__img" src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}" alt="user-image" style="width:40px; height:40px; border-radius:50%">
                                     <span class="l-header-dropdown__child-user__arrow">▼</span>
                                 </p>
                                 <ul>
