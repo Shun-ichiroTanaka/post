@@ -20,11 +20,11 @@
 <div>
     {{-- 現在のイメージ画像 --}}
     <label for="avatar">{{ __('current image') }}</label>
-    <div class="p-auth__form-thumbnail__update"><img src="{{ asset('/img/avatar/'.$user['avatar']) }}"/></div>
+    <div class="p-auth__form-thumbnail__update"><img src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}"/></div>
 
     {{-- 新しいイメージ画像 --}}
     <label for="avatar">{{ __('new image') }}</label>
-    <input id="avatar" value="{{ asset('/img/avatar/'.$user['avatar']) }}" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
+    <input id="avatar" value="{{ asset('/img/avatar/'.Auth::user()->avatar) }}" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
     @error('avatar')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>

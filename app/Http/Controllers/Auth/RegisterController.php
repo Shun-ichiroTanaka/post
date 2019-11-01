@@ -74,8 +74,8 @@ class RegisterController extends Controller
             // →アップロードされたファイルの拡張子を取得の場合、getClientOriginalExtension()を使う
 
             // avatarにアップロードされたファイルを$avataruploadedに入れる
-            $avataruploaded = request()->file('avatar');
-            $avatarname = time().'.'. $avataruploaded->getClientOriginalExtension();
+            $file = request()->file('avatar');
+            $avatarname = time().'.'. $file->getClientOriginalExtension();
             $avatarpath = public_path('/img/avatar/');
 
             // moveはmove_uploaded_file()関数のこと
@@ -84,7 +84,7 @@ class RegisterController extends Controller
             // そのままでは、一定の時間が経つと一時フォルダの中身は削除されるので、アップロードされたファイルを今後使用する場合は
             // 勝手に削除される可能性がない専用のディレクトリに保存する必要がありるため、その際にmove()メソッドを利用（ファイルを記載したパスまで移動）
             // move(アップロードしたファイルのファイル名, ファイルの移動先)
-            $avataruploaded->move($avatarpath, $avatarname);
+            $file->move($avatarpath, $avatarname);
 
             return User::create([
             'name' => $data['name'],

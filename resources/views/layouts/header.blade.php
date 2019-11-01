@@ -20,12 +20,18 @@
                     <li class="l-header-dropdown">
                         <ul>
                             <li class="l-header-dropdown__child">
-                                <p href="#" class="l-header-dropdown__child-user">
-                                    <img class="l-header-dropdown__child-user__img" src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}" alt="user-image" style="width:40px; height:40px; border-radius:50%">
+                                <div href="#" class="l-header-dropdown__child-user">
+                                    {{-- {{ Auth::user()->name }} --}}
+                                    @if (empty(Auth::user()->avatar))
+                                        <img src="/img/avatar/user.svg" alt="avatar" style="width:40px; height:40px; border-radius:50%" border-radius="50%">
+                                    @else
+                                        {{-- <p>{{ Auth::user()->name }}</p> --}}
+                                        <img src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}" alt="avatar" style="width:40px; height:40px; border-radius:50%" border-radius="50%">
+                                    @endif
+                                    {{-- <img class="l-header-dropdown__child-user__img" src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}" alt="user-image" style="width:40px; height:40px; border-radius:50%"> --}}
                                     <span class="l-header-dropdown__child-user__arrow">▼</span>
-                                </p>
+                                </div>
                                 <ul>
-                                    <li>{{ Auth::user()->name }}</li>
                                     {{-- <li><a href="{{ route('mypage.index') }}">{{ __('Mypage') }}</a> --}}
                                     <li><a href="{{ route('user.profile', Auth::user()->id ) }}">{{ __('Profile') }}</a></li>
                                     <li><a href="{{ route('user.edit', Auth::user()->id ) }}">{{ __('Edit Profiles') }}</a></li>

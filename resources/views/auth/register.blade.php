@@ -30,7 +30,7 @@
 </div>
 
 　　 {{-- 　ユーザー画像　　 --}}
-<div>
+{{-- <div>
     <label for="avatar">{{ __('user image') }}</label>
     <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
     @error('avatar')
@@ -38,7 +38,7 @@
             <strong>{{ $message }}</strong>
         </span>
     @enderror
-</div>
+</div> --}}
 
 
 

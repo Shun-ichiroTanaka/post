@@ -30,7 +30,13 @@ avatar/update
 <div>
     {{-- 現在のイメージ画像 --}}
     <label for="avatar">{{ __('current image') }}</label>
-    <div class="p-auth__form-thumbnail__update"><img src="{{ asset('/img/avatar/'.$user['avatar']) }}"/></div>
+    <div class="p-auth__form-thumbnail__update">
+      @if (empty($user->avatar))
+          <img src="{{ asset('/img/avatar/user.svg') }}" alt="avatar" />
+      @else
+          <img src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}" alt="avatar">
+      @endif
+    </div>
 
     {{-- 新しいイメージ画像 --}}
     <label for="avatar">{{ __('new image') }}</label>
