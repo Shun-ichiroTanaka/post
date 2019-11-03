@@ -4,7 +4,7 @@
 <div class="p-auth__title"><h1>{{ __('Login') }}</h1></div>
 <div class="p-auth__form">
   <div class="p-auth__form-thumbnail"><img src="/img/auth/p-auth__login-bg.svg"/></div>
-  <form　method="POST" action="{{ route('login') }}">
+  <form method="post" action="{{ route('login') }}">
       @csrf
     <div class="p-auth__form-login">
         <input id="email" type="email" placeholder="{{ __('email') }}" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>

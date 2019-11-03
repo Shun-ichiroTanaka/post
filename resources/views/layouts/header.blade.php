@@ -16,7 +16,10 @@
                     </li>
                 @endif
                 @else
-                    <li><a href="{{ route('post.index') }}">Post</a></li>
+                    <li>
+                        <a href="{{ route('post.new') }}">Post</a>
+                        {{-- <a href="{{ route('post.index') }}"></a> --}}
+                    </li>
                     <li class="l-header-dropdown">
                         <ul>
                             <li class="l-header-dropdown__child">

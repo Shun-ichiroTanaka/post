@@ -1,15 +1,27 @@
-require('./bootstrap');
+require("./bootstrap");
+import Vue from "vue";
+window.Vue = require("vue");
+import VueRouter from "vue-router";
 
-window.Vue = require('vue');
-
-import { VueEditor } from "vue2-editor";
-
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('AllPosts-Component', require('./components/AllPostsComponent.vue').default);
-Vue.component('NewPost-Component', require('./components/NewPostComponent.vue').default);
+Vue.use(VueRouter);
 
 
+Vue.component("posts", require("./components/post/Posts.vue").default);
+// Vue.component('categoryposts', require('./components/post/CategoryPosts.vue').default);
+// Vue.component('newpost', require('./components/NewPost.vue').default);
+
+// ルート
+const routes = [
+    { path: "/newpost", component: require("./post/NewPost.vue") }
+    //   { path: '/editpost', component: require('./components/post/EditPost.vue')},
+    //   { path: '/editpost', component: require('./components/post/NewPost.vue')},
+];
+
+const router = new VueRouter({
+    routes // `routes: routes` の短縮表記
+});
 
 const app = new Vue({
-    el: '#app',
+    el: "#app",
+    router
 });
