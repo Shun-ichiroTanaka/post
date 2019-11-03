@@ -31,11 +31,8 @@
     },
     "dependencies": {
         "bootstrap": "^4.3.1",
-<<<<<<< HEAD
-=======
         "codemirror": "*",
         "codemirror-spell-checker": "*",
->>>>>>> a3a2e95861ece3afe091f5046449f8ee0cdd34f8
         "github-markdown-css": "^3.0.1",
         "izitoast": "^1.4.0",
         "marked": "*",

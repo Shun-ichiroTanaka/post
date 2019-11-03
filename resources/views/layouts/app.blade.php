@@ -14,13 +14,10 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-<<<<<<< HEAD
-=======
     {{-- markdownライブラリ --}}
     <link rel="stylesheet" href="github-markdown.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 
->>>>>>> a3a2e95861ece3afe091f5046449f8ee0cdd34f8
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
