@@ -2,3 +2,28 @@
 
 /* pager
 ----------------------------------------------------------------- */
+.CodeMirror {
+	height: calc(100vh - 8rem);
+}
+#preview {
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+header,
+footer {
+	height: 3rem;
+	overflow: hidden;
+}
+
+.CodeMirror .CodeMirror-code .cm-header-1,
+.CodeMirror .CodeMirror-code .cm-header-2,
+.CodeMirror .CodeMirror-code .cm-header-3,
+.CodeMirror .CodeMirror-code .cm-header-4,
+.CodeMirror .CodeMirror-code .cm-header-5,
+.CodeMirror .CodeMirror-code .cm-header-6 {
+	line-height: 1.2 !important;
+}
+
+.markdown-body img {
+	height: auto;
+}

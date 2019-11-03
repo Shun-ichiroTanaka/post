@@ -17,6 +17,7 @@
     {{-- markdownライブラリ --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.css">
 
+<<<<<<< HEAD
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 <body>
@@ -79,6 +80,10 @@
 </header>
 
 <div id="app">
+=======
+    @section('content')
+
+>>>>>>> a3a2e95861ece3afe091f5046449f8ee0cdd34f8
     <div class="container">
         <div class="card-header">{{ __('Post Register') }}</div>
         <div class="card-body">
@@ -109,12 +114,22 @@
 
                     <div class="">
                         <label for="content">{{ __('Content') }}</label>
+                        <textarea id="editor" name="name" rows="10" cols="50">
+                        </textarea>
+                        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+                        <script>
+                            var simplemde = new SimpleMDE({ element: document.getElementById("editor") });
+                        </script>
                         {{-- <textarea class=""  cols="50" rows="10"></textarea> --}}
                         {{-- <div id="markdown" name="content">{{ old('content') }} --}}
                             {{-- <mavon-editor v-model="value" language="en" :toolbars="toolbars" /> --}}
                             {{-- </div> --}}
+<<<<<<< HEAD
                             <textarea id="editor" name="name" rows="10" cols="50">
                             </textarea>
+=======
+                            {{-- <textarea id="markdown" name="content"></textarea> --}}
+>>>>>>> a3a2e95861ece3afe091f5046449f8ee0cdd34f8
 
 
                         </div>
@@ -126,6 +141,7 @@
                 </form>
             </div>
         </div>
+<<<<<<< HEAD
     </div>
     <script src="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.js"></script>
     <script>
@@ -152,3 +168,23 @@
     </script>
 </body>
 </html>
+=======
+        {{-- <script src="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.js"></script> --}}
+        {{-- <script>
+            // const markdown = new SimpleMDE({
+                //     element: document.getElementById("markdown")
+                // });
+                // Most options demonstrate the non-default behavior
+                const simplemde = new SimpleMDE({
+                    element: document.getElementById("markdown"),
+                    autosave: {
+                        enabled: true,
+                        delay: 1000,
+                    },
+                    placeholder: "Markdown記法で書いてみよう",
+                    spellChecker: false,
+                    tabSize: 4,
+                });
+            </script> --}}
+            @endsection
+>>>>>>> a3a2e95861ece3afe091f5046449f8ee0cdd34f8
