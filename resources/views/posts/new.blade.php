@@ -8,6 +8,7 @@
     @extends('layouts.app')
 
     @section('content')
+
     <div class="container">
         <div class="card-header">{{ __('Post Register') }}</div>
         <div class="card-body">
@@ -38,20 +39,43 @@
 
                     <div class="">
                         <label for="content">{{ __('Content') }}</label>
+                        <textarea id="editor" name="name" rows="10" cols="50">
+                        </textarea>
+                        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+                        <script>
+                            var simplemde = new SimpleMDE({ element: document.getElementById("editor") });
+                        </script>
                         {{-- <textarea class=""  cols="50" rows="10"></textarea> --}}
                         {{-- <div id="markdown" name="content">{{ old('content') }} --}}
                             {{-- <mavon-editor v-model="value" language="en" :toolbars="toolbars" /> --}}
-                        {{-- </div> --}}
-                        <textarea id="markdown" name="content"></textarea>
+                            {{-- </div> --}}
+                            {{-- <textarea id="markdown" name="content"></textarea> --}}
 
-                    </div>
 
-                    <div class="">
-                        <button type="submit">{{ __('Register') }}</button>
+                        </div>
+
+                        <div class="">
+                            <button type="submit">{{ __('Register') }}</button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
-
-    @endsection
+        {{-- <script src="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.js"></script> --}}
+        {{-- <script>
+            // const markdown = new SimpleMDE({
+                //     element: document.getElementById("markdown")
+                // });
+                // Most options demonstrate the non-default behavior
+                const simplemde = new SimpleMDE({
+                    element: document.getElementById("markdown"),
+                    autosave: {
+                        enabled: true,
+                        delay: 1000,
+                    },
+                    placeholder: "Markdown記法で書いてみよう",
+                    spellChecker: false,
+                    tabSize: 4,
+                });
+            </script> --}}
+            @endsection
