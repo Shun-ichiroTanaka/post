@@ -6410,12 +6410,68 @@ table {
   font-size: .9em;
 }
 
+.c-post__new-title {
+  height: 100%;
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  font-size: 24px;
+  border: 1px solid #ddd;
+}
+
+.c-post__new-title input {
+  width: 100%;
+}
+
+.c-post__new-category {
+  overflow: hidden;
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  margin: 0;
+  color: transparent;
+  font-size: 14px;
+  background-color: white;
+}
+
+.c-post__new-category input {
+  width: 100%;
+}
+
+.c-post__new-editor textarea {
+  height: 500px !important;
+}
+
+.c-post__new-submit {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  background: #f2f2f2;
+}
+
+.c-post__new-submit button {
+  width: 100px;
+  padding: 15px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 14px;
+  background: #2db697;
+  border: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  outline: 0;
+  -webkit-transition: all .3 ease;
+  transition: all .3 ease;
+  cursor: pointer;
+}
+
 /* button
 ----------------------------------------------------------------- */
-
-.CodeMirror {
-  height: 300px;
-}
 
 /* flexbox
 ----------------------------------------------------------------- */

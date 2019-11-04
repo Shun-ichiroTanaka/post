@@ -15,8 +15,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     {{-- markdownライブラリ --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.css">
-
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui-editor/latest/tui-editor.css"></link>
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui-editor/latest/tui-editor-contents.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"></link>
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
@@ -77,7 +79,7 @@
                 </ul>
             </nav>
 
-    </header>
+        </header>
 
         <div id="app">
             <div class="c-post">
@@ -104,67 +106,45 @@
 
 
 
-                        <div class="c-post__new-editor">
-                            <textarea id="editor" type="textarea" name="name" required>
-                            </textarea>
-                        </div>
+                        {{-- <div class="c-post__new-editor"> --}}
+                            {{-- <textarea id="editor" type="textarea" name="name" required>
+                            </textarea> --}}
+                            <div id="editSection"></div>
+                            {{-- </div> --}}
 
-                        <div class="c-post__new-submit">
-                            <button type="submit">{{ __('Post') }}</button>
+                            <div class="c-post__new-submit">
+                                <button type="submit">{{ __('Post') }}</button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.js"></script>
-        <script>
-            const simplemde = new SimpleMDE({
-                autofocus: true,
-                element: document.getElementById("editor"),
-                autosave: {
-                    enabled: true,
-                    delay: 1000,
-                },
-                blockStyles: {
-                    bold: "__",
-                    italic: "_"
-                },
-                forceSync: true,
-                parsingConfig: {
-                    allowAtxHeaderWithoutSpace: true,
-                    strikethrough: true,
-                    underscoresBreakWords: true,
-                },
-                hideIcons: ["guide", "heading"],
-                indentWithTabs: false,
-                insertTexts: {
-                    horizontalRule: ["", "\n\n-----\n\n"],
-                    image: ["![](http://", ")"],
-                    link: ["[", "](http://)"],
-                    table: ["", "\n\n| Column 1 | Column 2 | Column 3 |\n| -------- | -------- | -------- |\n| Text     | Text      | Text     |\n\n"],
-                },
-                lineWrapping: true,
-                parsingConfig: {
-                    allowAtxHeaderWithoutSpace: true,
-                    strikethrough: true,
-                    underscoresBreakWords: true,
-                },
-                placeholder: "Markdown記法で書いてみよう",
-                spellChecker: false,
-                status: true,
-                status: ["autosave", "lines", "words", "cursor"], // Optional usage
-                status: ["autosave", "lines", "words", "cursor", {
-                    className: "keystrokes",
-                    defaultValue: function(el) {
-                        this.keystrokes = 0;
-                        el.innerHTML = "0 Keystrokes";
+            {{-- <script src="https://cdn.jsdelivr.net/npm/simplemde@latest/dist/simplemde.min.js"></script> --}}
+            <script src="https://uicdn.toast.com/tui-editor/latest/tui-editor-Editor-full.js"></script>
+            <script>
+                var editor = new tui.Editor({
+                    el: document.querySelector('#editSection'),
+                    previewStyle: 'vertical',
+                    height: '500px',
+                    initialEditType: 'markdown',
+                    placeholder: 'Markdown記法で書いてみよう',
+                    exts: [
+                    {
+                        name: 'chart',
+                        minWidth: 100,
+                        maxWidth: 600,
+                        minHeight: 100,
+                        maxHeight: 300
                     },
-                    onUpdate: function(el) {
-                        el.innerHTML = ++this.keystrokes + " Keystrokes";
-                    }
-                }],
-                tabSize: 4,
-            });
-        </script>
-    </body>
-    </html>
+                    'scrollSync',
+                    'colorSyntax',
+                    'uml',
+                    'mark',
+                    'table',
+                    'youtube',
+
+                    ]
+                });
+            </script>
+        </body>
+        </html>
