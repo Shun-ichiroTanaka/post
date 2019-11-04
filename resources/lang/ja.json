@@ -1,6 +1,9 @@
 {
     "Post Register": "投稿",
     "Title": "タイトル",
+    "title": "タイトル",
+    "category":"カテゴリー",
     "Category": "カテゴリー",
-    "Problem": "問題"
+    "Problem": "問題",
+    "Post": "投稿する"
 }
