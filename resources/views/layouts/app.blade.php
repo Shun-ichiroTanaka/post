@@ -29,7 +29,7 @@
 
             <!-- フラッシュメッセージ -->
             @if (session('flash_message'))
-                <div role="alert">
+                <div class="u-other__alert" role="alert">
                     {{ session('flash_message') }}
                 </div>
             @endif

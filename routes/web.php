@@ -17,15 +17,14 @@ Route::get('/setting', 'SettingController@index')->name('setting.index');
 // --------------------------------->>
 // 投稿
 // --------------------------------->>
-Route::get('/post', 'PostController@index')->name('post.index');
+Route::get('/post/new', 'PostController@index')->name('post.new');
+Route::post('/post/new', 'PostController@postArticle')->name('post.newpost');
 
-Route::get('/post/new', 'PostController@new')->name('post.new');
-Route::post('/post/new', 'PostController@create')->name('post.create');
+Route::get('/post/{id}', 'PostController@showArticle')->name('post.showpost');
 
-Route::get('/post/{id}', 'PostController@show')->name('post.show');
-Route::get('/post/{id}/edit', 'PostController@edit')->name('post.edit');
-Route::post('/post/{id}', 'PostController@update')->name('post.update');
-Route::post('/post/{id}/delete', 'PostController@delete')->name('post.delete');
+// Route::post('/post/{id}', 'PostController@update')->name('post.update');
+// Route::get('/post/{id}/edit', 'PostController@edit')->name('post.edit');
+// Route::post('/post/{id}/delete', 'PostController@delete')->name('post.delete');
 
 // --------------------------------->>
 // ユーザー
