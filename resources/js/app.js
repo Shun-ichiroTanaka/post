@@ -1,6 +1,10 @@
 require("./bootstrap");
+require("./library/markdown");
+
 import Vue from "vue";
 window.Vue = require("vue");
+import store from './store/index';
+
 import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
@@ -22,5 +26,6 @@ const router = new VueRouter({
 
 const app = new Vue({
     el: "#app",
+    store,
     router
 });

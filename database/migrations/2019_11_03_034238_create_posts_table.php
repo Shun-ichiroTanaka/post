@@ -7,26 +7,34 @@ use Illuminate\Database\Migrations\Migration;
 class CreatePostsTable extends Migration
 {
     /**
-     * Run the migrations.
-     *
+     * up : マイグレーションが実行されるときに処理をする
+     * upメソッドにはマイグレーションで実行したいことを記述
      * @return void
      */
     public function up()
     {
+        // postsテーブルを以下の条件で作りますよ！
         Schema::create('posts', function (Blueprint $table) {
-            $table->increments('id');
+            // idカラムを作成し、idkラムでは連番で番号をつけていくという意味
+            $table->bigIncrements('id');
+
+            $table->integer('user_id');
             $table->string('title');
-            $table->text('content');
-            $table->string('category_name');
-            $table->integer('user_id')->unsigned();
+            $table->string('tag1');
+            $table->string('tag2')->nullable();
+            $table->string('tag3')->nullable();
+            $table->string('tag4')->nullable();
+            $table->string('tag5')->nullable();
+            $table->text('body');
+
+            // 自動でcreated_atとupdated_atの2つのカラムを用意
             $table->timestamps();
-            // $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
     /**
-     * Reverse the migrations.
-     *
+     * down : マイグレーションがロールバックされるときに処理をする
+     * 万が一将来ロールバックしたときにデータベースを元に戻すために、downメソッドにはupメソッドと逆の記述をする
      * @return void
      */
     public function down()

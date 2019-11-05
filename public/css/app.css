@@ -6417,31 +6417,32 @@ table {
   padding-bottom: 8px;
   padding-left: 8px;
   font-size: 24px;
-  border: 1px solid #ddd;
 }
 
 .c-post__new-title input {
   width: 100%;
 }
 
-.c-post__new-category {
+.c-post__new-tags {
   overflow: hidden;
-  padding-top: 8px;
   padding-right: 8px;
-  padding-bottom: 8px;
+  padding-bottom: 5px;
   padding-left: 8px;
   margin: 0;
   color: transparent;
-  font-size: 14px;
+  font-size: 15px;
   background-color: white;
 }
 
-.c-post__new-category input {
+.c-post__new-tags input {
   width: 100%;
 }
 
-.c-post__new-editor textarea {
-  height: 500px !important;
+.c-post__new-editor {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
 
 .c-post__new-submit {
@@ -6468,6 +6469,38 @@ table {
   -webkit-transition: all .3 ease;
   transition: all .3 ease;
   cursor: pointer;
+}
+
+.c-post__new-editor__markdown {
+  padding: 0rem;
+  -webkit-box-flex: 0;
+          flex: none;
+  width: 48%;
+}
+
+.c-post__new-editor__markdown #markdown_editor_textarea {
+  padding: 1rem;
+  height: 29rem;
+  width: 100%;
+}
+
+.c-post__new-editor__markdown #markdown_preview {
+  padding: 1rem;
+  height: 29rem;
+  border: solid 1px gray;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  color: #495057;
+}
+
+.c-post__new-editor__markdown #markdown_preview pre 　code {
+  color: white;
+  padding: 1.5rem 1rem;
+  background-color: #364549;
+  width: 100%;
+  display: block;
 }
 
 /* button

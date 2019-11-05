@@ -27,6 +27,13 @@
 
             @include('layouts.header')
 
+            <!-- フラッシュメッセージ -->
+            @if (session('flash_message'))
+                <div role="alert">
+                    {{ session('flash_message') }}
+                </div>
+            @endif
+
             <div class="b-wrapper">
                 @yield('content')
                 <router-view></router-view>
