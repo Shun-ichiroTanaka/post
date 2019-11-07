@@ -1,35 +1,51 @@
 {{--
 
-＊トップページ
+    ＊トップページ
 
-post-componentで投稿一覧を表示
-左のサイドバーで検索機能・カテゴリー機能
-右のサイドバーで人気ユーザーランキング表示
+    post-componentで投稿一覧を表示
+    左のサイドバーで検索機能・カテゴリー機能
+    右のサイドバーで人気ユーザーランキング表示
 
- --}}
+    --}}
 
-@extends('layouts.app')
+    @extends('layouts.app')
 
-@section('content')
-<div id="app">
-    <div class="l-container">
-        <div class="l-container__left">
-            <h3>カテゴリーから探す</h3>
-        </div>
-        <div class="l-container__main">
-              <posts></posts>
+    @section('content')
+    <div id="app">
+        <div class="l-container">
+            <div class="l-container__left">
+                <h3>カテゴリーから探す</h3>
+            </div>
+            <div class="l-container__main">
+                {{-- <posts></posts> --}}
 
-              {{-- @foreach ($posts as $post)
-                <div class="">
-                    <h3 class="">{{ $post->title }}</h3>
-                    <a href="#" class="btn">{{ __('Go Practice')  }}</a>
+                @foreach ($articles as $article)
+                <div class="article-box">
+                    {{-- <div class="article-box-left"></div> --}}
+                    <div class="article-box-left">
+                        <img src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}" alt="user-image" style="width:42px; height:auto;">
+                    </div>
+                    <div class="article-box-right">
+                        <a class="article-title" href="/post/{{$article->id}}">{{ $article->title }}</a>
+                        <div class="article-details">
+                            <div class="article-date">{{ $article->created_at }}</div>
+                        </div>
+                    </div>
                 </div>
-            @endforeach --}}
-        </div>
-        <div class="l-container__right">
-            <div class="l-container__right-profile">
+                @endforeach
+
+
+                {{-- @foreach ($posts as $post)
+                    <div class="">
+                        <h3 class="">{{ $post->title }}</h3>
+                        <a href="#" class="btn">{{ __('Go Practice')  }}</a>
+                    </div>
+                    @endforeach --}}
+                </div>
+                <div class="l-container__right">
+                    <div class="l-container__right-profile">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-@endsection
+        @endsection

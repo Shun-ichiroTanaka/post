@@ -10,7 +10,7 @@
                 <div class="validation">{{ $errors->first('title') }}</div>
                 @endif
                 <div class="c-post__new-title">
-                    <input id="title" placeholder=" {{ __('title') }}"　type="text" class="form-control" name="title" value="{{ old('title') }}" required autocomplete="title">
+                    <input id="title" placeholder=" {{ __('自分の「STEP」タイトルを登録する（例：「最短で学んだ私の英語学習方法」）') }}"　type="text" class="form-control" name="title" value="{{ old('title') }}" required autocomplete="title">
                 </div>
 
                 @if($errors->first('tags'))
@@ -26,7 +26,7 @@
                 <div class="c-post__new-editor">
                     {{-- <div id="" name="content" autocomplete="content"></div> --}}
                     <div class="c-post__new-editor__markdown">
-                        <textarea name="article" id="markdown_editor_textarea" cols="30" rows="10" class="form-control"></textarea>
+                        <textarea name="article" id="markdown_editor_textarea" placeholder=" {{ __('ここにはStepの内容について書いてください。Markdown記法で書いてみましょう！') }}" cols="30" rows="10" class="form-control"></textarea>
                     </div>
                     <div class="c-post__new-editor__markdown">
                         <div id="markdown_preview"></div>
@@ -39,4 +39,5 @@
         </form>
     </div>
 </div>
+<style src='highlightjs/styles/github-gist.css'></style>
 @endsection

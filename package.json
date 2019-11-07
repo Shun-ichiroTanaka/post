@@ -35,6 +35,7 @@
         "codemirror": "*",
         "codemirror-spell-checker": "*",
         "github-markdown-css": "^3.0.1",
+        "highlight.js": "^9.16.2",
         "izitoast": "^1.4.0",
         "marked": "^0.7.0",
         "simplemde": "^1.11.2",
