@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
+use App\Post;
 
 class UserController extends Controller
 {
@@ -16,9 +19,10 @@ class UserController extends Controller
     public function profile($id)
     {
         $user = User::find($id);
+        $articles = Post::orderBy('created_at', 'asc')->get();
 
         if ($user) {
-            return view('user.profile')->withUser($user);
+            return view('user.profile',compact('articles'))->withUser($user);
         } else {
             // URLからidをいじって他のユーザーページにアクセスしないように例外処理
             // ＝自分のid以外にアクセスさせない
@@ -27,44 +31,6 @@ class UserController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit()
     {
         if (Auth::user()) {

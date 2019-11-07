@@ -64,6 +64,8 @@ class PostController extends Controller
 
     public function showArticle($id)
     {
+        $articles = Post::paginate(1);
+
         // IDの情報が飛んできて、$idでキャッチ
         // その記事IDを元に、データベースから記事を検索し、ビューに記事情報を返す
         $article = Post::where('id', $id)->first();

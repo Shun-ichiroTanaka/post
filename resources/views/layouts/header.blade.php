@@ -1,8 +1,6 @@
  {{-- @include('layouts.header') --}}
-
 <header class="l-header">
 		<h1 class="l-header__title"><a href="{{ url('/') }}"> {{ config('app.name', 'Step') }}</a></h1>
-
 		<nav class="l-header__nav">
 			<ul>
                 @guest
@@ -50,11 +48,8 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
                         </div>
                     </li>
-
-
                 @endguest
 			</ul>
 		</nav>
-
 </header>
 
