@@ -6,6 +6,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 Route::get('/', 'HomeController@showTopPage')->name('home');
 Route::get('/home', 'HomeController@showTopPage')->name('home');
 
+Route::get('/post/{id}', 'PostController@showArticle')->name('post.showpost');
 
 
 Route::group(['middleware' => ['auth']], function () {
@@ -18,7 +19,6 @@ Route::group(['middleware' => ['auth']], function () {
     // --------------------------------->>
     Route::get('/post/new', 'PostController@index')->name('post.new');
     Route::post('/post/new', 'PostController@postArticle')->name('post.newpost');
-    Route::get('/post/{id}', 'PostController@showArticle')->name('post.showpost');
 
 
     // --------------------------------->>
