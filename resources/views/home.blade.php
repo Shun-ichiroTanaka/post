@@ -23,7 +23,11 @@
                 <div class="article-box">
                     {{-- <div class="article-box-left"></div> --}}
                     <div class="article-box-left">
-                        <img src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}" alt="user-image" style="width:42px; height:auto;">
+                        @if (empty(Auth::user()->avatar))
+                            <img src="/img/avatar/user.svg" alt="avatar" style="width:40px; height:40px; border-radius:50%?vertical-align: middle;">
+                        @else
+                            <img src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}" alt="avatar" style="width:40px; height:40px; border-radius:50%" border-radius="50%">
+                        @endif
                     </div>
                     <div class="article-box-right">
                         <a class="article-title" href="/post/{{$article->id}}">{{ $article->title }}</a>
