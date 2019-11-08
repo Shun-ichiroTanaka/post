@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="github-markdown.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 
+
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
@@ -47,7 +48,6 @@
 
 
     @include('sweetalert::alert')
-
     {{-- vueを用いるためこの位置 --}}
     <script src=" {{ mix('js/app.js') }} "></script>
 </body>

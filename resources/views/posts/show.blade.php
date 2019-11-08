@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <div class="c-post__show">
-    <div class="c-post__show-box">
-        <div class="c-post__show-box__header">
-            <div class="c-post__show-box__header-date">{{$article->created_at}}</div>
+    <div class="c-post__show-left"></div>
+    <div class="c-post__show-main">
+        <div class="c-post__show-main__header">
+            <div class="c-post__show-main__header-date">{{$article->created_at}}</div>
         </div>
         <div class="c-post__show-title">{{$article->title}}</div>
 
@@ -24,6 +25,20 @@
         </div>
 
         <div class="c-post__show-body">{{$article->body}}</div>
+    </div>
+    <div class="c-post__show-right">
+        <div class="c-post__show-right__inner">
+            <ul>
+                <li><a href="">メニュー</a>
+                    <ul>
+                        <li><a href="">小メニュー</a></li>
+                        <li><a href="">小メニュー</a></li>
+                        <li><a href="">小メニュー</a></li>
+                        <li><a href="">小メニュー</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 @endsection
