@@ -1,11 +1,11 @@
 
 .step-app {
   display: flex;
-  width: 1200px;
+  width: 100vw;
   margin: 0 auto;
 }
 .step-app-side{
-width: 200px;
+width: 15vw;
 }
 .step-steps {
   display: flex;
@@ -60,7 +60,7 @@ width: 200px;
   background-color: #b6ddd5;
 }
 .step-content {
-    width: 1000px;
+    width: 85vw;
   padding: 10px 5px;
   border: 1px solid #e5e5e5;
   border-top: 0;

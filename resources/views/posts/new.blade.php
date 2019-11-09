@@ -37,6 +37,8 @@
                                 <button data-direction="next">Next</button>
                                 <button data-direction="finish">Finish</button>
                             </div>
+                            <p>目標時間</p>
+                            <input type="text" value="">
                         </div>
                         <div class="step-content">
                             <div class="step-tab-panel" id="step1">

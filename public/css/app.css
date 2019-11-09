@@ -6518,7 +6518,17 @@ table {
 
 .c-post__show-left {
   width: 80px;
-  background: #ceabab;
+}
+
+.c-post__show-left img {
+  width: 30px;
+  background: #f5f5f5;
+  border: solid .5px #1fa1f2;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .c-post__show-right__inner {

@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
 <div class="c-post__show">
-    <div class="c-post__show-left"></div>
+    <div class="c-post__show-left">
+        <a href=""><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a>
+    </div>
     <div class="c-post__show-main">
         <div class="c-post__show-main__header">
             <div class="c-post__show-main__header-date">{{$article->created_at}}</div>
@@ -38,6 +40,7 @@
                     </ul>
                 </li>
             </ul>
+            <p>このStepにチャレンジ</p>
         </div>
     </div>
 </div>
