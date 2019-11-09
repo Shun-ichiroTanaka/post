@@ -50733,6 +50733,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./parts/markdown */ "./resources/js/parts/markdown.js");
 
+__webpack_require__(/*! ./parts/step */ "./resources/js/parts/step.js");
+
 
 __webpack_provided_window_dot_Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
@@ -50914,6 +50916,22 @@ $(function () {
     html = html.replace(/&gt;/g, '>');
     html = html.replace(/&amp;/g, '&');
     return html;
+  }
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./resources/js/parts/step.js":
+/*!************************************!*\
+  !*** ./resources/js/parts/step.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {$('#demo').steps({
+  onFinish: function onFinish() {
+    alert('complete');
   }
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))

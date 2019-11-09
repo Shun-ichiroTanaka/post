@@ -1,5 +1,6 @@
 require("./bootstrap");
 require("./parts/markdown");
+require("./parts/step");
 
 import Vue from "vue";
 window.Vue = require("vue");

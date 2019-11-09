@@ -37,6 +37,8 @@
         "github-markdown-css": "^3.0.1",
         "highlight.js": "^9.16.2",
         "izitoast": "^1.4.0",
+        "jquery-steps": "^1.1.0",
+        "jquery.steps": "^1.0.2",
         "marked": "^0.7.0",
         "simplemde": "^1.11.2",
         "sticky-sidebar": "^3.3.1",
