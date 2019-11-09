@@ -39,5 +39,4 @@
         </form>
     </div>
 </div>
-<style src='highlightjs/styles/github-gist.css'></style>
 @endsection

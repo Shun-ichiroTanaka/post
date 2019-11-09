@@ -15,7 +15,6 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     {{-- markdownライブラリ --}}
-    <link rel="stylesheet" href="github-markdown.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 
 
@@ -43,7 +42,6 @@
             @include('layouts.footer')
 
         </div>
-        {{-- <router-view></router-view> --}}
     </div>
 
 
