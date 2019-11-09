@@ -1,72 +1,91 @@
-.step-app > .step-steps {
-  margin: 0;
-  padding: 0;
+
+.step-app {
   display: flex;
-  border-radius: 3px 3px 0 0;
+  width: 1200px;
+  margin: 0 auto;
+}
+.step-app-side{
+width: 200px;
+}
+.step-steps {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
+  padding: 20px 5px 0 5px;
+  margin: 0;
+          border-radius: 5px 5px 0 0;
+
+  -webkit-border-radius: 5px 5px 0 0;
+     -moz-border-radius: 5px 5px 0 0;
+      -ms-border-radius: 5px 5px 0 0;
+       -o-border-radius: 5px 5px 0 0;
 }
-.step-app > .step-steps > li {
-  list-style: none;
+.step-steps > li {
   flex: 1;
+  list-style: none;
 }
-.step-app > .step-steps > li:last-child a {
+.step-steps > li:last-child a {
   border: none;
 }
-.step-app > .step-steps > li > a {
+.step-steps > li > a {
   display: block;
   padding: 10px;
   color: #333;
-  background-color: #e5e5e5;
   text-decoration: none;
+  background-color: #e5e5e5;
   border-right: 1px solid #fff;
 }
-.step-app > .step-steps > li > a > .number {
-  background: #fff;
-  padding: 0 8px;
+.step-steps > li > a > .number {
   display: inline-block;
-  text-align: center;
+  padding: 0 8px;
   margin-right: 15px;
-  border-radius: 3px;
   color: #333;
+  text-align: center;
+  background: #fff;
+  border-radius: 3px;
 }
-.step-app > .step-steps > li > a:hover {
+.step-steps > li > a:hover {
   background-color: #ddd;
 }
-.step-app > .step-steps > li.active a {
-  background-color: #32c5d2;
+.step-steps > li.active a {
   color: #fff;
+  background-color: #2bb697;
 }
-.step-app > .step-steps > li.error a {
+.step-steps > li.error a {
+  color: #fff;
   background-color: #e7505a;
-  color: #fff;
 }
-.step-app > .step-steps > li.done a {
-  background-color: #3cb371;
+.step-steps > li.done a {
   color: #fff;
+  background-color: #b6ddd5;
 }
-.step-app > .step-content {
+.step-content {
+    width: 1000px;
+  padding: 10px 5px;
   border: 1px solid #e5e5e5;
-  padding: 10px;
   border-top: 0;
 }
-.step-app > .step-content > .step-tab-panel {
+.step-content > .step-tab-panel {
   display: none;
 }
-.step-app > .step-content > .step-tab-panel.active {
+.step-content > .step-tab-panel.active {
   display: block;
 }
-.step-app > .step-footer {
+.step-footer {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-.step-app > .step-footer > .step-btn {
+.step-footer > .step-btn {
   padding: 4px 16px;
   color: #333;
   text-decoration: none;
   background: #e5e5e5;
-  border-radius: 3px;
   border: none;
+  border-radius: 3px;
   outline: none;
+  cursor: pointer;
+}
+/*# sourceMappingURL=jquery-steps.css.map */
   cursor: pointer;
 }
 /*# sourceMappingURL=jquery-steps.css.map */
