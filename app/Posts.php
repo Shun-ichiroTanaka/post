@@ -13,7 +13,19 @@ class Post extends Model
     // モデルがその属性以外を持たなくなる（fillメソッドに対応しやすいが、カラムが増えるほど足していく必要あり）
     // protexted $fillableに指定したカラムに関してはデータの追加や更新ができる
     // 逆にいうと$fillableに指定していないカラムのデータを追加しようとしたり更新しようとしたりするとエラーが発生
-    protected $fillable = ['user_id', 'title', 'tag1', 'tag2', 'tag3', 'tag4','tag5', 'body'];
+    protected $fillable = [
+        'user_id',
+        'title',
+        'tag1',
+        'tag2',
+        'tag3',
+        'tag4',
+        'tag5',
+        'body1',
+        'body2',
+        'body3',
+        'body4',
+    ];
 
     // モデルからその属性が取り除かれる（カラムが増えてもほとんど変更しなくて良い）
     // $fillableの他にもう1つ$guardというものがある

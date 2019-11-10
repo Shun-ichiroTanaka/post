@@ -25,7 +25,10 @@ class CreatePostsTable extends Migration
             $table->string('tag3')->nullable();
             $table->string('tag4')->nullable();
             $table->string('tag5')->nullable();
-            $table->text('body');
+            $table->text('body1');
+            $table->text('body2')->nullable();
+            $table->text('body3')->nullable();
+            $table->text('body4')->nullable();
 
             // 自動でcreated_atとupdated_atの2つのカラムを用意
             $table->timestamps();

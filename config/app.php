@@ -161,6 +161,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         kanazaca\CounterCache\CounterCacheServiceProvider::class,
+        Unisharp\Ckeditor\ServiceProvider::class,
 
 
         /*

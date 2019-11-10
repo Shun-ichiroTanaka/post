@@ -50918,6 +50918,15 @@ $(function () {
     return html;
   }
 });
+ClassicEditor.create(document.querySelector('#markdown_editor_textarea'), {
+  placeholder: 'ツールバーやMarkdown記法を用いて書いてみましょう！' // plugins: [ MathType,  ],
+  // toolbar: [ 'MathType', 'ChemType',  ]
+
+}).then(function (markdown_editor_textarea) {
+  console.log(editor);
+})["catch"](function (error) {
+  console.error(error);
+});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),

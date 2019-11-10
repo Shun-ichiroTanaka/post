@@ -28,9 +28,9 @@
                         <div class="step-app-side">
                             <ul class="step-steps">
                                 <li><a href="#step1">Step 1</a></li>
-                                <li><a href="#step2">Step 2</a></li>
+                                {{-- <li><a href="#step2">Step 2</a></li>
                                 <li><a href="#step3">Step 3</a></li>
-                                <li><a href="#step4">Step 4</a></li>
+                                <li><a href="#step4">Step 4</a></li> --}}
                             </ul>
                             <div class="step-footer">
                                 <button data-direction="prev">Previous</button>
@@ -42,17 +42,18 @@
                         </div>
                         <div class="step-content">
                             <div class="step-tab-panel" id="step1">
-                                <div class="c-post__new-title">
+                                <div class="c-post__new-subtitle">
                                     <input id="title" placeholder=" {{ __('（例：「STEP1：まずはマクロ経済をザックリ理解しよう」）') }}"　type="text" class="form-control" name="title" value="{{ old('title') }}" required autocomplete="title">
                                 </div>
                                 <div class="c-post__new-editor">
                                     {{-- <div id="" name="content" autocomplete="content"></div> --}}
                                     <div class="c-post__new-editor__markdown">
-                                        <textarea name="article" id="markdown_editor_textarea" placeholder=" {{ __('ここにはStepの内容について書いてください。Markdown記法で書いてみましょう！') }}" cols="30" rows="10" class="form-control"></textarea>
+                                        <textarea name="article" id="markdown_editor_textarea"></textarea>
+                                        {{-- <textarea name="article" id="markdown_editor_textarea" placeholder=" {{ __('ここにはStepの内容について書いてください。Markdown記法で書いてみましょう！') }}" cols="30" rows="10" class="form-control"></textarea> --}}
                                     </div>
-                                    <div class="c-post__new-editor__markdown">
+                                    {{-- <div class="c-post__new-editor__markdown">
                                         <div id="markdown_preview"></div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="step-tab-panel" id="step2">
@@ -60,14 +61,14 @@
                                     <input id="title" placeholder=" {{ __('（例：「STEP2：次に必須の公式を押さえよう」）') }}"　type="text" class="form-control" name="title" value="{{ old('title') }}" required autocomplete="title">
                                 </div>
                                 <div class="c-post__new-editor">
-                                    {{-- <div id="" name="content" autocomplete="content"></div> --}}
                                     <div class="c-post__new-editor__markdown">
-                                        <textarea name="article" id="markdown_editor_textarea" placeholder=" {{ __('ここにはStepの内容について書いてください。Markdown記法で書いてみましょう！') }}" cols="30" rows="10" class="form-control"></textarea>
+                                        {{-- <textarea name="content" id="editor"></textarea> --}}
+                                        <textarea name="articles" id="markdown_editor_textarea"></textarea>
                                     </div>
                                     <div class="c-post__new-editor__markdown">
                                         <div id="markdown_preview"></div>
                                     </div>
-                            </div>
+                                </div>
                             </div>
                             <div class="step-tab-panel" id="step3">
                                 <div class="c-post__new-title">
@@ -79,9 +80,9 @@
                                         <textarea name="article" id="markdown_editor_textarea" placeholder=" {{ __('ここにはStepの内容について書いてください。Markdown記法で書いてみましょう！') }}" cols="30" rows="10" class="form-control"></textarea>
                                     </div>
                                     <div class="c-post__new-editor__markdown">
-                                    <div id="markdown_preview"></div>
+                                        <div id="markdown_preview"></div>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                             <div class="step-tab-panel" id="step4">
                                 <div class="c-post__new-title">

@@ -35,3 +35,17 @@ $(function() {
 		return html;
 	}
 });
+
+
+ClassicEditor
+    .create( document.querySelector( '#markdown_editor_textarea' ), {
+        placeholder: 'ツールバーやMarkdown記法を用いて書いてみましょう！',
+        // plugins: [ MathType,  ],
+        // toolbar: [ 'MathType', 'ChemType',  ]
+    } )
+    .then( markdown_editor_textarea => {
+        console.log( editor );
+    } )
+    .catch( error => {
+        console.error( error );
+    } );

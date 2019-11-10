@@ -6423,6 +6423,17 @@ table {
   width: 100%;
 }
 
+.c-post__new-subtitle {
+  height: 100%;
+  padding-bottom: 5px;
+  font-size: 18px;
+  background-color: #f5f5f5;
+}
+
+.c-post__new-subtitle input {
+  width: 100%;
+}
+
 .c-post__new-tags {
   overflow: hidden;
   padding-right: 5px;
@@ -6448,7 +6459,6 @@ table {
 .c-post__new-editor__markdown {
   -webkit-box-flex: 0;
           flex: none;
-  width: 50%;
 }
 
 .c-post__new-editor__markdown #markdown_editor_textarea {
@@ -7653,6 +7663,23 @@ body .pl-11 {
 
 body .pl-12 {
   padding-left: 128px !important;
+}
+
+.ck.ck-editor__editable > .ck-placeholder::before {
+  color: #b3b3b3;
+  font-family: Nunito;
+  font-size: .9em;
+}
+
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+  width: 85vw;
+  height: 26.5rem;
+}
+
+.ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
+.ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
+  width: 85vw;
+  height: 26.5rem;
 }
 
 /* pagetop

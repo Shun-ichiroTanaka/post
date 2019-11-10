@@ -28,7 +28,7 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|unique:posts|max:255',
             'tags' => 'required|string',
-            'article' => 'required|string',
+            'articles' => 'required|string',
         ]);
 
         // モデルを使って、DBに登録する値をセット
@@ -44,6 +44,12 @@ class PostController extends Controller
         $tag4 = (isset($tags[2])) ? $tags[2] : null;
         $tag5 = (isset($tags[2])) ? $tags[2] : null;
 
+        $articles = explode(' ', $request->articles);
+        $article1 = $articles[0];
+        $article2 = (isset($articles[1])) ? $articles[1] : null;
+        $article3 = (isset($articles[2])) ? $articles[2] : null;
+        $article4 = (isset($articles[2])) ? $articles[2] : null;
+
         $article = Post::create([
             'user_id' => Auth::user()->id,
             'title' => $request->title,
@@ -52,7 +58,11 @@ class PostController extends Controller
             'tag3' => $tag3,
             'tag4' => $tag4,
             'tag5' => $tag5,
-            'body' => $request->article,
+            'body1' => $request->article1,
+            'body2' => $request->article2,
+            'body3' => $request->article3,
+            'body4' => $request->article4,
+
         ]);
 
         // return redirect('/');

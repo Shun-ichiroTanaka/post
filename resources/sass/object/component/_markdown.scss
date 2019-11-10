@@ -1003,3 +1003,20 @@ body .pl-11 {
 body .pl-12 {
   padding-left: 128px!important;
 }
+
+.ck.ck-editor__editable > .ck-placeholder::before {
+  color: #b3b3b3;
+  font-family: Nunito;
+  font-size: .9em;
+}
+
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+  width: 85vw;
+  height: 26.5rem;
+}
+
+.ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
+.ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
+  width: 85vw;
+  height: 26.5rem;
+}

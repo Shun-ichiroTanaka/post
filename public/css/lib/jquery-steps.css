@@ -4,14 +4,14 @@
   width: 100vw;
   margin: 0 auto;
 }
-.step-app-side{
-width: 15vw;
+.step-app-side {
+  width: 15vw;
 }
 .step-steps {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: 20px 5px 0 5px;
+  padding: 0 5px 0 5px;
   margin: 0;
           border-radius: 5px 5px 0 0;
 
@@ -60,9 +60,8 @@ width: 15vw;
   background-color: #b6ddd5;
 }
 .step-content {
-    width: 85vw;
-  padding: 10px 5px;
-  border: 1px solid #e5e5e5;
+  width: 85vw;
+  /* padding: 0 5px; */
   border-top: 0;
 }
 .step-content > .step-tab-panel {
@@ -85,7 +84,3 @@ width: 15vw;
   outline: none;
   cursor: pointer;
 }
-/*# sourceMappingURL=jquery-steps.css.map */
-  cursor: pointer;
-}
-/*# sourceMappingURL=jquery-steps.css.map */
