@@ -16,15 +16,20 @@ class Post extends Model
     protected $fillable = [
         'user_id',
         'title',
+        'subtitle1',
+        'subtitle2',
+        'subtitle3',
+        'subtitle4',
         'tag1',
         'tag2',
         'tag3',
         'tag4',
         'tag5',
-        'body1',
-        'body2',
-        'body3',
-        'body4',
+        'step1',
+        'step2',
+        'step3',
+        'step4',
+        'time',
     ];
 
     // モデルからその属性が取り除かれる（カラムが増えてもほとんど変更しなくて良い）

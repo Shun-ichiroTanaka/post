@@ -22,13 +22,14 @@ class PostController extends Controller
 
     }
 
-    public function postArticle(Request $request)
+    public function poststep(Request $request)
     {
         // バリデーション
         $request->validate([
             'title' => 'required|unique:posts|max:255',
+            'subtitles' => 'required|unique:posts|max:255',
             'tags' => 'required|string',
-            'articles' => 'required|string',
+            'steps' => 'required|string',
         ]);
 
         // モデルを使って、DBに登録する値をセット
@@ -41,27 +42,37 @@ class PostController extends Controller
         $tag1 = $tags[0];
         $tag2 = (isset($tags[1])) ? $tags[1] : null;
         $tag3 = (isset($tags[2])) ? $tags[2] : null;
-        $tag4 = (isset($tags[2])) ? $tags[2] : null;
-        $tag5 = (isset($tags[2])) ? $tags[2] : null;
+        $tag4 = (isset($tags[3])) ? $tags[3] : null;
+        $tag5 = (isset($tags[4])) ? $tags[4] : null;
 
-        $articles = explode(' ', $request->articles);
-        $article1 = $articles[0];
-        $article2 = (isset($articles[1])) ? $articles[1] : null;
-        $article3 = (isset($articles[2])) ? $articles[2] : null;
-        $article4 = (isset($articles[2])) ? $articles[2] : null;
+        $steps = explode(' ', $request->steps);
+        $step1 = $steps[0];
+        $step2 = (isset($steps[1])) ? $steps[1] : null;
+        $step3 = (isset($steps[2])) ? $steps[2] : null;
+        $step4 = (isset($steps[3])) ? $steps[3] : null;
 
-        $article = Post::create([
+        $subtites = explode(' ', $request->subtites);
+        $subtite1 = $subtites[0];
+        $subtite2 = (isset($subtites[1])) ? $subtites[1] : null;
+        $subtite3 = (isset($subtites[2])) ? $subtites[2] : null;
+        $subtite4 = (isset($subtites[3])) ? $subtites[3] : null;
+
+        $step = Post::create([
             'user_id' => Auth::user()->id,
             'title' => $request->title,
+            'subtitle1' => $request->subtitle1,
+            'subtitle2' => $request->subtitle2,
+            'subtitle3' => $request->subtitle3,
+            'subtitle4' => $request->subtitle4,
             'tag1' => $tag1,
             'tag2' => $tag2,
             'tag3' => $tag3,
             'tag4' => $tag4,
             'tag5' => $tag5,
-            'body1' => $request->article1,
-            'body2' => $request->article2,
-            'body3' => $request->article3,
-            'body4' => $request->article4,
+            'step1' => $request->step1,
+            'step2' => $request->step2,
+            'step3' => $request->step3,
+            'step4' => $request->step4,
 
         ]);
 
@@ -69,17 +80,17 @@ class PostController extends Controller
 
         //「投稿する」をクリックしたら投稿情報表示ページへリダイレクト
         // その時にsessionフラッシュにメッセージを入れる
-        return redirect("/post/{$article->id}")->with('flash_message', __('投稿しました!'));
+        return redirect("/post/{$step->id}")->with('flash_message', __('投稿しました!'));
     }
 
-    public function showArticle($id)
+    public function showstep($id)
     {
-        $articles = Post::paginate(1);
+        $steps = Post::paginate(1);
 
         // IDの情報が飛んできて、$idでキャッチ
         // その記事IDを元に、データベースから記事を検索し、ビューに記事情報を返す
-        $article = Post::where('id', $id)->first();
-        return view('posts.show', compact('article'));
+        $step = Post::where('id', $id)->first();
+        return view('posts.show', compact('step'));
     }
 
     public function store(Request $request)
