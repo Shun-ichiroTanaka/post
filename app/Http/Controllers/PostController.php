@@ -22,7 +22,7 @@ class PostController extends Controller
 
     }
 
-    public function poststep(Request $request)
+    public function postStep(Request $request)
     {
         // バリデーション
         $request->validate([
@@ -30,6 +30,7 @@ class PostController extends Controller
             'subtitles' => 'required|unique:posts|max:255',
             'tags' => 'required|string',
             'steps' => 'required|string',
+            'time' => 'required|integer',
         ]);
 
         // モデルを使って、DBに登録する値をセット
@@ -51,11 +52,11 @@ class PostController extends Controller
         $step3 = (isset($steps[2])) ? $steps[2] : null;
         $step4 = (isset($steps[3])) ? $steps[3] : null;
 
-        $subtites = explode(' ', $request->subtites);
-        $subtite1 = $subtites[0];
-        $subtite2 = (isset($subtites[1])) ? $subtites[1] : null;
-        $subtite3 = (isset($subtites[2])) ? $subtites[2] : null;
-        $subtite4 = (isset($subtites[3])) ? $subtites[3] : null;
+        $subtitles = explode(' ', $request->subtitles);
+        $subtitle1 = $subtitles[0];
+        $subtitle2 = (isset($subtitles[1])) ? $subtitles[1] : null;
+        $subtitle3 = (isset($subtitles[2])) ? $subtitles[2] : null;
+        $subtitle4 = (isset($subtitles[3])) ? $subtitles[3] : null;
 
         $step = Post::create([
             'user_id' => Auth::user()->id,
@@ -73,6 +74,7 @@ class PostController extends Controller
             'step2' => $request->step2,
             'step3' => $request->step3,
             'step4' => $request->step4,
+            'time' => $request->time
 
         ]);
 

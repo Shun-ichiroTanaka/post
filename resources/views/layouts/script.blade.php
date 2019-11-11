@@ -3,7 +3,7 @@
 <script>
 var steps = $('#demo').steps({
     onFinish: function () {
-        alert('Wizard Completed');
+        alert('全てのステップが完了しました！');
     }
 });
 steps_api = steps.data('plugin_Steps');

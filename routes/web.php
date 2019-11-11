@@ -21,7 +21,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
 
     // 投稿
     Route::get('/post/new', 'PostController@index')->name('post.new');
-    Route::post('/post/new', 'PostController@postArticle')->name('post.newpost');
+    Route::post('/post/new', 'PostController@postStep')->name('post.newpost');
 
 
     // ユーザー
