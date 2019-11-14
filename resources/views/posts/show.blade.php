@@ -6,27 +6,27 @@
     </div>
     <div class="c-post__show-main">
         <div class="c-post__show-main__header">
-            <div class="c-post__show-main__header-date">{{$article->created_at}}</div>
+            <div class="c-post__show-main__header-date">{{$step->created_at}}</div>
         </div>
-        <div class="c-post__show-title">{{$article->title}}</div>
+        <div class="c-post__show-title">{{$step->title}}</div>
 
         <div class="c-post__show-tags">
-            <div class="c-post__show-tags__item">{{$article->tag1}}</div>
-            @if ($article->tag2)
-            <div class="c-post__show-tags__item">{{$article->tag2}}</div>
+            <div class="c-post__show-tags__item">{{$step->tag1}}</div>
+            @if ($step->tag2)
+            <div class="c-post__show-tags__item">{{$step->tag2}}</div>
             @endif
-            @if ($article->tag3)
-            <div class="c-post__show-tags__item">{{$article->tag3}}</div>
+            @if ($step->tag3)
+            <div class="c-post__show-tags__item">{{$step->tag3}}</div>
             @endif
-            @if ($article->tag4)
-            <div class="c-post__show-tags__item">{{$article->tag4}}</div>
+            @if ($step->tag4)
+            <div class="c-post__show-tags__item">{{$step->tag4}}</div>
             @endif
-            @if ($article->tag5)
-            <div class="c-post__show-tags__item">{{$article->tag5}}</div>
+            @if ($step->tag5)
+            <div class="c-post__show-tags__item">{{$step->tag5}}</div>
             @endif
         </div>
 
-        <div class="c-post__show-body">{{$article->body}}</div>
+        <div class="c-post__show-body">{{$step->step1}}</div>
     </div>
     <div class="c-post__show-right">
         <div class="c-post__show-right__inner">

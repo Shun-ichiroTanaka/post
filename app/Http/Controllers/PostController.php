@@ -27,9 +27,15 @@ class PostController extends Controller
         // バリデーション
         $request->validate([
             'title' => 'required|unique:posts|max:255',
-            'subtitles' => 'required|unique:posts|max:255',
+            'subtitle1' => 'required|unique:posts|max:255',
+            'subtitle2' => 'required|unique:posts|max:255',
+            'subtitle3' => 'required|unique:posts|max:255',
+            'subtitle4' => 'required|unique:posts|max:255',
             'tags' => 'required|string',
-            'steps' => 'required|string',
+            'step1' => 'required|string',
+            'step2' => 'required|string',
+            'step3' => 'required|string',
+            'step4' => 'required|string',
             'time' => 'required|integer',
         ]);
 
@@ -46,17 +52,6 @@ class PostController extends Controller
         $tag4 = (isset($tags[3])) ? $tags[3] : null;
         $tag5 = (isset($tags[4])) ? $tags[4] : null;
 
-        $steps = explode(' ', $request->steps);
-        $step1 = $steps[0];
-        $step2 = (isset($steps[1])) ? $steps[1] : null;
-        $step3 = (isset($steps[2])) ? $steps[2] : null;
-        $step4 = (isset($steps[3])) ? $steps[3] : null;
-
-        $subtitles = explode(' ', $request->subtitles);
-        $subtitle1 = $subtitles[0];
-        $subtitle2 = (isset($subtitles[1])) ? $subtitles[1] : null;
-        $subtitle3 = (isset($subtitles[2])) ? $subtitles[2] : null;
-        $subtitle4 = (isset($subtitles[3])) ? $subtitles[3] : null;
 
         $step = Post::create([
             'user_id' => Auth::user()->id,
@@ -78,11 +73,12 @@ class PostController extends Controller
 
         ]);
 
-        // return redirect('/');
+        return redirect('/');
 
         //「投稿する」をクリックしたら投稿情報表示ページへリダイレクト
         // その時にsessionフラッシュにメッセージを入れる
         return redirect("/post/{$step->id}")->with('flash_message', __('投稿しました!'));
+        // return redirect("/")->with('flash_message', __('投稿しました!'));
     }
 
     public function showstep($id)

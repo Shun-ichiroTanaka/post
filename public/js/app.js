@@ -56460,37 +56460,24 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var marked__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! marked */ "./node_modules/marked/lib/marked.js");
 /* harmony import */ var marked__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(marked__WEBPACK_IMPORTED_MODULE_0__);
- // マークダウンをプレビュー画面に表示
+ //     // 個別の記事画面のマークダウンをHTMLに変換する
+//     // var target = $('.item-body')で、item-bodyがクラスのものを取得して、
+//     // marked.jsを使用してマークダウンをHTMLに変換
+//     // $('.item-body').html(html);で、
+//     // もう一度クラスがitem-bodyの所にHTMLを返してあげる
 
-$(function () {
-  marked__WEBPACK_IMPORTED_MODULE_0___default.a.setOptions({
-    langPrefix: '',
-    breaks: true,
-    sanitize: true
-  }); // テキストエリア（id="markdown_editor_textarea")に文字が打ち込まれていったら、
-  // テキストエリアの文字を取得してmarkdownをHTMLに変換します。
-  // その後、プレビューに表示を実行
-  // $('#markdown_editor_textarea').keyup(function() {
-  //     var html = marked(getHtml($(this).val()));
-  //     $('#markdown_preview').html(html);
-  // });
-  // 個別の記事画面のマークダウンをHTMLに変換する
-  // var target = $('.item-body')で、item-bodyがクラスのものを取得して、
-  // marked.jsを使用してマークダウンをHTMLに変換
-  // $('.item-body').html(html);で、
-  // もう一度クラスがitem-bodyの所にHTMLを返してあげる
+var target = $('.c-post__show-body');
+var html = marked__WEBPACK_IMPORTED_MODULE_0___default()(getHtml(target.html()));
+$('.c-post__show-body').html(html); //     // 比較演算子が &lt; 等になるので置換
 
-  var target = $('.c-post__show-body');
-  var html = marked__WEBPACK_IMPORTED_MODULE_0___default()(getHtml(target.html()));
-  $('.c-post__show-body').html(html); // 比較演算子が &lt; 等になるので置換
+function getHtml(html) {
+  html = html.replace(/&lt;/g, '<');
+  html = html.replace(/&gt;/g, '>');
+  html = html.replace(/&amp;/g, '&');
+  return html;
+} // });
 
-  function getHtml(html) {
-    html = html.replace(/&lt;/g, '<');
-    html = html.replace(/&gt;/g, '>');
-    html = html.replace(/&amp;/g, '&');
-    return html;
-  }
-});
+
 ClassicEditor.create(document.querySelector('#markdown_editor_textarea'), {
   placeholder: 'ツールバーやMarkdown記法を用いて書いてみましょう！'
 }).then(function (markdown_editor_textarea) {
@@ -56702,8 +56689,8 @@ var mutations = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/MAMP/htdocs/laravel/step/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/laravel/step/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/laravel/stepc/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/laravel/stepc/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

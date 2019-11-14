@@ -1,6 +1,9 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="{{ asset('js/lib/jquery-steps.js') }}"></script>
 <script>
+
+// step
+// ==================>>
 var steps = $('#demo').steps({
     onFinish: function () {
         alert('全てのステップが完了しました！');
@@ -17,7 +20,8 @@ $('#btnFinish').on('click', function () {
     steps_api.finish();
 });
 
-
+// addStep
+// ==================>>
 $('tbody').delegate('.quantity,.budget','keyup',function(){
     var tr=$(this).parent().parent();
     var quantity=tr.find('.quantity').val();

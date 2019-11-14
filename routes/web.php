@@ -7,7 +7,7 @@ Route::get('/', 'HomeController@showTopPage')->name('home');
 Route::get('/home', 'HomeController@showTopPage')->name('home');
 
 // 投稿一覧
-Route::get('/post/{id}', 'PostController@showArticle')->name('post.showpost');
+Route::get('/post/{id}', 'PostController@showStep')->name('post.showpost');
 // プロフィール詳細
 Route::get('/user/{id}', 'UserController@profile')->name('user.profile');
 
