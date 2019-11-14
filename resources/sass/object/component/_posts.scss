@@ -124,7 +124,7 @@
       }
     }
     &-left {
-      width: 80px;
+      width: 180px;
       img {
         width: 30px;
         background: #f5f5f5;
@@ -141,7 +141,7 @@
       &__inner {
         position: fixed;
         overflow: auto;
-        width: 300px;
+        width: 200px;
         height: 600px; // experiment with this value, try changing to 110vh
         min-height: 200px;
         margin-top: 100px;
