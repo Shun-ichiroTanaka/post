@@ -33,9 +33,15 @@
                     <div class="step-app-side">
                         <ul class="step-steps">
                             <li><a href="#step1">{{ $step->subtitle1 }}</a></li>
+                            @if ($step->subtitle2)
                             <li><a href="#step2">{{ $step->subtitle2 }}</a></li>
+                            @endif
+                            @if ($step->subtitle3)
                             <li><a href="#step3">{{ $step->subtitle3 }}</a></li>
+                            @endif
+                            @if ($step->subtitle4)
                             <li><a href="#step4">{{ $step->subtitle4 }}</a></li>
+                            @endif
                         </ul>
                     </div>
                     <div class="step-content">
@@ -52,12 +58,6 @@
             <div class="c-post__show-right__inner">
                 <ul class="step-steps">
                     <li>目標時間 : {{ $step->time }}時間</li>
-                    <li><a href="#step1">{{ $step->subtitle1 }}</a></li>
-                    <li><a href="#step2">{{ $step->subtitle2 }}</a></li>
-                    <li><a href="#step3">{{ $step->subtitle3 }}</a></li>
-                    <li><a href="#step4">{{ $step->subtitle4 }}</a></li>
-                    {{-- <a href="#" class="addStep"><i class="fas fa-plus"></i></a>
-                    <a href="#" class="removeStep"><i class="far fa-trash-alt"></i></a> --}}
                 </ul>
                 <p>このStepにチャレンジ</p>
             </div>
