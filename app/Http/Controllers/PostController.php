@@ -26,16 +26,16 @@ class PostController extends Controller
     {
         // バリデーション
         $request->validate([
-            'title' => 'required|unique:posts|max:255',
-            'subtitle1' => 'required|unique:posts|max:255',
-            'subtitle2' => 'required|unique:posts|max:255',
-            'subtitle3' => 'required|unique:posts|max:255',
-            'subtitle4' => 'required|unique:posts|max:255',
-            'tags' => 'required|string',
-            'step1' => 'required|string',
-            'step2' => 'required|string',
-            'step3' => 'required|string',
-            'step4' => 'required|string',
+            'title' => 'required|max:255',
+            'subtitle1' => 'required|max:255',
+            'subtitle2' => 'nullable|max:255',
+            'subtitle3' => 'nullable|max:255',
+            'subtitle4' => 'nullable|max:255',
+            'tags' => 'required|max:255',
+            'step1' => 'required|max:255',
+            'step2' => 'nullable|max:255',
+            'step3' => 'nullable|max:255',
+            'step4' => 'nullable|max:255',
             'time' => 'required|integer',
         ]);
 
