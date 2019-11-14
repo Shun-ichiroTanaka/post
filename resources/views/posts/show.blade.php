@@ -45,10 +45,10 @@
                         </ul>
                     </div>
                     <div class="step-content">
-                        <div class="step-tab-panel" id="step1">{{ $step->step1 }}</div>
-                        <div class="step-tab-panel" id="step2">{{ $step->step2 }}</div>
-                        <div class="step-tab-panel" id="step3">{{ $step->step3 }}</div>
-                        <div class="step-tab-panel" id="step4">{{ $step->step4 }}</div>
+                        <div class="step-tab-panel" id="step1">{!! $step->step1 !!}</div>
+                        <div class="step-tab-panel" id="step2">{!! $step->step2 !!}</div>
+                        <div class="step-tab-panel" id="step3">{!! $step->step3 !!}</div>
+                        <div class="step-tab-panel" id="step4">{!! $step->step4 !!}</div>
                     </div>
                 </div>
             </div>
