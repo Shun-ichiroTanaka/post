@@ -5,22 +5,11 @@
         <div id="demo">
             <div class="c-step">
                 <div class="c-post__show-left">
-                    <p>目標時間 : {{ $step->time }}時間</p>
-                    <div class="step-app-side c-step__side">
-                        <ul class="step-steps c-step__step">
-                            <li><a href="#step1">Step1. {{ $step->subtitle1 }}</a></li>
-                            @if ($step->subtitle2)
-                            <li><a href="#step2">2. {{ $step->subtitle2 }}</a></li>
-                            @endif
-                            @if ($step->subtitle3)
-                            <li><a href="#step3">3. {{ $step->subtitle3 }}</a></li>
-                            @endif
-                            @if ($step->subtitle4)
-                            <li><a href="#step4">4. {{ $step->subtitle4 }}</a></li>
-                            @endif
-                        </ul>
+                    <div class="c-button__show-social">
+                        <a href="" class="c-button__show-social__like"><i class="fas fa-thumbs-up"></i></a>
+                        <a href="" class="c-button__show-social__stock"><i class="fas fa-folder-open"></i></a>
+                        <a href="" class="c-button__show-social__twitter"><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a>
                     </div>
-                    <a href=""><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a>
                 </div>
 
                 <div class="c-post__show-main">
@@ -57,11 +46,22 @@
 
                 </div>
                 <div class="c-post__show-right">
-                    <div class="c-post__show-right__inner">
-                        <ul class="step-steps">
-                            <li>目標時間 : {{ $step->time }}時間</li>
+                    <p>目標時間 : {{ $step->time }}時間</p>
+                    <p>このStepにチャレンジ</p>
+                    <div class="step-app-side c-step__side">
+                        <ul class="step-steps c-step__step">
+                            <li><a href="#step1">Step1. {{ $step->subtitle1 }}</a></li>
+                            @if ($step->subtitle2)
+                            <li><a href="#step2">2. {{ $step->subtitle2 }}</a></li>
+                            @endif
+                            @if ($step->subtitle3)
+                            <li><a href="#step3">3. {{ $step->subtitle3 }}</a></li>
+                            @endif
+                            @if ($step->subtitle4)
+                            <li><a href="#step4">4. {{ $step->subtitle4 }}</a></li>
+                            @endif
+                            <li></li>
                         </ul>
-                        <p>このStepにチャレンジ</p>
                     </div>
                 </div>
             </div>

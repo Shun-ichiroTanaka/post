@@ -2,19 +2,30 @@
 
 .c-step {
   display: flex;
-  width: 100vw;
+  width: 1200px;
   margin: 0 auto;
 
   &__side {
     // position: fixed;
     // left: 20px;
     width: 100%;
-    margin-top: 200px;
   }
   &__step {
+    position: fixed;
     display: flex;
     flex-direction: column;
     overflow: visible !important;
+    width: 250px;
     padding: 0 5px 0 5px;
+
+    text-align-last: left;
+    li {
+              border-radius: 10px    ;
+
+      -webkit-border-radius: 10px    ;
+         -moz-border-radius: 10px    ;
+          -ms-border-radius: 10px    ;
+           -o-border-radius: 10px    ;
+    }
   }
 }

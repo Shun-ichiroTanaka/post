@@ -7,9 +7,10 @@
   //           box-sizing: border-box;
   height: 40px;
   color: #e7e7e7;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", sans-serif !important;
   font-size: 100%;
-  background: #343642;
+  background: #fff;
+  box-shadow: 0 0 100px rgba(34,34,34,.08);
   //   -webkit-box-sizing: border-box;
   //      -moz-box-sizing: border-box;
 
@@ -40,7 +41,7 @@
     font-size: 1.5rem;
     line-height: 40px;
     & a {
-      color: #fff;
+      color: #3b3d4b;
     }
   }
   &__nav {
@@ -48,15 +49,14 @@
     width: 44px;
     height: 100%;
     margin-right: 5%;
-    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-menu.svg") no-repeat center center;
     cursor: pointer;
     & a {
       display: block;
       height: 40px;
       padding-left: 5%;
-      color: #fff;
+      color: #2cb597;
       line-height: 40px;
-      background: #292a34;
+      background: #fff;
       border-top: 1px solid #3b3d4b;
     }
   }
@@ -69,6 +69,7 @@
 @media only screen and (min-width: 768px) {
   .l-header {
     height: 60px;
+    color: #3b3d4b;
     &__title {
       font-size: 1.7rem;
       line-height: 60px;
@@ -98,18 +99,21 @@
       }
     }
 
-    & a.l-header__signin,
-    & a.l-header__signup {
-      padding: .6em 1em;
-      border: 1px solid rgba(255, 255, 255, .6);
-      border-radius: 40em;
-      &:hover {
-        border: 1px solid $emeraldo;
-      }
+    & a.l-header__signin {
+      color: #3b3d4b;
+      border: none;
     }
     & a.l-header__signup {
+      padding: .6em 1em;
+      color: #fff;
       background: $emeraldo;
-      border: none;
+      border: 1px solid #2cb597;
+              border-radius: 5px;
+
+      -webkit-border-radius: 5px;
+         -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+           -o-border-radius: 5px;
     }
   }
 }
