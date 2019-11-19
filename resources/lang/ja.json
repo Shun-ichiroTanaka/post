@@ -5,5 +5,9 @@
     "category":"カテゴリー",
     "Category": "カテゴリー",
     "Problem": "問題",
-    "Post": "投稿する"
+    "Post": "投稿する",
+    "Login": "ログイン",
+    "Register": "新規登録",
+    "Edit Profile": "プロフィール編集",
+    "Mypage": "マイページ"
 }

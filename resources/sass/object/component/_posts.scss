@@ -78,7 +78,9 @@
     }
     &-editor {
       display: flex;
-      justify-content: center;
+      &__markdown {
+        width: 100%;
+      }
     }
     &-submit {
       box-sizing: border-box;

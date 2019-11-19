@@ -15,7 +15,7 @@
                 @endif
                 @else
                     <li>
-                        <a href="{{ route('post.new') }}">Post</a>
+                        <a href="{{ route('post.new') }}">{{ __('Post') }}</a>
                         {{-- <a href="{{ route('post.index') }}"></a> --}}
                     </li>
                     <li class="l-header-dropdown">
@@ -31,8 +31,8 @@
                                 </div>
                                 <ul>
                                     {{-- <li><a href="{{ route('mypage.index') }}">{{ __('Mypage') }}</a> --}}
-                                    <li><a href="{{ route('user.profile', Auth::user()->id ) }}">{{ __('Profile') }}</a></li>
-                                    <li><a href="{{ route('user.edit', Auth::user()->id ) }}">{{ __('Edit Profiles') }}</a></li>
+                                    <li><a href="{{ route('user.profile', Auth::user()->id ) }}">{{ __('Mypage') }}</a></li>
+                                    <li><a href="{{ route('user.edit', Auth::user()->id ) }}">{{ __('Edit Profile') }}</a></li>
                                     {{-- <li><a href="{{ route('setting.index') }}">{{ __('Setting') }}</a></li> --}}
                                 </ul>
                             </li>

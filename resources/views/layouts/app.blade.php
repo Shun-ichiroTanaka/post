@@ -16,14 +16,12 @@
 
             <div class="b-wrapper">
                 @yield('content')
-                <router-view></router-view>
             </div>
 
             @include('layouts.footer')
         </div>
-        {{-- <router-view></router-view> --}}
     </div>
-
+<router-view></router-view>
 @include('layouts.script')
 </body>
 </html>

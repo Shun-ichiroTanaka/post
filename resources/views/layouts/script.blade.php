@@ -66,4 +66,4 @@ $('.removeStep').on('click',function(){
 </script>
 
 {{-- vueを用いるためこの位置 --}}
-<script src=" {{ mix('js/app.js') }} "></script>
+<script src=" {{ asset('js/app.js') }} "></script>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="p-auth__title"><h1>{{ __('Register') }}</h1></div>
+<div class="p-auth__title"><h1>Register</h1></div>
 <div class="p-auth__form">
   <div class="p-auth__form-thumbnail"><img src="/img/auth/p-auth__register-bg.svg"/></div>
   <form class="p-auth__form-register" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">

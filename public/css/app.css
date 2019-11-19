@@ -6150,15 +6150,17 @@ table {
 .l-header__nav a {
   display: block;
   height: 40px;
-  padding-left: 5%;
   color: #2cb597;
   line-height: 40px;
   background: #fff;
-  border-top: 1px solid #3b3d4b;
 }
 
 @media only screen and (min-width: 768px) {
   .l-header {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
     height: 60px;
     color: #3b3d4b;
   }
@@ -6166,6 +6168,11 @@ table {
   .l-header__title {
     font-size: 1.7rem;
     line-height: 60px;
+    text-decoration: none;
+  }
+
+  .l-header__title a:hover {
+    text-decoration: none;
   }
 
   .l-header__nav {
@@ -6173,19 +6180,23 @@ table {
     top: 0;
     right: 0;
     width: auto;
-    height: 60px;
-    background: none;
+    font-size: .9rem;
+    text-align: center;
     cursor: auto;
+    height: 300px;
   }
 
   .l-header__nav ul {
+    display: -webkit-box;
+    display: flex;
     width: auto;
     line-height: 60px;
+    white-space: nowrap;
   }
 
   .l-header__nav li {
     display: inline-block;
-    margin-left: 1em;
+    margin-left: .5em;
   }
 
   .l-header__nav a {
@@ -6201,15 +6212,15 @@ table {
   }
 
   .l-header a.l-header__signup {
-    padding: .6em 1em;
+    padding: .4em 1em;
     color: #fff;
     background: #2db697;
     border: 1px solid #2cb597;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
   }
 }
 
@@ -6224,10 +6235,6 @@ table {
   outline: none;
 }
 
-.l-header-dropdown a:hover {
-  text-decoration: underline;
-}
-
 .l-header-dropdown > ul > li > a {
   color: inherit;
   text-decoration: none !important;
@@ -6235,12 +6242,14 @@ table {
 
 .l-header-dropdown li ul {
   position: absolute;
+  right: 20px;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
           flex-direction: column;
   overflow: hidden;
+  width: 250px;
   max-height: 0;
   font: bold 12px "Open Sans Condensed", sans-serif;
   text-align: center;
@@ -6251,17 +6260,18 @@ table {
 }
 
 .l-header-dropdown li ul li {
+  padding: 15px 0;
   background-color: #292a34;
+}
+
+.l-header-dropdown li ul li:hover {
+  background-color: #444555;
 }
 
 .l-header-dropdown li ul li a {
   display: block;
   color: #fff !important;
   text-decoration: none !important;
-}
-
-.l-header-dropdown li ul li a:hover {
-  background-color: #444555;
 }
 
 .l-header-dropdown li ul li:first-child {
@@ -6453,8 +6463,10 @@ table {
 .c-post__new-editor {
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
+}
+
+.c-post__new-editor__markdown {
+  width: 100%;
 }
 
 .c-post__new-submit {
@@ -6648,15 +6660,15 @@ table {
 .c-button__show-social__like {
   width: 50px;
   height: 50px;
-  padding: 6px 0;
+  padding: 9px 0;
   margin-bottom: 10px;
-  color: #2cb597;
+  color: #fa5477;
   font-size: 20px;
   text-align: center;
   background: #f5f5f5;
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  border: 2px solid #2cb597;
+  border: 2px solid #fa5477;
   border-radius: 50%;
   outline: none;
   -webkit-border-radius: 50%;
@@ -6687,37 +6699,6 @@ table {
 
 /* list
 ----------------------------------------------------------------- */
-
-/* Markdown
------------------------------------------------------------------ */
-
-.CodeMirror {
-  height: calc(100vh - 8rem);
-}
-
-#preview {
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-}
-
-header,
-footer {
-  overflow: hidden;
-  height: 3rem;
-}
-
-.CodeMirror .CodeMirror-code .cm-header-1,
-.CodeMirror .CodeMirror-code .cm-header-2,
-.CodeMirror .CodeMirror-code .cm-header-3,
-.CodeMirror .CodeMirror-code .cm-header-4,
-.CodeMirror .CodeMirror-code .cm-header-5,
-.CodeMirror .CodeMirror-code .cm-header-6 {
-  line-height: 1.2 !important;
-}
-
-body img {
-  height: auto;
-}
 
 @font-face {
   font-family: octicons-link;
@@ -7689,23 +7670,6 @@ body .pl-12 {
   padding-left: 128px !important;
 }
 
-.ck.ck-editor__editable > .ck-placeholder::before {
-  color: #b3b3b3;
-  font-family: Nunito;
-  font-size: .9em;
-}
-
-.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
-  width: 85vw;
-  height: 26.5rem;
-}
-
-.ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
-.ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
-  width: 85vw;
-  height: 26.5rem;
-}
-
 /* pagetop
 ----------------------------------------------------------------- */
 
@@ -7916,6 +7880,12 @@ body .pl-12 {
   line-height: 40px;
   text-align: center;
   background: #2db697;
+}
+
+.ck-content {
+  overflow: scroll;
+  width: 100%;
+  height: 400px;
 }
 
 .u-space__a__pt-5 {

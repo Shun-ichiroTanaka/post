@@ -60,8 +60,8 @@
   background-color: #b6ddd5;
 }
 .step-content {
-  /* width: 85vw; */
-  /* padding: 0 5px; */
+  width: 85%;
+  padding-right: 5px;
   border-top: 0;
 }
 .step-content > .step-tab-panel {

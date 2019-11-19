@@ -6,7 +6,7 @@
             <div class="c-step">
                 <div class="c-post__show-left">
                     <div class="c-button__show-social">
-                        <a href="" class="c-button__show-social__like"><i class="fas fa-thumbs-up"></i></a>
+                        <a href="" class="c-button__show-social__like"><i class="fas fa-heart"></i></a>
                         <a href="" class="c-button__show-social__stock"><i class="fas fa-folder-open"></i></a>
                         <a href="" class="c-button__show-social__twitter"><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a>
                     </div>
@@ -34,6 +34,8 @@
                         @endif
                     </div>
 
+                        <like></like>
+                        <example-component></example-component>
 
 
                     <div class="step-content">

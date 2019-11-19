@@ -1,34 +1,3 @@
-@charset "utf-8";
-
-/* Markdown
------------------------------------------------------------------ */
-.CodeMirror {
-  height: calc(100vh - 8rem);
-}
-#preview {
-  overflow-y: scroll;
-
-  -webkit-overflow-scrolling: touch;
-}
-header,
-footer {
-  overflow: hidden;
-  height: 3rem;
-}
-
-.CodeMirror .CodeMirror-code .cm-header-1,
-.CodeMirror .CodeMirror-code .cm-header-2,
-.CodeMirror .CodeMirror-code .cm-header-3,
-.CodeMirror .CodeMirror-code .cm-header-4,
-.CodeMirror .CodeMirror-code .cm-header-5,
-.CodeMirror .CodeMirror-code .cm-header-6 {
-  line-height: 1.2 !important;
-}
-
-body img {
-  height: auto;
-}
-
 @font-face {
   font-family: octicons-link;
 
@@ -1002,21 +971,4 @@ body .pl-11 {
 
 body .pl-12 {
   padding-left: 128px!important;
-}
-
-.ck.ck-editor__editable > .ck-placeholder::before {
-  color: #b3b3b3;
-  font-family: Nunito;
-  font-size: .9em;
-}
-
-.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
-  width: 85vw;
-  height: 26.5rem;
-}
-
-.ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
-.ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
-  width: 85vw;
-  height: 26.5rem;
 }
