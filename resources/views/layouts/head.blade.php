@@ -16,6 +16,7 @@
 
     {{-- <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script> --}}
     <script src="https://cdn.ckeditor.com/ckeditor5/15.0.0/classic/ckeditor.js"></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>

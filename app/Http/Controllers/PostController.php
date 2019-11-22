@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Post; // fillable使用
+use App\Like; //いいね
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -12,14 +13,8 @@ class PostController extends Controller
     public function index()
     {
         return view('posts.new');
-        // $posts = Post::all();
+        // $steps = Post::all();
         // return view('posts.index', ['posts' => $posts]);
-    }
-
-
-    public function new()
-    {
-
     }
 
     public function postStep(Request $request)
@@ -81,14 +76,80 @@ class PostController extends Controller
         // return redirect("/")->with('flash_message', __('投稿しました!'));
     }
 
+
+
     public function showstep($id)
     {
-        $steps = Post::paginate(1);
+        // $steps = Post::paginate(1);
 
         // IDの情報が飛んできて、$idでキャッチ
         // その記事IDを元に、データベースから記事を検索し、ビューに記事情報を返す
         $step = Post::where('id', $id)->first();
         return view('posts.show', compact('step'));
+    }
+
+
+
+    public function postLike(Request $request)
+    {
+        $step_id = $request['stepId'];
+        $is_like = $request['isLike'] === 'true';
+        $update = false;
+        $step = Post::find($step_id);
+        if (!$step) {
+            return null;
+        }
+        $user = Auth::user();
+        $like = $user->likes()->where('step_id', $step_id)->first();
+        if ($like) {
+            $already_like = $like->like;
+            $update = true;
+            if ($already_like == $is_like) {
+                $like->delete();
+                return null;
+            }
+        } else {
+            $like = new Like();
+        }
+        $like->like = $is_like;
+        $like->user_id = $user->id;
+        $like->step_id = $step->id;
+        if ($update) {
+            $like->update();
+        } else {
+            $like->save();
+        }
+        return null;
+    }
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Post $post)
+    {
+        $userAuth = \Auth::user();
+
+        $post->load('likes');
+
+        $defaultCount = count($post->likes);
+
+        $defaultLiked = $post->likes->where('user_id', $userAuth->id)->first();
+        if(count($defaultLiked) == 0) {
+            $defaultLiked == false;
+        } else {
+            $defaultLiked == true;
+        }
+
+        return view('posts.show', [
+            'post' => $post,
+            'userAuth' => $userAuth,
+            'defaultLiked' => $defaultLiked,
+            'defaultCount' => $defaultCount
+        ]);
     }
 
     public function store(Request $request)

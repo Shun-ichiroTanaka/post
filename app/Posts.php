@@ -14,6 +14,7 @@ class Post extends Model
     // protexted $fillableに指定したカラムに関してはデータの追加や更新ができる
     // 逆にいうと$fillableに指定していないカラムのデータを追加しようとしたり更新しようとしたりするとエラーが発生
     protected $fillable = [
+        'id',
         'user_id',
         'title',
         'subtitle1',
@@ -36,5 +37,33 @@ class Post extends Model
     // $fillableの他にもう1つ$guardというものがある
     // $guardにする場合は、データの追加や更新をされたくないラムのみを指定して、あとは全部許可するという$fillableの逆の方式
     // protected $guarded = ['id'];
+
+    public function likes()
+    {
+        return $this->hasMany('App\Like', 'post_id', 'id');
+    }
+
+
+    public static function defaultLiked($post, $user_auth_id)
+    {
+      // $defaultLiked = $post->likes->where('user_id', $user_auth_id)->first();
+
+      $defaultLiked = 0;
+      foreach ($post['likes'] as $key => $like) {
+          if($like['user_id'] == $user_auth_id) {
+            $defaultLiked = 1;
+            break;
+          }
+      }
+
+      if(is_countable($defaultLiked) == 0) {
+            $defaultLiked == false;
+        } else {
+            $defaultLiked == true;
+        }
+
+
+      return $defaultLiked;
+    }
 
 }

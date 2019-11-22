@@ -14,18 +14,18 @@ $(function() {
     // marked.jsを使用してマークダウンをHTMLに変換
     // $('.item-body').html(html);で、
     // もう一度クラスがitem-bodyの所にHTMLを返してあげる
-    var target = $('.c-post__show-body')
-    var html = marked(getHtml(target.html()));
-    $('.c-post__show-body').html(html);
+    // var target = $('.c-post__show-body')
+    // var html = marked(getHtml(target.html()));
+    // $('.c-post__show-body').html(html);
 
 
     // 比較演算子が &lt; 等になるので置換
-    function getHtml(html) {
-        html = html.replace(/&lt;/g, '<');
-        html = html.replace(/&gt;/g, '>');
-        html = html.replace(/&amp;/g, '&');
-        return html;
-    }
+    // function getHtml(html) {
+    //     html = html.replace(/&lt;/g, '<');
+    //     html = html.replace(/&gt;/g, '>');
+    //     html = html.replace(/&amp;/g, '&');
+    //     return html;
+    // }
 });
 
 

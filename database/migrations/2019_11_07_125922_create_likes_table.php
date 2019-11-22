@@ -14,20 +14,15 @@ class CreateLikesTable extends Migration
     public function up()
     {
         Schema::create('likes', function (Blueprint $table) {
-            $table->BigIncrements('id');
-            $table->BigInteger('user_id')->unsigned();
-            $table->BigInteger('post_id')->unsigned();
+            $table->bigIncrements('id');
+
+            $table->bigInteger('user_id')->unsigned()->index();
+            $table->bigInteger('post_id')->unsigned()->index();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+
             $table->timestamps();
-
-            $table->foreign('user_id')
-                  ->references('id')
-                  ->on('users')
-                  ->onDelete('cascade'); // userが削除されたとき、それに関連するlikeも一気に削除される
-
-            $table->foreign('post_id')
-                  ->references('id')
-                  ->on('posts')
-                  ->onDelete('cascade'); // postが削除されたとき、それに関連するlikeも一気に削除される
         });
     }
 
@@ -38,7 +33,6 @@ class CreateLikesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('likes');
+        Schema::dropIfExists('likes');
     }
 }
-

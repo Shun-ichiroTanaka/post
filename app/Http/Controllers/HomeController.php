@@ -21,14 +21,22 @@ class HomeController extends Controller
         return view('home');
     }
 
-
+    // トップページの一覧表示
     public function showTopPage()
     {
+        $userAuth = \Auth::user();
         // データベースのpostsテーブルから、作成日時を昇順に並び替えて、全ての情報を取得する
         // postsテーブルには投稿した記事が全て入るので、上のコードでは投稿した記事を全て新しい順に取得
         $articles = Post::orderBy('created_at', 'asc')->get();
-        // compactを使うことによってビューに$articlesが送られる
-        return view('home', compact('articles'));
+        $articles->load('likes');
+
+        return view('home', [
+            'articles' => $articles,
+            'userAuth' => $userAuth
+        ]);
+
+        // compactを使うことによってビューに$articleが送られる
+        // return view('home', compact('articles'));
     }
 }
 

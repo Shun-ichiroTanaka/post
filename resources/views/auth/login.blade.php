@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="p-auth__title"><h1>{{ __('Login') }}</h1></div>
+<div class="p-auth__title"><h1>Login</h1></div>
 <div class="p-auth__form">
   <div class="p-auth__form-thumbnail"><img src="/img/auth/p-auth__login-bg.svg"/></div>
   <form method="post" action="{{ route('login') }}">

@@ -27,8 +27,13 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
     // ユーザー
     Route::get('/edit/user/', 'UserController@edit')->name('user.edit');
     Route::post('/edit/user/', 'UserController@update')->name('user.update');
+    // Route::resource('/edit/user/', 'UserController', ['only' => ['edit', 'update']]);
+
+    // Route::resource('/edit/avatar/', 'AvatarController', ['only' => ['edit', 'update']]);
     Route::get('/edit/avatar/', 'AvatarController@edit')->name('avatar.edit');
     Route::post('/edit/avatar/', 'AvatarController@update')->name('avatar.update');
+
+    Route::post('/post/{post}/like', 'LikeController@like');
 });
 
 // Route::group(['middleware' => ['auth']], function () {

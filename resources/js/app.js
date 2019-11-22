@@ -1,11 +1,9 @@
-import Vue from "vue";
-import axios from 'axios';
+window.Vue = require('vue');
+
 import fontawesome from '@fortawesome/fontawesome';
 import regular from '@fortawesome/fontawesome-free-solid';
 import solid from '@fortawesome/fontawesome-free-regular';
 import brands from '@fortawesome/fontawesome-free-brands';
-
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -16,7 +14,6 @@ require('./bootstrap');
 require("./parts/markdown");
 require("./parts/step");
 
-window.Vue = require('vue');
 window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 const token = document.head.querySelector('meta[name="csrf-token"]')
@@ -41,9 +38,6 @@ fontawesome.library.add(brands);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('like', require('./components/social/Like.vue').default);
-
-import Like from './components/social/Like.vue';
-
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -21,3 +21,45 @@
   width: 100%;
   height: 400px;
 }
+
+
+.toc {
+  position: fixed;
+  overflow: auto;
+  width: 250px;
+  height: 600px; // experiment with this value, try changing to 110vh
+  min-height: 500px;
+  margin-top: 50px;
+  color: #999;
+  text-align: left;
+  a {
+    color: #999;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #333;
+    background-color: #efefef;
+  }
+  &-h2 {
+    margin-left: 10px;
+  }
+  &-h3 {
+    margin-left: 20px;
+  }
+  &-h4 {
+    margin-left: 30px;
+  }
+  &-h5 {
+    margin-left: 40px;
+  }
+  &-h6 {
+    margin-left: 50px;
+  }
+  &-visible {
+    color: #000;
+    font-weight: bold;
+  }
+  .right {
+    right: 0;
+  }
+}

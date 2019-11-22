@@ -1,4 +1,5 @@
 
-$('#demo').steps({
-    onFinish: function () { alert('complete'); }
-});
+// $('#demo').steps({
+//     // onFinish: function () { alert('complete'); }
+// });
+

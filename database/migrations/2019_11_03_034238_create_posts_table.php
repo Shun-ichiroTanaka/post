@@ -17,10 +17,9 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             // idカラムを作成し、idkラムでは連番で番号をつけていくという意味
             $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned()->index();
 
-            $table->integer('user_id');
             $table->string('title');
-
             $table->string('subtitle1');
             $table->string('subtitle2')->nullable();
             $table->string('subtitle3')->nullable();
@@ -38,6 +37,14 @@ class CreatePostsTable extends Migration
             $table->text('step4')->nullable();
 
             $table->integer('time');
+
+            // 別のテーブルと外部キーで接続するリレーションシップを作成する場合、外部キー列を定義
+            //参照先のデータが必須でない場合はさらに nullable() を付加
+            //foreignメソッドでuser_idを外部キーに設定
+            // referencesメソッドで、従テーブルのuser_idと紐付いている主テーブルのidを指定
+            // onメソッドで主テーブルusersを指定
+            // onDeleteメソッドでuserが削除・更新された場合の処理を記述、引数はcascadeを指定
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             // 自動でcreated_atとupdated_atの2つのカラムを用意
             $table->timestamps();

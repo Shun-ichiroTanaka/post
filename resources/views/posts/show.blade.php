@@ -6,9 +6,18 @@
             <div class="c-step">
                 <div class="c-post__show-left">
                     <div class="c-button__show-social">
-                        <a href="" class="c-button__show-social__like"><i class="fas fa-heart"></i></a>
-                        <a href="" class="c-button__show-social__stock"><i class="fas fa-folder-open"></i></a>
-                        <a href="" class="c-button__show-social__twitter"><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a>
+                        {{-- <a href="#" class="like">{{ Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'You like this post' : 'Like' : 'Like'  }}</a> | --}}
+                        {{-- <a href="#" class="like">{{ Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 0 ? 'You don\'t like this post' : 'Dislike' : 'Dislike'  }}</a> --}}
+                        <like
+                            {{-- :post-id="{{ json_encode($post->id) }}"
+                            :user-id="{{ json_encode($userAuth->id) }}"
+                            :default-Liked="{{ json_encode($defaultLiked) }}"
+                            :default-Count="{{ json_encode($defaultCount) }}" --}}
+                        ></like>
+                        <a href="#" class="c-button__show-social__like like"><i class="fas fa-heart"></i></a>
+                        <a href="#" class="c-button__show-social__dislike like"><i class="fas fa-heart"></i></a>
+                        <a href="#" class="c-button__show-social__stock"><i class="fas fa-folder-open"></i></a>
+                        <a href="#" class="c-button__show-social__twitter"><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a>
                     </div>
                 </div>
 
@@ -34,9 +43,6 @@
                         @endif
                     </div>
 
-                        <like></like>
-                        <example-component></example-component>
-
 
                     <div class="step-content">
                         <div class="step-tab-panel" id="step1">{!! $step->step1 !!}</div>
@@ -50,6 +56,7 @@
                 <div class="c-post__show-right">
                     <p>目標時間 : {{ $step->time }}時間</p>
                     <p>このStepにチャレンジ</p>
+                    {{-- <div class="toc" data-toc="h1, h2, h3, h4, h5, h6"></div> --}}
                     <div class="step-app-side c-step__side">
                         <ul class="step-steps c-step__step">
                             <li><a href="#step1">Step1. {{ $step->subtitle1 }}</a></li>
@@ -70,5 +77,9 @@
         </div>
     </div>
 </div>
-
+{{-- <script>
+    var token = '{{ Session::token() }}';
+    var urlEdit = '{{ route('edit') }}';
+    var urlLike = '{{ route('like') }}';
+</script> --}}
 @endsection

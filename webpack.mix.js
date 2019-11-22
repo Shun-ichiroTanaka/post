@@ -14,10 +14,10 @@ let mix = require('laravel-mix');
 mix.setResourceRoot('');
 mix.js('resources/js/app.js', 'public/js')
 mix.sass('resources/sass/app.scss', 'public/css')
-mix.autoload({
-    "jquery": ['$', 'window.jQuery'],
-    "vue": ['Vue', 'window.Vue']
-})
+// mix.autoload({
+//     "jquery": ['$', 'window.jQuery'],
+//     "vue": ['Vue', 'window.Vue']
+// })
 // develop環境の時にソースマップを表示するための設定を書いている。
 if (!mix.inProduction()) {
     mix.webpackConfig({

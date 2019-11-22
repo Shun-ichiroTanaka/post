@@ -4,7 +4,13 @@
 
 // step
 // ==================>>
-var steps = $('#demo').steps({
+
+$('#demo').steps({
+    onFinish: function () { alert('complete'); }
+});
+
+
+$('#demo').steps({
     onFinish: function () {
         alert('全てのステップが完了しました！');
     }
@@ -66,4 +72,4 @@ $('.removeStep').on('click',function(){
 </script>
 
 {{-- vueを用いるためこの位置 --}}
-<script src=" {{ asset('js/app.js') }} "></script>
+<script src=" {{ mix('js/app.js') }} "></script>
