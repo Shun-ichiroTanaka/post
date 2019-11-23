@@ -9,13 +9,11 @@
                         {{-- <a href="#" class="like">{{ Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'You like this post' : 'Like' : 'Like'  }}</a> | --}}
                         {{-- <a href="#" class="like">{{ Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 0 ? 'You don\'t like this post' : 'Dislike' : 'Dislike'  }}</a> --}}
                         <like
-                            {{-- :post-id="{{ json_encode($post->id) }}"
-                            :user-id="{{ json_encode($userAuth->id) }}"
-                            :default-Liked="{{ json_encode($defaultLiked) }}"
-                            :default-Count="{{ json_encode($defaultCount) }}" --}}
+                        :post-id="{{ json_encode($step->id) }}"
+                        :user-id="{{ json_encode($userAuth->id) }}"
+                        :default-Liked="{{ json_encode($defaultLiked) }}"
+                        :default-Count="{{ json_encode($defaultCount) }}"
                         ></like>
-                        <a href="#" class="c-button__show-social__like like"><i class="fas fa-heart"></i></a>
-                        <a href="#" class="c-button__show-social__dislike like"><i class="fas fa-heart"></i></a>
                         <a href="#" class="c-button__show-social__stock"><i class="fas fa-folder-open"></i></a>
                         <a href="#" class="c-button__show-social__twitter"><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a>
                     </div>
@@ -23,7 +21,7 @@
 
                 <div class="c-post__show-main">
                     <div class="c-post__show-main__header">
-                        <div class="c-post__show-main__header-date">{{$step->created_at}}</div>
+                        <div class="c-post__show-main__header-date">{{ $step->created_at }}</div>
                     </div>
                     <div class="c-post__show-title">{{$step->title}}</div>
 

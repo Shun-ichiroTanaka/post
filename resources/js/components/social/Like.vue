@@ -1,7 +1,13 @@
 <template>
    <div>
-       <button v-if="!liked" type="button" class="c-button__show-social__like" @click="like(postId)"><i class="fas fa-thumbs-up"></i>{{ likeCount }}</button>
-       <button v-else type="button" class="c-button__show-social__like" @click="unlike(postId)"><i class="fas fa-thumbs-up"></i>{{ likeCount }}</button>
+       <button v-if="!liked" type="button" class="c-button__show-social__like" @click="like(postId)">
+            <i class="fas fa-heart c-button"></i>
+            <p class="c-button__show-social__count">{{ likeCount }}</p>
+       </button>
+       <button v-else type="button" class="c-button__show-social__dislike" @click="unlike(postId)">
+            <i class="fas fa-heart c-button"></i>
+            <p class="c-button__show-social__count">{{ likeCount }}</p>
+       </button>
    </div>
 </template>
 

@@ -7440,6 +7440,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['postId', 'userId', 'defaultLiked', 'defaultCount'],
   data: function data() {
@@ -44563,14 +44569,17 @@ var render = function() {
             }
           },
           [
-            _c("i", { staticClass: "fas fa-thumbs-up" }),
-            _vm._v(_vm._s(_vm.likeCount))
+            _c("i", { staticClass: "fas fa-heart c-button" }),
+            _vm._v(" "),
+            _c("p", { staticClass: "c-button__show-social__count" }, [
+              _vm._v(_vm._s(_vm.likeCount))
+            ])
           ]
         )
       : _c(
           "button",
           {
-            staticClass: "c-button__show-social__like",
+            staticClass: "c-button__show-social__dislike",
             attrs: { type: "button" },
             on: {
               click: function($event) {
@@ -44579,8 +44588,11 @@ var render = function() {
             }
           },
           [
-            _c("i", { staticClass: "fas fa-thumbs-up" }),
-            _vm._v(_vm._s(_vm.likeCount))
+            _c("i", { staticClass: "fas fa-heart c-button" }),
+            _vm._v(" "),
+            _c("p", { staticClass: "c-button__show-social__count" }, [
+              _vm._v(_vm._s(_vm.likeCount))
+            ])
           ]
         )
   ])

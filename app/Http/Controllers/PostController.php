@@ -80,12 +80,22 @@ class PostController extends Controller
 
     public function showstep($id)
     {
-        // $steps = Post::paginate(1);
-
-        // IDの情報が飛んできて、$idでキャッチ
-        // その記事IDを元に、データベースから記事を検索し、ビューに記事情報を返す
+        $userAuth = \Auth::user();
         $step = Post::where('id', $id)->first();
-        return view('posts.show', compact('step'));
+        $defaultCount = is_countable($step->likes);
+        $defaultLiked = $step->likes->where('user_id', $userAuth->id)->first();
+        if(is_countable($defaultLiked) == 0) {
+            $defaultLiked == false;
+        } else {
+            $defaultLiked == true;
+        }
+
+        return view('posts.show', [
+            'step' => $step,
+            'userAuth' => $userAuth,
+            'defaultLiked' => $defaultLiked,
+            'defaultCount' => $defaultCount
+        ]);
     }
 
 
