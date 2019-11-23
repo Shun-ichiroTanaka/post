@@ -13,12 +13,6 @@
         <div class="article-details">
             <div class="article-date">{{ $article->created_at }}</div>
         </div>
-        <like
-        :post-id="{{ json_encode($article['id']) }}"
-        :user-id="{{ json_encode($userAuth->id) }}"
-        :default-Liked="{{ json_encode(\App\Post::defaultLiked($article, $userAuth->id)) }}"
-        :default-Count="{{ json_encode(count($article['likes'])) }}"
-        ></like>
     </div>
 </div>
 @endforeach

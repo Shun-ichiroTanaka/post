@@ -6,8 +6,8 @@
             <div class="c-step">
                 <div class="c-post__show-left">
                     <div class="c-button__show-social">
-                        {{-- <a href="#" class="like">{{ Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'You like this post' : 'Like' : 'Like'  }}</a> | --}}
-                        {{-- <a href="#" class="like">{{ Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 0 ? 'You don\'t like this post' : 'Dislike' : 'Dislike'  }}</a> --}}
+                        {{-- @if (Auth::check())
+                        @endif --}}
                         <like
                         :post-id="{{ json_encode($step->id) }}"
                         :user-id="{{ json_encode($userAuth->id) }}"
@@ -15,7 +15,7 @@
                         :default-Count="{{ json_encode($defaultCount) }}"
                         ></like>
                         <a href="#" class="c-button__show-social__stock"><i class="fas fa-folder-open"></i></a>
-                        <a href="#" class="c-button__show-social__twitter"><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a>
+                        {{-- <a href="#" class="c-button__show-social__twitter"><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a> --}}
                     </div>
                 </div>
 

@@ -16,6 +16,7 @@
         "kanazaca/counter-cache": "1.0.*",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
+        "laravelcollective/html": "5.8",
         "realrashid/sweet-alert": "^2.0",
         "unisharp/laravel-ckeditor": "^4.7",
         "unisharp/laravel-filemanager": "dev-master",
