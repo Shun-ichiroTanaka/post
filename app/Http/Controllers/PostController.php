@@ -13,8 +13,6 @@ class PostController extends Controller
     public function index()
     {
         return view('posts.new');
-        // $steps = Post::all();
-        // return view('posts.index', ['posts' => $posts]);
     }
 
     public function postStep(Request $request)
@@ -80,22 +78,33 @@ class PostController extends Controller
 
     public function showstep($id)
     {
-        $userAuth = \Auth::user();
-        $step = Post::where('id', $id)->first();
-        $defaultCount = is_countable($step->likes);
-        $defaultLiked = $step->likes->where('user_id', $userAuth->id)->first();
-        if(is_countable($defaultLiked) == 0) {
-            $defaultLiked == false;
-        } else {
-            $defaultLiked == true;
-        }
+        if (Auth::check()) {
+            $userAuth = \Auth::user();
+            $step = Post::where('id', $id)->first();
+            $defaultCount = count($step->likes);
+            $defaultLiked = $step->likes->where('user_id', $userAuth->id)->first();
+            if(is_countable($defaultLiked) == 0) {
+                $defaultLiked == false;
+            } else {
+                $defaultLiked == true;
+            }
 
-        return view('posts.show', [
+            return view('posts.show', [
             'step' => $step,
             'userAuth' => $userAuth,
             'defaultLiked' => $defaultLiked,
             'defaultCount' => $defaultCount
-        ]);
+            ]);
+
+        }else {
+            $user = Auth::user();
+            $step = Post::where('id', $id)->first();
+            $defaultCount = count($step->likes);
+
+            return view('posts.show',compact('step'));
+
+        }
+
     }
 
 
@@ -131,54 +140,4 @@ class PostController extends Controller
         }
         return null;
     }
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Post $post)
-    {
-        $userAuth = \Auth::user();
-
-        $post->load('likes');
-
-        $defaultCount = count($post->likes);
-
-        $defaultLiked = $post->likes->where('user_id', $userAuth->id)->first();
-        if(count($defaultLiked) == 0) {
-            $defaultLiked == false;
-        } else {
-            $defaultLiked == true;
-        }
-
-        return view('posts.show', [
-            'post' => $post,
-            'userAuth' => $userAuth,
-            'defaultLiked' => $defaultLiked,
-            'defaultCount' => $defaultCount
-        ]);
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
-    }
-        }
+}

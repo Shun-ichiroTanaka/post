@@ -6,14 +6,23 @@
             <div class="c-step">
                 <div class="c-post__show-left">
                     <div class="c-button__show-social">
-                        {{-- @if (Auth::check())
-                        @endif --}}
-                        <like
-                        :post-id="{{ json_encode($step->id) }}"
-                        :user-id="{{ json_encode($userAuth->id) }}"
-                        :default-Liked="{{ json_encode($defaultLiked) }}"
-                        :default-Count="{{ json_encode($defaultCount) }}"
-                        ></like>
+                        @if (Auth::check())
+                            <like
+                            :post-id="{{ json_encode($step->id) }}"
+                            :user-id="{{ json_encode($userAuth->id) }}"
+                            :default-Liked="{{ json_encode($defaultLiked) }}"
+                            :default-Count="{{ json_encode($defaultCount) }}"
+                            ></like>
+                        @else
+                            <a href="/login">
+                            <like
+                            :post-id="{{ json_encode($step->id) }}"
+                            :user-id="{{ json_encode($userAuth->id) }}"
+                            :default-Liked="{{ json_encode($defaultLiked) }}"
+                            :default-Count="{{ json_encode($defaultCount) }}"
+                            ></like>
+                            </a>
+                        @endif
                         <a href="#" class="c-button__show-social__stock"><i class="fas fa-folder-open"></i></a>
                         {{-- <a href="#" class="c-button__show-social__twitter"><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a> --}}
                     </div>
