@@ -6187,8 +6187,6 @@ table {
   }
 
   .l-header__nav ul {
-    display: -webkit-box;
-    display: flex;
     width: auto;
     line-height: 60px;
     white-space: nowrap;

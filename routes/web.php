@@ -19,22 +19,25 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
     // 設定
     Route::get('/setting', 'SettingController@index')->name('setting.index');
 
-    // 投稿
-    Route::get('/post/new', 'PostController@index')->name('post.new');
-    Route::post('/post/new', 'PostController@postStep')->name('post.newpost');
+    Route::prefix('post')->group(function () {
+        // 投稿
+        Route::get('/new', 'PostController@index')->name('post.new');
+        Route::post('/new', 'PostController@postStep')->name('post.newpost');
+    });
 
 
-    // ユーザー
-    Route::get('/edit/user/', 'UserController@edit')->name('user.edit');
-    Route::post('/edit/user/', 'UserController@update')->name('user.update');
-    // Route::resource('/edit/user/', 'UserController', ['only' => ['edit', 'update']]);
-
-    // Route::resource('/edit/avatar/', 'AvatarController', ['only' => ['edit', 'update']]);
-    Route::get('/edit/avatar/', 'AvatarController@edit')->name('avatar.edit');
-    Route::post('/edit/avatar/', 'AvatarController@update')->name('avatar.update');
-
-    // Route::post('/post/{post}/like', 'LikeController@like');
+    Route::prefix('edit')->group(function () {
+        // ユーザー
+        Route::get('/user', 'UserController@edit')->name('user.edit');
+        Route::post('/user', 'UserController@update')->name('user.update');
+        // アバター
+        Route::get('/avatar', 'AvatarController@edit')->name('avatar.edit');
+        Route::post('/avatar', 'AvatarController@update')->name('avatar.update');
+    });
 });
+
+
+
 
 // Route::group(['middleware' => ['auth']], function () {
 

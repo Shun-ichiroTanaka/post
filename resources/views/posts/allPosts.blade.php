@@ -2,10 +2,10 @@
 <div class="article-box">
     {{-- <div class="article-box-left"></div> --}}
     <div class="article-box-left">
-        @if (empty(Auth::user()->avatar))
+        @if (empty($user->avatar))
         <img src="/img/avatar/user.svg" alt="avatar" style="width:40px; height:40px; border-radius:50%?vertical-align: middle;">
         @else
-        <img src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}" alt="avatar" style="width:40px; height:40px; border-radius:50%" border-radius="50%">
+        <img src="{{ asset('/img/avatar/'.$user->avatar) }}" alt="avatar" style="width:40px; height:40px; border-radius:50%" border-radius="50%">
         @endif
     </div>
     <div class="article-box-right">
