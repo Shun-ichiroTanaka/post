@@ -7468,9 +7468,8 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         _this.liked = true;
         _this.likeCount = response.data.likeCount;
-      })["catch"](function (error) {
-        alert(error);
-      });
+      }); // .catch(error => {
+      // });
     },
     unlike: function unlike(postId) {
       var _this2 = this;
@@ -7481,9 +7480,9 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         _this2.liked = false;
         _this2.likeCount = response.data.likeCount;
-      })["catch"](function (error) {
-        alert(error);
-      });
+      }); // .catch(error => {
+      // //   alert(error)
+      // });
     }
   }
 });

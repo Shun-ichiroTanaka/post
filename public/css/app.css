@@ -5905,7 +5905,7 @@ body {
   -webkit-box-direction: normal;
           flex-direction: column;
   min-height: 100%;
-  background: #f5f5f5 !important;
+  background: #f4f8fa !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -6313,11 +6313,6 @@ table {
 
 .l-header-dropdown__child-user__img {
   display: block;
-}
-
-.l-header-dropdown__child-user__arrow {
-  display: block;
-  font-size: .2em;
 }
 
 .l-container {

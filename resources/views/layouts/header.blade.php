@@ -23,11 +23,10 @@
                             <li class="l-header-dropdown__child">
                                 <div href="#" class="l-header-dropdown__child-user">
                                     @if (empty(Auth::user()->avatar))
-                                        <img src="/img/avatar/user.svg" alt="avatar" style="width:40px; height:40px; border-radius:50%?vertical-align: middle;">
+                                        <img src="/img/avatar/user.svg" alt="avatar" style="width:40px; height:40px; border-radius:50%; vertical-align:middle; cursor:pointer;">
                                     @else
-                                        <img src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}" alt="avatar" style="width:40px; height:40px; border-radius:50%" border-radius="50%">
+                                        <img src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}" alt="avatar" style="width:40px; height:40px; border-radius:50%; cursor:pointer;" border-radius="50%">
                                     @endif
-                                    <span class="l-header-dropdown__child-user__arrow">▼</span>
                                 </div>
                                 <ul>
                                     {{-- <li><a href="{{ route('mypage.index') }}">{{ __('Mypage') }}</a> --}}

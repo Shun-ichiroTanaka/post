@@ -97,12 +97,16 @@ class PostController extends Controller
             ]);
 
         }else {
-            $user = Auth::user();
             $step = Post::where('id', $id)->first();
             $defaultCount = count($step->likes);
+            $defaultLiked = $step->likes;
 
-            return view('posts.show',compact('step'));
-
+            return view('posts.show', [
+            'step' => $step,
+            // 'userAuth' => $userAuth,
+            'defaultLiked' => $defaultLiked,
+            'defaultCount' => $defaultCount
+            ]);
         }
 
     }

@@ -15,12 +15,11 @@
                             ></like>
                         @else
                             <a href="/login">
-                            <like
-                            :post-id="{{ json_encode($step->id) }}"
-                            :user-id="{{ json_encode($userAuth->id) }}"
-                            :default-Liked="{{ json_encode($defaultLiked) }}"
-                            :default-Count="{{ json_encode($defaultCount) }}"
-                            ></like>
+                                <like
+                                :post-id="{{ json_encode($step->id) }}"
+                                :default-Liked="{{ json_encode($defaultLiked) }}"
+                                :default-Count="{{ json_encode($defaultCount) }}"
+                                ></like>
                             </a>
                         @endif
                         <a href="#" class="c-button__show-social__stock"><i class="fas fa-folder-open"></i></a>

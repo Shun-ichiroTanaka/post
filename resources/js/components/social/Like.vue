@@ -36,9 +36,9 @@
                   this.liked = true
                   this.likeCount = response.data.likeCount
                 })
-                .catch(error => {
-                  alert(error)
-                });
+                // .catch(error => {
+
+                // });
             },
             unlike(postId) {
                 let url = `/api/posts/${postId}/unlike`
@@ -50,9 +50,9 @@
                   this.liked = false
                   this.likeCount = response.data.likeCount
                 })
-                .catch(error => {
-                  alert(error)
-                });
+                // .catch(error => {
+                // //   alert(error)
+                // });
             }
         }
     }
