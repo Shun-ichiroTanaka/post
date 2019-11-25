@@ -16,13 +16,5 @@
     </div>
 </div>
 @endforeach
-<!-- ページネーション -->
-
-    <div class="u-pagenation">
-        {{ $articles->links() }}
-    </div>
-
-<example-component></example-component>
-
 {{-- {!! $articles->render() !!}
 // ページャー --}}

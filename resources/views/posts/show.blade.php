@@ -7,16 +7,16 @@
                 <div class="c-post__show-left">
                     <div class="c-button__show-social">
                         @if (Auth::check())
-                            <like
-                            :post-id="{{ json_encode($step->id) }}"
-                            :user-id="{{ json_encode($userAuth->id) }}"
-                            :default-Liked="{{ json_encode($defaultLiked) }}"
-                            :default-Count="{{ json_encode($defaultCount) }}"
-                            ></like>
+                        <like
+                        :post-id="{{ json_encode($step->id) }}"
+                        :user-id="{{ json_encode($userAuth->id) }}"
+                        :default-Liked="{{ json_encode($defaultLiked) }}"
+                        :default-Count="{{ json_encode($defaultCount) }}"
+                        ></like>
                         @else
-                            <a href="/login">
-                                <like :default-Count="{{ json_encode($defaultCount) }}"></like>
-                            </a>
+                        <a href="/login">
+                            <like :default-Count="{{ json_encode($defaultCount) }}"></like>
+                        </a>
                         @endif
                         <a href="#" class="c-button__show-social__stock"><i class="fas fa-folder-open"></i></a>
                         {{-- <a href="#" class="c-button__show-social__twitter"><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a> --}}
@@ -25,7 +25,9 @@
 
                 <div class="c-post__show-main">
                     <div class="c-post__show-main__header">
-                        <div class="c-post__show-main__header-date">{{ $step->created_at }}</div>
+                        <div class="c-post__show-main__header-list">
+                            <div class="c-post__show-main__header-list__date">{{ $step->created_at }}</div>
+                        </div>
                     </div>
                     <div class="c-post__show-title">{{$step->title}}</div>
 
@@ -56,6 +58,14 @@
 
                 </div>
                 <div class="c-post__show-right">
+                    <div>
+                        @if (empty($step->user->avatar))
+                        <img src="/img/avatar/user.svg" alt="avatar" style="width:70px; height:70px; border-radius:50%?vertical-align: middle;">
+                        @else
+                        <img src="{{ asset('/img/avatar/'.$step->user->avatar) }}" alt="avatar" style="width:70px; height:70px; border-radius:50%" border-radius="50%">
+                        @endif
+                    </div>
+                    <div class="">{{ $step->user->name }}</div>
                     <p>目標時間 : {{ $step->time }}時間</p>
                     <p>このStepにチャレンジ</p>
                     {{-- <div class="toc" data-toc="h1, h2, h3, h4, h5, h6"></div> --}}

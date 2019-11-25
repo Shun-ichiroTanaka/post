@@ -40,30 +40,13 @@ class Post extends Model
 
     public function likes()
     {
-        return $this->hasMany('App\Like', 'post_id', 'id');
+        return $this->hasMany('App\Like');
     }
 
-
-    public static function defaultLiked($post, $user_auth_id)
+    public function user()
     {
-      // $defaultLiked = $post->likes->where('user_id', $user_auth_id)->first();
-
-      $defaultLiked = 0;
-      foreach ($post['likes'] as $key => $like) {
-          if($like['user_id'] == $user_auth_id) {
-            $defaultLiked = 1;
-            break;
-          }
-      }
-
-      if(is_countable($defaultLiked) == 0) {
-            $defaultLiked == false;
-        } else {
-            $defaultLiked == true;
-        }
-
-
-      return $defaultLiked;
+        return $this->belongsTo('App\User');
     }
+
 
 }

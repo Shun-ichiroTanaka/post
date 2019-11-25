@@ -6502,7 +6502,17 @@ table {
   background-color: white;
 }
 
-.c-post__show-main__header-date {
+.c-post__show-main__header-list {
+  display: -webkit-box;
+  display: flex;
+}
+
+.c-post__show-main__header-list__date {
+  color: gray;
+}
+
+.c-post__show-main__header-list__name {
+  padding-left: 30px;
   color: gray;
 }
 
@@ -7972,6 +7982,36 @@ body .pl-12 {
 .u-space__a__pt-10 {
   display: inline-block;
   padding-top: 10px;
+}
+
+.u-pagenation {
+  width: 100%;
+  text-align: center;
+}
+
+/* その4  */
+
+.pagination {
+  display: -webkit-box;
+  display: flex;
+  text-align: center;
+  cursor: pointer;
+}
+
+.pagination li {
+  position: relative;
+  display: inline;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin: 0 2px;
+  text-align: center;
+  border-radius: 50px;
+}
+
+.page-item {
+  line-height: 50px;
 }
 
 

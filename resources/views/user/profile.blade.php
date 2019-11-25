@@ -25,7 +25,7 @@ componentで投稿一覧を表示
             <a href="{{ route('user.edit') }}">プロフィール編集</a>
         </div>
         <main class="l-container__main-mypage">
-            @include('posts.allPosts')
+            @include('posts.ownPosts')
         </main>
         <div class="l-container__right-mypage">
             <h3>登録してるSTEP</h3>

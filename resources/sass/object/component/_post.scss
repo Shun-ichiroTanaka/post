@@ -120,8 +120,15 @@
       //   margin: 3rem 5rem;
       background-color: white;
       &__header {
-        &-date {
-          color: gray;
+        &-list {
+          display: flex;
+          &__date {
+            color: gray;
+          }
+          &__name {
+            padding-left: 30px;
+            color: gray;
+          }
         }
       }
     }

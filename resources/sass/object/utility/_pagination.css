@@ -1,0 +1,23 @@
+.u-pagenation {
+  width: 100%;
+  text-align: center;
+}
+.pagination {
+  display: flex;
+  text-align: center;
+  cursor: pointer;
+}
+.pagination li {
+  position: relative;
+  display: inline;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin: 0 2px;
+  text-align: center;
+  border-radius: 50px;
+}
+.page-item {
+  line-height: 50px;
+}
