@@ -6130,7 +6130,6 @@ table {
 }
 
 .l-header__title {
-  margin-left: 30px;
   font-size: 1.5rem;
   line-height: 40px;
 }
@@ -6316,7 +6315,7 @@ table {
 .l-container {
   display: -webkit-box;
   display: flex;
-  width: 1100px;
+  width: 1200px;
   margin: 0 auto;
   margin-top: 40px;
 }
@@ -6508,12 +6507,12 @@ table {
 }
 
 .c-post__show-left {
-  width: 180px;
+  width: 80px;
 }
 
 .c-post__show-right {
   overflow: auto;
-  width: 150px;
+  width: 250px;
   height: 600px;
   min-height: 500px;
   margin-top: 50px;

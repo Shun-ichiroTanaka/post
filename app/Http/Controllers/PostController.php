@@ -110,38 +110,4 @@ class PostController extends Controller
         }
 
     }
-
-
-
-    public function postLike(Request $request)
-    {
-        $step_id = $request['stepId'];
-        $is_like = $request['isLike'] === 'true';
-        $update = false;
-        $step = Post::find($step_id);
-        if (!$step) {
-            return null;
-        }
-        $user = Auth::user();
-        $like = $user->likes()->where('step_id', $step_id)->first();
-        if ($like) {
-            $already_like = $like->like;
-            $update = true;
-            if ($already_like == $is_like) {
-                $like->delete();
-                return null;
-            }
-        } else {
-            $like = new Like();
-        }
-        $like->like = $is_like;
-        $like->user_id = $user->id;
-        $like->step_id = $step->id;
-        if ($update) {
-            $like->update();
-        } else {
-            $like->save();
-        }
-        return null;
-    }
 }

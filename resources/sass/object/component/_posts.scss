@@ -126,11 +126,11 @@
       }
     }
     &-left {
-      width: 180px;
+      width: 80px;
     }
     &-right {
       overflow: auto;
-      width: 150px;
+      width: 250px;
       height: 600px; // experiment with this value, try changing to 110vh
       min-height: 500px;
       margin-top: 50px;
