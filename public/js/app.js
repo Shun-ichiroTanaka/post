@@ -7491,8 +7491,16 @@ __webpack_require__.r(__webpack_exports__);
     console.log('NewPostComponent.vueの読み込みに成功');
   },
   methods: {
-    newPost: function newPost() {
-      alert('adding Task');
+    newpost: function newpost() {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('./api/newpost', {
+        firstName: 'Fred',
+        lastName: 'Flintstone'
+      }).then(function (response) {
+        console.log(response);
+      })["catch"](function (error) {
+        console.log("新規投稿に失敗");
+      });
+      console.log(vueファイルをaxiosでSQLに保存させます); // Send a POST request
     },
     onComplete: function onComplete() {// alert('全てのステップが完了しました！！');
     },
@@ -58792,7 +58800,7 @@ var render = function() {
         on: {
           submit: function($event) {
             $event.preventDefault()
-            return _vm.newPost()
+            return _vm.newpost()
           }
         }
       },

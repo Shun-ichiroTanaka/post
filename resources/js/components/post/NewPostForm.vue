@@ -1,7 +1,7 @@
 
 <template>
     <div id="app">
-        <form action="post.newpost" method="POST" @submit.prevent="newPost()">
+        <form action="post.newpost" method="POST" @submit.prevent="newpost()">
             <div class="c-post__new-title">
                 <input id="title" placeholder=" タイトル（例：「1日5分!マクロ経済のオススメ勉強法」）" 　type="text" name="title" required>
             </div>
@@ -54,8 +54,19 @@ export default {
         console.log('NewPostComponent.vueの読み込みに成功')
     },
     methods: {
-        newPost(){
-            alert('adding Task')
+        newpost() {
+            axios.post('./api/newpost', {
+                    firstName: 'Fred',
+                    lastName: 'Flintstone'
+                })
+                .then(function(response) {
+                    console.log(response);
+                })
+                .catch(function(error) {
+                    console.log("新規投稿に失敗");
+                });
+            console.log(vueファイルをaxiosでSQLに保存させます);
+            // Send a POST request
         },
         onComplete: function() {
             // alert('全てのステップが完了しました！！');

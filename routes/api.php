@@ -21,5 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/posts/{post}/like', 'LikeController@like');
 Route::post('/posts/{post}/unlike', 'LikeController@unlike');
 
-Route::post('/new', 'PostController@postStep')->name('post.newpost');
+Route::post('/user/post/new', 'PostController@postStep');
 

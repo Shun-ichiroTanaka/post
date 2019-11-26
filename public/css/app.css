@@ -522,15 +522,16 @@ table {
   width: 870px;
   height: 100%;
   padding-top: 50px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   margin: 0 auto;
-  font-size: 24px;
 }
 
 .c-post__new-title input {
   width: 100%;
   padding: 10px 0;
+  padding-left: 5px;
   font-size: 20px;
+  border: none;
 }
 
 .c-post__new-tags {
@@ -545,7 +546,9 @@ table {
 .c-post__new-tags input {
   width: 100%;
   padding: 7px 0;
-  font-size: 15px;
+  padding-left: 5px;
+  font-size: 12px;
+  border: none;
 }
 
 .c-post__new-submit {
@@ -918,6 +921,14 @@ table {
 
 .vue-form-wizard.md .wizard-nav-pills > li.active > a svg {
   color: #2cb597;
+}
+
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+  border: none;
+}
+
+.quillWrapper .ql-snow.ql-toolbar {
+  border-bottom: solid .8px #eee !important;
 }
 
 /* about

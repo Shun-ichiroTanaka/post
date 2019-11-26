@@ -77,3 +77,10 @@
 .vue-form-wizard.md .wizard-nav-pills > li.active > a svg {
   color: #2cb597;
 }
+
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+  border: none;
+}
+.quillWrapper .ql-snow.ql-toolbar {
+  border-bottom: solid .8px #eee !important;
+}
