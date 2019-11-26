@@ -227,7 +227,6 @@ table {
   float: right;
   width: 44px;
   height: 100%;
-  margin-right: 5%;
   cursor: pointer;
 }
 
@@ -251,6 +250,7 @@ table {
   }
 
   .l-header__title {
+    margin-left: 50px;
     font-size: 1.7rem;
     line-height: 50px;
     text-decoration: none;
@@ -266,6 +266,7 @@ table {
     right: 0;
     width: auto;
     height: 300px;
+    margin-right: 50px;
     font-size: .9rem;
     text-align: center;
     cursor: auto;
@@ -279,7 +280,6 @@ table {
 
   .l-header__nav li {
     display: inline-block;
-    margin-left: .5em;
   }
 
   .l-header__nav a {
@@ -389,9 +389,13 @@ table {
 .l-header-dropdown__child-user {
   display: -webkit-box;
   display: flex;
+  justify-content: space-around;
   -webkit-box-align: center;
           align-items: center;
+  min-width: 100px;
+  margin-right: 35px;
   line-height: 50px;
+  cursor: pointer;
 }
 
 .l-header-dropdown__child-user__img {
@@ -818,15 +822,16 @@ table {
   text-align: center;
 }
 
-.c-button-header__post {
-  display: block;
-  height: 50px;
-  padding: 0 20px;
-  background-color: #4bcfc8;
-}
-
 .c-button-header__post a {
-  color: white;
+  padding: .4em 1em;
+  color: #fff;
+  background: #4bcfc8;
+  border: 1px solid #4bcfc8;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
 }
 
 /* flexbox

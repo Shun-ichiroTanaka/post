@@ -89,13 +89,17 @@
   }
   &-header {
     &__post {
-      display: block;
-      height: 50px;
-      padding: 0 20px;
-      background-color: $emeraldo;
-
       a {
-        color: white;
+        padding: .4em 1em;
+        color: #fff;
+        background: $emeraldo;
+        border: 1px solid $emeraldo;
+                border-radius: 3px;
+
+        -webkit-border-radius: 3px;
+           -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+             -o-border-radius: 3px;
       }
     }
   }
