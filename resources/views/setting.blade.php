@@ -2,8 +2,6 @@
 
 セッティングページ
 
-
-
  --}}
 
 @extends('layouts.app')

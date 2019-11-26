@@ -4,6 +4,12 @@ import fontawesome from '@fortawesome/fontawesome';
 import regular from '@fortawesome/fontawesome-free-solid';
 import solid from '@fortawesome/fontawesome-free-regular';
 import brands from '@fortawesome/fontawesome-free-brands';
+import VueFormWizard from 'vue-form-wizard'
+import 'vue-form-wizard/dist/vue-form-wizard.min.css'
+import { VueEditor, Quill } from "vue2-editor";
+
+Vue.use(VueFormWizard)
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -12,7 +18,6 @@ import brands from '@fortawesome/fontawesome-free-brands';
 
 require('./bootstrap');
 require("./parts/markdown");
-require("./parts/step");
 
 window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
@@ -37,6 +42,8 @@ fontawesome.library.add(brands);
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
+Vue.component('newpostform', require('./components/post/NewPostForm.vue').default);
 Vue.component('like', require('./components/social/Like.vue').default);
 Vue.component('likecount', require('./components/social/LikeCount.vue').default);
 

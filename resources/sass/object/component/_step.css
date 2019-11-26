@@ -22,3 +22,47 @@
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
+.vue-form-wizard {
+  width: 870px;
+  margin: 0 auto;
+}
+.vue-form-wizard .wizard-header {
+  display: none;
+}
+.vue-form-wizard .wizard-nav-pills > li > a.disabled {
+  display: none !important;
+}
+.quillWrapper {
+  background: #fff;
+}
+.ql-editor {
+  min-height: 300px !important;
+}
+.vue-form-wizard.md .wizard-icon-circle {
+  width: 50px !important;
+  height: 50px !important;
+  font-size: 15px !important;
+}
+.vue-form-wizard .wizard-nav-pills > li > a {
+  top: 10px !important;
+}
+.vue-form-wizard .wizard-card-footer {
+  padding: 0 !important;
+}
+.vue-form-wizard .wizard-tab-content {
+  padding: 20px 0 10px !important;
+}
+.vue-form-wizard {
+  padding-bottom: 10px !important;
+}
+.stepTitle {
+  padding-top: 5px;
+}
+.wizard-icon {
+  position: absolute;
+  top: 12px;
+  font-size: 18px;
+}
+.vue-form-wizard.md .wizard-nav-pills > li.active > a svg {
+  color: #2cb597;
+}

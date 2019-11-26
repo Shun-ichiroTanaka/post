@@ -17,6 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// いいね Ajax通信
+// いいね Axios
 Route::post('/posts/{post}/like', 'LikeController@like');
 Route::post('/posts/{post}/unlike', 'LikeController@unlike');
+
+Route::post('/new', 'PostController@postStep')->name('post.newpost');
+

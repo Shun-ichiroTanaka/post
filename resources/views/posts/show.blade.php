@@ -59,11 +59,13 @@
                 </div>
                 <div class="c-post__show-right">
                     <div>
+                        <a href="/profile/{{ $step->user->id }}">
                         @if (empty($step->user->avatar))
-                        <img src="/img/avatar/user.svg" alt="avatar" style="width:70px; height:70px; border-radius:50%?vertical-align: middle;">
+                            <img src="/img/avatar/user.svg" alt="avatar" style="width:70px; height:70px; border-radius:50%?vertical-align: middle;">
                         @else
-                        <img src="{{ asset('/img/avatar/'.$step->user->avatar) }}" alt="avatar" style="width:70px; height:70px; border-radius:50%" border-radius="50%">
+                            <img src="{{ asset('/img/avatar/'.$step->user->avatar) }}" alt="avatar" style="width:70px; height:70px; border-radius:50%" border-radius="50%">
                         @endif
+                        </a>
                     </div>
                     <div class="">{{ $step->user->name }}</div>
                     <p>目標時間 : {{ $step->time }}時間</p>
