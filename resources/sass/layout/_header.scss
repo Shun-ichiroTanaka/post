@@ -10,31 +10,10 @@
   font-family: "PT Sans", sans-serif !important;
   font-size: 100%;
   background: #fff;
-  box-shadow: 0 0 100px rgba(34,34,34,.08);
-  //   -webkit-box-sizing: border-box;
-  //      -moz-box-sizing: border-box;
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  input,
-  textarea {
-    font-size: 16px;
-    font-size: 1rem;
-  }
-  input::-ms-clear,
-  textarea::-ms-clear {
-    display: none;
-  }
   a {
     color: $emeraldo;
     text-decoration: none;
-  }
-
-  &::after {
-    /* clearfix */
-    content: "";
-    clear: both;
-    display: table;
   }
   &__title {
     font-size: 1.5rem;
@@ -53,7 +32,7 @@
       display: block;
       height: 40px;
       //   padding-left: 5%;
-      color: #2cb597;
+      color: $emeraldo;
       line-height: 40px;
       background: #fff;
     }
@@ -68,11 +47,13 @@
   .l-header {
     display: flex;
     align-items: center;
-    height: 60px;
+    height: 50px;
     color: #3b3d4b;
+    box-shadow: 0 1px 3px rgba(160,166,179,.3);
+
     &__title {
       font-size: 1.7rem;
-      line-height: 60px;
+      line-height: 50px;
       text-decoration: none;
       a:hover {
         text-decoration: none;
@@ -90,7 +71,7 @@
 
       & ul {
         width: auto;
-        line-height: 60px;
+        line-height: 50px;
         white-space: nowrap;
       }
       & li {
@@ -113,7 +94,7 @@
       padding: .4em 1em;
       color: #fff;
       background: $emeraldo;
-      border: 1px solid #2cb597;
+      border: 1px solid $emeraldo;
               border-radius: 3px;
 
       -webkit-border-radius: 3px;
@@ -207,7 +188,7 @@
     &-user {
       display: flex;
       align-items: center;
-      line-height: 60px;
+      line-height: 50px;
 
       &__img {
         display: block;

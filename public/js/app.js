@@ -7467,6 +7467,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -58813,7 +58833,7 @@ var render = function() {
           "form-wizard",
           {
             attrs: {
-              color: "#2cb597",
+              color: "#4BCFC8",
               transition: "bounce",
               "back-button-text": "戻る",
               "next-button-text": "追加",
@@ -58827,7 +58847,9 @@ var render = function() {
               { attrs: { title: "Step1" } },
               [
                 _c("vue-editor", {
+                  staticClass: "form-control",
                   attrs: {
+                    name: "step1",
                     id: "editor1",
                     useCustomImageHandler: "",
                     placeholder:
@@ -58851,7 +58873,9 @@ var render = function() {
               { attrs: { title: "Step2" } },
               [
                 _c("vue-editor", {
+                  staticClass: "form-control",
                   attrs: {
+                    name: "step2",
                     id: "editor2",
                     useCustomImageHandler: "",
                     placeholder: "（例：「STEP2：次に必須の公式を押さえよう」）"
@@ -58874,7 +58898,9 @@ var render = function() {
               { attrs: { title: "Step3" } },
               [
                 _c("vue-editor", {
+                  staticClass: "form-control",
                   attrs: {
+                    name: "step3",
                     id: "editor3",
                     useCustomImageHandler: "",
                     placeholder: "（例：「STEP3：頻出の問題系統を押さえよう」）"
@@ -58897,7 +58923,9 @@ var render = function() {
               { attrs: { title: "Last Step", icon: "fas fa-check" } },
               [
                 _c("vue-editor", {
+                  staticClass: "form-control",
                   attrs: {
+                    name: "step4",
                     id: "editor4",
                     useCustomImageHandler: "",
                     placeholder:
@@ -58946,16 +58974,57 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "c-post__new-tags" }, [
-      _c("input", {
-        attrs: {
-          id: "tags",
-          placeholder: " タグを半角スペース区切りで5つまで入力できます')",
-          type: "text",
-          name: "tags",
-          required: ""
-        }
-      })
+    return _c("div", { staticClass: "c-post__new-box" }, [
+      _c("div", { staticClass: "c-post__new-box__tags" }, [
+        _c("input", {
+          attrs: {
+            id: "tags",
+            placeholder: " タグを半角スペース区切りで5つまで入力できます')",
+            type: "text",
+            name: "tags",
+            required: ""
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "c-post__new-box__time" }, [
+        _vm._v("目標時間 :\n                "),
+        _c("select", { attrs: { name: "time" } }, [
+          _c("option", { attrs: { selected: "", value: "指定なし" } }, [
+            _vm._v("指定しない")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "30分" } }, [_vm._v("30分")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "1時間" } }, [_vm._v("1時間")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "1時間30分" } }, [
+            _vm._v("1時間30分")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "2時間" } }, [_vm._v("2時間")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "2時間30分" } }, [
+            _vm._v("2時間30分")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "3時間" } }, [_vm._v("3時間")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "3時間30分" } }, [
+            _vm._v("3時間30分")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "4時間" } }, [_vm._v("4時間")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "4時間30分" } }, [
+            _vm._v("4時間30分")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "5時間" } }, [_vm._v("5時間")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "それ以上" } }, [_vm._v("それ以上")])
+        ])
+      ])
     ])
   },
   function() {
@@ -58963,7 +59032,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "c-post__new-submit" }, [
-      _c("button", { attrs: { type: "submit" } }, [_vm._v("Stepに投稿")])
+      _c("button", { attrs: { type: "submit" } }, [_vm._v("投稿する")])
     ])
   }
 ]
