@@ -10,7 +10,12 @@ import 'vue-form-wizard/dist/vue-form-wizard.min.css'
 import { VueEditor, Quill } from "vue2-editor";
 import Multiselect from 'vue-multiselect'
 import VoerroTagsInput from '@voerro/vue-tagsinput';
+import '@desislavsd/vue-select/dist/vue-select.css'
+import VueRouter from 'vue-router'
+import router from './router'
+import App from './App.vue'
 
+Vue.use(VueRouter)
 Vue.component('tags-input', VoerroTagsInput);
 Vue.use(VueFormWizard)
 Vue.component('multiselect', Multiselect)
@@ -51,13 +56,28 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('newpostform', require('./components/post/NewPostForm.vue').default);
 Vue.component('like', require('./components/social/Like.vue').default);
 Vue.component('likecount', require('./components/social/LikeCount.vue').default);
+Vue.component('custom-cursor', require('./components/parts/CustomCursor.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+const routes = [
+//   {
+//     path: '/',
+//     component: Example
+//   }
+]
+var app = new VueRouter({
+    mode: 'history',
+    routes
+});
+export default router
 
-var app = new Vue({
-    el: '#app'
+new Vue({
+  el: '#app',
+  router,
+  components: { App },
+  template: '<App />'
 });

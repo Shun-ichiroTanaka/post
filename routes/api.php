@@ -22,5 +22,8 @@ Route::group(['middleware' => 'api'],function(){
     Route::post('/posts/{post}/like', 'LikeController@like');
     Route::post('/posts/{post}/unlike', 'LikeController@unlike');
 
-    // Route::post('/user/post/new', 'PostController@postStep');
+
+    // 第一引数にControllerのメソッド名
+    Route::post('/user/post/new', 'PostController@postStep');
+
 });

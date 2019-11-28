@@ -12,8 +12,8 @@ let mix = require('laravel-mix');
  */
 
 mix.setResourceRoot('');
-mix.js('resources/js/app.js', 'public/js')
-mix.sass('resources/sass/app.scss', 'public/css')
+mix.js('resources/js/app.js', 'public/js') .version();
+mix.sass('resources/sass/app.scss', 'public/css').version();
 // mix.autoload({
 //     "jquery": ['$', 'window.jQuery'],
 //     "vue": ['Vue', 'window.Vue']

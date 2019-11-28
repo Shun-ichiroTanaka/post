@@ -1,0 +1,36 @@
+.custom-cursor {
+  cursor: none;
+  pointer-events: none;
+}
+.custom-cursor__circle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #4bcfc7;
+  border-radius: 50%;
+  transform: translate(-100%, -100%);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: none;
+  -webkit-transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -ms-transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.custom-cursor__dot {
+  position: fixed;
+  top: 1px;
+  left: 1px;
+  width: 7px;
+  height: 7px;
+  background-color: #5c5c5c;
+  border-radius: 50%;
+  transform: translate(-100%, -100%);
+  transition: transform 0.02s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: none;
+  -webkit-transition: transform 0.02s cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: transform 0.02s cubic-bezier(0.23, 1, 0.32, 1);
+  -ms-transition: transform 0.02s cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: transform 0.02s cubic-bezier(0.23, 1, 0.32, 1);
+}
