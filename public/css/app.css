@@ -1102,17 +1102,22 @@ table {
 
 .cursor {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #4bcfc8;
+  z-index: 2000;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #f6f078;
   border-radius: 50%;
-  animation: cursorAnim .3s infinite alternate;
+  animation: cursorAnim .5s infinite alternate;
   -webkit-transition-duration: 200ms;
           transition-duration: 200ms;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   pointer-events: none;
-  -webkit-animation: cursorAnim .3s infinite alternate;
+  -webkit-animation: cursorAnim .5s infinite alternate;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .cursor::after {
@@ -1120,13 +1125,14 @@ table {
   position: absolute;
   top: -8px;
   left: -8px;
-  width: 20px;
-  height: 20px;
-  border: 8px solid #ffdc34;
+  z-index: 2000;
+  width: 50px;
+  height: 50px;
+  border: 8px solid #4bcfc8;
   border-radius: 50%;
-  animation: cursorAnim2 .3s infinite alternate;
-  opacity: .5;
-  -webkit-animation: cursorAnim2 .3s infinite alternate;
+  animation: cursorAnim2 .5s infinite alternate;
+  opacity: .4;
+  -webkit-animation: cursorAnim2 .5s infinite alternate;
 }
 
 @-webkit-keyframes cursorAnim {
@@ -1136,8 +1142,11 @@ table {
   }
 
   to {
-    -webkit-transform: scale(0.7);
-            transform: scale(0.7);
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
   }
 }
 
@@ -1148,8 +1157,11 @@ table {
   }
 
   to {
-    -webkit-transform: scale(0.7);
-            transform: scale(0.7);
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
   }
 }
 
@@ -1160,8 +1172,11 @@ table {
   }
 
   to {
-    -webkit-transform: scale(0.4);
-            transform: scale(0.4);
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
   }
 }
 
@@ -1172,8 +1187,11 @@ table {
   }
 
   to {
-    -webkit-transform: scale(0.4);
-            transform: scale(0.4);
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
   }
 }
 
@@ -1184,8 +1202,11 @@ table {
   }
 
   50% {
-    -webkit-transform: scale(3);
-            transform: scale(3);
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
   }
 
   100% {
@@ -1202,8 +1223,11 @@ table {
   }
 
   50% {
-    -webkit-transform: scale(3);
-            transform: scale(3);
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
   }
 
   100% {
@@ -1214,7 +1238,7 @@ table {
 }
 
 .expand {
-  border: 1px solid #4bcfc8;
+  border: 3px solid #f6f078;
   -webkit-animation: cursorAnim3 .5s forwards;
           animation: cursorAnim3 .5s forwards;
 }

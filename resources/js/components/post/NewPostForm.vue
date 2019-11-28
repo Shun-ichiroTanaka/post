@@ -65,16 +65,16 @@ export default {
     },
     data() {
         return {
-
-// あらかじめあるタグの選択
+            // あらかじめあるタグの選択
             selectedTags: [],
-// テキストエディター
+            // テキストエディター
             customToolbar: [
                 ["bold", "italic", "underline"],
                 [{ list: "ordered" }, { list: "bullet" }],
                 ["image", "code-block"]
             ],
- // 投稿情報
+
+            // 投稿情報
             title: "",
             tags: [],
             step1: "",
@@ -82,7 +82,6 @@ export default {
             step3: "",
             step4: "",
             time: "",
-
         };
 
     },
