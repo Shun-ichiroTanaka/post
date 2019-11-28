@@ -17,9 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// いいね Axios
-Route::post('/posts/{post}/like', 'LikeController@like');
-Route::post('/posts/{post}/unlike', 'LikeController@unlike');
+Route::group(['middleware' => 'api'],function(){
+    // いいね Axios
+    Route::post('/posts/{post}/like', 'LikeController@like');
+    Route::post('/posts/{post}/unlike', 'LikeController@unlike');
 
-Route::post('/user/post/new', 'PostController@postStep');
-
+    // Route::post('/user/post/new', 'PostController@postStep');
+});

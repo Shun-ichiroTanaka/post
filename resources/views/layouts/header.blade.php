@@ -1,6 +1,6 @@
 <header class="l-header">
     <div class="">
-        <h1 class="l-header__title"><a href="{{ url('/') }}"> {{ config('app.name', 'Step') }}</a></h1>
+        <h1 class="l-header__title"><a href="{{ url('/') }}"><img src="{{ asset('/img/title.svg') }}" alt=""></a></h1>
         <nav class="l-header__nav">
             <ul>
                 @guest

@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Like');
     }
+    public function post()
+    {
+        return $this->hasMany('App\Post');
+        return $this->belongsTo(\App\Post::class);
+    }
 }

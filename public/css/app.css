@@ -215,12 +215,7 @@ table {
 }
 
 .l-header__title {
-  font-size: 1.5rem;
   line-height: 40px;
-}
-
-.l-header__title a {
-  color: #3b3d4b;
 }
 
 .l-header__nav {
@@ -250,14 +245,10 @@ table {
   }
 
   .l-header__title {
+    height: 50px;
     margin-left: 50px;
-    font-size: 1.7rem;
-    line-height: 50px;
     text-decoration: none;
-  }
-
-  .l-header__title a:hover {
-    text-decoration: none;
+    vertical-align: center !important;
   }
 
   .l-header__nav {
@@ -290,6 +281,7 @@ table {
   }
 
   .l-header a.l-header__signin {
+    padding-right: 2rem;
     color: #3b3d4b;
     border: none;
   }
@@ -548,7 +540,8 @@ table {
   overflow: hidden;
   width: 200px;
   height: 100%;
-  padding-top: 7px;
+  padding-top: 5px;
+  color: #757575;
   text-align: center;
 }
 

@@ -16,11 +16,7 @@
     text-decoration: none;
   }
   &__title {
-    font-size: 1.5rem;
     line-height: 40px;
-    & a {
-      color: #3b3d4b;
-    }
   }
   &__nav {
     float: right;
@@ -51,13 +47,10 @@
     box-shadow: 0 1px 3px rgba(160,166,179,.3);
 
     &__title {
+      height: 50px;
       margin-left: 50px;
-      font-size: 1.7rem;
-      line-height: 50px;
       text-decoration: none;
-      a:hover {
-        text-decoration: none;
-      }
+      vertical-align: center !important;
     }
     &__nav {
       position: absolute;
@@ -87,6 +80,7 @@
     }
 
     & a.l-header__signin {
+      padding-right: 2rem;
       color: #3b3d4b;
       border: none;
     }

@@ -22,7 +22,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
     Route::prefix('post')->group(function () {
         // 投稿
         Route::get('/new', 'PostController@index')->name('post.new');
-        Route::post('/new', 'PostController@postStep')->name('post.newpost');
+        // Route::post('/new', 'PostController@postStep')->name('post.newpost');
     });
 
 
