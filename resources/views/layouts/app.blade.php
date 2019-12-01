@@ -16,13 +16,13 @@
 
             <div class="b-wrapper">
                 @yield('content')
-                <div class="cursor"></div>
             </div>
 
             @include('layouts.footer')
         </div>
     </div>
     <router-view></router-view>
+
     @include('layouts.script')
 </body>
 </html>

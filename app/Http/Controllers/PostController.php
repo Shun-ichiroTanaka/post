@@ -17,26 +17,23 @@ class PostController extends Controller
 
     public function postStep(Request $request)
     {
+
         // バリデーション
-        $request->validate([
-            'title' => 'required|max:255',
-            'subtitle1' => 'required|max:255',
-            'subtitle2' => 'nullable|max:255',
-            'subtitle3' => 'nullable|max:255',
-            'subtitle4' => 'nullable|max:255',
-            'tags' => 'required|max:255',
-            'step1' => 'required|max:255',
-            'step2' => 'nullable|max:255',
-            'step3' => 'nullable|max:255',
-            'step4' => 'nullable|max:255',
-            'time' => 'required|integer',
-        ]);
+        // $request->validate([
+        //     'title' => 'required|string|max:255',
+        //     'tags' => 'required|string|max:255',
+        //     'step1' => 'required|string',
+        //     'step2' => 'nullable|string',
+        //     'step3' => 'nullable|string',
+        //     'step4' => 'nullable|string',
+        //     'time' => 'required|string',
+        // ]);
 
         // モデルを使って、DBに登録する値をセット
-        // $posts = new Post;
+        $step = new Post;
         // fillを使って一気にいれる
         // $fillableを使っていないと変なデータが入り込んだ場合に勝手にDBが更新されてしまうので注意
-        // $posts->fill($request->all())->save();
+        // $step->fill($request->all())->save();
 
         $tags = explode(' ', $request->tags);
         $tag1 = $tags[0];
@@ -47,12 +44,8 @@ class PostController extends Controller
 
 
         $step = Post::create([
-            'user_id' => Auth::user()->id,
+            'user_id' => auth()->id(),
             'title' => $request->title,
-            'subtitle1' => $request->subtitle1,
-            'subtitle2' => $request->subtitle2,
-            'subtitle3' => $request->subtitle3,
-            'subtitle4' => $request->subtitle4,
             'tag1' => $tag1,
             'tag2' => $tag2,
             'tag3' => $tag3,
@@ -66,11 +59,12 @@ class PostController extends Controller
 
         ]);
 
-        return redirect('/');
+        // dd($request->all());
 
         //「投稿する」をクリックしたら投稿情報表示ページへリダイレクト
         // その時にsessionフラッシュにメッセージを入れる
         return redirect("/post/{$step->id}")->with('flash_message', __('投稿しました!'));
+        // return response()->json(['success'=>'投稿に成功しました！']);
         // return redirect("/")->with('flash_message', __('投稿しました!'));
     }
 

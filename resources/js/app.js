@@ -10,7 +10,7 @@ import 'vue-form-wizard/dist/vue-form-wizard.min.css'
 import { VueEditor, Quill } from "vue2-editor";
 import Multiselect from 'vue-multiselect'
 import VoerroTagsInput from '@voerro/vue-tagsinput';
-import '@desislavsd/vue-select/dist/vue-select.css'
+// import '@desislavsd/vue-select/dist/vue-select.css'
 
 Vue.component('tags-input', VoerroTagsInput);
 Vue.use(VueFormWizard)
@@ -23,14 +23,15 @@ Vue.component('multiselect', Multiselect)
  */
 
 require('./bootstrap');
-require("./parts/markdown");
+// require("./parts/markdown");
 
-window.axios = require('axios');
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
-const token = document.head.querySelector('meta[name="csrf-token"]')
-if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content
-}
+
+// window.axios = require('axios');
+// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+// const token = document.head.querySelector('meta[name="csrf-token"]')
+// if (token) {
+//   window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content
+// }
 // fontawesome
 fontawesome.library.add(regular);
 fontawesome.library.add(solid);

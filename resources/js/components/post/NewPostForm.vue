@@ -1,16 +1,27 @@
 
 <template>
     <div id="app">
-        <form @submit.prevent="newpost" enctype="multipart/form-data">
+        <form @submit.prevent="newpost">
             <div>
                 <div class="c-post__new-title">
                     <input v-model="title" placeholder=" タイトル（例：「1日5分!マクロ経済のオススメ勉強法」）" 　type="text" required>
                 </div>
                 <div class="c-post__new-box">
                     <div class="c-post__new-box__tags">
-                        <!-- <input id="tags" placeholder=" タグを半角スペース区切りで5つまで入力できます')" 　type="text" v-model="tags" required> -->
-                        <tags-input v-model="tags" element-id="tags" placeholder="カテゴリーを追加..." :existing-tags="[{ key: 'web-development', value: 'Web Development' },{ key: 'php', value: 'PHP' },{ key: 'javascript', value: 'JavaScript' },{ key: 'ruby', value: 'Ruby' },{ key: 'python', value: 'Python' },{ key: 'マクロ経済学', value: 'マクロ経済学' },{ key: 'ミクロ経済学', value: 'ミクロ経済学' },{ key: 'ゲーム理論', value: 'ゲーム理論' },{ key: 'html', value: 'HTML' },{ key: 'css', value: 'CSS' },]"
-                            :typeahead="true"></tags-input>
+                        <input v-model="tags" id="tags" placeholder=" タグを半角スペース区切りで5つまで入力できます')" 　type="text" required>
+                        <!-- <tags-input
+                            v-model="tags"
+                            element-id="tags"
+                            placeholder="タグを追加..."
+                            :existing-tags="[
+                                {key:'web-development',value: 'Web Development' },{ key: 'php', value: 'PHP' },{ key: 'javascript', value: 'JavaScript' },
+                                { key: 'ruby', value: 'Ruby' },{ key: 'python', value: 'Python' },{ key: 'マクロ経済学', value: 'マクロ経済学' },{ key: 'ミクロ経済学', value: 'ミクロ経済学' },
+                                { key: 'ゲーム理論', value: 'ゲーム理論' },{ key: 'html', value: 'HTML' },{ key: 'css', value: 'CSS' },]"
+                            :typeahead="true" :add-tags-on-comma="true"
+                            :add-tags-on-space="true"
+                            :limit="5"
+                            :discard-search-text="'検索結果を表示しない'">
+                        </tags-input> -->
                     </div>
                     <div class="c-post__new-box__time">
                         <select v-model="time">
@@ -77,6 +88,11 @@ export default {
             // 投稿情報
             title: "",
             tags: [],
+            // tag1: tags[0],
+            // tag2: tags[1],
+            // tag3: tags[2],
+            // tag4: tags[3],
+            // tag5: tags[4],
             step1: "",
             step2: "",
             step3: "",
@@ -86,14 +102,8 @@ export default {
 
     },
     mounted() {
-        console.log('NewPostComponent.vueの読み込みに成功')
     },
     methods: {
-        // タグ
-        setSelectedTags() {
-            this.selectedTags = [{ key: 'php', value: 'PHP' }];
-        },
-
         // 新規投稿
         newpost() {
              // ①送信する記事情報を定義
@@ -101,23 +111,30 @@ export default {
             var article = {
                 title: self.title,
                 tags: self.tags,
+                // tag1: self.tags[0],
+                // tag2: self.tags[1],
+                // tag3: self.tags[2],
+                // tag4: self.tags[3],
+                // tag5: self.tags[4],
                 step1: self.step1,
                 step2: self.step2,
                 step3: self.step3,
                 step4: self.step4,
                 time: self.time,
             };
-            // ②パスを指定
+
+            // ②パスを定義
             const url = '/api/user/post/new';
 
             // axiosを使って、入力項目をサーバ側へ
             axios.post( url, article )
             .then(function(response) {
-                console.log(response);
+                console.log('新規投稿に成功しました')
+                // console.log(e.response.article.errors)
             })
-            .catch(function(error) {
-                console.log("新規投稿に失敗");
-            });
+            .catch(e => {
+                console.log('新規投稿に失敗しました')
+             });
         },
         // step完了
         onComplete: function() {
@@ -142,3 +159,4 @@ export default {
     }
 }
 </script>
+
