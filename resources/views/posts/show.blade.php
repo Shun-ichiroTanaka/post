@@ -26,11 +26,45 @@
                 <div class="c-post__show-main">
                     <div class="c-post__show-main__header">
                         <div class="c-post__show-main__header-list">
-                            <div class="c-post__show-main__header-list__date">{{ $step->created_at }}</div>
+                            <div>
+                                <a href="/profile/{{ $step->user->id }}">
+                                    @if (empty($step->user->avatar))
+                                    <img
+                                        src="/img/avatar/user.svg"
+                                        alt="avatar"
+                                        style="display: flex;
+                                        overflow: hidden;
+                                        border-radius: .2em;
+                                        width: 32px;
+                                        height: 32px;
+                                        margin-right: 8px;"
+                                        border-radius="50%"
+                                    >
+                                    @else
+                                    <img
+                                        src="{{ asset('/img/avatar/'.$step->user->avatar) }}"
+                                        alt="avatar"
+                                        style="display: flex;
+                                        overflow: hidden;
+                                        border-radius: .2em;
+                                        width: 32px;
+                                        height: 32px;
+                                        margin-right: 8px;"
+                                        border-radius="50%"
+                                    >
+                                    @endif
+                                </a>
+                            </div>
+                            <div class="c-post__show-main__header-list__name">{{ $step->user->name }}</div>
+                            <div class="c-post__show-main__header-list__date">{{ $step->created_at }}に投稿</div>
+                            <div class="c-post__show-main__header-list__time">目標時間 : {{ $step->time }}</div>
                         </div>
                     </div>
+
+                    {{-- タイトル --}}
                     <div class="c-post__show-title">{{$step->title}}</div>
 
+                    {{-- タグ --}}
                     <div class="c-post__show-tags">
                         <div class="c-post__show-tags__item">{{$step->tag1}}</div>
                         @if ($step->tag2)
@@ -47,7 +81,7 @@
                         @endif
                     </div>
 
-
+                    {{-- Vue-Editor プラグイン --}}
                     <div class="step-content">
                         <div class="step-tab-panel" id="step1">{!! $step->step1 !!}</div>
                         <div class="step-tab-panel" id="step2">{!! $step->step2 !!}</div>
@@ -58,33 +92,10 @@
 
                 </div>
                 <div class="c-post__show-right">
-                    <div>
-                        <a href="/profile/{{ $step->user->id }}">
-                        @if (empty($step->user->avatar))
-                            <img src="/img/avatar/user.svg" alt="avatar" style="width:70px; height:70px; border-radius:50%?vertical-align: middle;">
-                        @else
-                            <img src="{{ asset('/img/avatar/'.$step->user->avatar) }}" alt="avatar" style="width:70px; height:70px; border-radius:50%" border-radius="50%">
-                        @endif
-                        </a>
-                    </div>
-                    <div class="">{{ $step->user->name }}</div>
-                    <p>目標時間 : {{ $step->time }}時間</p>
-                    <p>このStepにチャレンジ</p>
-                    {{-- <div class="toc" data-toc="h1, h2, h3, h4, h5, h6"></div> --}}
+                    <div><a href="" class="c-button__show-challange">このStepにチャレンジ</a></div>
                     <div class="step-app-side c-step__side">
-                        <ul class="step-steps c-step__step">
-                            <li><a href="#step1">Step1. {{ $step->subtitle1 }}</a></li>
-                            @if ($step->subtitle2)
-                            <li><a href="#step2">2. {{ $step->subtitle2 }}</a></li>
-                            @endif
-                            @if ($step->subtitle3)
-                            <li><a href="#step3">3. {{ $step->subtitle3 }}</a></li>
-                            @endif
-                            @if ($step->subtitle4)
-                            <li><a href="#step4">4. {{ $step->subtitle4 }}</a></li>
-                            @endif
-                            <li></li>
-                        </ul>
+                        {{-- 目次 --}}
+                        <div class="toc" data-toc="h1"></div>
                     </div>
                 </div>
             </div>

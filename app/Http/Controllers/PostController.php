@@ -30,7 +30,7 @@ class PostController extends Controller
         // ]);
 
         // モデルを使って、DBに登録する値をセット
-        $step = new Post;
+        // $step = new Post;
         // fillを使って一気にいれる
         // $fillableを使っていないと変なデータが入り込んだ場合に勝手にDBが更新されてしまうので注意
         // $step->fill($request->all())->save();
@@ -97,7 +97,6 @@ class PostController extends Controller
 
             return view('posts.show', [
             'step' => $step,
-            // 'userAuth' => $userAuth,
             'defaultLiked' => $defaultLiked,
             'defaultCount' => $defaultCount
             ]);

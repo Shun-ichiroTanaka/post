@@ -1,16 +1,25 @@
 @charset "utf-8";
-
 .u-space {
-  &__a {
-    &__pt {
-      &-5 {
-        display: inline-block;
-        padding-top: 5px;
-      }
-      &-10 {
-        display: inline-block;
-        padding-top: 10px;
-      }
+    &__a {
+        &__pt {
+            &-5 {
+                display: inline-block;
+                padding-top: 5px;
+            }
+            &-10 {
+                display: inline-block;
+                padding-top: 10px;
+            }
+        }
+        &__pl {
+            &-20 {
+                padding: 20px;
+            }
+        }
+        &__mt {
+            &-200 {
+                margin-top: 200px;
+            }
+        }
     }
-  }
 }

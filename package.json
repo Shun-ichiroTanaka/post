@@ -38,12 +38,12 @@
     "dependencies": {
         "@firstandthird/toc": "^2.1.0",
         "bootstrap": "^4.4.0",
+        "import": "0.0.6",
         "postcss-loader": "^3.0.0",
         "quill-markdown-shortcuts": "0.0.10",
         "raw-loader": "^3.1.0",
         "style-loader": "^1.0.0",
         "vue-form-wizard": "^0.8.4",
-        "vue-multiselect": "^2.1.6",
         "vue2-editor": "^2.10.2",
         "vuex": "^3.1.2"
     }

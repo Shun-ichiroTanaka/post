@@ -1,20 +1,20 @@
 window.Vue = require('vue');
 
 import axios from "axios";
+
 import fontawesome from '@fortawesome/fontawesome';
 import regular from '@fortawesome/fontawesome-free-solid';
 import solid from '@fortawesome/fontawesome-free-regular';
 import brands from '@fortawesome/fontawesome-free-brands';
+
 import VueFormWizard from 'vue-form-wizard'
 import 'vue-form-wizard/dist/vue-form-wizard.min.css'
 import { VueEditor, Quill } from "vue2-editor";
-import Multiselect from 'vue-multiselect'
 import VoerroTagsInput from '@voerro/vue-tagsinput';
-// import '@desislavsd/vue-select/dist/vue-select.css'
+import '@firstandthird/toc';
 
 Vue.component('tags-input', VoerroTagsInput);
 Vue.use(VueFormWizard)
-Vue.component('multiselect', Multiselect)
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -25,13 +25,6 @@ Vue.component('multiselect', Multiselect)
 require('./bootstrap');
 // require("./parts/markdown");
 
-
-// window.axios = require('axios');
-// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
-// const token = document.head.querySelector('meta[name="csrf-token"]')
-// if (token) {
-//   window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content
-// }
 // fontawesome
 fontawesome.library.add(regular);
 fontawesome.library.add(solid);

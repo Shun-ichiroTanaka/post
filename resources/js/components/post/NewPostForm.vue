@@ -1,6 +1,7 @@
 
 <template>
     <div id="app">
+        <div class="p-auth__title"><h1>New Post</h1></div>
         <form @submit.prevent="newpost">
             <div>
                 <div class="c-post__new-title">
@@ -41,7 +42,7 @@
                     </div>
                 </div>
 
-                <form-wizard @on-complete="onComplete" color="#4BCFC8" transition="bounce" back-button-text="戻る" next-button-text="追加" finish-button-text="これ以上追加できません">
+                <form-wizard @on-complete="onComplete" color="#4BCFC8" transition="bounce" back-button-text="戻る" next-button-text="ステップを追加.." finish-button-text="これ以上追加できません">
                     <tab-content title="Step1">
                         <!-- <textarea v-model="step1" class="form-control" id="markdown_editor_textarea" placeholder=" {{ __('ここにはStepの内容について書いてください。Markdown記法で書いてみましょう！') }}"></textarea> -->
                         <vue-editor v-model="step1" id="editor1" useCustomImageHandler @image-added="handleImageAdded" placeholder="Stepは最大4つまで登録できます（例：「STEP1：まずはマクロ経済をザックリ理解しよう」）"></vue-editor>
@@ -88,11 +89,6 @@ export default {
             // 投稿情報
             title: "",
             tags: [],
-            // tag1: tags[0],
-            // tag2: tags[1],
-            // tag3: tags[2],
-            // tag4: tags[3],
-            // tag5: tags[4],
             step1: "",
             step2: "",
             step3: "",
@@ -101,8 +97,7 @@ export default {
         };
 
     },
-    mounted() {
-    },
+    mounted() {},
     methods: {
         // 新規投稿
         newpost() {
@@ -111,11 +106,6 @@ export default {
             var article = {
                 title: self.title,
                 tags: self.tags,
-                // tag1: self.tags[0],
-                // tag2: self.tags[1],
-                // tag3: self.tags[2],
-                // tag4: self.tags[3],
-                // tag5: self.tags[4],
                 step1: self.step1,
                 step2: self.step2,
                 step3: self.step3,
