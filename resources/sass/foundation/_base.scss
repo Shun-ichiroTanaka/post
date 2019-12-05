@@ -1,11 +1,13 @@
 @charset "utf-8";
-
+@import url('https://fonts.googleapis.com/css?family=Roboto|Rubik&display=swap');
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  box-sizing: border-box !important;
   background: #f9fbfe !important;
+  font-family: Rubik, "Noto Sans JP", sans-serif !important;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

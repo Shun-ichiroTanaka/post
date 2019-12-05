@@ -19,6 +19,7 @@
                         </a>
                         @endif
                         <a href="#" class="c-button__show-social__stock"><i class="fas fa-folder-open"></i></a>
+
                         {{-- <a href="#" class="c-button__show-social__twitter"><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a> --}}
                     </div>
                 </div>
@@ -95,6 +96,7 @@
                     <div><a href="" class="c-button__show-challange">このStepにチャレンジ</a></div>
                     <div class="step-app-side c-step__side">
                         {{-- 目次 --}}
+                        <p>ステップ</p>
                         <div class="toc" data-toc="h1"></div>
                     </div>
                 </div>
@@ -102,9 +104,7 @@
         </div>
     </div>
 </div>
-{{-- <script>
-    var token = '{{ Session::token() }}';
-    var urlEdit = '{{ route('edit') }}';
-    var urlLike = '{{ route('like') }}';
-</script> --}}
+<script type="text/javascript">
+    document.title = `{{ $step['title'] }}'`
+</script>
 @endsection

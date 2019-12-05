@@ -1,0 +1,43 @@
+@charset "utf-8";
+.p-mypage {
+    width: 100%;
+    margin: 0 auto;
+    &__bg {
+        width: 1800px;
+        height: 280px;
+        background: #1CD8D2;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #93EDC7, #1CD8D2);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #93EDC7, #1CD8D2);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    &__user {
+        width: 500px;
+        text-align: center;
+        margin: 0 auto;
+        &-img {
+            display: block;
+            margin-top: -100px;
+            margin-bottom: 20px;
+        }
+        &-name {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        &-change {
+            &__img {
+                position: absolute;
+                display: inline-block;
+                top: 18em;
+                margin-left: 120px;
+                color: #000;
+                font-size: 1.3em;
+            }
+        }
+        &-info{
+            display: block;
+            margin-bottom: 30px;
+        }
+    }
+}

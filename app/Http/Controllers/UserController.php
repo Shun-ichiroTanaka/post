@@ -11,11 +11,7 @@ use App\Post;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function profile($id)
     {
         $user = User::find($id);
@@ -31,6 +27,8 @@ class UserController extends Controller
 
     }
 
+    // プロフィール編集
+    // ユーザー情報を含めたviewファイルを返す
     public function edit()
     {
         if (Auth::user()) {
@@ -47,13 +45,7 @@ class UserController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // プロフィールアップデート
     public function update(Request $request)
     {
         $user = User::find(Auth::user()->id);
@@ -65,17 +57,20 @@ class UserController extends Controller
                 $validate = $request->validate([
                   'name' => 'required|min:2',
                   'email' => 'required|email',
+                  'info' => 'required|string|max:130',
                 ]);
             } else {
                 $validate = $request->validate([
                   'name' => 'required|min:2',
                   'email' => 'required|email|unique:users|',
+                  'info' => 'required|string|max:130',
                 ]);
             }
 
             if($validate) {
                 $user->name = $request['name'];
                 $user->email = $request['email'];
+                $user->info = $request['info'];
                 $user->save();
                 return redirect()->back()->with('flash_message', 'プロフィールを変更しました!');
 

@@ -42047,7 +42047,7 @@ var render = function() {
                         id: "editor1",
                         useCustomImageHandler: "",
                         placeholder:
-                          "Stepは最大4つまで登録できます（例：「STEP1：まずはマクロ経済をザックリ理解しよう」）"
+                          "各ステップのサブタイトル(Heading1)を最初につけましょう（例：「STEP1：まずはマクロ経済をザックリ理解しよう」）"
                       },
                       on: { "image-added": _vm.handleImageAdded },
                       model: {
@@ -55792,8 +55792,8 @@ function getCookieValue(searchKey) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/MAMP/htdocs/laravel/stepc/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/laravel/stepc/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/Laravel/stepc/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/Laravel/stepc/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -63,7 +63,7 @@ class PostController extends Controller
 
         //「投稿する」をクリックしたら投稿情報表示ページへリダイレクト
         // その時にsessionフラッシュにメッセージを入れる
-        return redirect("/post/{$step->id}")->with('flash_message', __('投稿しました!'));
+        // return redirect("/post/{$step->id}")->with('flash_message', __('投稿しました!'));
         // return response()->json(['success'=>'投稿に成功しました！']);
         // return redirect("/")->with('flash_message', __('投稿しました!'));
     }
