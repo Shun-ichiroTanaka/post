@@ -105,6 +105,6 @@
     </div>
 </div>
 <script type="text/javascript">
-    document.title = `{{ $step['title'] }}'`
+    document.title = `{{ $step['title'] }}`
 </script>
 @endsection

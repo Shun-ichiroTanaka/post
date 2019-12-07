@@ -1,7 +1,9 @@
 @charset "utf-8";
+
 .p-mypage {
     width: 100%;
     margin: 0 auto;
+
     &__bg {
         width: 1800px;
         height: 280px;
@@ -12,19 +14,23 @@
         background: linear-gradient(to right, #93EDC7, #1CD8D2);
         /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
+
     &__user {
         width: 500px;
         text-align: center;
         margin: 0 auto;
+
         &-img {
             display: block;
             margin-top: -100px;
             margin-bottom: 20px;
         }
+
         &-name {
             font-size: 2rem;
             margin-bottom: 20px;
         }
+
         &-change {
             &__img {
                 position: absolute;
@@ -35,7 +41,8 @@
                 font-size: 1.3em;
             }
         }
-        &-info{
+
+        &-info {
             display: block;
             margin-bottom: 30px;
         }

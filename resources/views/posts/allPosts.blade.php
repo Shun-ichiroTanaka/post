@@ -1,6 +1,5 @@
 @foreach ($articles as $article)
 <div class="article-box">
-    {{-- <div class="article-box-left"></div> --}}
     <div class="article-box-left">
         @if (empty($article->user->avatar))
         <img src="/img/avatar/user.svg" alt="avatar" style="width:40px; height:40px; border-radius:50%?vertical-align: middle;">
@@ -16,13 +15,10 @@
     </div>
 </div>
 @endforeach
+
 <!-- ページネーション -->
-
-    <div class="u-pagenation">
-        {{ $articles->links() }}
-    </div>
-
-<example-component></example-component>
-
+<div class="u-pagenation">
+    {{ $articles->links() }}
+</div>
 {{-- {!! $articles->render() !!}
 // ページャー --}}

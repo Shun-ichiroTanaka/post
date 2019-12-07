@@ -16,7 +16,15 @@ post-componentで投稿一覧を表示
             <h3>カテゴリーから探す</h3>
         </div>
         <div class="l-container__main">
-                {{-- <posts></posts> --}}
+            <div class="c-post__detail">
+                全ての投稿一覧
+            </div>
+            {{-- <allposts
+            :article-id="{{ json_encode($articles->id) }}"
+            :user-name="{{ json_encode($articles->name) }}"
+            :user-Avatar="{{ json_encode($articles->avatar) }}"
+            :article-Createdtime="{{ json_encode($articles->created_at) }}"
+            ></allposts> --}}
             @include('posts.allPosts')
         </div>
         <div class="l-container__right">

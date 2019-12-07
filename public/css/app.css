@@ -8,7 +8,12 @@ body {
           flex-direction: column;
   min-height: 100%;
   box-sizing: border-box !important;
-  background: #f9fbfe !important;
+  background: #f3f2f1;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#FFFFFF), to(#f5f2ef));
+  background: linear-gradient(to right, #FFFFFF, #f5f2ef);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-family: Rubik, "Noto Sans JP", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -739,13 +744,13 @@ table {
   height: 50px;
   padding: 9px 0;
   margin-bottom: 10px;
-  color: #ff8ba7;
+  color: #ED4264;
   font-size: 20px;
   text-align: center;
   background: #f5f5f5;
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  border: 2px solid #ff8ba7;
+  border: 2px solid #ED4264;
   border-radius: 50%;
   outline: none;
   -webkit-border-radius: 50%;
@@ -762,10 +767,13 @@ table {
   color: #fff;
   font-size: 20px;
   text-align: center;
-  background: #ff8ba7;
-  background-color: #ff8ba7;
+  background: #ED4264;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#FFEDBC), to(#ED4264));
+  background: linear-gradient(to right, #FFEDBC, #ED4264);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  border: 2px solid #ff8ba7;
   border-radius: 50%;
   outline: none;
   -webkit-border-radius: 50%;

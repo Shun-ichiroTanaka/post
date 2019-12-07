@@ -28,16 +28,15 @@ class HomeController extends Controller
         // postsテーブルには投稿した記事が全て入るので、上のコードでは投稿した記事を全て新しい順に取得
         $userAuth = \Auth::user();
         $articles = Post::orderBy('created_at', 'asc')->paginate(15);
-        $articles->load('likes');
-        $articles->load('user');
+        $articles->load('likes','user');
 
-        return view('home', [
-            'articles' => $articles,
-            'userAuth' => $userAuth
-        ]);
+        // return view('home', [
+        //     'articles' => $articles,
+        //     'userAuth' => $userAuth
+        // ]);
 
         // compactを使うことによってビューに$articleが送られる
-        // return view('home', compact('articles'));
+        return view('home', compact('articles'));
     }
 }
 

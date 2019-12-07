@@ -17,6 +17,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/',function(){
+    return App\Post::all();
+    return App\User::all();
+    return App\Like::all();
+});
+// Route::get('/', 'HomeController@showTopPage');
+Route::get('/post/{id}', 'PostController@showStep');
+
+// Route::get('/', 'HomeController@showTopPage');
+
 Route::group(['middleware' => 'api'],function(){
     // いいね Axios
     Route::post('/posts/{post}/like', 'LikeController@like');
