@@ -15,6 +15,7 @@ class PostController extends Controller
         return view('posts.new');
     }
 
+    // 新規投稿
     public function postStep(Request $request)
     {
 
@@ -69,15 +70,22 @@ class PostController extends Controller
     }
 
 
-
+    // 詳細ページ
     public function showstep($id)
     {
         if (Auth::check()) {
             $userAuth = \Auth::user();
             $step = Post::where('id', $id)->first();
-            $defaultCount = count($step->likes);
+            $defaultlikeCount = count($step->likes);
+            $defaultstockCount = count($step->stocks);
             $defaultLiked = $step->likes->where('user_id', $userAuth->id)->first();
             if(is_countable($defaultLiked) == 0) {
+                $defaultLiked == false;
+            } else {
+                $defaultLiked == true;
+            }
+            $defaultStocked = $step->stocks->where('user_id', $userAuth->id)->first();
+            if(is_countable($defaultStocked) == 0) {
                 $defaultLiked == false;
             } else {
                 $defaultLiked == true;
@@ -87,18 +95,24 @@ class PostController extends Controller
             'step' => $step,
             'userAuth' => $userAuth,
             'defaultLiked' => $defaultLiked,
-            'defaultCount' => $defaultCount
+            'defaultStocked' => $defaultStocked,
+            'defaultlikeCount' => $defaultlikeCount,
+            'defaultstockCount' => $defaultstockCount
             ]);
 
         }else {
             $step = Post::where('id', $id)->first();
-            $defaultCount = count($step->likes);
+            $defaultlikeCount = count($step->likes);
+            $defaultstockCount = count($step->stocks);
             $defaultLiked = $step->likes;
+            $defaultStocked = $step->stocks;
 
             return view('posts.show', [
             'step' => $step,
             'defaultLiked' => $defaultLiked,
-            'defaultCount' => $defaultCount
+            'defaultStocked' => $defaultStocked,
+            'defaultlikeCount' => $defaultlikeCount,
+            'defaultstockCount' => $defaultstockCount
             ]);
         }
 

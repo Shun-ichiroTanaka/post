@@ -29,7 +29,7 @@
                         border-radius="50%">
                     @else
                         <img
-                        src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}"
+                        src="{{ asset('/img/avatar/'.$user->avatar) }}"
                         alt="avatar"
                         style="
                         display: block;

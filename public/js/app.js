@@ -7947,7 +7947,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['postId', 'userId', 'defaultLiked', 'defaultCount'],
+  props: ['postId', 'userId', 'defaultLiked', 'defaultlikeCount'],
   data: function data() {
     return {
       liked: false,
@@ -7956,7 +7956,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     this.liked = this.defaultLiked;
-    this.likeCount = this.defaultCount;
+    this.likeCount = this.defaultlikeCount;
   },
   methods: {
     like: function like(postId) {
@@ -8018,7 +8018,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['postId', 'userId', 'defaultStocked', 'defaultCount'],
+  props: ['postId', 'userId', 'defaultStocked', 'defaultstockCount'],
   data: function data() {
     return {
       stocked: false,
@@ -8027,7 +8027,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     this.stocked = this.defaultStocked;
-    this.stockCount = this.defaultCount;
+    this.stockCount = this.defaultstockCount;
   },
   methods: {
     stock: function stock(postId) {
@@ -42437,13 +42437,7 @@ var render = function() {
             }
           },
           [
-            _c("span", [
-              _c("i", { staticClass: "fas fa-folder c-button" }),
-              _vm._v(" "),
-              _c("p", { staticClass: "c-button__show-social__stockcount" }, [
-                _vm._v(_vm._s(_vm.stockCount))
-              ])
-            ]),
+            _vm._m(0),
             _vm._v(" "),
             _c("p", { staticClass: "u-other__fukidashi-stock" }, [
               _vm._v("マイページに登録します")
@@ -42462,13 +42456,7 @@ var render = function() {
             }
           },
           [
-            _c("span", [
-              _c("i", { staticClass: "fas fa-folder-open c-button" }),
-              _vm._v(" "),
-              _c("p", { staticClass: "c-button__show-social__stockcount" }, [
-                _vm._v(_vm._s(_vm.stockCount))
-              ])
-            ]),
+            _vm._m(1),
             _vm._v(" "),
             _c("p", { staticClass: "u-other__fukidashi-stock" }, [
               _vm._v("登録を解除します")
@@ -42477,7 +42465,20 @@ var render = function() {
         )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [_c("i", { staticClass: "fas fa-folder c-button" })])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [_c("i", { staticClass: "fas fa-folder-open c-button" })])
+  }
+]
 render._withStripped = true
 
 

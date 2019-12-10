@@ -14,17 +14,20 @@ class UserController extends Controller
 
     public function profile($id)
     {
-        $user = User::find($id);
-        $articles = Post::orderBy('created_at', 'asc')->get();
+        if (Auth::check()) {
+            $user = User::find($id);
+            $articles = Post::orderBy('created_at', 'asc')->get();
+    
+            if ($user) {
+                return view('user.profile',compact('articles'))->withUser($user);
+            } else {
+                // URLからidをいじって他のユーザーページにアクセスしないように例外処理
+                // ＝自分のid以外にアクセスさせない
+                return redirect()->back();
+            }
+        }else {
 
-        if ($user) {
-            return view('user.profile',compact('articles'))->withUser($user);
-        } else {
-            // URLからidをいじって他のユーザーページにアクセスしないように例外処理
-            // ＝自分のid以外にアクセスさせない
-            return redirect()->back();
         }
-
     }
 
     // プロフィール編集

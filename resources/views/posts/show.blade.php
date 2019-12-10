@@ -11,18 +11,18 @@
                             :post-id="{{ json_encode($step->id) }}"
                             :user-id="{{ json_encode($userAuth->id) }}"
                             :default-Liked="{{ json_encode($defaultLiked) }}"
-                            :default-Count="{{ json_encode($defaultCount) }}"
+                            :defaultlike-Count="{{ json_encode($defaultlikeCount) }}"
                         ></like>
                         <stock
                             :post-id="{{ json_encode($step->id) }}"
                             :user-id="{{ json_encode($userAuth->id) }}"
-                            {{-- :default-Stocked="{{ json_encode($defaultStocked) }}" --}}
-                            {{-- :default-Count="{{ json_encode($defaultCount) }}" --}}
+                            :default-Stocked="{{ json_encode($defaultStocked) }}"
+                            :defaultstock-Count="{{ json_encode($defaultstockCount) }}"
                         ></stock>
                         @else
                         <a href="/login">
-                            <like :default-Count="{{ json_encode($defaultCount) }}"></like>
-                            <stock></stock>
+                            <like :defaultlike-Count="{{ json_encode($defaultlikeCount) }}"></like>
+                            <stock :defaultstock-Count="{{ json_encode($defaultstockCount) }}"></stock>
                         </a>
                         @endif
                         {{-- <a href="#" class="c-button__show-social__twitter"><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a> --}}

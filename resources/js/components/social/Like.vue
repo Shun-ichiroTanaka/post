@@ -19,7 +19,7 @@
 
 <script>
     export default {
-        props: ['postId', 'userId', 'defaultLiked', 'defaultCount'],
+        props: ['postId', 'userId', 'defaultLiked', 'defaultlikeCount'],
         data() {
             return {
                 liked: false,
@@ -28,7 +28,7 @@
         },
         created () {
             this.liked = this.defaultLiked
-            this.likeCount = this.defaultCount
+            this.likeCount = this.defaultlikeCount
         },
 
         methods: {

@@ -3,14 +3,14 @@
        <button v-if="!stocked" type="button" class="c-button__show-social__stock" @click="stock(postId)">
          <span>
             <i class="fas fa-folder c-button"></i>
-            <p class="c-button__show-social__stockcount">{{ stockCount }}</p>
+            <!-- <p class="c-button__show-social__stockcount">{{ stockCount }}</p> -->
          </span>
           <p class="u-other__fukidashi-stock">マイページに登録します</p>
        </button>
        <button v-else type="button" class="c-button__show-social__unstock" @click="unstock(postId)">
          <span>
             <i class="fas fa-folder-open c-button"></i>
-            <p class="c-button__show-social__stockcount">{{ stockCount }}</p>
+            <!-- <p class="c-button__show-social__stockcount">{{ stockCount }}</p> -->
          </span>
          <p class="u-other__fukidashi-stock">登録を解除します</p>
        </button>
@@ -19,7 +19,7 @@
 
 <script>
     export default {
-        props: ['postId', 'userId', 'defaultStocked', 'defaultCount'],
+        props: ['postId', 'userId', 'defaultStocked', 'defaultstockCount'],
         data() {
             return {
                 stocked: false,
@@ -28,7 +28,7 @@
         },
         created () {
             this.stocked = this.defaultStocked
-            this.stockCount = this.defaultCount
+            this.stockCount = this.defaultstockCount
         },
 
         methods: {
