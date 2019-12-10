@@ -8,18 +8,23 @@
                     <div class="c-button__show-social">
                         @if (Auth::check())
                         <like
-                        :post-id="{{ json_encode($step->id) }}"
-                        :user-id="{{ json_encode($userAuth->id) }}"
-                        :default-Liked="{{ json_encode($defaultLiked) }}"
-                        :default-Count="{{ json_encode($defaultCount) }}"
+                            :post-id="{{ json_encode($step->id) }}"
+                            :user-id="{{ json_encode($userAuth->id) }}"
+                            :default-Liked="{{ json_encode($defaultLiked) }}"
+                            :default-Count="{{ json_encode($defaultCount) }}"
                         ></like>
+                        <stock
+                            :post-id="{{ json_encode($step->id) }}"
+                            :user-id="{{ json_encode($userAuth->id) }}"
+                            {{-- :default-Stocked="{{ json_encode($defaultStocked) }}" --}}
+                            {{-- :default-Count="{{ json_encode($defaultCount) }}" --}}
+                        ></stock>
                         @else
                         <a href="/login">
                             <like :default-Count="{{ json_encode($defaultCount) }}"></like>
+                            <stock></stock>
                         </a>
                         @endif
-                        <a href="#" class="c-button__show-social__stock"><i class="fas fa-folder-open"></i></a>
-
                         {{-- <a href="#" class="c-button__show-social__twitter"><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a> --}}
                     </div>
                 </div>
@@ -89,6 +94,7 @@
                         <div class="step-tab-panel" id="step3">{!! $step->step3 !!}</div>
                         <div class="step-tab-panel" id="step4">{!! $step->step4 !!}</div>
                     </div>
+                    
 
 
                 </div>

@@ -16,24 +16,32 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+    // Route::get('/',function(){
+    //     return App\Post::all();
+    //     return App\User::all();
+    //     // return App\Like::all();
+    // });
 
-Route::get('/',function(){
-    return App\Post::all();
-    return App\User::all();
-    return App\Like::all();
+Route::group(['middleware' => 'guest:api'], function () {
+    Route::get('/post/{id}', 'PostController@showStep');
+
+    // Route::get('/', 'HomeController@showTopPage');
+
 });
-// Route::get('/', 'HomeController@showTopPage');
-Route::get('/post/{id}', 'PostController@showStep');
-
-// Route::get('/', 'HomeController@showTopPage');
 
 Route::group(['middleware' => 'api'],function(){
+    // Route::get('/', 'HomeController@showTopPage');
+
     // いいね Axios
     Route::post('/posts/{post}/like', 'LikeController@like');
     Route::post('/posts/{post}/unlike', 'LikeController@unlike');
 
+    // ストック Axios
+    Route::post('/posts/{post}/stock', 'StockController@stock');
+    Route::post('/posts/{post}/unstock', 'StockController@unstock');
 
-    // 第一引数にControllerのメソッド名
+    // 新規投稿
     Route::post('/user/post/new', 'PostController@postStep');
 
 });
+

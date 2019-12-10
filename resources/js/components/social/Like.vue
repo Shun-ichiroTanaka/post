@@ -1,12 +1,18 @@
 <template>
    <div>
        <button v-if="!liked" type="button" class="c-button__show-social__like" @click="like(postId)">
-            <i class="fas fa-heart c-button"></i>
-            <p class="c-button__show-social__count">{{ likeCount }}</p>
+           <span>
+                <i class="fas fa-heart c-button"></i>
+                <p class="c-button__show-social__count">{{ likeCount }}</p>
+           </span>
+            <p class="u-other__fukidashi-like">いいねをします</p>
        </button>
-       <button v-else type="button" class="c-button__show-social__dislike" @click="unlike(postId)">
-            <i class="fas fa-heart c-button"></i>
-            <p class="c-button__show-social__count">{{ likeCount }}</p>
+       <button v-else type="button" class="c-button__show-social__dislike text" @click="unlike(postId)">
+           <span>
+                <i class="fas fa-heart c-button"></i>
+                <p class="c-button__show-social__count">{{ likeCount }}</p>
+           </span>
+            <p class="u-other__fukidashi-like">いいねを取り消します</p>
        </button>
    </div>
 </template>

@@ -20,8 +20,8 @@
 
             @include('layouts.footer')
         </div>
+    {{-- <router-view></router-view> --}}
     </div>
-    <router-view></router-view>
 
     @include('layouts.script')
 </body>

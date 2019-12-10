@@ -1,6 +1,9 @@
 <template>
     <div id="app">
         <div class="c-post">
+            <div class="c-post__detail">
+                全ての投稿一覧
+            </div>
             <!-- <div class="c-post__box">
                 <div class="c-post__box-img" v-for="(user, u) in users" :key="`${u}-${user.id}`">{{ user.avatar }}</div>
                 <div class="c-post__box-title">
@@ -10,7 +13,7 @@
             </div> -->
             <div class="article-box" v-for="article in articles" :key="article.id">
                 <div class="article-box-left">
-                    <img src="user.avatar" alt="avatar" style="width:40px; height:40px; border-radius:50%" border-radius="50%">
+                    <!-- <img src="user.avatar" alt="avatar" style="width:40px; height:40px; border-radius:50%" border-radius="50%"> -->
                     <img src="/img/avatar/user.svg" alt="avatar" style="width:40px; height:40px; border-radius:50%?vertical-align: middle;">
                 </div>
                 <div class="article-box-right">

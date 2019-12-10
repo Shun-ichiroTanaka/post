@@ -40,6 +40,7 @@
         "quill-markdown-shortcuts": "0.0.10",
         "raw-loader": "^3.1.0",
         "style-loader": "^1.0.0",
+        "validate.js": "^0.13.1",
         "vue-form-wizard": "^0.8.4",
         "vue2-editor": "^2.10.2",
         "vuex": "^3.1.2"

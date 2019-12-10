@@ -30,7 +30,7 @@
                             <ul>
                                 {{-- <li><a href="{{ route('mypage.index') }}">{{ __('Mypage') }}</a> --}}
                                     <li><a href="{{ route('user.profile', Auth::user()->id ) }}">{{ __('Mypage') }}</a></li>
-                                    <li><a href="{{ route('user.edit', Auth::user()->id ) }}">{{ __('Edit Profile') }}</a></li>
+                                    {{-- <li><a href="{{ route('user.edit', Auth::user()->id ) }}">{{ __('Edit Profile') }}</a></li> --}}
                                     <li>
                                         <div>
                                             <a class="" href="{{ route('logout') }}"

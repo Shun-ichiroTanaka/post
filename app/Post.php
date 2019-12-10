@@ -46,6 +46,12 @@ class Post extends Model
         return $this->hasMany('App\Like');
     }
 
+    // ストックモデル
+    public function stocks()
+    {
+        return $this->hasMany('App\Stock');
+    }
+
     // タグモデル
     // belongsToMany() メソッドの第１引数には関連するモデル名を渡します。
     // 第２引数は多対多の中間テーブル名を渡します。

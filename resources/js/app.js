@@ -13,6 +13,7 @@ import { VueEditor, Quill } from "vue2-editor";
 import VoerroTagsInput from '@voerro/vue-tagsinput';
 import '@firstandthird/toc';
 
+
 Vue.component('tags-input', VoerroTagsInput);
 Vue.use(VueFormWizard)
 
@@ -47,7 +48,8 @@ Vue.component('newpostform', require('./components/post/NewPostForm.vue').defaul
 Vue.component('allposts', require('./components/post/AllPosts.vue').default);
 
 Vue.component('like', require('./components/social/Like.vue').default);
-Vue.component('likecount', require('./components/social/LikeCount.vue').default);
+Vue.component('stock', require('./components/social/Stock.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
