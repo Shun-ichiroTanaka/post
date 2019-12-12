@@ -1,0 +1,115 @@
+<div class="tabs">
+    {{-- @if (Auth::check()) --}}
+    {{-- タブのタイトル --}}
+    <input id="ownpost" type="radio" name="tab_item" checked>
+    <label class="tab_item" for="ownpost">投稿</label>
+
+    <input id="like" type="radio" name="tab_item">
+    <label class="tab_item" for="like">いいね</label>
+
+    <input id="tyarenzi-step" type="radio" name="tab_item">
+    <label class="tab_item" for="tyarenzi-step">チャレンジ中</label>
+
+    <input id="stock" type="radio" name="tab_item">
+    <label class="tab_item" for="stock">登録中</label>
+
+    {{-- タブの中身 --}}
+    <div class="tab_content" id="ownpost_content">
+        @foreach ($articles as $article)
+        @if (!empty($article->id))
+        <div class="article-box">
+            <div class="article-box-left">
+                <a href="/user/{{$article->user_id}}">
+                    @if (empty($article->user->avatar))
+                    <img src="/img/avatar/user.svg" alt="avatar"
+                        style="width:40px; height:40px; border-radius:50%?vertical-align: middle;">
+                    @else
+                    <img src="{{ asset('/img/avatar/'.$article->user->avatar) }}" alt="avatar"
+                        style="width:40px; height:40px; border-radius:50%" border-radius="50%">
+                    @endif
+                </a>
+            </div>
+            <div class="article-box-right">
+                <a class="article-title" href="/post/{{$article->id}}">{{ $article->title }}</a>
+                <div class="article-details">
+                    <div class="article-date">{{ $article->created_at }}</div>
+                </div>
+            </div>
+        </div>
+        @else
+        まだ投稿がありません
+        @endif
+        @endforeach
+    </div>
+    <div class="tab_content" id="like_content">
+        @foreach ($likes as $like)
+        {{-- @if (!empty($like->id)) --}}
+        <div class="article-box">
+            <div class="article-box-left">
+            </div>
+            <div class="article-box-right">
+                {{ $like->user->id }}
+            </div>
+        </div>
+        {{-- @else --}}
+        <p>まだいいねをしていません</p>
+        {{-- @endif --}}
+        @endforeach
+    </div>
+    <div class="tab_content" id="tyarenzi-step_content">
+        @foreach ($articles as $article)
+        @if (!empty($article->id))
+        <div class="article-box">
+            <div class="article-box-left">
+                <a href="/user/{{$article->user_id}}">
+                    @if (empty($article->user->avatar))
+                    <img src="/img/avatar/user.svg" alt="avatar"
+                        style="width:40px; height:40px; border-radius:50%?vertical-align: middle;">
+                    @else
+                    <img src="{{ asset('/img/avatar/'.$article->user->avatar) }}" alt="avatar"
+                        style="width:40px; height:40px; border-radius:50%" border-radius="50%">
+                    @endif
+                </a>
+            </div>
+            <div class="article-box-right">
+                <a class="article-title" href="/post/{{$article->id}}">{{ $article->title }}</a>
+                <div class="article-details">
+                    <div class="article-date">{{ $article->created_at }}</div>
+                </div>
+            </div>
+        </div>
+        @else
+        まだ投稿がありません
+        @endif
+        @endforeach
+    </div>
+    <div class="tab_content" id="stock_content">
+        @foreach ($articles as $article)
+        @if (!empty($article->id))
+        <div class="article-box">
+            <div class="article-box-left">
+                <a href="/user/{{$article->user_id}}">
+                    @if (empty($article->user->avatar))
+                    <img src="/img/avatar/user.svg" alt="avatar"
+                        style="width:40px; height:40px; border-radius:50%?vertical-align: middle;">
+                    @else
+                    <img src="{{ asset('/img/avatar/'.$article->user->avatar) }}" alt="avatar"
+                        style="width:40px; height:40px; border-radius:50%" border-radius="50%">
+                    @endif
+                </a>
+            </div>
+            <div class="article-box-right">
+                <a class="article-title" href="/post/{{$article->id}}">{{ $article->title }}</a>
+                <div class="article-details">
+                    <div class="article-date">{{ $article->created_at }}</div>
+                </div>
+            </div>
+        </div>
+        @else
+        まだ投稿がありません
+        @endif
+        @endforeach
+    </div>
+    {{-- @else
+    @endif --}}
+</div>

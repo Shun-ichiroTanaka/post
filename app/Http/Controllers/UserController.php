@@ -18,8 +18,9 @@ class UserController extends Controller
         $user = User::find($id);
         // 自分の投稿のみを取り出す
         $articles = \App\Post::where('user_id', $id )->get();
-        $likes = \App\Post::where('user_id', 'like_id' )->get();
-
+        
+        // いいねを取り出す
+        $likes = \App\Like::where('user_id', $user )->get();
 
 
         if ($user) {

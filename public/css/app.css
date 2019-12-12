@@ -403,6 +403,7 @@ table {
 
 .l-container__main {
   width: 585px;
+  margin: 0 auto;
   background: #fff;
 }
 
@@ -411,43 +412,6 @@ table {
   height: 100vh;
   margin: 0 20px;
   background: #fff;
-}
-
-.l-container__left {
-  width: 200px;
-  height: 100vh;
-}
-
-.l-container__left-mypage {
-  width: 300px;
-  height: 100vh;
-}
-
-.l-container__left-mypage h1 {
-  font-size: 1.6em;
-  margin-top: 0.5em;
-  line-height: 1.4;
-  position: relative;
-}
-
-.l-container__right {
-  width: 295px;
-  height: 100vh;
-  margin-top: 260px;
-  margin-left: 20px;
-  background: #fff;
-}
-
-.l-container__right-mypage {
-  width: 300px;
-  height: 100vh;
-  margin-top: 0;
-  background: #fff;
-}
-
-.l-container__right-profile {
-  display: -webkit-box;
-  display: flex;
 }
 
 .c-post__detail {
@@ -2089,16 +2053,17 @@ table {
 .p-mypage__bg {
   width: 1800px;
   height: 280px;
-  background: #1CD8D2;
+  background: #50C9C3;
   /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#93EDC7), to(#1CD8D2));
-  background: linear-gradient(to right, #93EDC7, #1CD8D2);
+  background: -webkit-gradient(linear, left top, right top, from(#96DEDA), to(#50C9C3));
+  background: linear-gradient(to right, #96DEDA, #50C9C3);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .p-mypage__user {
   width: 500px;
+  min-height: 300px;
   text-align: center;
   margin: 0 auto;
 }
@@ -2123,10 +2088,20 @@ table {
   font-size: 1.3em;
 }
 
-.p-mypage__user-info {
+.p-mypage__user-change__info {
   display: block;
-  margin-bottom: 30px;
-  word-wrap: break-word;
+  width: 100%;
+  margin: 30px 0;
+  word-wrap: break-word !important;
+}
+
+.p-mypage__tab {
+  width: 1000px;
+  height: auto;
+  margin: 50px auto;
+  padding: 20px 0;
+  border-bottom: solid 1px #e8eef5;
+  border-top: solid 1px #e0e7ef;
 }
 
 /*タブ切り替え全体のスタイル*/

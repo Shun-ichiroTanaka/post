@@ -120,7 +120,7 @@ export default {
             axios.post( url, article )
             .then(function(response) {
                 console.log('新規投稿に成功しました')
-                // location.href = '/';
+                location.href = '/';
                 // console.log(e.response.article.errors)
             })
             .catch(e => {
