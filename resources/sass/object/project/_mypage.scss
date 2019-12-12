@@ -48,3 +48,58 @@
         }
     }
 }
+
+/*タブ切り替え全体のスタイル*/
+.tabs {
+    margin-top: 50px;
+    padding-bottom: 40px;
+    width: 1000px;
+    margin: 0 auto;}
+  
+  /*タブのスタイル*/
+  .tab_item {
+    width: calc(100%/3);
+    height: 50px;
+    border-bottom: 3px solid #5ab4bd;
+    background-color: #f3f2f2;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    color: #565656;
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.1s ease;
+  }
+  .tab_item:hover {
+    opacity: 0.75;
+  }
+  
+  /*ラジオボタンを全て消す*/
+  input[name="tab_item"] {
+    display: none;
+  }
+  
+  /*タブ切り替えの中身のスタイル*/
+  .tab_content {
+    display: none;
+    padding: 40px 40px 0;
+    clear: both;
+    overflow: hidden;
+  }
+  
+  
+  /*選択されているタブのコンテンツのみを表示*/
+  #ownpost:checked ~ #ownpost_content,
+  #tyarenzi-step:checked ~ #tyarenzi-step_content,
+  #like:checked ~ #like_content,
+  #stock:checked ~ #stock_content {
+    display: block;
+  }
+  
+  /*選択されているタブのスタイルを変える*/
+  .tabs input:checked + .tab_item {
+    background-color: #5ab4bd;
+    color: #fff;
+  }

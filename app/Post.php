@@ -34,20 +34,26 @@ class Post extends Model
     // $guardにする場合は、データの追加や更新をされたくないラムのみを指定して、あとは全部許可するという$fillableの逆の方式
     // protected $guarded = ['id'];
 
-    // ユーザーモデル
+    /**
+     * この投稿を所有するUserを取得
+     */
     public function user()
     {
         return $this->belongsTo('App\User');
     }
 
-    // いいねモデル
+    /**
+     * 投稿のいいねを取得
+     */
     public function likes()
     {
         return $this->hasMany('App\Like');
     }
 
-    // ストックモデル
-    public function stocks()
+    /**
+     * 投稿のストックを取得
+     */
+     public function stocks()
     {
         return $this->hasMany('App\Stock');
     }
@@ -57,6 +63,9 @@ class Post extends Model
     // 第２引数は多対多の中間テーブル名を渡します。
     // 上記の例では第２引数は省略されています。省略された場合は、モデル名をアルファベット順で並べた物が中間テーブル名となります。
     // 中間テーブル名に規約から外れた物を指定したい時に、第２引数を指定します。
+    /**
+     * 投稿に所属する役目を取得
+     */
     public function tags()
     {
         return $this->belongsToMany('App\Tag')->withTimestamps();

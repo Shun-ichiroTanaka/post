@@ -1,6 +1,6 @@
 <header class="l-header">
     <div class="">
-        <h1 class="l-header__title"><a href="{{ url('/') }}"><img src="{{ asset('/img/title.svg') }}" alt=""></a></h1>
+        <p class="l-header__title"><a href="{{ url('/') }}">R2 β</a></p>
         <nav class="l-header__nav">
             <ul>
                 @guest

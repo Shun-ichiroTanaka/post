@@ -42,15 +42,16 @@
   .l-header {
     display: flex;
     align-items: center;
-    height: 50px;
+    height: 65px;
     color: #3b3d4b;
     box-shadow: 0 1px 3px rgba(160,166,179,.3);
 
     &__title {
-      height: 50px;
+      height: 65px;
+      line-height: 65px;
       margin-left: 50px;
-      text-decoration: none;
-      vertical-align: center !important;
+      font-size: 2rem;
+      color: #000 !important;
     }
     &__nav {
       position: absolute;
@@ -65,7 +66,7 @@
 
       & ul {
         width: auto;
-        line-height: 50px;
+        line-height: 65px;
         white-space: nowrap;
       }
       & li {
@@ -122,7 +123,7 @@
     overflow: hidden;
     width: 250px;
     max-height: 0;
-    font: bold 12px "Open Sans Condensed", sans-serif;
+    font: bold;
     text-align: center;
     list-style: none;
             transition: max-height .4s linear;
@@ -185,7 +186,7 @@
       align-items: center;
       min-width: 100px;
       margin-right: 35px;
-      line-height: 50px;
+      line-height: 65px;
       cursor: pointer;
 
       &__img {

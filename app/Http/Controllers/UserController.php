@@ -12,21 +12,22 @@ use App\Post;
 class UserController extends Controller
 {
 
+    // マイページ
     public function profile($id)
     {
-        if (Auth::check()) {
-            $user = User::find($id);
-            $articles = Post::orderBy('created_at', 'asc')->get();
-    
-            if ($user) {
-                return view('user.profile',compact('articles'))->withUser($user);
-            } else {
-                // URLからidをいじって他のユーザーページにアクセスしないように例外処理
-                // ＝自分のid以外にアクセスさせない
-                return redirect()->back();
-            }
-        }else {
+        $user = User::find($id);
+        // 自分の投稿のみを取り出す
+        $articles = \App\Post::where('user_id', $id )->get();
+        $likes = \App\Post::where('user_id', 'like_id' )->get();
 
+
+
+        if ($user) {
+            return view('user.profile',compact('articles', 'likes'))->withUser($user);
+        } else {
+            // URLからidをいじって他のユーザーページにアクセスしないように例外処理
+            // ＝自分のid以外にアクセスさせない
+            return redirect()->back();
         }
     }
 

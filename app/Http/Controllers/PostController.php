@@ -76,6 +76,7 @@ class PostController extends Controller
         if (Auth::check()) {
             $userAuth = \Auth::user();
             $step = Post::where('id', $id)->first();
+
             $defaultlikeCount = count($step->likes);
             $defaultstockCount = count($step->stocks);
             $defaultLiked = $step->likes->where('user_id', $userAuth->id)->first();
@@ -116,5 +117,12 @@ class PostController extends Controller
             ]);
         }
 
+    }
+
+    public function remove(Request $request)
+    {
+        $post = Post::find($request->id);
+        $post->delete();
+        return redirect("/")->with('flash_message', __('削除しました!'));
     }
 }
