@@ -45,6 +45,7 @@
         &-info {
             display: block;
             margin-bottom: 30px;
+            word-wrap: break-word;
         }
     }
 }
@@ -52,15 +53,18 @@
 /*タブ切り替え全体のスタイル*/
 .tabs {
     margin-top: 50px;
+    position: absolute;
     padding-bottom: 40px;
     width: 1000px;
-    margin: 0 auto;}
+    margin: 0 auto;
+    // display: flex;
+    // flex-direction: column;
+  }
   
   /*タブのスタイル*/
   .tab_item {
-    width: calc(100%/3);
+    width: calc(100%/4);
     height: 50px;
-    border-bottom: 3px solid #5ab4bd;
     background-color: #f3f2f2;
     line-height: 50px;
     font-size: 16px;
@@ -92,8 +96,8 @@
   
   /*選択されているタブのコンテンツのみを表示*/
   #ownpost:checked ~ #ownpost_content,
-  #tyarenzi-step:checked ~ #tyarenzi-step_content,
   #like:checked ~ #like_content,
+  #tyarenzi-step:checked ~ #tyarenzi-step_content,
   #stock:checked ~ #stock_content {
     display: block;
   }

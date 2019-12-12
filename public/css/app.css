@@ -607,8 +607,12 @@ table {
 
 .c-post__show-main__header-list__name {
   padding: 0 40px 0 5px;
-  color: #414141;
   font-size: 1.3em;
+}
+
+.c-post__show-main__header-list__name a {
+  color: #414141;
+  text-decoration: none;
 }
 
 .c-post__show-main__header-list__time {
@@ -2122,12 +2126,14 @@ table {
 .p-mypage__user-info {
   display: block;
   margin-bottom: 30px;
+  word-wrap: break-word;
 }
 
 /*タブ切り替え全体のスタイル*/
 
 .tabs {
   margin-top: 50px;
+  position: absolute;
   padding-bottom: 40px;
   width: 1000px;
   margin: 0 auto;
@@ -2136,9 +2142,8 @@ table {
 /*タブのスタイル*/
 
 .tab_item {
-  width: calc(100%/3);
+  width: calc(100%/4);
   height: 50px;
-  border-bottom: 3px solid #5ab4bd;
   background-color: #f3f2f2;
   line-height: 50px;
   font-size: 16px;
@@ -2174,8 +2179,8 @@ input[name="tab_item"] {
 /*選択されているタブのコンテンツのみを表示*/
 
 #ownpost:checked ~ #ownpost_content,
-#tyarenzi-step:checked ~ #tyarenzi-step_content,
 #like:checked ~ #like_content,
+#tyarenzi-step:checked ~ #tyarenzi-step_content,
 #stock:checked ~ #stock_content {
   display: block;
 }

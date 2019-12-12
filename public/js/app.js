@@ -7889,8 +7889,8 @@ __webpack_require__.r(__webpack_exports__);
       var url = '/api/user/post/new'; // axiosを使って、入力項目をサーバ側へ
 
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(url, article).then(function (response) {
-        console.log('新規投稿に成功しました');
-        location.href = '/'; // console.log(e.response.article.errors)
+        console.log('新規投稿に成功しました'); // location.href = '/';
+        // console.log(e.response.article.errors)
       })["catch"](function (e) {
         console.log('新規投稿に失敗しました');
       });

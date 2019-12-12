@@ -132,8 +132,11 @@
                     }
                     &__name {
                         padding: 0 40px 0 5px;
-                        color: rgb(65, 65, 65);
                         font-size: 1.3em;
+                        a {
+                            color: rgb(65, 65, 65);
+                            text-decoration: none;
+                        }
                     }
                     &__time {
                         position: absolute;

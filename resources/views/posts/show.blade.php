@@ -33,7 +33,7 @@
                     <div class="c-post__show-main__header">
                         <div class="c-post__show-main__header-list">
                             <div>
-                                <a href="/profile/{{ $step->user->id }}">
+                                <a href="/user/{{$step->user_id}}">
                                     @if (empty($step->user->avatar))
                                     <img
                                         src="/img/avatar/user.svg"
@@ -61,9 +61,11 @@
                                     @endif
                                 </a>
                             </div>
-                            <div class="c-post__show-main__header-list__name">{{ $step->user->name }}</div>
+                            <div class="c-post__show-main__header-list__name"> <a href="/user/{{$step->user_id}}">{{ $step->user->name }}</a></div>
                             <div class="c-post__show-main__header-list__date">{{ $step->created_at }}に投稿</div>
-                            <div class="c-post__show-main__header-list__time">目標時間 : {{ $step->time }}</div>
+                            @if ($step->time)
+                                <div class="c-post__show-main__header-list__time">目標時間 : {{ $step->time }}</div>
+                            @endif
                         </div>
                     </div>
 
