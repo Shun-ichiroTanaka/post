@@ -29,7 +29,7 @@ class UserController extends Controller
 
 
         if ($user) {
-            return view('user.profile',compact('articles', 'likes'))->withUser($user);
+            return view('user.profile',compact('articles', 'likes','stocks'))->withUser($user);
         } else {
             // URLからidをいじって他のユーザーページにアクセスしないように例外処理
             // ＝自分のid以外にアクセスさせない

@@ -57,7 +57,7 @@
                 </a>
             </div>
             <div class="article-box-right">
-                <a class="article-title" href="/post/{{$like->id}}">{{ $like->post->title }}</a>
+                <a class="article-title" href="/post/{{$like->post->id}}">{{ $like->post->title }}</a>
                 <div class="article-details">
                     <div class="article-date">{{ $like->created_at }}</div>
                 </div>
@@ -96,7 +96,7 @@
         @endforeach
     </div>
     <div class="tab_content" id="stock_content">
-        {{-- @foreach ($stocks as $stock)
+        @foreach ($stocks as $stock)
         @if (!empty($stock->id))
         <div class="article-box">
             <div class="article-box-left">
@@ -111,7 +111,7 @@
                 </a>
             </div>
             <div class="article-box-right">
-                <a class="article-title" href="/post/{{$stock->id}}">{{ $stock->post->title }}</a>
+                <a class="article-title" href="/post/{{$stock->post->id}}">{{ $stock->post->title }}</a>
                 <div class="article-details">
                     <div class="article-date">{{ $stock->created_at }}</div>
                 </div>
@@ -120,7 +120,7 @@
         @else
         まだ投稿がありません
         @endif
-        @endforeach --}}
+        @endforeach
     </div>
     {{-- @else
     @endif --}}
