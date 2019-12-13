@@ -35,10 +35,12 @@
                 @endif
             </div>
             <h1 class="p-mypage__user-name">{{ $user['name'] }}</h1>
-            @if (Auth::user())
-            <a class="p-mypage__user-change__img" href="{{ route('avatar.edit') }}"><i class="fas fa-images"></i></a>
-            <div class="p-mypage__user-info">{{ $user['info'] }}</div>
-            <a class="p-mypage__user-change__info" href="{{ route('user.edit') }}">プロフィール編集</a>
+            @if ($user = $ownuser)
+                {{-- @if ($user) --}}
+                    <a class="p-mypage__user-change__img" href="{{ route('avatar.edit') }}"><i class="fas fa-images"></i></a>
+                    <div class="p-mypage__user-info">{{ $user['info'] }}</div>
+                    <a class="p-mypage__user-change__info" href="{{ route('user.edit') }}">プロフィール編集</a>    
+                {{-- @endif --}}
             @else
             <div class="p-mypage__user-change__info">{{ $user['info'] }}</div>
             @endif

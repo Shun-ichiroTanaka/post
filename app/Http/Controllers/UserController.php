@@ -18,7 +18,8 @@ class UserController extends Controller
     public function profile($id)
     {
         $user = User::find($id);
-        // $user = \App\User::where('id', $id)->first();
+        
+        $ownuser = \App\User::where('id', $id)->first();
 
         // ユーザーの投稿のみを取り出す
         $articles = \App\Post::where('user_id', $id)->orderBy('created_at', 'desc')->get();
@@ -29,7 +30,7 @@ class UserController extends Controller
 
 
         if ($user) {
-            return view('user.profile',compact('articles', 'likes','stocks'))->withUser($user);
+            return view('user.profile',compact('articles', 'likes','stocks','ownuser'))->withUser($user);
         } else {
             // URLからidをいじって他のユーザーページにアクセスしないように例外処理
             // ＝自分のid以外にアクセスさせない
