@@ -27,7 +27,7 @@ class HomeController extends Controller
         // データベースのpostsテーブルから、作成日時を昇順に並び替えて、全ての情報を取得する
         // postsテーブルには投稿した記事が全て入るので、上のコードでは投稿した記事を全て新しい順に取得
         $userAuth = \Auth::user();
-        $articles = Post::orderBy('created_at', 'asc')->paginate(15);
+        $articles = Post::orderBy('created_at', 'desc')->paginate(15);
         $articles->load('likes');
         $articles->load('user');
 

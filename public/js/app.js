@@ -7853,7 +7853,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       // あらかじめあるタグの選択
-      selectedTags: [],
+      // selectedTags: [],
       // テキストエディター
       customToolbar: [["bold", "italic", "underline"], [{
         list: "ordered"
@@ -7894,6 +7894,15 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (e) {
         console.log('新規投稿に失敗しました');
       });
+    },
+    submitPrepare: function submitPrepare() {
+      var params = new URLSearchParams(); //パラメータのインスタンス生成↩
+
+      for (var key in this.formdata) {
+        params.append(key, this.formdata[key].data); //キーに値を追加↩
+
+        this.senddata = params; //値セット↩
+      }
     },
     // step完了
     onComplete: function onComplete() {// alert('全てのステップが完了しました！！');

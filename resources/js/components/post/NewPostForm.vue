@@ -78,7 +78,7 @@ export default {
     data() {
         return {
             // あらかじめあるタグの選択
-            selectedTags: [],
+            // selectedTags: [],
             // テキストエディター
             customToolbar: [
                 ["bold", "italic", "underline"],
@@ -93,7 +93,7 @@ export default {
             step2: "",
             step3: "",
             step4: "",
-            time: "",
+            time: ""
         };
 
     },
@@ -126,6 +126,13 @@ export default {
             .catch(e => {
                 console.log('新規投稿に失敗しました')
              });
+        },
+        submitPrepare() {
+            const params = new URLSearchParams() //パラメータのインスタンス生成↩
+            for(let key in this.formdata) {
+                params.append(key, this.formdata[key].data) //キーに値を追加↩
+                this.senddata = params //値セット↩
+            }
         },
         // step完了
         onComplete: function() {
