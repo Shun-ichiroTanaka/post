@@ -42,7 +42,12 @@
               display: block;
               width: 100%;
               margin: 30px 0;
-              word-wrap: break-word !important;
+              #text {
+                word-wrap: break-word !important;
+                display: block;
+                width: 100%;
+  
+              }
           }
         }
     }

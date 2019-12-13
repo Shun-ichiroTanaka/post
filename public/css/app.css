@@ -2093,7 +2093,12 @@ table {
   display: block;
   width: 100%;
   margin: 30px 0;
+}
+
+.p-mypage__user-change__info #text {
   word-wrap: break-word !important;
+  display: block;
+  width: 100%;
 }
 
 .p-mypage__tab {
