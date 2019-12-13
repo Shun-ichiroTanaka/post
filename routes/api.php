@@ -40,8 +40,10 @@ Route::group(['middleware' => 'api'],function(){
     Route::post('/posts/{post}/stock', 'StockController@stock');
     Route::post('/posts/{post}/unstock', 'StockController@unstock');
 
-    // 新規投稿
+    // 投稿
     Route::post('/user/post/new', 'PostController@postStep');
+    Route::post('/user/post/edit', 'PostController@edit');
+
 
 });
 

@@ -118,8 +118,26 @@ class PostController extends Controller
         }
 
     }
+    // 投稿編集
+    // ユーザー情報を含めたviewファイルを返す
+    public function edit()
+    {
+        if (Auth::user()) {
+            $user = Post::find(Auth::user()->id);
 
-    public function remove(Request $request)
+            if ($user) {
+                return view('posts.edit')->withUser($user);
+            } else {
+                return redirect()->back();
+            }
+
+        } else {
+            return redirect()->back();
+        }
+    }
+
+    // 投稿削除
+    public function delete(Request $request)
     {
         $post = Post::find($request->id);
         $post->delete();

@@ -43,17 +43,29 @@
     </div>
     <div class="tab_content" id="like_content">
         @foreach ($likes as $like)
-        {{-- @if (!empty($like->id)) --}}
+        @if (!empty($like->id))
         <div class="article-box">
             <div class="article-box-left">
+                <a href="/user/{{$like->post->user_id}}">
+                    @if (empty($like->post->user->avatar))
+                    <img src="/img/avatar/user.svg" alt="avatar"
+                        style="width:40px; height:40px; border-radius:50%?vertical-align: middle;">
+                    @else
+                    <img src="{{ asset('/img/avatar/'.$like->post->user->avatar) }}" alt="avatar"
+                        style="width:40px; height:40px; border-radius:50%" border-radius="50%">
+                    @endif
+                </a>
             </div>
             <div class="article-box-right">
-                {{ $like->user->id }}
+                <a class="article-title" href="/post/{{$like->id}}">{{ $like->post->title }}</a>
+                <div class="article-details">
+                    <div class="article-date">{{ $like->created_at }}</div>
+                </div>
             </div>
         </div>
-        {{-- @else --}}
-        <p>まだいいねをしていません</p>
-        {{-- @endif --}}
+        @else
+        まだ投稿がありません
+        @endif
         @endforeach
     </div>
     <div class="tab_content" id="tyarenzi-step_content">
@@ -84,31 +96,31 @@
         @endforeach
     </div>
     <div class="tab_content" id="stock_content">
-        @foreach ($articles as $article)
-        @if (!empty($article->id))
+        {{-- @foreach ($stocks as $stock)
+        @if (!empty($stock->id))
         <div class="article-box">
             <div class="article-box-left">
-                <a href="/user/{{$article->user_id}}">
-                    @if (empty($article->user->avatar))
+                <a href="/user/{{$stock->post->user_id}}">
+                    @if (empty($stock->post->user->avatar))
                     <img src="/img/avatar/user.svg" alt="avatar"
                         style="width:40px; height:40px; border-radius:50%?vertical-align: middle;">
                     @else
-                    <img src="{{ asset('/img/avatar/'.$article->user->avatar) }}" alt="avatar"
+                    <img src="{{ asset('/img/avatar/'.$stock->post->user->avatar) }}" alt="avatar"
                         style="width:40px; height:40px; border-radius:50%" border-radius="50%">
                     @endif
                 </a>
             </div>
             <div class="article-box-right">
-                <a class="article-title" href="/post/{{$article->id}}">{{ $article->title }}</a>
+                <a class="article-title" href="/post/{{$stock->id}}">{{ $stock->post->title }}</a>
                 <div class="article-details">
-                    <div class="article-date">{{ $article->created_at }}</div>
+                    <div class="article-date">{{ $stock->created_at }}</div>
                 </div>
             </div>
         </div>
         @else
         まだ投稿がありません
         @endif
-        @endforeach
+        @endforeach --}}
     </div>
     {{-- @else
     @endif --}}

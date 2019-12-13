@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\HomeController;
 use App\Post;
+use App\Like;
+use App\Stock;
 
 class UserController extends Controller
 {
@@ -16,11 +18,14 @@ class UserController extends Controller
     public function profile($id)
     {
         $user = User::find($id);
-        // 自分の投稿のみを取り出す
-        $articles = \App\Post::where('user_id', $id )->get();
-        
-        // いいねを取り出す
-        $likes = \App\Like::where('user_id', $user )->get();
+        // $user = \App\User::where('id', $id)->first();
+
+        // ユーザーの投稿のみを取り出す
+        $articles = \App\Post::where('user_id', $id)->orderBy('created_at', 'desc')->get();
+        // ユーザーがしたいいねを取り出す
+        $likes = $user->likes()->orderBy('created_at', 'desc')->get();
+        // ユーザーのストック(登録)を取り出す
+        $stocks = $user->stocks()->orderBy('created_at', 'desc')->get();
 
 
         if ($user) {
