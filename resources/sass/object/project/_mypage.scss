@@ -7,9 +7,9 @@
     &__bg {
         width: 1800px;
         height: 280px;
-        background: #50C9C3;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #96DEDA, #50C9C3);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #96DEDA, #50C9C3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: #606c88;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             }
 
     &__user {
@@ -53,10 +53,10 @@
     }
     &__tab {
       width: 1000px;
-      height: auto;
+      min-height: 400px;
       margin: 50px auto;
       padding: 20px 0;
-      border-bottom: solid 1px #e8eef5;
+      // border-bottom: solid 1px #e8eef5;
       border-top: solid 1px #e0e7ef;
     }
 }
@@ -115,6 +115,8 @@
   
   /*選択されているタブのスタイルを変える*/
   .tabs input:checked + .tab_item {
-    background-color: #5ab4bd;
+    background: #606c88;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #fff;
   }
