@@ -1,7 +1,7 @@
 @charset "utf-8";
+@include pc {};
+@include sp {};
 
-/* button
------------------------------------------------------------------ */
 @include sp {
     .c-button {
         cursor: pointer;

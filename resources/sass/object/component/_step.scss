@@ -1,8 +1,15 @@
 @charset "utf-8";
 .c-step {
     display: flex;
-    width: 1200px;
     margin: 0 auto;
+    @include pc {
+        width: 1200px;
+    };
+    @include sp {
+        flex-direction: column;
+        width: 95vw;
+    };
+
     &__side {
         // position: fixed;
         // left: 20px;

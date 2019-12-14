@@ -1,9 +1,14 @@
 @charset "utf-8";
+@include pc {};
+@include sp {};
+
 .c-post {
     &__detail {
         height: 70px;
         background: #fff;
         border-bottom: 1px solid #000;
+        @include pc {};
+        @include sp {};
     }
     &__box1 {
         display: flex;
@@ -12,10 +17,16 @@
         min-height: 75px;
         background: #fff;
         border-bottom: 1px solid #e8e8e8;
+        @include pc {};
+        @include sp {};
+
         &-img {
             width: 44px;
             height: 44px;
             padding: 0 16px;
+            @include pc {};
+            @include sp {};
+    
         }
         &-title {
             width: 100%;
@@ -23,6 +34,9 @@
             margin-top: 16px;
             margin-right: 16px;
             margin-bottom: 16px;
+            @include pc {};
+            @include sp {};
+    
             h2 {
                 display: inline-block;
                 margin-bottom: 10px;
@@ -32,10 +46,16 @@
                 word-wrap: break-word;
                 word-break: break-all;
                 cursor: pointer;
+                @include pc {};
+                @include sp {};
+        
             }
             p {
                 color: #999;
                 font-size: .9em;
+                @include pc {};
+                @include sp {};
+        
             }
         }
     }
@@ -45,6 +65,9 @@
             height: 100%;
             padding-bottom: 10px;
             margin: 0 auto;
+            @include pc {};
+            @include sp {};
+    
             input {
                 width: 100%;
                 padding: 10px 0;
@@ -52,12 +75,16 @@
                 font-size: 20px;
                 box-shadow: 0 1px 3px rgba(160, 166, 179, .3);
                 border: none;
+                @include pc {};
+                @include sp {};        
             }
         }
         &-box {
             display: flex;
             width: 870px;
             margin: 0 auto;
+            @include pc {};
+            @include sp {};    
             &__tags {
                 overflow: hidden;
                 width: 670px;
@@ -66,12 +93,17 @@
                 color: transparent;
                 background: #fff;
                 box-shadow: 0 1px 3px rgba(160, 166, 179, .3);
+                @include pc {};
+                @include sp {};
+        
                 input {
                     width: 100%;
                     padding: 7px 0;
                     padding-left: 5px;
                     font-size: 12px;
                     border: none;
+                    @include pc {};
+                    @include sp {};            
                 }
             }
             &__time {
@@ -81,6 +113,8 @@
                 padding-top: 5px;
                 color: #757575;
                 text-align: center;
+                @include pc {};
+                @include sp {};        
             }
         }
         &-submit {
@@ -89,6 +123,9 @@
             margin: 0 auto;
             text-align: center;
             background: #fff;
+            @include pc {};
+            @include sp {};
+
             button {
                 width: 100%;
                 padding: 10px;
@@ -105,21 +142,34 @@
                 outline: 0;
                 transition: all .3 ease;
                 cursor: pointer;
+                @include pc {};
+                @include sp {};
+        
             }
         }
     }
     &__show {
         display: flex;
-        width: 1200px;
         margin: 0 auto;
-        margin-top: 45px;
+        @include pc {
+            width: 1200px;
+            margin-top: 45px;
+        };
+        @include sp {
+        };
+
         // background-color: #f8f9fc;
         &-main {
-            width: 870px;
-            min-height: 600px;
-            padding: 3rem;
-            //   margin: 3rem 5rem;
-            background-color: white;
+            margin: 0 auto;
+            @include pc {
+                width: 870px;
+                min-height: 600px;
+                padding: 3rem;    
+            };
+            @include sp {
+                width: 95%;
+            };
+    
             &__header {
                 &-list {
                     display: flex;
@@ -127,12 +177,26 @@
                     align-items: center;
                     justify-content: flex-start;
                     margin-bottom: 50px;
+                    @include pc {};
+                    @include sp {
+                        margin: 30px auto 50px auto;
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                    };
+
                     &__date {
                         color: gray;
                     }
                     &__name {
-                        padding: 0 40px 0 5px;
-                        font-size: 1.3em;
+                        @include pc {
+                            padding: 0 40px 0 5px;
+                            font-size: 1.3em;    
+                        };
+                        @include sp {
+                            font-size: 1rem;
+                        };
+                
                         a {
                             color: rgb(65, 65, 65);
                             text-decoration: none;
@@ -142,20 +206,31 @@
                         position: absolute;
                         right: 400px;
                         color: gray;
+                        @include pc {};
+                        @include sp {};
+                
                     }
                 }
             }
         }
         &-left {
-            width: 80px;
+            @include pc {
+                width: 80px;
+            };
+            @include sp {
+                // display: none;
+            };    
         }
         &-right {
             overflow: auto;
-            width: 250px;
-            min-height: 500px;
             margin-top: 50px;
             color: #999;
             text-align: center;
+            @include pc {
+                width: 250px;
+                min-height: 500px;    
+            };
+            @include sp {};    
             a {
                 color: #999;
                 text-decoration: none;
@@ -167,6 +242,8 @@
         }
         &-body {
             margin-top: 2rem;
+            @include pc {};
+            @include sp {};    
         }
         &-title {
             margin-top: 1.2rem;
@@ -174,6 +251,10 @@
             font-size: 2.5rem;
             font-weight: 700;
             line-height: 1.0;
+            @include pc {};
+            @include sp {
+                overflow: auto;
+            };    
         }
         &-tags {
             &__item {
@@ -190,6 +271,9 @@
                 -moz-border-radius: 4px;
                 -ms-border-radius: 4px;
                 -o-border-radius: 4px;
+                @include pc {};
+                @include sp {};
+        
             }
         }
     }
@@ -200,12 +284,17 @@
     align-items: center;
     padding: 20px;
     border-bottom: 1px solid #e8e8e8;
+    @include pc {};
+    @include sp {};
+
     a {
         color: #000;
     }
     .article-box-left {
         min-width: 40px;
         height: 40px;
+        @include pc {};
+        @include sp {};
         img {
             border-radius: 5px;
             cursor: pointer;
@@ -213,6 +302,9 @@
     }
     .article-box-right {
         padding-left: 20px;
+        @include pc {};
+        @include sp {};
+
         .article-title {
             font-weight: bold;
             cursor: pointer;

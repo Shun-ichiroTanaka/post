@@ -2,7 +2,7 @@
 @section('content')
 <div id="app">
     <div class="c-post__show">
-        <div id="demo">
+        {{-- <div id="demo"> --}}
             <div class="c-step">
                 <div class="c-post__show-left">
                     <div class="c-button__show-social">
@@ -105,6 +105,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    {{-- </div> --}}
 </div>
 @endsection

@@ -1,40 +1,36 @@
 @charset "utf-8";
-@include pc {
-    .l-container {
-        display: flex;
-        width: 1200px;
-        margin: 0 auto;
-        margin-top: 40px;
-        &__main {
-            width: 585px;
-            margin: 0 auto;
-            background: #fff;
-            &-mypage {
-                width: 500px;
-                height: 100vh;
-                margin: 0 20px;
-                background: #fff;
-            }
-        }
-    }
-};
 
-@include sp {
-    .l-container {
-        display: flex;
+@include pc {};
+@include sp {};
+
+.l-container {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 40px;
+    @include pc {
+        width: 1200px;
+    };
+    @include sp {
         width: 95%;
+    };
+
+    &__main {
         margin: 0 auto;
-        margin-top: 40px;
-        &__main {
+        background: #fff;
+        @include pc {
+            width: 585px;
+        };
+        @include sp {
             width: 100%;
-            margin: 0 auto;
+        };
+        &-mypage {
+            height: 100vh;
+            margin: 0 20px;
             background: #fff;
-            &-mypage {
-                // width: 500px;
-                height: 100vh;
-                margin: 0 20px;
-                background: #fff;
-            }
+            @include pc {
+                width: 500px;
+            };
+            @include sp {};
         }
     }
-};
+}

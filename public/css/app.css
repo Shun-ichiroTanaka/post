@@ -434,48 +434,51 @@ table {
   -o-border-radius: 3px;
 }
 
+.l-container {
+  display: -webkit-box;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
 @media (min-width: 767px) {
   .l-container {
-    display: -webkit-box;
-    display: flex;
     width: 1200px;
-    margin: 0 auto;
-    margin-top: 40px;
-  }
-
-  .l-container__main {
-    width: 585px;
-    margin: 0 auto;
-    background: #fff;
-  }
-
-  .l-container__main-mypage {
-    width: 500px;
-    height: 100vh;
-    margin: 0 20px;
-    background: #fff;
   }
 }
 
 @media (max-width: 767px) {
   .l-container {
-    display: -webkit-box;
-    display: flex;
     width: 95%;
-    margin: 0 auto;
-    margin-top: 40px;
   }
+}
 
+.l-container__main {
+  margin: 0 auto;
+  background: #fff;
+}
+
+@media (min-width: 767px) {
+  .l-container__main {
+    width: 585px;
+  }
+}
+
+@media (max-width: 767px) {
   .l-container__main {
     width: 100%;
-    margin: 0 auto;
-    background: #fff;
   }
+}
 
+.l-container__main-mypage {
+  height: 100vh;
+  margin: 0 20px;
+  background: #fff;
+}
+
+@media (min-width: 767px) {
   .l-container__main-mypage {
-    height: 100vh;
-    margin: 0 20px;
-    background: #fff;
+    width: 500px;
   }
 }
 
@@ -607,16 +610,32 @@ table {
 .c-post__show {
   display: -webkit-box;
   display: flex;
-  width: 1200px;
   margin: 0 auto;
-  margin-top: 45px;
+}
+
+@media (min-width: 767px) {
+  .c-post__show {
+    width: 1200px;
+    margin-top: 45px;
+  }
 }
 
 .c-post__show-main {
-  width: 870px;
-  min-height: 600px;
-  padding: 3rem;
-  background-color: white;
+  margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+  .c-post__show-main {
+    width: 870px;
+    min-height: 600px;
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .c-post__show-main {
+    width: 95%;
+  }
 }
 
 .c-post__show-main__header-list {
@@ -630,13 +649,34 @@ table {
   margin-bottom: 50px;
 }
 
+@media (max-width: 767px) {
+  .c-post__show-main__header-list {
+    margin: 30px auto 50px auto;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+}
+
 .c-post__show-main__header-list__date {
   color: gray;
 }
 
-.c-post__show-main__header-list__name {
-  padding: 0 40px 0 5px;
-  font-size: 1.3em;
+@media (min-width: 767px) {
+  .c-post__show-main__header-list__name {
+    padding: 0 40px 0 5px;
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 767px) {
+  .c-post__show-main__header-list__name {
+    font-size: 1rem;
+  }
 }
 
 .c-post__show-main__header-list__name a {
@@ -650,17 +690,24 @@ table {
   color: gray;
 }
 
-.c-post__show-left {
-  width: 80px;
+@media (min-width: 767px) {
+  .c-post__show-left {
+    width: 80px;
+  }
 }
 
 .c-post__show-right {
   overflow: auto;
-  width: 250px;
-  min-height: 500px;
   margin-top: 50px;
   color: #999;
   text-align: center;
+}
+
+@media (min-width: 767px) {
+  .c-post__show-right {
+    width: 250px;
+    min-height: 500px;
+  }
 }
 
 .c-post__show-right a {
@@ -683,6 +730,12 @@ table {
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.0;
+}
+
+@media (max-width: 767px) {
+  .c-post__show-title {
+    overflow: auto;
+  }
 }
 
 .c-post__show-tags__item {
@@ -739,9 +792,6 @@ table {
 .article-box .article-box-right .article-date {
   color: gray;
 }
-
-/* button
------------------------------------------------------------------ */
 
 @media (max-width: 767px) {
   .c-button {
@@ -1056,8 +1106,22 @@ table {
 .c-step {
   display: -webkit-box;
   display: flex;
-  width: 1200px;
   margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+  .c-step {
+    width: 1200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .c-step {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    width: 95vw;
+  }
 }
 
 .c-step__side {
@@ -2248,10 +2312,21 @@ table {
 .p-auth__title {
   position: relative;
   z-index: 1;
-  max-width: 300px;
-  margin: 50px auto;
   font-family: "Roboto", sans-serif;
   text-align: center;
+}
+
+@media (min-width: 767px) {
+  .p-auth__title {
+    max-width: 300px;
+    margin: 50px auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .p-auth__title {
+    margin: 30px auto;
+  }
 }
 
 .p-auth__title h1 {
@@ -2268,8 +2343,6 @@ table {
 }
 
 .p-mypage__bg {
-  width: 1800px;
-  height: 280px;
   background: #606c88;
   /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */
@@ -2278,11 +2351,30 @@ table {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+@media (min-width: 767px) {
+  .p-mypage__bg {
+    width: 1800px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .p-mypage__bg {
+    width: 100%;
+    height: 150px;
+  }
+}
+
 .p-mypage__user {
-  width: 500px;
   min-height: 300px;
   text-align: center;
   margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+  .p-mypage__user {
+    width: 500px;
+  }
 }
 
 .p-mypage__user-img {
@@ -2318,11 +2410,23 @@ table {
 }
 
 .p-mypage__tab {
-  width: 1000px;
-  min-height: 400px;
-  margin: 50px auto;
   padding: 20px 0;
   border-top: solid 1px #e0e7ef;
+  margin: 50px auto;
+}
+
+@media (min-width: 767px) {
+  .p-mypage__tab {
+    width: 1000px;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .p-mypage__tab {
+    width: 100%;
+    overflow: scroll;
+  }
 }
 
 /*タブ切り替え全体のスタイル*/
@@ -2331,18 +2435,21 @@ table {
   margin-top: 50px;
   position: absolute;
   padding-bottom: 40px;
-  width: 1000px;
   margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+  .tabs {
+    width: 1000px;
+  }
 }
 
 /*タブのスタイル*/
 
 .tab_item {
-  width: calc(100%/4);
   height: 50px;
   background-color: #f3f2f2;
   line-height: 50px;
-  font-size: 16px;
   text-align: center;
   color: #565656;
   display: block;
@@ -2351,6 +2458,20 @@ table {
   font-weight: bold;
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
+  min-width: calc(100%/4);
+}
+
+@media (min-width: 767px) {
+  .tab_item {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tab_item {
+    font-size: .9rem;
+    overflow: scroll;
+  }
 }
 
 .tab_item:hover {
