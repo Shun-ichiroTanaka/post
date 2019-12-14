@@ -68,10 +68,8 @@
                             @endif
                         </div>
                     </div>
-
                     {{-- タイトル --}}
                     <div class="c-post__show-title">{{$step->title}}</div>
-
                     {{-- タグ --}}
                     <div class="c-post__show-tags">
                         <div class="c-post__show-tags__item">{{$step->tag1}}</div>
@@ -88,7 +86,6 @@
                         <div class="c-post__show-tags__item">{{$step->tag5}}</div>
                         @endif
                     </div>
-
                     {{-- Vue-Editor プラグイン --}}
                     <div class="step-content">
                         <div class="step-tab-panel" id="step1">{!! $step->step1 !!}</div>
@@ -96,10 +93,8 @@
                         <div class="step-tab-panel" id="step3">{!! $step->step3 !!}</div>
                         <div class="step-tab-panel" id="step4">{!! $step->step4 !!}</div>
                     </div>
-                    
-
-
                 </div>
+
                 <div class="c-post__show-right">
                     <div><a href="" class="c-button__show-challange">このStepにチャレンジ</a></div>
                     <div class="step-app-side c-step__side">
@@ -112,7 +107,7 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
+{{-- <script type="text/javascript">
     document.title = `{{ $step['title'] }}`
-</script>
+</script> --}}
 @endsection

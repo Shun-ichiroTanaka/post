@@ -50063,11 +50063,12 @@ Vue.use(vue_form_wizard__WEBPACK_IMPORTED_MODULE_1___default.a);
  */
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // require("./parts/markdown");
-// fontawesome
-// fontawesome.library.add(regular);
-// fontawesome.library.add(solid);
-// fontawesome.library.add(brands);
 
+
+fontawesome;
+fontawesome.library.add(regular);
+fontawesome.library.add(solid);
+fontawesome.library.add(brands);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -50077,7 +50078,6 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // requir
  */
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('newpostform', __webpack_require__(/*! ./components/post/NewPostForm.vue */ "./resources/js/components/post/NewPostForm.vue")["default"]);
