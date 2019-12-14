@@ -19,20 +19,20 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned()->index();
 
-            $table->string('title', 191);
+            $table->string('title');
 
-            $table->string('tag1', 191);
-            $table->string('tag2', 191)->nullable();
-            $table->string('tag3', 191)->nullable();
-            $table->string('tag4', 191)->nullable();
-            $table->string('tag5', 191)->nullable();
+            $table->string('tag1');
+            $table->string('tag2')->nullable();
+            $table->string('tag3')->nullable();
+            $table->string('tag4')->nullable();
+            $table->string('tag5')->nullable();
 
             $table->text('step1');
             $table->text('step2')->nullable();
             $table->text('step3')->nullable();
             $table->text('step4')->nullable();
 
-            $table->string('time', 191)->nullable();
+            $table->string('time')->nullable();
 
             // 別のテーブルと外部キーで接続するリレーションシップを作成する場合、外部キー列を定義
             //参照先のデータが必須でない場合はさらに nullable() を付加
