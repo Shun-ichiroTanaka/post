@@ -1,11 +1,5 @@
 @charset "utf-8";
-
-/* header
------------------------------------------------------------------ */
 .l-header {
-  //   position: relative;
-  //           box-sizing: border-box;
-  height: 40px;
   color: #e7e7e7;
   font-family: "PT Sans", sans-serif !important;
   font-size: 100%;
@@ -15,30 +9,159 @@
     color: $emeraldo;
     text-decoration: none;
   }
-  &__title {
-    line-height: 40px;
-  }
-  &__nav {
-    float: right;
-    width: 44px;
-    height: 100%;
-    cursor: pointer;
-    & a {
-      display: block;
-      height: 40px;
-      //   padding-left: 5%;
-      color: $emeraldo;
-      line-height: 40px;
-      background: #fff;
+}
+@include sp {
+  .l-header {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    color: #3b3d4b;
+    box-shadow: 0 1px 3px rgba(160,166,179,.3);
+
+    &__title {
+      height: 50px;
+      line-height: 50px;
+      margin-left: 1rem;
+      font-size: 2rem;
+      color: #000 !important;
+    }
+    &__nav {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: auto;
+      height: 300px;
+      margin-right: 1rem;
+      font-size: .9rem;
+      text-align: center;
+      cursor: auto;
+
+      & ul {
+        width: auto;
+        line-height: 50px;
+        white-space: nowrap;
+      }
+      & li {
+        display: inline-block;
+      }
+      & a {
+        display: inline-block;
+        height: auto;
+        line-height: normal;
+        background: transparent;
+      }
+    }
+
+    & a.l-header__signin {
+      padding-right: 2rem;
+      color: #3b3d4b;
+      border: none;
+    }
+    & a.l-header__signup {
+      padding: .4em 1em;
+      color: #fff;
+      background: $emeraldo;
+      border: 1px solid $emeraldo;
+              border-radius: 3px;
+
+      -webkit-border-radius: 3px;
+         -moz-border-radius: 3px;
+          -ms-border-radius: 3px;
+           -o-border-radius: 3px;
+    }
+    &-dropdown {
+      a,
+      a:visited {
+        text-decoration: none;
+        outline: none;
+      }
+    
+      & > ul > li > a {
+        color: inherit;
+        text-decoration: none !important;
+      }
+    
+      & li ul {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 0;
+        font: bold;
+        text-align: center;
+        list-style: none;
+                transition: max-height .4s linear;
+    
+        -webkit-transition: max-height .4s linear;
+           -moz-transition: max-height .4s linear;;
+      }
+    
+      & li ul li {
+        padding: 1rem 2rem;
+        background-color: #292a34;
+        &:hover {
+          background-color: #444555;
+        }
+      }
+    
+      & li ul li a {
+        display: block;
+        color: #fff !important;
+        text-decoration: none !important;
+      }
+    
+    
+    
+      & li ul li:first-child {
+        position: relative;
+        margin-top: 10px;
+        border-radius: 3px 3px 0 0;
+        // ドロップダウンのマーク
+        &:before {
+          /* the pointer tip */
+          content: "";
+          position: absolute;
+          top: -10px;
+          left: 50%;
+          width: 1px;
+          height: 1px;
+          margin-left: -5px;
+          border: 5px solid transparent;
+          border-bottom-color: #292a34;
+        }
+      }
+    
+    
+      & li ul li:last-child {
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+    
+      /* This will trigger the CSS */
+      /* transition animation on hover */
+    
+      & li:hover ul {
+        max-height: 300px; /* Increase when adding more dropdown items */
+      }
+      &__child {
+        &-user {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          min-width: 120px;
+          line-height: 50px;
+          cursor: pointer;
+    
+          &__img {
+            display: block;
+          }
+        }
+      }
     }
   }
-}
+};
 
-
-
-
-
-@media only screen and (min-width: 768px) {
+@include pc {
   .l-header {
     display: flex;
     align-items: center;
@@ -190,5 +313,6 @@
       }
     }
   }
-}
+};
+
 
