@@ -1,7 +1,15 @@
 @charset "utf-8";
+@include pc {};
+@include sp {};
+
 .vue-form-wizard {
-    width: 870px;
     margin: 0 auto;
+    @include pc {
+        width: 870px;
+    };
+    @include sp {
+        width: 100%;
+    };
 }
 
 .vue-form-wizard .wizard-header {
@@ -59,10 +67,13 @@
 
 .vue-form-wizard.md .wizard-nav-pills {
     display: flex;
-    flex-direction: column;
-    position: fixed;
-    left: 200px;
-    margin-top: 20px;
+    @include pc {
+        margin-top: 20px;
+        flex-direction: column;
+        left: 200px;
+        position: fixed;
+    };
+    @include sp {};
 }
 
 .vue-form-wizard.md .wizard-nav-pills>li {

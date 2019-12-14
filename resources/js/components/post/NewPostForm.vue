@@ -1,7 +1,6 @@
 
 <template>
     <div id="app">
-        <div class="p-auth__title"><h1>New Post</h1></div>
         <form @submit.prevent="newpost">
             <div>
                 <div class="c-post__new-title">

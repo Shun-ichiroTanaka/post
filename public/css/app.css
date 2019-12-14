@@ -267,6 +267,7 @@ table {
 @media (max-width: 767px) {
   .l-header__nav {
     margin-right: 1rem;
+    height: 200px;
   }
 }
 
@@ -531,36 +532,81 @@ table {
 }
 
 .c-post__new-title {
-  width: 870px;
   height: 100%;
   padding-bottom: 10px;
   margin: 0 auto;
+  margin-top: 50px;
+}
+
+@media (min-width: 767px) {
+  .c-post__new-title {
+    width: 870px;
+  }
+}
+
+@media (max-width: 767px) {
+  .c-post__new-title {
+    width: 100%;
+  }
 }
 
 .c-post__new-title input {
   width: 100%;
   padding: 10px 0;
   padding-left: 5px;
-  font-size: 20px;
   box-shadow: 0 1px 3px rgba(160, 166, 179, 0.3);
   border: none;
+}
+
+@media (min-width: 767px) {
+  .c-post__new-title input {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .c-post__new-title input {
+    font-size: 0.9rem;
+  }
 }
 
 .c-post__new-box {
   display: -webkit-box;
   display: flex;
-  width: 870px;
   margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+  .c-post__new-box {
+    width: 870px;
+  }
+}
+
+@media (max-width: 767px) {
+  .c-post__new-box {
+    width: 100%;
+  }
 }
 
 .c-post__new-box__tags {
   overflow: hidden;
-  width: 670px;
   height: 100%;
   margin: 0 auto;
   color: transparent;
   background: #fff;
   box-shadow: 0 1px 3px rgba(160, 166, 179, 0.3);
+}
+
+@media (min-width: 767px) {
+  .c-post__new-box__tags {
+    width: 670px;
+  }
+}
+
+@media (max-width: 767px) {
+  .c-post__new-box__tags {
+    width: 100%;
+  }
 }
 
 .c-post__new-box__tags input {
@@ -569,6 +615,12 @@ table {
   padding-left: 5px;
   font-size: 12px;
   border: none;
+}
+
+@media (max-width: 767px) {
+  .c-post__new-box__tags input {
+    width: 100vw;
+  }
 }
 
 .c-post__new-box__time {
@@ -582,10 +634,21 @@ table {
 
 .c-post__new-submit {
   box-sizing: border-box;
-  width: 870px;
   margin: 0 auto;
   text-align: center;
   background: #fff;
+}
+
+@media (min-width: 767px) {
+  .c-post__new-submit {
+    width: 870px;
+  }
+}
+
+@media (max-width: 767px) {
+  .c-post__new-submit {
+    width: 95%;
+  }
 }
 
 .c-post__new-submit button {
@@ -2181,13 +2244,24 @@ table {
   z-index: 1;
   max-width: 300px;
   padding: 30px;
-  margin: 0 auto 100px;
   text-align: center;
   background: #fff;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
+}
+
+@media (min-width: 767px) {
+  .p-auth__form {
+    margin: 0 auto 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .p-auth__form {
+    margin: 50px auto;
+  }
 }
 
 .p-auth__form-thumbnail {
@@ -2325,7 +2399,7 @@ table {
 
 @media (max-width: 767px) {
   .p-auth__title {
-    margin: 30px auto;
+    display: none;
   }
 }
 
@@ -2703,8 +2777,19 @@ span:hover + .u-other__fukidashi-stock {
 }
 
 .vue-form-wizard {
-  width: 870px;
   margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+  .vue-form-wizard {
+    width: 870px;
+  }
+}
+
+@media (max-width: 767px) {
+  .vue-form-wizard {
+    width: 100%;
+  }
 }
 
 .vue-form-wizard .wizard-header {
@@ -2766,12 +2851,17 @@ span:hover + .u-other__fukidashi-stock {
 .vue-form-wizard.md .wizard-nav-pills {
   display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  position: fixed;
-  left: 200px;
-  margin-top: 20px;
+}
+
+@media (min-width: 767px) {
+  .vue-form-wizard.md .wizard-nav-pills {
+    margin-top: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    left: 200px;
+    position: fixed;
+  }
 }
 
 .vue-form-wizard.md .wizard-nav-pills > li {
