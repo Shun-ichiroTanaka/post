@@ -732,12 +732,7 @@ table {
   color: #fff;
   font-size: 20px;
   text-align: center;
-  background: #ED4264;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#FFEDBC), to(#ED4264));
-  background: linear-gradient(to right, #FFEDBC, #ED4264);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #EF566E;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   outline: none;
