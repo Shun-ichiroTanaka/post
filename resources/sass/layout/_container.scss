@@ -1,20 +1,56 @@
 @charset "utf-8";
 .l-container {
-    display: flex;
-    width: 1200px;
-    margin: 0 auto;
-    margin-top: 40px;
-    &__main {
-        width: 585px;
+    @include pc {
+        display: flex;
+        width: 1200px;
         margin: 0 auto;
-        background: #fff;
-        &-mypage {
-            width: 500px;
-            height: 100vh;
-            margin: 0 20px;
+        margin-top: 40px;
+        &__main {
+            width: 585px;
+            margin: 0 auto;
             background: #fff;
-        }
-    }
+            &-mypage {
+                width: 500px;
+                height: 100vh;
+                margin: 0 20px;
+                background: #fff;
+            }
+        }    
+    };
+    @include tab {
+        display: flex;
+        width: 600px;
+        margin: 0 auto;
+        margin-top: 40px;
+        &__main {
+            width: 95%;
+            margin: 0 auto;
+            background: #fff;
+            &-mypage {
+                width: 500px;
+                height: 100vh;
+                margin: 0 20px;
+                background: #fff;
+            }
+        }  
+    };
+    @include sp {
+        display: flex;
+        width: 95vw;
+        margin: 0 auto;
+        margin-top: 40px;
+        &__main {
+            width: 100%;
+            margin: 0 auto;
+            background: #fff;
+            &-mypage {
+                width: 500px;
+                height: 100vh;
+                margin: 0 20px;
+                background: #fff;
+            }
+        }  
+    };
     // &__left {
     //     width: 200px;
     //     height: 100vh;

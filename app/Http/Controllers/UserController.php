@@ -67,20 +67,17 @@ class UserController extends Controller
             if(Auth::user()->email === $request['email']){
                 $validate = $request->validate([
                   'name' => 'required|min:2',
-                  'email' => 'required|email',
                   'info' => 'required|string|max:130',
                 ]);
             } else {
                 $validate = $request->validate([
                   'name' => 'required|min:2',
-                  'email' => 'required|email|unique:users|',
                   'info' => 'required|string|max:130',
                 ]);
             }
 
             if($validate) {
                 $user->name = $request['name'];
-                $user->email = $request['email'];
                 $user->info = $request['info'];
                 $user->save();
                 return redirect()->back()->with('flash_message', 'プロフィールを変更しました!');
