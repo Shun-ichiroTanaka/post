@@ -685,6 +685,7 @@ table {
 
 .c-post__show-main {
   margin: 0 auto;
+  background: #ffffff;
 }
 
 @media (min-width: 767px) {
@@ -698,6 +699,7 @@ table {
 @media (max-width: 767px) {
   .c-post__show-main {
     width: 95%;
+    margin-top: 30px;
   }
 }
 
@@ -729,6 +731,13 @@ table {
   color: gray;
 }
 
+@media (max-width: 767px) {
+  .c-post__show-main__header-list__date {
+    display: block;
+    padding-top: 10px;
+  }
+}
+
 @media (min-width: 767px) {
   .c-post__show-main__header-list__name {
     padding: 0 40px 0 5px;
@@ -738,6 +747,7 @@ table {
 
 @media (max-width: 767px) {
   .c-post__show-main__header-list__name {
+    padding-top: 10px;
     font-size: 1rem;
   }
 }
@@ -1183,7 +1193,7 @@ table {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
             flex-direction: column;
-    width: 95vw;
+    width: 98vw;
   }
 }
 

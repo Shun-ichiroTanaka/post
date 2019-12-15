@@ -179,6 +179,7 @@
         // background-color: #f8f9fc;
         &-main {
             margin: 0 auto;
+            background: #ffffff;
             @include pc {
                 width: 870px;
                 min-height: 600px;
@@ -186,6 +187,7 @@
             };
             @include sp {
                 width: 95%;
+                margin-top: 30px;
             };
     
             &__header {
@@ -205,6 +207,11 @@
 
                     &__date {
                         color: gray;
+                        @include pc {};
+                        @include sp {
+                            display: block;
+                            padding-top: 10px;
+                        };
                     }
                     &__name {
                         @include pc {
@@ -212,6 +219,7 @@
                             font-size: 1.3em;    
                         };
                         @include sp {
+                            padding-top: 10px;  
                             font-size: 1rem;
                         };
                 
@@ -225,7 +233,8 @@
                         right: 400px;
                         color: gray;
                         @include pc {};
-                        @include sp {};
+                        @include sp {
+                        };
                 
                     }
                 }
