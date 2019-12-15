@@ -42,6 +42,8 @@
                     <li class="c-button-header__post">
                         <a href="{{ route('post.new') }}">{{ __('Post') }}</a>
                     </li>
+
+                    {{-- スマホ用メニュー --}}
                     <div class="l-header__spnav">
                         <input type="radio" id="one" name="buttons" checked>
                         <label for="one" class="icons home"><a href="/"><span class="fas fa-home"></span></a></label>
