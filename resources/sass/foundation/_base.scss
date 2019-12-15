@@ -1,16 +1,15 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css?family=Roboto|Rubik&display=swap');
+// @include pc {};
+// @include sp {};
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
   box-sizing: border-box !important;
-  background: #F6F6F4 !important;
-  // background: rgb(248, 246, 245);  /* fallback for old browsers */
-// background: #a7e4e8;
   font-family: Rubik, "Noto Sans JP", sans-serif !important;
-
+  background: #F6F6F4 !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -20,4 +19,10 @@ a {
 }
 .b-wrapper {
   flex: 1;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background: #fff !important;
+  }
 }

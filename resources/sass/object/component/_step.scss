@@ -1,4 +1,7 @@
 @charset "utf-8";
+@include pc {};
+@include sp {};
+
 .c-step {
     display: flex;
     margin: 0 auto;
@@ -7,7 +10,7 @@
     };
     @include sp {
         flex-direction: column;
-        width: 98vw;
+        width: 100%;
     };
 
     &__side {
@@ -245,8 +248,14 @@
         font-weight: bolder;
     }
     h1 {
-        font-size: 2em;
-        margin: .67em 0;
+        @include pc {
+            font-size: 2em;
+            margin: .67em 0;    
+        };
+        @include sp {
+            font-size: 27px !important;
+            margin: .67em 0;    
+        };
     }
     img {
         border-style: none;
@@ -401,6 +410,18 @@
     pre {
         margin-bottom: 0;
         margin-top: 0;
+        span.o {
+            color: #ff8095 !important;
+        }
+        span.p {
+            color: #e3e3e3 !important;
+        }
+        span.kc {
+            color: #ebd247 !important;
+        }
+        span.nx, span.na {
+            color: #8bdf4c !important;
+        }
     }
     input::-webkit-inner-spin-button,
     input::-webkit-outer-spin-button {

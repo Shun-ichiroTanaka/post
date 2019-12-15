@@ -36552,6 +36552,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "c-post__new-box__time" }, [
+                _vm._v("目標時間:\n                    "),
                 _c(
                   "select",
                   {
@@ -36582,7 +36583,7 @@ var render = function() {
                   [
                     _c(
                       "option",
-                      { attrs: { selected: "", value: "指定なし" } },
+                      { attrs: { selected: "", value: "指定しない" } },
                       [_vm._v("指定しない")]
                     ),
                     _vm._v(" "),

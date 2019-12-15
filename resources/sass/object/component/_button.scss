@@ -18,7 +18,7 @@
                 width: 30px;
                 margin-top: 30px;
                 position: absolute;
-                margin-left: 5px;
+                margin-left: 15px;
             };
             &__twitter {
                 width: 30px;
@@ -42,13 +42,13 @@
                 background-color: #fff;
                 box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
                 border: 2px solid #ED4264;
-                border-radius: 50%;
                 outline: none;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                -ms-border-radius: 50%;
-                -o-border-radius: 50%;
                 @include pc {
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
                     width: 50px;
                     height: 50px;
                     padding: 9px 0;
@@ -58,6 +58,7 @@
                     width: 40px;
                     height: 40px;
                     padding: 0px;
+                    border-radius: 10px;
                 };
 
             }
@@ -69,13 +70,13 @@
                 // background: #ff8ba7;
                 background: #EF566E;
                 box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
-                border-radius: 50%;
                 outline: none;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                -ms-border-radius: 50%;
-                -o-border-radius: 50%;
                 @include pc {
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
                     width: 50px;
                     height: 50px;
                     padding: 9px 0;
@@ -85,6 +86,7 @@
                     width: 40px;
                     height: 40px;
                     padding: 0;
+                    border-radius: 10px;
                 };
 
             }
@@ -96,13 +98,13 @@
                 text-align: center;
                 background: #777;
                 box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
-                border-radius: 50%;
                 outline: none;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                -ms-border-radius: 50%;
-                -o-border-radius: 50%;
                 @include pc {
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
                     width: 50px;
                     height: 50px;
                     padding: 9px 0;
@@ -112,6 +114,7 @@
                     width: 40px;
                     height: 40px;
                     padding: 0px;
+                    border-radius: 10px;
                 };
 
                 .fa-folder-open {
@@ -126,13 +129,13 @@
                 text-align: center;
                 background: rgb(204, 204, 204);
                 box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
-                border-radius: 50%;
                 outline: none;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                -ms-border-radius: 50%;
-                -o-border-radius: 50%;
                 @include pc {
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
                     width: 50px;
                     height: 50px;
                     padding: 9px 0;
@@ -142,6 +145,7 @@
                     width: 40px;
                     height: 40px;
                     padding: 0px;
+                    border-radius: 10px;
                 };
 
                 .fa-folder-open {
@@ -236,14 +240,14 @@
                 background-color: #fff;
                 box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
                 border: 2px solid #ED4264;
-                border-radius: 50%;
                 outline: none;
+            }
+    
+                    border-radius: 50%;
                 -webkit-border-radius: 50%;
                 -moz-border-radius: 50%;
                 -ms-border-radius: 50%;
-                -o-border-radius: 50%;
-            }
-            &__dislike {
+            -o-border-radius: 50%;        &__dislike {
                 width: 50px;
                 height: 50px;
                 padding: 9px 0;
@@ -254,14 +258,14 @@
                 // background: #ff8ba7;
                 background: #EF566E;
                 box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
-                border-radius: 50%;
                 outline: none;
+            }
+    
+                    border-radius: 50%;
                 -webkit-border-radius: 50%;
                 -moz-border-radius: 50%;
                 -ms-border-radius: 50%;
-                -o-border-radius: 50%;
-            }
-            &__stock {
+            -o-border-radius: 50%;        &__stock {
                 width: 50px;
                 height: 50px;
                 color: #fff;
@@ -269,14 +273,14 @@
                 text-align: center;
                 background: #777;
                 box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
-                border-radius: 50%;
                 outline: none;
+                .fa-folder-open {
+    
+                    border-radius: 50%;
                 -webkit-border-radius: 50%;
                 -moz-border-radius: 50%;
                 -ms-border-radius: 50%;
-                -o-border-radius: 50%;
-                .fa-folder-open {
-                    padding: 14px 0;
+            -o-border-radius: 50%;                padding: 14px 0;
                 }
             }
             &__unstock {
@@ -287,14 +291,14 @@
                 text-align: center;
                 background: rgb(204, 204, 204);
                 box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
-                border-radius: 50%;
                 outline: none;
+                .fa-folder-open {
+    
+                    border-radius: 50%;
                 -webkit-border-radius: 50%;
                 -moz-border-radius: 50%;
                 -ms-border-radius: 50%;
-                -o-border-radius: 50%;
-                .fa-folder-open {
-                    padding: 14px 0;
+            -o-border-radius: 50%;                padding: 14px 0;
                 }
             }
             &__count {

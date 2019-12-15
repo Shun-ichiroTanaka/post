@@ -23,9 +23,9 @@
                             :discard-search-text="'検索結果を表示しない'">
                         </tags-input> -->
                     </div>
-                    <div class="c-post__new-box__time">
+                    <div class="c-post__new-box__time">目標時間:
                         <select v-model="time">
-                            <option selected value="指定なし">指定しない</option>
+                            <option selected value="指定しない">指定しない</option>
                             <option value="30分">30分</option>
                             <option value="1時間">1時間</option>
                             <option value="1時間30分">1時間30分</option>
