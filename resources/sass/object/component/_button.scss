@@ -6,16 +6,26 @@
     .c-button {
         cursor: pointer;
         &__show-social {
-            position: fixed;
             display: flex;
-            flex-direction: column;
-            width: 50px;
-            margin-top: 100px;
             color: $emeraldo;
+            flex-direction: column;
+            @include pc {
+                margin-top: 100px;
+                position: fixed;
+                width: 50px;
+            };
+            @include sp {
+                width: 30px;
+                margin-top: 30px;
+                position: absolute;
+                margin-left: 5px;
+            };
             &__twitter {
                 width: 30px;
                 margin: 0 auto;
                 margin-top: 50px;
+                @include pc {};
+                @include sp {};
                 img {
                     background: #f5f5f5;
                 }
@@ -38,11 +48,20 @@
                 -moz-border-radius: 50%;
                 -ms-border-radius: 50%;
                 -o-border-radius: 50%;
+                @include pc {
+                    width: 50px;
+                    height: 50px;
+                    padding: 9px 0;
+    
+                };
+                @include sp {
+                    width: 40px;
+                    height: 40px;
+                    padding: 0px;
+                };
+
             }
             &__dislike {
-                width: 50px;
-                height: 50px;
-                padding: 9px 0;
                 margin-bottom: 10px;
                 color: #fff;
                 font-size: 20px;
@@ -56,6 +75,18 @@
                 -moz-border-radius: 50%;
                 -ms-border-radius: 50%;
                 -o-border-radius: 50%;
+                @include pc {
+                    width: 50px;
+                    height: 50px;
+                    padding: 9px 0;
+    
+                };
+                @include sp {
+                    width: 40px;
+                    height: 40px;
+                    padding: 0;
+                };
+
             }
             &__stock {
                 width: 50px;
@@ -71,6 +102,18 @@
                 -moz-border-radius: 50%;
                 -ms-border-radius: 50%;
                 -o-border-radius: 50%;
+                @include pc {
+                    width: 50px;
+                    height: 50px;
+                    padding: 9px 0;
+    
+                };
+                @include sp {
+                    width: 40px;
+                    height: 40px;
+                    padding: 0px;
+                };
+
                 .fa-folder-open {
                     padding: 14px 0;
                 }
@@ -89,18 +132,39 @@
                 -moz-border-radius: 50%;
                 -ms-border-radius: 50%;
                 -o-border-radius: 50%;
+                @include pc {
+                    width: 50px;
+                    height: 50px;
+                    padding: 9px 0;
+    
+                };
+                @include sp {
+                    width: 40px;
+                    height: 40px;
+                    padding: 0px;
+                };
+
                 .fa-folder-open {
                     padding: 14px 0;
+                    @include sp {
+                        padding: 0px;
+                    };
                 }
             }
             &__count {
                 position: absolute;
                 top: -30px;
-                width: 50px;
                 color: #ff8ba7;
-                font-size: 1.3rem;
                 font-weight: 600;
                 text-align: center;
+                @include pc {
+                    width: 50px;
+                    font-size: 1.3rem;
+                };
+                @include sp {
+                    width: 40px;
+                    font-size: 1.2rem;
+                };
             }
             &__stockcount {
                 position: absolute;
