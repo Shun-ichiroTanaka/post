@@ -205,12 +205,31 @@
                     align-items: center;
                     justify-content: flex-start;
                     margin-bottom: 50px;
-                    @include pc {};
+                    @include pc {
+                        a img {
+                            display: flex;
+                            overflow: hidden;
+                            border-radius: .2em;
+                            width: 32px;
+                            height: 32px;
+                            margin-right: 8px;
+                            border-radius: 50%;
+                        }
+                    };
                     @include sp {
                         margin: 30px auto 50px auto;
                         display: flex;
                         justify-content: center;
                         flex-direction: column;
+                        a img {
+                            display: flex;
+                            overflow: hidden;
+                            border-radius: .2em;
+                            width: 80px;
+                            height: 80px;
+                            margin-right: 8px;
+                            border-radius: 10px;
+                        }
                     };
 
                     &__date {

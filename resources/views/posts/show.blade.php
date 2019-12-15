@@ -35,29 +35,9 @@
                             <div>
                                 <a href="/user/{{$step->user_id}}">
                                     @if (empty($step->user->avatar))
-                                    <img
-                                        src="/img/avatar/user.svg"
-                                        alt="avatar"
-                                        style="display: flex;
-                                        overflow: hidden;
-                                        border-radius: .2em;
-                                        width: 32px;
-                                        height: 32px;
-                                        margin-right: 8px;"
-                                        border-radius="50%"
-                                    >
+                                    <img src="/img/avatar/user.svg" alt="avatar">
                                     @else
-                                    <img
-                                        src="{{ asset('/img/avatar/'.$step->user->avatar) }}"
-                                        alt="avatar"
-                                        style="display: flex;
-                                        overflow: hidden;
-                                        border-radius: .2em;
-                                        width: 32px;
-                                        height: 32px;
-                                        margin-right: 8px;"
-                                        border-radius="50%"
-                                    >
+                                    <img src="{{ asset('/img/avatar/'.$step->user->avatar) }}" alt="avatar">
                                     @endif
                                 </a>
                             </div>

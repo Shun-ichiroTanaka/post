@@ -19,6 +19,7 @@
     padding: 30px;
     text-align: center;
     background: #fff;
+    color: #000;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -28,6 +29,11 @@
     };
     @include sp {
       margin: 50px auto;
+      label {
+        display: inline-block;
+        padding-bottom: 10px;
+      }
+
     };
     &-thumbnail {
       box-sizing: border-box;

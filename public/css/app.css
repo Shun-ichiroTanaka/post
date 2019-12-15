@@ -14,6 +14,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .b-wrapper {
   -webkit-box-flex: 1;
           flex: 1;
@@ -408,6 +412,7 @@ table {
 @media (max-width: 767px) {
   .l-header-dropdown li ul {
     right: 20px;
+    z-index: 2;
   }
 }
 
@@ -819,6 +824,19 @@ table {
   margin-bottom: 50px;
 }
 
+@media (min-width: 767px) {
+  .c-post__show-main__header-list a img {
+    display: -webkit-box;
+    display: flex;
+    overflow: hidden;
+    border-radius: .2em;
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    border-radius: 50%;
+  }
+}
+
 @media (max-width: 767px) {
   .c-post__show-main__header-list {
     margin: 30px auto 50px auto;
@@ -829,6 +847,17 @@ table {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
             flex-direction: column;
+  }
+
+  .c-post__show-main__header-list a img {
+    display: -webkit-box;
+    display: flex;
+    overflow: hidden;
+    border-radius: .2em;
+    width: 80px;
+    height: 80px;
+    margin-right: 8px;
+    border-radius: 10px;
   }
 }
 
@@ -2468,6 +2497,7 @@ table {
   padding: 30px;
   text-align: center;
   background: #fff;
+  color: #000;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -2483,6 +2513,11 @@ table {
 @media (max-width: 767px) {
   .p-auth__form {
     margin: 50px auto;
+  }
+
+  .p-auth__form label {
+    display: inline-block;
+    padding-bottom: 10px;
   }
 }
 
@@ -2725,8 +2760,31 @@ table {
 
 .p-mypage__user-change__info {
   display: block;
-  width: 100%;
-  margin: 30px 0;
+  color: #B79B5B;
+  background: #fff;
+  border: 1px solid #B79B5B;
+  margin: 0 auto;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+@media (min-width: 767px) {
+  .p-mypage__user-change__info {
+    width: 200px;
+    margin: 30px 0;
+    padding: .4em 1em;
+  }
+}
+
+@media (max-width: 767px) {
+  .p-mypage__user-change__info {
+    width: 200px;
+    margin-top: 50px;
+    padding: .7em 1em;
+  }
 }
 
 .p-mypage__user-change__info #text {

@@ -15,6 +15,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  text-decoration: none !important;
+}
 .b-wrapper {
   flex: 1;
 }

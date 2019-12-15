@@ -11,7 +11,7 @@
                 <label for="three" class="icons bell"><a href=""><span class="fas fa-bell"></span></a></label>
 
                 <input type="radio" id="four" name="buttons">
-                <label for="four" class="icons pen"><a href="{{ route('post.new') }}"><span class="fas fa-pen-fancy"></span></label>
+                <label for="four" class="icons pen"><a href=""><span class="fas fa-pen-fancy"></span></label>
 
                 <div id="box">
                 </div>
