@@ -15,23 +15,9 @@
         <div class="p-mypage__user">
             <div class="p-mypage__user-img">
                 @if (empty($user->avatar))
-                <img src="/img/avatar/user.svg" alt="avatar" style="
-                        display: block;
-                        margin: 0 auto;
-                        width: 150px;
-                        height: 150px;
-                        border-radius: 50%;
-                        border: solid 5px #fff;
-                        background: #fff;" border-radius="50%">
+                <img src="/img/avatar/user.svg" alt="avatar" style="">
                 @else
-                <img src="{{ asset('/img/avatar/'.$user->avatar) }}" alt="avatar" style="
-                        display: block;
-                        margin: 0 auto;
-                        width: 150px;
-                        height: 150px;
-                        border-radius: 50%;
-                        border: solid 5px #fff;
-                        background: #fff;" border-radius="50%">
+                <img src="{{ asset('/img/avatar/'.$user->avatar) }}" alt="avatar" style="">
                 @endif
             </div>
             <h1 class="p-mypage__user-name">{{ $user['name'] }}</h1>
