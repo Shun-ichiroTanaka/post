@@ -1058,14 +1058,13 @@ table {
     text-align: center;
     background: #f5f5f5;
     background-color: #fff;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    border: 2px solid #ED4264;
     outline: none;
   }
 }
 
 @media (max-width: 767px) and (min-width: 767px) {
   .c-button__show-social__like {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -1074,6 +1073,7 @@ table {
     width: 50px;
     height: 50px;
     padding: 9px 0;
+    border: 2px solid #ED4264;
   }
 }
 
@@ -1093,13 +1093,13 @@ table {
     font-size: 20px;
     text-align: center;
     background: #EF566E;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     outline: none;
   }
 }
 
 @media (max-width: 767px) and (min-width: 767px) {
   .c-button__show-social__dislike {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -1128,13 +1128,13 @@ table {
     font-size: 20px;
     text-align: center;
     background: #777;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     outline: none;
   }
 }
 
 @media (max-width: 767px) and (min-width: 767px) {
   .c-button__show-social__stock {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -1167,13 +1167,13 @@ table {
     font-size: 20px;
     text-align: center;
     background: #cccccc;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     outline: none;
   }
 }
 
 @media (max-width: 767px) and (min-width: 767px) {
   .c-button__show-social__unstock {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
