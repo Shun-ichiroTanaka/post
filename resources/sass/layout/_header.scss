@@ -11,7 +11,7 @@
     color: #e7e7e7;
     font-family: "PT Sans", sans-serif !important;
     font-size: 100%;
-    background: #fff;
+    background: #313435;
     display: flex;
     align-items: center;
     color: #3b3d4b;
@@ -30,6 +30,10 @@
     };
     @include sp {
     };
+  }
+
+  p {
+    color: #fff;
   }
 
   &__title {
@@ -51,7 +55,7 @@
   }
 
   &__nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     width: auto;
@@ -139,6 +143,7 @@
     a:visited {
       text-decoration: none;
       outline: none;
+      
     }
   
     & > ul > li > a {
@@ -166,9 +171,9 @@
     }
   
     & li ul li {
-      background-color: #292a34;
+      background-color: #313435;
       &:hover {
-        background-color: #444555;
+        background-color: #575757;
       }
       @include pc {
         padding: 15px 0;
@@ -206,6 +211,7 @@
     & li ul li:last-child {
       border-bottom-right-radius: 3px;
       border-bottom-left-radius: 3px;
+      
     }  
     & li:hover ul {
       max-height: 300px; /* Increase when adding more dropdown items */
@@ -217,12 +223,12 @@
         align-items: center;
         cursor: pointer;
         @include pc {
-          min-width: 100px;
+          min-width: 120px;
           margin-right: 35px;
           line-height: 65px;  
         };
         @include sp {
-          min-width: 120px;
+          min-width: 100px;
           line-height: 50px;
         };
         &__img {
@@ -234,8 +240,8 @@
   // ログイン
   & a.l-header__signin {
     padding-right: 2rem;
-    color: #3b3d4b;
     border: none;
+    color: #fff;
   }
 
   // 新規ユーザー登録

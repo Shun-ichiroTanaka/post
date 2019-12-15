@@ -190,7 +190,7 @@ table {
 }
 
 .emeraldo {
-  color: #81c3c7;
+  color: #B79B5B;
 }
 
 /* footer
@@ -202,7 +202,7 @@ table {
     color: #e7e7e7;
     font-family: "PT Sans", sans-serif !important;
     font-size: 100%;
-    background: #fff;
+    background: #313435;
     display: -webkit-box;
     display: flex;
     -webkit-box-align: center;
@@ -222,6 +222,10 @@ table {
   text-decoration: none;
   font-family: 'Girassol', cursive;
   color: #B79B5B;
+}
+
+.l-header p {
+  color: #fff;
 }
 
 .l-header__title {
@@ -248,7 +252,7 @@ table {
 }
 
 .l-header__nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   width: auto;
@@ -394,11 +398,11 @@ table {
 }
 
 .l-header-dropdown li ul li {
-  background-color: #292a34;
+  background-color: #313435;
 }
 
 .l-header-dropdown li ul li:hover {
-  background-color: #444555;
+  background-color: #575757;
 }
 
 @media (min-width: 767px) {
@@ -459,7 +463,7 @@ table {
 
 @media (min-width: 767px) {
   .l-header-dropdown__child-user {
-    min-width: 100px;
+    min-width: 120px;
     margin-right: 35px;
     line-height: 65px;
   }
@@ -467,7 +471,7 @@ table {
 
 @media (max-width: 767px) {
   .l-header-dropdown__child-user {
-    min-width: 120px;
+    min-width: 100px;
     line-height: 50px;
   }
 }
@@ -478,15 +482,15 @@ table {
 
 .l-header a.l-header__signin {
   padding-right: 2rem;
-  color: #3b3d4b;
   border: none;
+  color: #fff;
 }
 
 .l-header a.l-header__signup {
   padding: .4em 1em;
   color: #fff;
-  background: #81c3c7;
-  border: 1px solid #81c3c7;
+  background: #B79B5B;
+  border: 1px solid #B79B5B;
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -721,11 +725,11 @@ table {
   width: 100%;
   padding: 10px;
   margin: 0 auto;
-  color: #81c3c7;
+  color: #B79B5B;
   font-size: 14px;
   background: #fff;
   border: 0;
-  border: solid #81c3c7 1px;
+  border: solid #B79B5B 1px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -734,6 +738,13 @@ table {
   -webkit-transition: all .3 ease;
   transition: all .3 ease;
   cursor: pointer;
+}
+
+.c-post__new-submit button:hover {
+  background: #B79B5B;
+  color: #fff;
+  -webkit-transition: ease .3s;
+  transition: ease .3s;
 }
 
 .c-post__show {
@@ -945,7 +956,7 @@ table {
             flex-direction: column;
     width: 50px;
     margin-top: 100px;
-    color: #81c3c7;
+    color: #B79B5B;
   }
 
   .c-button__show-social__twitter {
@@ -1080,7 +1091,7 @@ table {
     right: 10px;
     padding: .6em 1.2em;
     color: #fff;
-    background: #81c3c7;
+    background: #B79B5B;
     border-radius: 10px;
   }
 }
@@ -1099,7 +1110,7 @@ table {
             flex-direction: column;
     width: 50px;
     margin-top: 100px;
-    color: #81c3c7;
+    color: #B79B5B;
   }
 
   .c-button__show-social__twitter {
@@ -1231,8 +1242,8 @@ table {
   .c-button-header__post a {
     padding: .4em 1em;
     color: #fff;
-    background: #81c3c7;
-    border: 1px solid #81c3c7;
+    background: #B79B5B;
+    border: 1px solid #B79B5B;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -2345,7 +2356,7 @@ table {
   height: 150px;
   padding: 27px 24px;
   margin: 0 auto 30px;
-  background: #81c3c7;
+  background: #B79B5B;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
   border-bottom-left-radius: 100%;
@@ -2375,7 +2386,7 @@ table {
   padding: 15px;
   color: #fff;
   font-size: 14px;
-  background: #81c3c7;
+  background: #B79B5B;
   border: 0;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -2394,7 +2405,7 @@ table {
 }
 
 .p-auth__form-question__link {
-  color: #81c3c7;
+  color: #B79B5B;
   text-decoration: none;
 }
 
@@ -2492,7 +2503,7 @@ table {
 }
 
 .p-mypage__bg {
-  background: #2a3132;
+  background: #313435;
   /* fallback for old browsers */
 }
 
@@ -2596,7 +2607,7 @@ table {
   background-color: #f3f2f2;
   line-height: 50px;
   text-align: center;
-  color: #565656;
+  color: #313435;
   display: block;
   float: left;
   text-align: center;
@@ -2665,7 +2676,7 @@ input[name="tab_item"] {
   color: #fff;
   line-height: 40px;
   text-align: center;
-  background: #81c3c7;
+  background: #B79B5B;
 }
 
 .u-other__fukidashi-like {

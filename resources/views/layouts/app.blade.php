@@ -6,6 +6,7 @@
         <div class="container">
 
             @include('layouts.header')
+            @include('parts.spnav')
 
             <!-- フラッシュメッセージ -->
             @if (session('flash_message'))

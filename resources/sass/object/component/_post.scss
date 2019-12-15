@@ -166,7 +166,12 @@
                 cursor: pointer;
                 @include pc {};
                 @include sp {};
-        
+            }
+            button:hover {
+                background: $emeraldo;
+                color: #fff;
+                transition: ease .3s;
+
             }
         }
     }
