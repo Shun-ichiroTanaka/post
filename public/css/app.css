@@ -221,18 +221,7 @@ table {
 .l-header a {
   text-decoration: none;
   font-family: 'Girassol', cursive;
-}
-
-@media (min-width: 767px) {
-  .l-header a {
-    color: #81c3c7;
-  }
-}
-
-@media (max-width: 767px) {
-  .l-header a {
-    color: #9b8f8f;
-  }
+  color: #B79B5B;
 }
 
 .l-header__title {
@@ -509,18 +498,19 @@ table {
   display: -webkit-box;
   display: flex;
   margin: 0 auto;
-  margin-top: 40px;
 }
 
 @media (min-width: 767px) {
   .l-container {
     width: 1200px;
+    margin-top: 40px;
   }
 }
 
 @media (max-width: 767px) {
   .l-container {
     width: 95%;
+    margin-top: 20px;
   }
 }
 
@@ -2502,12 +2492,8 @@ table {
 }
 
 .p-mypage__bg {
-  background: #606c88;
+  background: #2a3132;
   /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#3f4c6b), to(#606c88));
-  background: linear-gradient(to right, #3f4c6b, #606c88);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 @media (min-width: 767px) {
@@ -2664,12 +2650,7 @@ input[name="tab_item"] {
 /*選択されているタブのスタイルを変える*/
 
 .tabs input:checked + .tab_item {
-  background: #606c88;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#3f4c6b), to(#606c88));
-  background: linear-gradient(to right, #3f4c6b, #606c88);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #2a3132;
   color: #fff;
 }
 

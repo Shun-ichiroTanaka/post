@@ -6,12 +6,13 @@
 .l-container {
     display: flex;
     margin: 0 auto;
-    margin-top: 40px;
     @include pc {
         width: 1200px;
+        margin-top: 40px;
     };
     @include sp {
         width: 95%;
+        margin-top: 20px;
     };
 
     &__main {

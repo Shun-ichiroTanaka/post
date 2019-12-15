@@ -43,6 +43,8 @@ class PostController extends Controller
         $tag4 = (isset($tags[3])) ? $tags[3] : null;
         $tag5 = (isset($tags[4])) ? $tags[4] : null;
 
+        // 二重送信対策
+        $request->session()->regenerateToken();
 
         $step = Post::create([
             'user_id' => auth()->id(),

@@ -25,11 +25,10 @@
   a {
     text-decoration: none;
     font-family: 'Girassol', cursive;
+    color: #B79B5B;
     @include pc {  
-      color: $emeraldo;
     };
     @include sp {
-      color:rgb(155, 143, 143);
     };
   }
 
