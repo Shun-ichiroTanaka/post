@@ -25,7 +25,7 @@
   a {
     text-decoration: none;
     font-family: 'Girassol', cursive;
-    color: #B79B5B;
+    color: $emeraldo;
     @include pc {  
     };
     @include sp {
@@ -46,7 +46,7 @@
     }
     @include sp {
       display: block;
-      text-align: center;
+      // text-align: center;
       padding: 20px 0;
       font-size: 2.5rem;
       border-bottom: solid 1px #e0e7ef;
@@ -67,7 +67,7 @@
       margin-right: 50px;
     };
     @include sp {
-      display: none;
+      // display: none;
     };
 
     & ul {
@@ -99,7 +99,9 @@
       bottom: 0;
       opacity: 1 !important;
       background: #ffffff;
-  
+      a{
+        color:rgb(155, 143, 143);
+      }  
       label.icons{
           font-size:25px;
           position: fixed;
@@ -168,6 +170,9 @@
         right: 20px;
         width: 250px;
       };
+      @include sp {
+        right: 20px;
+      };
     }
   
     & li ul li {
@@ -228,8 +233,11 @@
           line-height: 65px;  
         };
         @include sp {
-          min-width: 100px;
+          min-width: 120px;
           line-height: 50px;
+          p {
+            color: #000;
+          }
         };
         &__img {
           display: block;

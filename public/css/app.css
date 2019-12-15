@@ -244,7 +244,6 @@ table {
 @media (max-width: 767px) {
   .l-header__title {
     display: block;
-    text-align: center;
     padding: 20px 0;
     font-size: 2.5rem;
     border-bottom: solid 1px #e0e7ef;
@@ -265,12 +264,6 @@ table {
 @media (min-width: 767px) {
   .l-header__nav {
     margin-right: 50px;
-  }
-}
-
-@media (max-width: 767px) {
-  .l-header__nav {
-    display: none;
   }
 }
 
@@ -314,6 +307,10 @@ table {
     bottom: 0;
     opacity: 1 !important;
     background: #ffffff;
+  }
+
+  .l-header__spnav a {
+    color: #9b8f8f;
   }
 
   .l-header__spnav label.icons {
@@ -397,6 +394,12 @@ table {
   }
 }
 
+@media (max-width: 767px) {
+  .l-header-dropdown li ul {
+    right: 20px;
+  }
+}
+
 .l-header-dropdown li ul li {
   background-color: #313435;
 }
@@ -471,8 +474,12 @@ table {
 
 @media (max-width: 767px) {
   .l-header-dropdown__child-user {
-    min-width: 100px;
+    min-width: 120px;
     line-height: 50px;
+  }
+
+  .l-header-dropdown__child-user p {
+    color: #000;
   }
 }
 
