@@ -47,6 +47,7 @@
     @include sp {
       display: block;
       // text-align: center;
+      margin-left: 20px;
       padding: 20px 0;
       font-size: 2.5rem;
       border-bottom: solid 1px #e0e7ef;
@@ -67,7 +68,10 @@
       margin-right: 50px;
     };
     @include sp {
-      // display: none;
+      margin-right: 20px;
+      li {
+        line-height: 82px;
+      }
     };
 
     & ul {
@@ -114,13 +118,13 @@
       label.home{
           transform: translate(-135px,-15px);
       }
-      label.heart{
+      label.search{
           transform: translate(-54px,-12px);
       }
-      label.search{
+      label.bell{
           transform: translate(30px,-15px);
       }
-      label.bell{
+      label.pen{
           transform: translate(120px,-15px);
       }
       div#box{
@@ -227,14 +231,13 @@
         justify-content: space-around;
         align-items: center;
         cursor: pointer;
+        min-width: 120px;
         @include pc {
-          min-width: 120px;
           margin-right: 35px;
           line-height: 65px;  
         };
         @include sp {
-          min-width: 120px;
-          line-height: 50px;
+          line-height: 82px;
           p {
             color: #000;
           }
@@ -247,9 +250,15 @@
   }
   // ログイン
   & a.l-header__signin {
-    padding-right: 2rem;
     border: none;
     color: #fff;
+    @include pc {
+      padding-right: 2rem;
+    };
+    @include sp {
+      color: #000;
+      padding-right: 10px;
+    };
   }
 
   // 新規ユーザー登録
@@ -264,5 +273,7 @@
        -moz-border-radius: 3px;
         -ms-border-radius: 3px;
          -o-border-radius: 3px;
+    @include pc {};
+    @include sp {};     
     }
 }

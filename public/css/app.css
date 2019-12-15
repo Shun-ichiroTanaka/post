@@ -244,6 +244,7 @@ table {
 @media (max-width: 767px) {
   .l-header__title {
     display: block;
+    margin-left: 20px;
     padding: 20px 0;
     font-size: 2.5rem;
     border-bottom: solid 1px #e0e7ef;
@@ -264,6 +265,16 @@ table {
 @media (min-width: 767px) {
   .l-header__nav {
     margin-right: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .l-header__nav {
+    margin-right: 20px;
+  }
+
+  .l-header__nav li {
+    line-height: 82px;
   }
 }
 
@@ -328,17 +339,17 @@ table {
             transform: translate(-135px, -15px);
   }
 
-  .l-header__spnav label.heart {
+  .l-header__spnav label.search {
     -webkit-transform: translate(-54px, -12px);
             transform: translate(-54px, -12px);
   }
 
-  .l-header__spnav label.search {
+  .l-header__spnav label.bell {
     -webkit-transform: translate(30px, -15px);
             transform: translate(30px, -15px);
   }
 
-  .l-header__spnav label.bell {
+  .l-header__spnav label.pen {
     -webkit-transform: translate(120px, -15px);
             transform: translate(120px, -15px);
   }
@@ -462,11 +473,11 @@ table {
   -webkit-box-align: center;
           align-items: center;
   cursor: pointer;
+  min-width: 120px;
 }
 
 @media (min-width: 767px) {
   .l-header-dropdown__child-user {
-    min-width: 120px;
     margin-right: 35px;
     line-height: 65px;
   }
@@ -474,8 +485,7 @@ table {
 
 @media (max-width: 767px) {
   .l-header-dropdown__child-user {
-    min-width: 120px;
-    line-height: 50px;
+    line-height: 82px;
   }
 
   .l-header-dropdown__child-user p {
@@ -488,9 +498,21 @@ table {
 }
 
 .l-header a.l-header__signin {
-  padding-right: 2rem;
   border: none;
   color: #fff;
+}
+
+@media (min-width: 767px) {
+  .l-header a.l-header__signin {
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .l-header a.l-header__signin {
+    color: #000;
+    padding-right: 10px;
+  }
 }
 
 .l-header a.l-header__signup {
