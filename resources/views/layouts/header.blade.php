@@ -40,7 +40,7 @@
                         </ul>
                     </li>
                     <li class="c-button-header__post">
-                        <a href="{{ route('post.new') }}">{{ __('Post') }}</a>
+                        <a href="{{ route('post.new') }}">{{ __('投稿ページ') }}</a>
                     </li>
                 @endguest
             </ul>

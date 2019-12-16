@@ -1066,10 +1066,6 @@ table {
   .c-button__show-social__like {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
     width: 50px;
     height: 50px;
     padding: 9px 0;
@@ -1102,10 +1098,6 @@ table {
   .c-button__show-social__dislike {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
     width: 50px;
     height: 50px;
     padding: 9px 0;
@@ -1137,10 +1129,6 @@ table {
   .c-button__show-social__stock {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
     width: 50px;
     height: 50px;
     padding: 9px 0;
@@ -1176,10 +1164,6 @@ table {
   .c-button__show-social__unstock {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
     width: 50px;
     height: 50px;
     padding: 9px 0;
@@ -3095,6 +3079,7 @@ span:hover + .u-other__fukidashi-stock {
   cursor: pointer;
   -webkit-box-pack: center;
           justify-content: center;
+  margin-bottom: 70px;
 }
 
 .pagination li {
