@@ -41,7 +41,7 @@
                         @if(Auth::user()->id === $article->user_id)
                         <form method="post" action="/user/delete/{{$article->id}}">
                             {{ csrf_field() }}
-                            <input type="submit" value="削除" class="btn btn-danger btn-sm" onclick='return confirm("記事を削除しますか？");'>
+                            <input id="c-button_post-delete" type="submit" value="削除" onclick='return confirm("記事を削除しますか？");'>
                         </form>
                         @endif                      
                     @endif
