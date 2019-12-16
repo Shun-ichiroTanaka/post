@@ -19,8 +19,6 @@ class UserController extends Controller
     {
         $user = User::find($id);
         
-        $ownuser = \App\User::where('id', $id)->first();
-
         // ユーザーの投稿のみを取り出す
         $articles = \App\Post::where('user_id', $id)->orderBy('created_at', 'desc')->get();
         // ユーザーがしたいいねを取り出す
@@ -30,7 +28,7 @@ class UserController extends Controller
 
 
         if ($user) {
-            return view('user.profile',compact('articles', 'likes','stocks','ownuser'))->withUser($user);
+            return view('user.profile',compact('articles', 'likes','stocks'))->withUser($user);
         } else {
             // URLからidをいじって他のユーザーページにアクセスしないように例外処理
             // ＝自分のid以外にアクセスさせない

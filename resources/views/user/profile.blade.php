@@ -21,11 +21,13 @@
                 @endif
             </div>
             <h1 class="p-mypage__user-name">{{ $user['name'] }}</h1>
-            @if ($user = $ownuser)
-                <div class="p-mypage__user-info">{{ $user['info'] }}</div>
-                <a class="p-mypage__user-change__info" href="{{ route('user.edit') }}">プロフィール編集</a>    
-            @else
-                <a class="p-mypage__user-change__info">{{ $user['info'] }}</a>
+            @if (Auth::check())
+                @if(Auth::user()->id === $user->id)
+                    <div class="p-mypage__user-info">{{ $user['info'] }}</div>
+                    <a class="p-mypage__user-change__info" href="{{ route('user.edit') }}">プロフィール編集</a>    
+                @else
+                    <a class="p-mypage__user-change">{{ $user['info'] }}</a>
+                @endif
             @endif
         </div>
         {{-- プロフィールのタブ部分 --}}
