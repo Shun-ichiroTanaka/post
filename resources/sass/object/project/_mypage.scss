@@ -84,7 +84,7 @@
                    -o-border-radius: 3px;
               @include pc {
                 width: 200px;
-                margin: 30px 0;
+                margin: 30px auto;
                 padding: .4em 1em;  
               };
               @include sp {
