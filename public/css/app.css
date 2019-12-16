@@ -2529,7 +2529,7 @@ table {
 
 @media (max-width: 767px) {
   .p-auth__form {
-    margin: 50px auto;
+    margin: 30px auto;
   }
 
   .p-auth__form label {
