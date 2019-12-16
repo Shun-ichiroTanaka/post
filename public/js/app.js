@@ -2201,6 +2201,161 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/post/EditPost.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/post/EditPost.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue2_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue2-editor */ "./node_modules/vue2-editor/dist/vue2-editor.esm.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'EditpostForm',
+  components: {
+    VueEditor: vue2_editor__WEBPACK_IMPORTED_MODULE_0__["VueEditor"],
+    VoerroTagsInput: VoerroTagsInput
+  },
+  data: function data() {
+    return {
+      // あらかじめあるタグの選択
+      selectedTags: [],
+      // テキストエディター
+      customToolbar: [["bold", "italic", "underline"], [{
+        list: "ordered"
+      }, {
+        list: "bullet"
+      }], ["image", "code-block"]],
+      // 投稿情報
+      title: "",
+      tags: [],
+      step1: "",
+      step2: "",
+      step3: "",
+      step4: "",
+      time: ""
+    };
+  },
+  mounted: function mounted() {},
+  methods: {
+    // 新規投稿
+    editpost: function editpost() {
+      // ①送信する記事情報を定義
+      var self = this;
+      var article = {
+        title: self.title,
+        tags: self.tags,
+        step1: self.step1,
+        step2: self.step2,
+        step3: self.step3,
+        step4: self.step4,
+        time: self.time
+      }; // ②パスを定義
+
+      var url = '/api/user/post/edit'; // axiosを使って、入力項目をサーバ側へ
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(url, article).then(function (response) {
+        console.log('投稿の編集に成功しました');
+        location.href = '/'; // console.log(e.response.article.errors)
+      })["catch"](function (e) {
+        console.log('投稿の編集に失敗しました');
+      });
+    },
+    // step完了
+    onComplete: function onComplete() {// alert('全てのステップが完了しました！！');
+    },
+    handleImageAdded: function handleImageAdded(file, Editor, cursorLocation, resetUploader) {
+      var url = "/api/posts/".concat(postId, "/image");
+      var formData = new FormData();
+      formData.append("image", file);
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(url, {
+        user_id: this.userId
+      }).then(function (result) {
+        var url = result.data.url; // Get url from response
+
+        Editor.insertEmbed(cursorLocation, "image", url);
+        resetUploader();
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/post/NewPostForm.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/post/NewPostForm.vue?vue&type=script&lang=js& ***!
@@ -36463,6 +36618,321 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/post/EditPost.vue?vue&type=template&id=6ce73dbe&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/post/EditPost.vue?vue&type=template&id=6ce73dbe& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { attrs: { id: "app" } }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.editpost($event)
+          }
+        }
+      },
+      [
+        _c(
+          "div",
+          [
+            _c("div", { staticClass: "c-post__new-title" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.title,
+                    expression: "title"
+                  }
+                ],
+                attrs: {
+                  placeholder:
+                    " タイトル（例：「1日5分!マクロ経済のオススメ勉強法」）",
+                  type: "text",
+                  required: ""
+                },
+                domProps: { value: _vm.title },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.title = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "c-post__new-box" }, [
+              _c("div", { staticClass: "c-post__new-box__tags" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.tags,
+                      expression: "tags"
+                    }
+                  ],
+                  attrs: {
+                    id: "tags",
+                    placeholder:
+                      " タグを半角スペース区切りで5つまで入力できます')",
+                    type: "text",
+                    required: ""
+                  },
+                  domProps: { value: _vm.tags },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.tags = $event.target.value
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "c-post__new-box__time" }, [
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.time,
+                        expression: "time"
+                      }
+                    ],
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.time = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      }
+                    }
+                  },
+                  [
+                    _c(
+                      "option",
+                      { attrs: { selected: "", value: "指定なし" } },
+                      [_vm._v("指定しない")]
+                    ),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "30分" } }, [
+                      _vm._v("30分")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "1時間" } }, [
+                      _vm._v("1時間")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "1時間30分" } }, [
+                      _vm._v("1時間30分")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2時間" } }, [
+                      _vm._v("2時間")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "2時間30分" } }, [
+                      _vm._v("2時間30分")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "3時間" } }, [
+                      _vm._v("3時間")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "3時間30分" } }, [
+                      _vm._v("3時間30分")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "4時間" } }, [
+                      _vm._v("4時間")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "4時間30分" } }, [
+                      _vm._v("4時間30分")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "5時間" } }, [
+                      _vm._v("5時間")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "それ以上" } }, [
+                      _vm._v("それ以上")
+                    ])
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "form-wizard",
+              {
+                attrs: {
+                  color: "#4BCFC8",
+                  transition: "bounce",
+                  "back-button-text": "戻る",
+                  "next-button-text": "ステップを追加..",
+                  "finish-button-text": "これ以上追加できません"
+                },
+                on: { "on-complete": _vm.onComplete }
+              },
+              [
+                _c(
+                  "tab-content",
+                  { attrs: { title: "Step1" } },
+                  [
+                    _c("vue-editor", {
+                      attrs: {
+                        id: "editor1",
+                        useCustomImageHandler: "",
+                        placeholder:
+                          "各ステップのサブタイトル(Heading1)を最初につけましょう（例：「STEP1：まずはマクロ経済をザックリ理解しよう」）"
+                      },
+                      on: { "image-added": _vm.handleImageAdded },
+                      model: {
+                        value: _vm.step1,
+                        callback: function($$v) {
+                          _vm.step1 = $$v
+                        },
+                        expression: "step1"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "tab-content",
+                  { attrs: { title: "Step2" } },
+                  [
+                    _c("vue-editor", {
+                      attrs: {
+                        id: "editor2",
+                        useCustomImageHandler: "",
+                        placeholder:
+                          "（例：「STEP2：次に必須の公式を押さえよう」）"
+                      },
+                      on: { "image-added": _vm.handleImageAdded },
+                      model: {
+                        value: _vm.step2,
+                        callback: function($$v) {
+                          _vm.step2 = $$v
+                        },
+                        expression: "step2"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "tab-content",
+                  { attrs: { title: "Step3" } },
+                  [
+                    _c("vue-editor", {
+                      attrs: {
+                        id: "editor3",
+                        useCustomImageHandler: "",
+                        placeholder:
+                          "（例：「STEP3：頻出の問題系統を押さえよう」）"
+                      },
+                      on: { "image-added": _vm.handleImageAdded },
+                      model: {
+                        value: _vm.step3,
+                        callback: function($$v) {
+                          _vm.step3 = $$v
+                        },
+                        expression: "step3"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "tab-content",
+                  { attrs: { title: "Last Step", icon: "fas fa-check" } },
+                  [
+                    _c("vue-editor", {
+                      attrs: {
+                        id: "editor4",
+                        useCustomImageHandler: "",
+                        placeholder:
+                          "（例：「STEP4：試験までにこなしておくべき参考書一覧」）"
+                      },
+                      on: { "image-added": _vm.handleImageAdded },
+                      model: {
+                        value: _vm.step4,
+                        callback: function($$v) {
+                          _vm.step4 = $$v
+                        },
+                        expression: "step4"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "c-post__new-submit" }, [
+              _c(
+                "button",
+                { attrs: { type: "submit" }, on: { click: _vm.editpost } },
+                [_vm._v("投稿する")]
+              )
+            ])
+          ],
+          1
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "p-auth__title" }, [
+      _c("h1", [_vm._v("Edit Post")])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/post/NewPostForm.vue?vue&type=template&id=5c4d2000&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/post/NewPostForm.vue?vue&type=template&id=5c4d2000& ***!
@@ -50070,6 +50540,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // requir
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('newpostform', __webpack_require__(/*! ./components/post/NewPostForm.vue */ "./resources/js/components/post/NewPostForm.vue")["default"]);
+Vue.component('editpost', __webpack_require__(/*! ./components/post/EditPost.vue */ "./resources/js/components/post/EditPost.vue")["default"]);
 Vue.component('allposts', __webpack_require__(/*! ./components/post/AllPosts.vue */ "./resources/js/components/post/AllPosts.vue")["default"]);
 Vue.component('like', __webpack_require__(/*! ./components/social/Like.vue */ "./resources/js/components/social/Like.vue")["default"]);
 Vue.component('stock', __webpack_require__(/*! ./components/social/Stock.vue */ "./resources/js/components/social/Stock.vue")["default"]);
@@ -50248,6 +50719,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AllPosts_vue_vue_type_template_id_620712a6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AllPosts_vue_vue_type_template_id_620712a6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/post/EditPost.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/post/EditPost.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _EditPost_vue_vue_type_template_id_6ce73dbe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EditPost.vue?vue&type=template&id=6ce73dbe& */ "./resources/js/components/post/EditPost.vue?vue&type=template&id=6ce73dbe&");
+/* harmony import */ var _EditPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EditPost.vue?vue&type=script&lang=js& */ "./resources/js/components/post/EditPost.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _EditPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _EditPost_vue_vue_type_template_id_6ce73dbe___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _EditPost_vue_vue_type_template_id_6ce73dbe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/post/EditPost.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/post/EditPost.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/post/EditPost.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EditPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./EditPost.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/post/EditPost.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EditPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/post/EditPost.vue?vue&type=template&id=6ce73dbe&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/post/EditPost.vue?vue&type=template&id=6ce73dbe& ***!
+  \**********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditPost_vue_vue_type_template_id_6ce73dbe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./EditPost.vue?vue&type=template&id=6ce73dbe& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/post/EditPost.vue?vue&type=template&id=6ce73dbe&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditPost_vue_vue_type_template_id_6ce73dbe___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditPost_vue_vue_type_template_id_6ce73dbe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

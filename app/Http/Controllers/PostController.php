@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
+    // public function __construct()
+    // {
+    //     // can(Policy)の、destructiveメソッドの、postに対しての制約をmiddleware指定する。
+    //     // edit, update, destoryに対してのみmiddlewareを適用する。
+    //     $this->middleware('can:destructive,post')
+    //          ->only(['edit', 'update', 'delete']);
+    // }
+
     public function index()
     {
         return view('posts.new');
@@ -132,7 +140,6 @@ class PostController extends Controller
             } else {
                 return redirect()->back();
             }
-
         } else {
             return redirect()->back();
         }
@@ -141,8 +148,9 @@ class PostController extends Controller
     // 投稿削除
     public function delete(Request $request)
     {
-        $post = Post::find($request->id);
-        $post->delete();
-        return redirect("/")->with('flash_message', __('削除しました!'));
+        // Policyのdestructiveメソッドを適用($postは第2引数にあたる)
+        // $this->authorize('destructive', $request);
+        Post::find($request->id)->delete();
+        return redirect("/")->with('flash_message', __('投稿を削除しました!'));
     }
 }

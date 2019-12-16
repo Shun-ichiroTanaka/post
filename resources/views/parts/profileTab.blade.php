@@ -30,10 +30,24 @@
                 </a>
             </div>
             <div class="article-box-right">
-                <a class="article-title" href="/post/{{$article->id}}">{{ $article->title }}</a>
-                <div class="article-details">
-                    <div class="article-date">{{ $article->created_at }}</div>
+                <div>
+                    <a class="article-title" href="/post/{{$article->id}}">{{ $article->title }}</a>
+                    <div class="article-details">
+                        <div class="article-date">{{ $article->created_at }}</div>
+                    </div>
                 </div>
+                <div>
+                    @if (Auth::check())
+                        @if(Auth::user()->id === $article->user_id)
+                        <form method="post" action="/user/delete/{{$article->id}}">
+                            {{ csrf_field() }}
+                            <input type="submit" value="削除" class="btn btn-danger btn-sm" onclick='return confirm("記事を削除しますか？");'>
+                        </form>
+                        @endif                      
+                    @endif
+
+                </div>
+                
             </div>
         </div>
         @else

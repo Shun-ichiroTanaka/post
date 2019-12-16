@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
 <div id="app">
-    <newpostform></newpostform>
+    <editpost></editpost>
 </div>
 @endsection

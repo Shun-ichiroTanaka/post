@@ -45,6 +45,7 @@ require('./bootstrap');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 Vue.component('newpostform', require('./components/post/NewPostForm.vue').default);
+Vue.component('editpost', require('./components/post/EditPost.vue').default);
 Vue.component('allposts', require('./components/post/AllPosts.vue').default);
 
 Vue.component('like', require('./components/social/Like.vue').default);
