@@ -72,9 +72,8 @@
             }
             &__info {
               display: block;
-              color: $emeraldo;
-              background: #fff;
-              border: 1px solid $emeraldo;
+              color: #fff;
+              background: $emeraldo;
               margin: 0 auto;
                       border-radius: 3px;
           
@@ -85,7 +84,7 @@
               @include pc {
                 width: 200px;
                 margin: 30px auto;
-                padding: .4em 1em;  
+                padding: .6em 1em;  
               };
               @include sp {
                 width: 200px;

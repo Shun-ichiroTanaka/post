@@ -11,7 +11,6 @@
 @extends('layouts.app')
 @section('content')
 <div class="p-auth__title">
-    <h1>{{ __('Update Profile') }}</h1>
 </div>
 <div class="p-auth__form">
     <form class="p-auth__form-register" method="POST" action="{{ route('user.update') }}" enctype="multipart/form-data">
@@ -26,7 +25,7 @@
 
         {{-- 　名前　　 --}}
         <div>
-            <label for="name">{{ __('name') }}</label>
+            <label for="name">{{ __('お名前') }}</label>
             <input id="name" value="{{ $user['name'] }}" 　type="text"
                 class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"
                 autocomplete="name" autofocus>
@@ -34,6 +33,27 @@
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
+            @enderror
+        </div>
+
+        <div>
+            {{-- 現在のイメージ画像 --}}
+            <label for="avatar">{{ __('現在の画像') }}</label>
+            <div class="p-auth__form-thumbnail__update">
+              @if (empty($user->avatar))
+                  <img src="{{ asset('/img/avatar/user.svg') }}" alt="avatar" />
+              @else
+                  <img src="{{ asset('/img/avatar/'.Auth::user()->avatar) }}" alt="avatar">
+              @endif
+            </div>
+        
+            {{-- 新しいイメージ画像 --}}
+            <label for="avatar">{{ __('新しい画像を選択') }}</label>
+            <input id="avatar" value="{{ $user['avatar'] }}" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
+            @error('avatar')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
             @enderror
         </div>
 

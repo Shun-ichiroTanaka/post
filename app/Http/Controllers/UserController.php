@@ -79,7 +79,17 @@ class UserController extends Controller
             if($validate) {
                 $user->name = $request['name'];
                 $user->info = $request['info'];
+
+                if ($request->hasfile('avatar')) {
+                    $file = $request->file('avatar');
+                    $extension = $file->getClientOriginalExtension(); //getting avatar extension
+                    $filename = time() . '.' . $extension;
+                    $file->move('img/avatar/' , $filename);
+                    $user->avatar = $filename;
+                }                
                 $user->save();
+                $user->avatar = $request['avatar'];
+                
                 return redirect()->back()->with('flash_message', 'プロフィールを変更しました!');
 
             } else {

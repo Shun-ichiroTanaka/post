@@ -328,6 +328,7 @@ table {
     bottom: 0;
     opacity: 1 !important;
     background: #ffffff;
+    z-index: 1000;
   }
 
   .l-header__spnav a {
@@ -2776,9 +2777,8 @@ table {
 
 .p-mypage__user-change__info {
   display: block;
-  color: #B79B5B;
-  background: #fff;
-  border: 1px solid #B79B5B;
+  color: #fff;
+  background: #B79B5B;
   margin: 0 auto;
   border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -2791,7 +2791,7 @@ table {
   .p-mypage__user-change__info {
     width: 200px;
     margin: 30px auto;
-    padding: .4em 1em;
+    padding: .6em 1em;
   }
 }
 

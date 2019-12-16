@@ -23,8 +23,6 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
     Route::prefix('edit')->group(function () {
         Route::get('/user', 'UserController@edit')->name('user.edit');
         Route::post('/user', 'UserController@update')->name('user.update');
-        Route::get('/avatar', 'AvatarController@edit')->name('avatar.edit');
-        Route::post('/avatar', 'AvatarController@update')->name('avatar.update');
     });
 });
 
