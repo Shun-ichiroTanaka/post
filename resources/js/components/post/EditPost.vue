@@ -5,11 +5,11 @@
         <form @submit.prevent="editpost">
             <div>
                 <div class="c-post__new-title">
-                    <input v-model="title" placeholder=" タイトル（例：「1日5分!マクロ経済のオススメ勉強法」）" 　type="text" required>
+                    <input v-model="title" type="text" required>
                 </div>
                 <div class="c-post__new-box">
                     <div class="c-post__new-box__tags">
-                        <input v-model="tags" id="tags" placeholder=" タグを半角スペース区切りで5つまで入力できます')" 　type="text" required>
+                        <input v-model="tags" id="tags" type="text" required>
                         <!-- <tags-input
                             v-model="tags"
                             element-id="tags"
@@ -44,17 +44,16 @@
 
                 <form-wizard @on-complete="onComplete" color="#4BCFC8" transition="bounce" back-button-text="戻る" next-button-text="ステップを追加.." finish-button-text="これ以上追加できません">
                     <tab-content title="Step1">
-                        <!-- <textarea v-model="step1" class="form-control" id="markdown_editor_textarea" placeholder=" {{ __('ここにはStepの内容について書いてください。Markdown記法で書いてみましょう！') }}"></textarea> -->
-                        <vue-editor v-model="step1" id="editor1" useCustomImageHandler @image-added="handleImageAdded" placeholder="各ステップのサブタイトル(Heading1)を最初につけましょう（例：「STEP1：まずはマクロ経済をザックリ理解しよう」）"></vue-editor>
+                        <vue-editor v-model="step1" id="editor1" useCustomImageHandler @image-added="handleImageAdded"></vue-editor>
                     </tab-content>
                     <tab-content title="Step2">
-                        <vue-editor v-model="step2" id="editor2" useCustomImageHandler @image-added="handleImageAdded" placeholder="（例：「STEP2：次に必須の公式を押さえよう」）"> </vue-editor>
+                        <vue-editor v-model="step2" id="editor2" useCustomImageHandler @image-added="handleImageAdded"></vue-editor>
                     </tab-content>
                     <tab-content title="Step3">
-                        <vue-editor v-model="step3" id="editor3" useCustomImageHandler @image-added="handleImageAdded" placeholder="（例：「STEP3：頻出の問題系統を押さえよう」）"> </vue-editor>
+                        <vue-editor v-model="step3" id="editor3" useCustomImageHandler @image-added="handleImageAdded"></vue-editor>
                     </tab-content>
                     <tab-content title="Last Step" icon="fas fa-check">
-                        <vue-editor v-model="step4" id="editor4" useCustomImageHandler @image-added="handleImageAdded" placeholder="（例：「STEP4：試験までにこなしておくべき参考書一覧」）"></vue-editor>
+                        <vue-editor v-model="step4" id="editor4" useCustomImageHandler @image-added="handleImageAdded"></vue-editor>
                     </tab-content>
                 </form-wizard>
                 <div class="c-post__new-submit">
@@ -75,10 +74,14 @@ export default {
         VueEditor,
         VoerroTagsInput,
     },
+    props:[
+        // 投稿情報取得①
+        'post'
+    ],
     data() {
         return {
             // あらかじめあるタグの選択
-            selectedTags: [],
+            // selectedTags: [],
             // テキストエディター
             customToolbar: [
                 ["bold", "italic", "underline"],
@@ -86,14 +89,14 @@ export default {
                 ["image", "code-block"]
             ],
 
-            // 投稿情報
-            title: "",
-            tags: [],
-            step1: "",
-            step2: "",
-            step3: "",
-            step4: "",
-            time: "",
+            // 投稿情報取得②
+            title: this.post.title,
+            tags: this.post.tags,
+            step1: this.post.step1,
+            step2: this.post.step2,
+            step3: this.post.step3,
+            step4: this.post.step4,
+            time: this.post.time,
         };
 
     },

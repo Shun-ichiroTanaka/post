@@ -130,16 +130,40 @@ class PostController extends Controller
     }
     // 投稿編集
     // ユーザー情報を含めたviewファイルを返す
-    public function edit()
+    public function edit($id)
+    {
+        $post = Post::where('id', $id)->first();
+        return view('posts.edit', compact('post'));
+    }
+
+    public function update(Request $request, Post $post)
     {
         if (Auth::user()) {
-            $user = Post::find(Auth::user()->id);
-
-            if ($user) {
-                return view('posts.edit')->withUser($user);
-            } else {
-                return redirect()->back();
-            }
+                $tags = explode(' ', $request->tags);
+                $tag1 = $tags[0];
+                $tag2 = (isset($tags[1])) ? $tags[1] : null;
+                $tag3 = (isset($tags[2])) ? $tags[2] : null;
+                $tag4 = (isset($tags[3])) ? $tags[3] : null;
+                $tag5 = (isset($tags[4])) ? $tags[4] : null;
+        
+                // 二重送信対策
+                $request->session()->regenerateToken();
+        
+                $post->fill([
+                    'user_id' => auth()->id(),
+                    'title' => $request->title,
+                    'tag1' => $tag1,
+                    'tag2' => $tag2,
+                    'tag3' => $tag3,
+                    'tag4' => $tag4,
+                    'tag5' => $tag5,
+                    'step1' => $request->step1,
+                    'step2' => $request->step2,
+                    'step3' => $request->step3,
+                    'step4' => $request->step4,
+                    'time' => $request->time
+                ]);
+                $post->save();
         } else {
             return redirect()->back();
         }

@@ -42,7 +42,7 @@ Route::group(['middleware' => 'api'],function(){
 
     // 投稿
     Route::post('/user/post/new', 'PostController@postStep');
-    Route::post('/user/post/edit', 'PostController@edit');
+    Route::post('/user/post/edit', 'PostController@update');
 
 
 });

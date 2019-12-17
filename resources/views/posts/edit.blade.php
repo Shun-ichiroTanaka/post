@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div id="app">
-    <editpost></editpost>
+    <editpost
+    :post="{{$post}}">
+    </editpost>
 </div>
 @endsection

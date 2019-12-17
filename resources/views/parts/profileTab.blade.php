@@ -39,10 +39,18 @@
                 <div>
                     @if (Auth::check())
                         @if(Auth::user()->id === $article->user_id)
-                        <form method="post" action="/user/delete/{{$article->id}}">
-                            {{ csrf_field() }}
-                            <input id="c-button_post-delete" type="submit" value="削除" onclick='return confirm("記事を削除しますか？");'>
-                        </form>
+                        <div class="u-flex">
+                            {{-- 削除ボタン --}}
+                            <form method="post" action="/user/delete/{{$article->id}}">
+                                {{ csrf_field() }}
+                                <input id="c-button_post-delete" type="submit" value="削除" onclick='return confirm("記事を削除しますか？");'>
+                            </form>
+                            {{-- 編集ボタン --}}
+                            <form method="post" action="/user/edit/{{$article->id}}">
+                                {{ csrf_field() }}
+                                <input id="c-button_post-edit" type="submit" value="編集">
+                            </form>
+                        </div>
                         @endif                      
                     @endif
 

@@ -2279,7 +2279,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2288,24 +2287,26 @@ __webpack_require__.r(__webpack_exports__);
     VueEditor: vue2_editor__WEBPACK_IMPORTED_MODULE_0__["VueEditor"],
     VoerroTagsInput: VoerroTagsInput
   },
+  props: [// 投稿情報取得①
+  'post'],
   data: function data() {
     return {
       // あらかじめあるタグの選択
-      selectedTags: [],
+      // selectedTags: [],
       // テキストエディター
       customToolbar: [["bold", "italic", "underline"], [{
         list: "ordered"
       }, {
         list: "bullet"
       }], ["image", "code-block"]],
-      // 投稿情報
-      title: "",
-      tags: [],
-      step1: "",
-      step2: "",
-      step3: "",
-      step4: "",
-      time: ""
+      // 投稿情報取得②
+      title: this.post.title,
+      tags: this.post.tags,
+      step1: this.post.step1,
+      step2: this.post.step2,
+      step3: this.post.step3,
+      step4: this.post.step4,
+      time: this.post.time
     };
   },
   mounted: function mounted() {},
@@ -36660,12 +36661,7 @@ var render = function() {
                     expression: "title"
                   }
                 ],
-                attrs: {
-                  placeholder:
-                    " タイトル（例：「1日5分!マクロ経済のオススメ勉強法」）",
-                  type: "text",
-                  required: ""
-                },
+                attrs: { type: "text", required: "" },
                 domProps: { value: _vm.title },
                 on: {
                   input: function($event) {
@@ -36689,13 +36685,7 @@ var render = function() {
                       expression: "tags"
                     }
                   ],
-                  attrs: {
-                    id: "tags",
-                    placeholder:
-                      " タグを半角スペース区切りで5つまで入力できます')",
-                    type: "text",
-                    required: ""
-                  },
+                  attrs: { id: "tags", type: "text", required: "" },
                   domProps: { value: _vm.tags },
                   on: {
                     input: function($event) {
@@ -36809,12 +36799,7 @@ var render = function() {
                   { attrs: { title: "Step1" } },
                   [
                     _c("vue-editor", {
-                      attrs: {
-                        id: "editor1",
-                        useCustomImageHandler: "",
-                        placeholder:
-                          "各ステップのサブタイトル(Heading1)を最初につけましょう（例：「STEP1：まずはマクロ経済をザックリ理解しよう」）"
-                      },
+                      attrs: { id: "editor1", useCustomImageHandler: "" },
                       on: { "image-added": _vm.handleImageAdded },
                       model: {
                         value: _vm.step1,
@@ -36833,12 +36818,7 @@ var render = function() {
                   { attrs: { title: "Step2" } },
                   [
                     _c("vue-editor", {
-                      attrs: {
-                        id: "editor2",
-                        useCustomImageHandler: "",
-                        placeholder:
-                          "（例：「STEP2：次に必須の公式を押さえよう」）"
-                      },
+                      attrs: { id: "editor2", useCustomImageHandler: "" },
                       on: { "image-added": _vm.handleImageAdded },
                       model: {
                         value: _vm.step2,
@@ -36857,12 +36837,7 @@ var render = function() {
                   { attrs: { title: "Step3" } },
                   [
                     _c("vue-editor", {
-                      attrs: {
-                        id: "editor3",
-                        useCustomImageHandler: "",
-                        placeholder:
-                          "（例：「STEP3：頻出の問題系統を押さえよう」）"
-                      },
+                      attrs: { id: "editor3", useCustomImageHandler: "" },
                       on: { "image-added": _vm.handleImageAdded },
                       model: {
                         value: _vm.step3,
@@ -36881,12 +36856,7 @@ var render = function() {
                   { attrs: { title: "Last Step", icon: "fas fa-check" } },
                   [
                     _c("vue-editor", {
-                      attrs: {
-                        id: "editor4",
-                        useCustomImageHandler: "",
-                        placeholder:
-                          "（例：「STEP4：試験までにこなしておくべき参考書一覧」）"
-                      },
+                      attrs: { id: "editor4", useCustomImageHandler: "" },
                       on: { "image-added": _vm.handleImageAdded },
                       model: {
                         value: _vm.step4,

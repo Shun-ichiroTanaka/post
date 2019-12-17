@@ -1260,6 +1260,7 @@ table {
   color: #fff;
   border-radius: 5px;
   font-size: 1rem;
+  margin-right: 10px;
 }
 
 @media (min-width: 767px) {
@@ -1270,6 +1271,26 @@ table {
 
 @media (max-width: 767px) {
   #c-button_post-delete {
+    margin-top: 3px;
+  }
+}
+
+#c-button_post-edit {
+  background: #4dc0b5;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+@media (min-width: 767px) {
+  #c-button_post-edit {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  #c-button_post-edit {
     margin-top: 3px;
   }
 }
@@ -2773,6 +2794,11 @@ input[name="tab_item"] {
 .tabs input:checked + .tab_item {
   background: #2a3132;
   color: #fff;
+}
+
+.u-flex {
+  display: -webkit-box;
+  display: flex;
 }
 
 .validation {

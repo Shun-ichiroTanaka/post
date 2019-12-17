@@ -213,6 +213,20 @@
             color: #fff;
             border-radius: 5px;
             font-size: 1rem;
+            margin-right: 10px;
+            @include pc {
+                margin-top: 5px;
+            };
+            @include sp {
+                margin-top: 3px;
+            };
+        }
+        &-edit {
+            background: $teal;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-right: 10px;
             @include pc {
                 margin-top: 5px;
             };

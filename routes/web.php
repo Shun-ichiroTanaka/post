@@ -8,6 +8,8 @@ Route::get('/post/{id}', 'PostController@showStep')->name('post.showpost');
 Route::get('/user/{id}', 'UserController@profile')->name('user.profile');
 
 Route::post('/user/delete/{id}', 'PostController@delete');
+Route::post('/user/edit/{id}', 'PostController@edit');
+
 
 // 認証
 Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
@@ -28,10 +30,6 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
     Route::prefix('edit')->group(function () {
         Route::get('/user', 'UserController@edit')->name('user.edit');
         Route::post('/user', 'UserController@update')->name('user.update');
-    });
-    Route::prefix('delete')->group(function () {
-        Route::patch('/user/{id}', 'PostController@edit')->name('post.edit');
-        Route::post('/user/{id}', 'PostController@delete')->name('post.delete');
     });
 });
 
