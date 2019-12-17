@@ -1221,19 +1221,37 @@ table {
 
 .c-button__show-challange {
   display: block;
-  padding: 0.5em 1em;
   text-decoration: none;
   border-radius: 3px;
-  font-weight: bold;
-  color: #FFF;
-  background-image: linear-gradient(45deg, #709dff 0%, #b0c9ff 100%);
-  -webkit-transition: .4s;
-  transition: .4s;
-  cursor: pointer;
+  color: #FFF !important;
+  background: #FF416C;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#FF4B2B), to(#FF416C));
+  background: linear-gradient(to right, #FF4B2B, #FF416C);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@media (min-width: 767px) {
+  .c-button__show-challange {
+    padding: 0.8em 1em;
+    margin: 80px 0 80px 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .c-button__show-challange {
+    padding: 0.8em 1em;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
 }
 
 .c-button__show-challange :hover {
-  background-image: linear-gradient(45deg, #709dff 50%, #b0c9ff 100%);
+  cursor: pointer !important;
+  padding: 20px;
 }
 
 .c-button-header__post a {

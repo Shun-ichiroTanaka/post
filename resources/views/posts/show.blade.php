@@ -76,10 +76,10 @@
                 </div>
 
                 <div class="c-post__show-right">
-                    {{-- <div><a href="" class="c-button__show-challange">このStepにチャレンジ</a></div> --}}
+                    <div><a href="" class="c-button__show-challange">チャレンジする</a></div>
                     <div class="step-app-side c-step__side">
                         {{-- 目次 --}}
-                        <p>ステップ</p>
+                        <p>目次</p>
                         <div class="toc" data-toc="h1"></div>
                     </div>
                 </div>
