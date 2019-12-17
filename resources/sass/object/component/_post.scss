@@ -270,14 +270,17 @@
         }
         &-right {
             overflow: auto;
-            margin-top: 50px;
             color: #999;
             text-align: center;
             @include pc {
+                margin-top: 50px;
                 width: 250px;
                 min-height: 500px;    
             };
-            @include sp {};    
+            @include sp {
+                width: 100%;
+                margin: 50px auto;
+            };    
             a {
                 color: #999;
                 text-decoration: none;
