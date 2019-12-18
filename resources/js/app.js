@@ -1,18 +1,11 @@
 window.Vue = require('vue');
 
 import axios from "axios";
-
-// import fontawesome from '@fortawesome/fontawesome';
-// import regular from '@fortawesome/fontawesome-free-solid';
-// import solid from '@fortawesome/fontawesome-free-regular';
-// import brands from '@fortawesome/fontawesome-free-brands';
-
 import VueFormWizard from 'vue-form-wizard'
 import 'vue-form-wizard/dist/vue-form-wizard.min.css'
 import { VueEditor, Quill } from "vue2-editor";
 import VoerroTagsInput from '@voerro/vue-tagsinput';
 import '@firstandthird/toc';
-
 
 Vue.component('tags-input', VoerroTagsInput);
 Vue.use(VueFormWizard)
@@ -25,11 +18,6 @@ Vue.use(VueFormWizard)
 
 require('./bootstrap');
 // require("./parts/markdown");
-
-// fontawesome
-// fontawesome.library.add(regular);
-// fontawesome.library.add(solid);
-// fontawesome.library.add(brands);
 
 
 /**

@@ -2446,7 +2446,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       // あらかじめあるタグの選択
-      // selectedTags: [],
+      selectedTags: [],
       // テキストエディター
       customToolbar: [["bold", "italic", "underline"], [{
         list: "ordered"
@@ -50473,10 +50473,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _voerro_vue_tagsinput__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @voerro/vue-tagsinput */ "./node_modules/@voerro/vue-tagsinput/src/main.js");
 /* harmony import */ var _firstandthird_toc__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @firstandthird/toc */ "./node_modules/@firstandthird/toc/dist/toc.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
- // import fontawesome from '@fortawesome/fontawesome';
-// import regular from '@fortawesome/fontawesome-free-solid';
-// import solid from '@fortawesome/fontawesome-free-regular';
-// import brands from '@fortawesome/fontawesome-free-brands';
 
 
 
@@ -50492,10 +50488,6 @@ Vue.use(vue_form_wizard__WEBPACK_IMPORTED_MODULE_1___default.a);
  */
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // require("./parts/markdown");
-// fontawesome
-// fontawesome.library.add(regular);
-// fontawesome.library.add(solid);
-// fontawesome.library.add(brands);
 
 /**
  * The following block of code may be used to automatically register your

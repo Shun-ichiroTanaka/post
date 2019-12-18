@@ -18,19 +18,17 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
     // カリキュラム
     Route::get('/curriculum/{id?}/{page?}', 'CurriculumController@viewcurriculum');
 
-
-
     Route::prefix('post')->group(function () {
         Route::get('/new', 'PostController@index')->name('post.new');    
         Route::delete('/destroy/{id}', 'PostController@destroy');    
         // Route::post('/new', 'PostController@postStep')->name('post.newpost');
     });
+});
 
-    // 編集
-    Route::prefix('edit')->group(function () {
-        Route::get('/user', 'UserController@edit')->name('user.edit');
-        Route::post('/user', 'UserController@update')->name('user.update');
-    });
+// 編集
+Route::group(['prefix' => 'edit', 'middleware' => ['auth']], function () {
+    Route::get('/user', 'UserController@edit')->name('user.edit');
+    Route::post('/user', 'UserController@update')->name('user.update');
 });
 
 Auth::routes();

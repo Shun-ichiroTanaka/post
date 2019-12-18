@@ -81,7 +81,6 @@
 
 　　{{-- 　登録ボタン　　 --}}
     <button type="submit">{{ __('Update Details') }}</button>
-
   </form>
 </div>
 

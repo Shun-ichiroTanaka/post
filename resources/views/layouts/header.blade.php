@@ -1,6 +1,6 @@
 <header class="l-header">
     <div class="">
-        <p class="l-header__title"><a href="{{ url('/') }}">R2 β</a></p>
+        <p class="l-header__title"><a href="{{ url('/') }}">β</a></p>
         <nav class="l-header__nav">
             <ul>
                 @guest

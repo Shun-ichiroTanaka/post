@@ -77,7 +77,7 @@ export default {
     data() {
         return {
             // あらかじめあるタグの選択
-            // selectedTags: [],
+            selectedTags: [],
             // テキストエディター
             customToolbar: [
                 ["bold", "italic", "underline"],

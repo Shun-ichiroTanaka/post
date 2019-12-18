@@ -26,7 +26,6 @@ class UserController extends Controller
         // ユーザーのストック(登録)を取り出す
         $stocks = $user->stocks()->orderBy('created_at', 'desc')->get();
 
-
         if ($user) {
             return view('user.profile',compact('articles', 'likes','stocks'))->withUser($user);
         } else {
@@ -60,8 +59,8 @@ class UserController extends Controller
         $user = User::find(Auth::user()->id);
 
         if ($user) {
-
             $validate = null;
+            
             if(Auth::user()->email === $request['email']){
                 $validate = $request->validate([
                   'name' => 'required|min:2',

@@ -149,7 +149,7 @@ class PostController extends Controller
                 // 二重送信対策
                 $request->session()->regenerateToken();
         
-                $post->fill([
+                $post = Post::updateOrCreate([
                     'user_id' => auth()->id(),
                     'title' => $request->title,
                     'tag1' => $tag1,
@@ -163,7 +163,7 @@ class PostController extends Controller
                     'step4' => $request->step4,
                     'time' => $request->time
                 ]);
-                $post->save();
+                // $post->save();
         } else {
             return redirect()->back();
         }
@@ -175,6 +175,6 @@ class PostController extends Controller
         // Policyのdestructiveメソッドを適用($postは第2引数にあたる)
         // $this->authorize('destructive', $request);
         Post::find($request->id)->delete();
-        return redirect("/")->with('flash_message', __('投稿を削除しました!'));
+        return redirect()->back()->with('flash_message', __('投稿を削除しました!'));
     }
 }
