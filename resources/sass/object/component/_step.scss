@@ -4,9 +4,9 @@
 
 .c-step {
     display: flex;
-    margin: 0 auto;
+    // margin: 0 auto;
     @include pc {
-        width: 1200px;
+        width: 100%;
     };
     @include sp {
         flex-direction: column;

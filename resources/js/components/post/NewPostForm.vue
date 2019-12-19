@@ -41,7 +41,7 @@
                     </div>
                 </div>
 
-                <form-wizard @on-complete="onComplete" color="#4BCFC8" transition="bounce" back-button-text="戻る" next-button-text="ステップを追加.." finish-button-text="これ以上追加できません">
+                <form-wizard @on-complete="onComplete" color="#B79B5B" transition="bounce" back-button-text="戻る" next-button-text="ステップを追加.." finish-button-text="これ以上追加できません">
                     <tab-content title="Step1">
                         <!-- <textarea v-model="step1" class="form-control" id="markdown_editor_textarea" placeholder=" {{ __('ここにはStepの内容について書いてください。Markdown記法で書いてみましょう！') }}"></textarea> -->
                         <vue-editor v-model="step1" id="editor1" useCustomImageHandler @image-added="handleImageAdded" placeholder="各ステップのサブタイトル(Heading1)を最初につけましょう（例：「STEP1：まずはマクロ経済をザックリ理解しよう」）"></vue-editor>

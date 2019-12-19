@@ -38,6 +38,8 @@ Vue.component('allposts', require('./components/post/AllPosts.vue').default);
 
 Vue.component('like', require('./components/social/Like.vue').default);
 Vue.component('stock', require('./components/social/Stock.vue').default);
+Vue.component('challenge', require('./components/social/Challenge.vue').default);
+
 
 
 /**

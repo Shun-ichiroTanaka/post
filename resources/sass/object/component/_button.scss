@@ -9,7 +9,7 @@
         color: $emeraldo;
         flex-direction: column;
         @include pc {
-            margin-top: 100px;
+            margin-top: 50px;
             position: fixed;
             width: 50px;
         };
@@ -87,6 +87,7 @@
             background: #777;
             outline: none;
             border-radius: 50%;
+            border: none;
             @include pc {
                 box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
                 width: 50px;
@@ -97,7 +98,6 @@
                 width: 40px;
                 height: 40px;
                 padding: 0px;
-                border: none;
             };
 
             .fa-folder-open {
@@ -113,19 +113,17 @@
             background: rgb(204, 204, 204);
             outline: none;
             border-radius: 50%;
+            border: none;
             @include pc {
                 box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
                 width: 50px;
                 height: 50px;
-                padding: 9px 0;
             };
             @include sp {
                 width: 40px;
                 height: 40px;
                 padding: 0px;
-                border: none;
             };
-
             .fa-folder-open {
                 padding: 14px 0;
                 @include sp {
@@ -166,13 +164,16 @@
         display: block;
         text-decoration: none;
         border-radius: 3px;
+        cursor: pointer;
         color: #FFF !important;
         background: #FF416C;  /* fallback for old browsers */
         background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         @include pc {
+            width: 200px;
+            margin: 0 auto;
             padding: 0.8em 1em;
-            margin: 80px 0 80px 10px;
+            margin: 80px 0 80px 30px;
         };
         @include sp {
             padding: 0.8em 1em;

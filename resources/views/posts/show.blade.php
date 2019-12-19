@@ -76,7 +76,8 @@
                 </div>
 
                 <div class="c-post__show-right">
-                    <div><a href="" class="c-button__show-challange">チャレンジする</a></div>
+                    <challenge></challenge>
+                    {{-- <div><a href="" class="c-button__show-challange">チャレンジする</a></div> --}}
                     <div class="step-app-side c-step__side">
                         {{-- 目次 --}}
                         <p>目次</p>
