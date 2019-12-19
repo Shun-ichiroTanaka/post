@@ -37336,23 +37336,23 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.subtitle3,
-                            expression: "subtitle3"
+                            value: _vm.subtitle4,
+                            expression: "subtitle4"
                           }
                         ],
                         attrs: {
                           placeholder:
                             "（例：「STEP4：試験までにこなしておくべき参考書一覧」）",
                           type: "text",
-                          name: "subtitle3"
+                          name: "subtitle4"
                         },
-                        domProps: { value: _vm.subtitle3 },
+                        domProps: { value: _vm.subtitle4 },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.subtitle3 = $event.target.value
+                            _vm.subtitle4 = $event.target.value
                           }
                         }
                       })

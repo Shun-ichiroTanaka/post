@@ -67,11 +67,59 @@
                         @endif
                     </div>
                     {{-- Vue-Editor プラグイン --}}
+
+
                     <div class="step-content">
-                        <div class="step-tab-panel" id="step1">{!! $step->step1 !!}</div>
-                        <div class="step-tab-panel" id="step2">{!! $step->step2 !!}</div>
-                        <div class="step-tab-panel" id="step3">{!! $step->step3 !!}</div>
-                        <div class="step-tab-panel" id="step4">{!! $step->step4 !!}</div>
+                        <div class="c-tabs__showdetails">
+                            {{-- @if (Auth::check()) --}}
+                            {{-- タブのタイトル --}}
+                            @if (!empty($step->step1))
+                                <input id="step1" type="radio" name="tab_item" checked>
+                                <label class="c-tabs__showdetails-item" for="step1">{!! $step->subtitle1 !!}</label>
+                            @endif
+                            
+                            @if (!empty($step->step2))
+                                <input id="step2" type="radio" name="tab_item">
+                                <label class="c-tabs__showdetails-item" for="step2">{!! $step->subtitle2 !!}</label>
+                            @endif
+    
+                            @if (!empty($step->step3))
+                                <input id="step3" type="radio" name="tab_item">
+                                <label class="c-tabs__showdetails-item" for="step3">{!! $step->subtitle3 !!}</label>
+                            @endif
+    
+                            @if (!empty($step->step4))
+                                <input id="step4" type="radio" name="tab_item">
+                                <label class="c-tabs__showdetails-item" for="step4">{!! $step->subtitle4 !!}</label>
+                            @endif
+                                  
+                            {{-- タブの中身 --}}
+                            @if (!empty($step->step1))
+                                <div class="c-tabs__showdetails-content" id="step1_content">
+                                    {!! $step->step1 !!}
+                                </div>
+                            @endif
+                            
+                            @if (!empty($step->step2))
+                                <div class="c-tabs__showdetails-content" id="step2_content">
+                                    {!! $step->step2 !!}
+                                </div>
+                            @endif
+    
+                            @if (!empty($step->step3))
+                                <div class="c-tabs__showdetails-content" id="step3_content">
+                                    {!! $step->step3 !!}
+                                </div>
+                            @endif
+    
+                            @if (!empty($step->step4))
+                                <div class="c-tabs__showdetails-content" id="step4_content">
+                                    {!! $step->step4 !!}
+                                </div>
+                            @endif
+                            {{-- @else
+                            @endif --}}
+                        </div>
                     </div>
                 </div>
 

@@ -677,6 +677,43 @@ table {
   }
 }
 
+.c-post__new-subtitle {
+  height: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+  .c-post__new-subtitle {
+    width: 870px;
+  }
+}
+
+@media (max-width: 767px) {
+  .c-post__new-subtitle {
+    width: 100%;
+  }
+}
+
+.c-post__new-subtitle input {
+  width: 100%;
+  padding: 10px 0;
+  padding-left: 5px;
+  box-shadow: 0 1px 3px rgba(160, 166, 179, 0.3);
+  border: none;
+}
+
+@media (min-width: 767px) {
+  .c-post__new-subtitle input {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .c-post__new-subtitle input {
+    font-size: 0.9rem;
+  }
+}
+
 .c-post__new-box {
   display: -webkit-box;
   display: flex;
@@ -2469,6 +2506,143 @@ table {
   padding-left: 128px !important;
 }
 
+.c-tabs__showdetails {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+  .c-tabs__showdetails {
+    width: 100%;
+  }
+}
+
+.c-tabs__showdetails-item {
+  min-height: 40px;
+  background-color: #313435;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  display: block;
+  float: left;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  min-width: calc(100%/4);
+}
+
+@media (min-width: 767px) {
+  .c-tabs__showdetails-item {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .c-tabs__showdetails-item {
+    font-size: .9rem;
+    overflow: scroll;
+  }
+}
+
+.c-tabs__showdetails-item :hover {
+  opacity: 0.75;
+}
+
+.c-tabs__showdetails-content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+/*タブ切り替え全体のスタイル*/
+
+.tabs {
+  margin-top: 50px;
+  position: absolute;
+  padding-bottom: 40px;
+  margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+  .tabs {
+    width: 1000px;
+  }
+}
+
+/*タブのスタイル*/
+
+.tab_item {
+  height: 50px;
+  background-color: #f3f2f2;
+  line-height: 50px;
+  text-align: center;
+  color: #313435;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  min-width: calc(100%/4);
+}
+
+@media (min-width: 767px) {
+  .tab_item {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tab_item {
+    font-size: .9rem;
+    overflow: scroll;
+  }
+}
+
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+
+input[name="tab_item"] {
+  display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+
+.tab_content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+/*選択されているタブのコンテンツのみを表示*/
+
+#ownpost:checked ~ #ownpost_content,
+#like:checked ~ #like_content,
+#tyarenzi-step:checked ~ #tyarenzi-step_content,
+#stock:checked ~ #stock_content,
+#step1:checked ~ #step1_content,
+#step2:checked ~ #step2_content,
+#step3:checked ~ #step3_content,
+#step4:checked ~ #step4_content {
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+
+.tabs input:checked + .tab_item {
+  background: #2a3132;
+  color: #fff;
+}
+
 .p-auth__form {
   position: relative;
   z-index: 1;
@@ -2812,87 +2986,6 @@ table {
     width: 100%;
     overflow: scroll;
   }
-}
-
-/*タブ切り替え全体のスタイル*/
-
-.tabs {
-  margin-top: 50px;
-  position: absolute;
-  padding-bottom: 40px;
-  margin: 0 auto;
-}
-
-@media (min-width: 767px) {
-  .tabs {
-    width: 1000px;
-  }
-}
-
-/*タブのスタイル*/
-
-.tab_item {
-  height: 50px;
-  background-color: #f3f2f2;
-  line-height: 50px;
-  text-align: center;
-  color: #313435;
-  display: block;
-  float: left;
-  text-align: center;
-  font-weight: bold;
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-  min-width: calc(100%/4);
-}
-
-@media (min-width: 767px) {
-  .tab_item {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 767px) {
-  .tab_item {
-    font-size: .9rem;
-    overflow: scroll;
-  }
-}
-
-.tab_item:hover {
-  opacity: 0.75;
-}
-
-/*ラジオボタンを全て消す*/
-
-input[name="tab_item"] {
-  display: none;
-}
-
-/*タブ切り替えの中身のスタイル*/
-
-.tab_content {
-  display: none;
-  padding: 40px 40px 0;
-  clear: both;
-  overflow: hidden;
-  margin-bottom: 50px;
-}
-
-/*選択されているタブのコンテンツのみを表示*/
-
-#ownpost:checked ~ #ownpost_content,
-#like:checked ~ #like_content,
-#tyarenzi-step:checked ~ #tyarenzi-step_content,
-#stock:checked ~ #stock_content {
-  display: block;
-}
-
-/*選択されているタブのスタイルを変える*/
-
-.tabs input:checked + .tab_item {
-  background: #2a3132;
-  color: #fff;
 }
 
 .u-flex {

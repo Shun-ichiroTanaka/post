@@ -52,17 +52,17 @@
                         <div class="c-post__new-subtitle">
                             <input v-model="subtitle2" placeholder="（例：「STEP2：次に必須の公式を押さえよう」）" type="text" name="subtitle2">
                         </div>
-                        <vue-editor v-model="step2" id="editor2" useCustomImageHandler @image-added="handleImageAdded" placeholder=""> </vue-editor>
+                        <vue-editor v-model="step2" id="editor2" useCustomImageHandler @image-added="handleImageAdded" placeholder=""></vue-editor>
                     </tab-content>
                     <tab-content title="Step3">
                         <div class="c-post__new-subtitle">
                             <input v-model="subtitle3" placeholder="（例：「STEP3：頻出の問題系統を押さえよう」）" type="text" name="subtitle3">
                         </div>
-                        <vue-editor v-model="step3" id="editor3" useCustomImageHandler @image-added="handleImageAdded" placeholder=""> </vue-editor>
+                        <vue-editor v-model="step3" id="editor3" useCustomImageHandler @image-added="handleImageAdded" placeholder=""></vue-editor>
                     </tab-content>
                     <tab-content title="Last Step" icon="fas fa-check">
                         <div class="c-post__new-subtitle">
-                            <input v-model="subtitle3" placeholder="（例：「STEP4：試験までにこなしておくべき参考書一覧」）" type="text" name="subtitle3">
+                            <input v-model="subtitle4" placeholder="（例：「STEP4：試験までにこなしておくべき参考書一覧」）" type="text" name="subtitle4">
                         </div>
                         <vue-editor v-model="step4" id="editor4" useCustomImageHandler @image-added="handleImageAdded" placeholder=""></vue-editor>
                     </tab-content>
