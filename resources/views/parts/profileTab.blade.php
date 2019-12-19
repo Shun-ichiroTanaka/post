@@ -43,12 +43,12 @@
                             {{-- 削除ボタン --}}
                             <form method="post" action="/user/delete/{{$article->id}}">
                                 {{ csrf_field() }}
-                                <input id="c-button_post-delete" type="submit" value="削除" onclick='return confirm("記事を削除しますか？");'>
+                                <button id="c-button_post-delete" type="submit" onclick='return confirm("記事を削除しますか？");'>削除</button>
                             </form>
                             {{-- 編集ボタン --}}
                             <form method="post" action="/user/edit/{{$article->id}}">
                                 {{ csrf_field() }}
-                                <input id="c-button_post-edit" type="submit" value="編集">
+                                <button id="c-button_post-edit" type="submit">編集</button>
                             </form>
                         </div>
                         @endif                      
