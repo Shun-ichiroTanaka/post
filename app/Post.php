@@ -22,6 +22,10 @@ class Post extends Model
         'tag3',
         'tag4',
         'tag5',
+        'subtitle1',
+        'subtitle2',
+        'subtitle3',
+        'subtitle4',
         'step1',
         'step2',
         'step3',
@@ -56,6 +60,14 @@ class Post extends Model
      public function stocks()
     {
         return $this->hasMany('App\Stock');
+    }
+
+    /**
+     * チャレンジのストックを取得
+     */
+    public function challenges()
+    {
+        return $this->hasMany('App\Challenge');
     }
 
     // タグモデル

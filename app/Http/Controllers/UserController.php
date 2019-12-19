@@ -10,6 +10,7 @@ use App\Http\Controllers\HomeController;
 use App\Post;
 use App\Like;
 use App\Stock;
+use App\Challenge;
 
 class UserController extends Controller
 {
@@ -25,9 +26,11 @@ class UserController extends Controller
         $likes = $user->likes()->orderBy('created_at', 'desc')->get();
         // ユーザーのストック(登録)を取り出す
         $stocks = $user->stocks()->orderBy('created_at', 'desc')->get();
+        // ユーザーのチャレンジ情報を取り出す
+        $challenges = $user->challenges()->orderBy('created_at', 'desc')->get();
 
         if ($user) {
-            return view('user.profile',compact('articles', 'likes','stocks'))->withUser($user);
+            return view('user.profile',compact('articles', 'likes','stocks','challenges'))->withUser($user);
         } else {
             // URLからidをいじって他のユーザーページにアクセスしないように例外処理
             // ＝自分のid以外にアクセスさせない

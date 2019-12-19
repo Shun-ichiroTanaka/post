@@ -985,7 +985,7 @@ table {
   -o-border-radius: 4px;
 }
 
-.article-box {
+.c-post__article-box {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -994,32 +994,43 @@ table {
   border-bottom: 1px solid #e8e8e8;
 }
 
-.article-box a {
+.c-post__article-box a {
   color: #000;
 }
 
-.article-box .article-box-left {
+.c-post__article-box-left {
   min-width: 40px;
   height: 40px;
 }
 
-.article-box .article-box-left img {
+.c-post__article-box-left img {
   border-radius: 5px;
   cursor: pointer;
 }
 
-.article-box .article-box-right {
+.c-post__article-box-right {
   padding-left: 20px;
 }
 
-.article-box .article-box-right .article-title {
+.c-post__article-box-right__title {
   font-weight: bold;
   cursor: pointer;
   word-wrap: break-word;
+  display: block;
+  padding-bottom: 10px;
 }
 
-.article-box .article-box-right .article-date {
+.c-post__article-box-right__title :hover {
+  border-bottom: 1px solid #333 !important;
+}
+
+.c-post__article-box-right__date {
   color: gray;
+}
+
+.c-post__article-box-right__progress {
+  display: -webkit-box;
+  display: flex;
 }
 
 .c-button {
@@ -2634,6 +2645,29 @@ table {
   color: #1a1a1a;
   font-size: 36px;
   font-weight: 300;
+}
+
+.p-challenge {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: flex;
+}
+
+@media (min-width: 767px) {
+  .p-challenge__left {
+    width: 25%;
+    background: #000;
+    height: auto;
+  }
+}
+
+@media (min-width: 767px) {
+  .p-challenge__right {
+    width: 75%;
+    height: auto;
+  }
 }
 
 .p-mypage {

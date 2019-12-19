@@ -43,17 +43,28 @@
 
                 <form-wizard @on-complete="onComplete" color="#B79B5B" transition="bounce" back-button-text="戻る" next-button-text="ステップを追加.." finish-button-text="これ以上追加できません">
                     <tab-content title="Step1">
-                        <!-- <textarea v-model="step1" class="form-control" id="markdown_editor_textarea" placeholder=" {{ __('ここにはStepの内容について書いてください。Markdown記法で書いてみましょう！') }}"></textarea> -->
-                        <vue-editor v-model="step1" id="editor1" useCustomImageHandler @image-added="handleImageAdded" placeholder="各ステップのサブタイトル(Heading1)を最初につけましょう（例：「STEP1：まずはマクロ経済をザックリ理解しよう」）"></vue-editor>
+                        <div class="c-post__new-subtitle">
+                            <input v-model="subtitle1" placeholder="（例：「STEP1：まずはマクロ経済をザックリ理解しよう」" type="text" name="subtitle1">
+                        </div>
+                        <vue-editor v-model="step1" id="editor1" useCustomImageHandler @image-added="handleImageAdded" placeholder=""></vue-editor>
                     </tab-content>
                     <tab-content title="Step2">
-                        <vue-editor v-model="step2" id="editor2" useCustomImageHandler @image-added="handleImageAdded" placeholder="（例：「STEP2：次に必須の公式を押さえよう」）"> </vue-editor>
+                        <div class="c-post__new-subtitle">
+                            <input v-model="subtitle2" placeholder="（例：「STEP2：次に必須の公式を押さえよう」）" type="text" name="subtitle2">
+                        </div>
+                        <vue-editor v-model="step2" id="editor2" useCustomImageHandler @image-added="handleImageAdded" placeholder=""> </vue-editor>
                     </tab-content>
                     <tab-content title="Step3">
-                        <vue-editor v-model="step3" id="editor3" useCustomImageHandler @image-added="handleImageAdded" placeholder="（例：「STEP3：頻出の問題系統を押さえよう」）"> </vue-editor>
+                        <div class="c-post__new-subtitle">
+                            <input v-model="subtitle3" placeholder="（例：「STEP3：頻出の問題系統を押さえよう」）" type="text" name="subtitle3">
+                        </div>
+                        <vue-editor v-model="step3" id="editor3" useCustomImageHandler @image-added="handleImageAdded" placeholder=""> </vue-editor>
                     </tab-content>
                     <tab-content title="Last Step" icon="fas fa-check">
-                        <vue-editor v-model="step4" id="editor4" useCustomImageHandler @image-added="handleImageAdded" placeholder="（例：「STEP4：試験までにこなしておくべき参考書一覧」）"></vue-editor>
+                        <div class="c-post__new-subtitle">
+                            <input v-model="subtitle3" placeholder="（例：「STEP4：試験までにこなしておくべき参考書一覧」）" type="text" name="subtitle3">
+                        </div>
+                        <vue-editor v-model="step4" id="editor4" useCustomImageHandler @image-added="handleImageAdded" placeholder=""></vue-editor>
                     </tab-content>
                 </form-wizard>
                 <div class="c-post__new-submit">
@@ -88,6 +99,10 @@ export default {
             // 投稿情報
             title: "",
             tags: [],
+            subtitle1: "",
+            subtitle2: "",
+            subtitle3: "",
+            subtitle4: "",
             step1: "",
             step2: "",
             step3: "",
@@ -105,6 +120,10 @@ export default {
             var article = {
                 title: self.title,
                 tags: self.tags,
+                subtitle1: self.subtitle1,
+                subtitle2: self.subtitle2,
+                subtitle3: self.subtitle3,
+                subtitle4: self.subtitle4,
                 step1: self.step1,
                 step2: self.step2,
                 step3: self.step3,

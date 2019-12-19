@@ -1,6 +1,6 @@
 @foreach ($articles as $article)
-<div class="article-box">
-    <div class="article-box-left">
+<div class="c-post__article-box">
+    <div class="c-post__article-box-left">
         <a href="/user/{{$article->user_id}}">
             @if (empty($article->user->avatar))
             <img src="/img/avatar/user.svg" alt="avatar" style="width:40px; height:40px; border-radius:50%?vertical-align: middle;">
@@ -9,10 +9,10 @@
             @endif        
         </a>
     </div>
-    <div class="article-box-right">
-        <a class="article-title" href="/post/{{$article->id}}">{{ $article->title }}</a>
+    <div class="c-post__article-box-right">
+        <a class="c-post__article-box-right__title" href="/post/{{$article->id}}">{{ $article->title }}</a>
         <div class="article-details">
-            <div class="article-date">{{ $article->created_at }}</div>
+            <div class="c-post__article-box-right__date">{{ $article->created_at }}</div>
         </div>
     </div>
 </div>

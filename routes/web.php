@@ -5,6 +5,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 Route::get('/', 'HomeController@showTopPage')->name('home');
 Route::get('/post/{id}', 'PostController@showStep')->name('post.showpost');
+Route::get('/challenge/{id}', 'ChallengeController@index')->name('challenge.index');
 Route::get('/user/{id}', 'UserController@profile')->name('user.profile');
 
 Route::post('/user/delete/{id}', 'PostController@delete');

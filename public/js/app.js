@@ -2435,6 +2435,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2456,6 +2467,10 @@ __webpack_require__.r(__webpack_exports__);
       // 投稿情報
       title: "",
       tags: [],
+      subtitle1: "",
+      subtitle2: "",
+      subtitle3: "",
+      subtitle4: "",
       step1: "",
       step2: "",
       step3: "",
@@ -2472,6 +2487,10 @@ __webpack_require__.r(__webpack_exports__);
       var article = {
         title: self.title,
         tags: self.tags,
+        subtitle1: self.subtitle1,
+        subtitle2: self.subtitle2,
+        subtitle3: self.subtitle3,
+        subtitle4: self.subtitle4,
         step1: self.step1,
         step2: self.step2,
         step3: self.step3,
@@ -2547,16 +2566,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['postId', 'userId', 'defaultChallenged', 'defaultchallengeCount'],
+  props: ['postId', 'userId', 'defaultChallenged'],
   data: function data() {
     return {
-      challenged: false,
-      challengeCount: 0
+      challenged: false // challengeCount: 0,
+
     };
   },
   created: function created() {
-    this.challenged = this.defaultChallenged;
-    this.challengeCount = this.defaultchallengeCount;
+    this.challenged = this.defaultChallenged; // this.challengeCount = this.defaultchallengeCount
   },
   methods: {
     challenge: function challenge(postId) {
@@ -2566,8 +2584,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post(url, {
         user_id: this.userId
       }).then(function (response) {
-        _this.challenged = true;
-        _this.challengeCount = response.data.challengeCount;
+        _this.challenged = true; //   this.challengeCount = response.data.challengeCount
       }); // .catch(error => {
       // });
     },
@@ -2578,8 +2595,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post(url, {
         user_id: this.userId
       }).then(function (response) {
-        _this2.challenged = false;
-        _this2.challengeCount = response.data.challengeCount;
+        _this2.challenged = false; //   this.challengeCount = response.data.challengeCount
       }); // .catch(error => {
       // //   alert(error)
       // });
@@ -37161,12 +37177,39 @@ var render = function() {
                   "tab-content",
                   { attrs: { title: "Step1" } },
                   [
+                    _c("div", { staticClass: "c-post__new-subtitle" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.subtitle1,
+                            expression: "subtitle1"
+                          }
+                        ],
+                        attrs: {
+                          placeholder:
+                            "（例：「STEP1：まずはマクロ経済をザックリ理解しよう」",
+                          type: "text",
+                          name: "subtitle1"
+                        },
+                        domProps: { value: _vm.subtitle1 },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.subtitle1 = $event.target.value
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
                     _c("vue-editor", {
                       attrs: {
                         id: "editor1",
                         useCustomImageHandler: "",
-                        placeholder:
-                          "各ステップのサブタイトル(Heading1)を最初につけましょう（例：「STEP1：まずはマクロ経済をザックリ理解しよう」）"
+                        placeholder: ""
                       },
                       on: { "image-added": _vm.handleImageAdded },
                       model: {
@@ -37185,12 +37228,39 @@ var render = function() {
                   "tab-content",
                   { attrs: { title: "Step2" } },
                   [
+                    _c("div", { staticClass: "c-post__new-subtitle" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.subtitle2,
+                            expression: "subtitle2"
+                          }
+                        ],
+                        attrs: {
+                          placeholder:
+                            "（例：「STEP2：次に必須の公式を押さえよう」）",
+                          type: "text",
+                          name: "subtitle2"
+                        },
+                        domProps: { value: _vm.subtitle2 },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.subtitle2 = $event.target.value
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
                     _c("vue-editor", {
                       attrs: {
                         id: "editor2",
                         useCustomImageHandler: "",
-                        placeholder:
-                          "（例：「STEP2：次に必須の公式を押さえよう」）"
+                        placeholder: ""
                       },
                       on: { "image-added": _vm.handleImageAdded },
                       model: {
@@ -37209,12 +37279,39 @@ var render = function() {
                   "tab-content",
                   { attrs: { title: "Step3" } },
                   [
+                    _c("div", { staticClass: "c-post__new-subtitle" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.subtitle3,
+                            expression: "subtitle3"
+                          }
+                        ],
+                        attrs: {
+                          placeholder:
+                            "（例：「STEP3：頻出の問題系統を押さえよう」）",
+                          type: "text",
+                          name: "subtitle3"
+                        },
+                        domProps: { value: _vm.subtitle3 },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.subtitle3 = $event.target.value
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
                     _c("vue-editor", {
                       attrs: {
                         id: "editor3",
                         useCustomImageHandler: "",
-                        placeholder:
-                          "（例：「STEP3：頻出の問題系統を押さえよう」）"
+                        placeholder: ""
                       },
                       on: { "image-added": _vm.handleImageAdded },
                       model: {
@@ -37233,12 +37330,39 @@ var render = function() {
                   "tab-content",
                   { attrs: { title: "Last Step", icon: "fas fa-check" } },
                   [
+                    _c("div", { staticClass: "c-post__new-subtitle" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.subtitle3,
+                            expression: "subtitle3"
+                          }
+                        ],
+                        attrs: {
+                          placeholder:
+                            "（例：「STEP4：試験までにこなしておくべき参考書一覧」）",
+                          type: "text",
+                          name: "subtitle3"
+                        },
+                        domProps: { value: _vm.subtitle3 },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.subtitle3 = $event.target.value
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
                     _c("vue-editor", {
                       attrs: {
                         id: "editor4",
                         useCustomImageHandler: "",
-                        placeholder:
-                          "（例：「STEP4：試験までにこなしておくべき参考書一覧」）"
+                        placeholder: ""
                       },
                       on: { "image-added": _vm.handleImageAdded },
                       model: {

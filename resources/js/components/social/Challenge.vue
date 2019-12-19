@@ -17,16 +17,16 @@
 
 <script>
     export default {
-        props: ['postId', 'userId', 'defaultChallenged', 'defaultchallengeCount'],
+        props: ['postId', 'userId', 'defaultChallenged'],
         data() {
             return {
                 challenged: false,
-                challengeCount: 0,
+                // challengeCount: 0,
             };
         },
         created () {
             this.challenged = this.defaultChallenged
-            this.challengeCount = this.defaultchallengeCount
+            // this.challengeCount = this.defaultchallengeCount
         },
 
         methods: {
@@ -38,7 +38,7 @@
                 })
                 .then(response => {
                   this.challenged = true
-                  this.challengeCount = response.data.challengeCount
+                //   this.challengeCount = response.data.challengeCount
                 })
                 // .catch(error => {
 
@@ -52,7 +52,7 @@
                 })
                 .then(response => {
                   this.challenged = false
-                  this.challengeCount = response.data.challengeCount
+                //   this.challengeCount = response.data.challengeCount
                 })
                 // .catch(error => {
                 // //   alert(error)

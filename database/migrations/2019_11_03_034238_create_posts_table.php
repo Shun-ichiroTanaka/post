@@ -18,14 +18,19 @@ class CreatePostsTable extends Migration
             // idカラムを作成し、idkラムでは連番で番号をつけていくという意味
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned()->index();
-
             $table->string('title');
+
+            $table->string('subtitle1');
+            $table->string('subtitle2')->nullable();
+            $table->string('subtitle3')->nullable();
+            $table->string('subtitle4')->nullable();
 
             $table->string('tag1');
             $table->string('tag2')->nullable();
             $table->string('tag3')->nullable();
             $table->string('tag4')->nullable();
             $table->string('tag5')->nullable();
+
 
             $table->text('step1');
             $table->text('step2')->nullable();
