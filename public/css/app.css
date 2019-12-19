@@ -1245,6 +1245,7 @@ table {
 @media (min-width: 767px) {
   .c-button__show-social__challange {
     width: 200px;
+    font-size: 1.1rem;
     margin: 0 auto;
     padding: 0.8em 1em;
     margin: 80px 0 80px 30px;
@@ -1274,6 +1275,7 @@ table {
 @media (min-width: 767px) {
   .c-button__show-social__unchallange {
     width: 200px;
+    font-size: 1.1rem;
     border: 2px solid #FF416C;
     margin: 0 auto;
     padding: 0.8em 1em;
@@ -2937,10 +2939,11 @@ input[name="tab_item"] {
 .u-other__fukidashi-challenge {
   display: none;
   min-width: 120px;
-  left: 65px;
-  top: 70px;
   position: absolute;
   padding: 10px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 8px;
   background: #333;
   color: #fff;
@@ -2973,6 +2976,10 @@ span:hover + .u-other__fukidashi-like {
 }
 
 span:hover + .u-other__fukidashi-stock {
+  display: block !important;
+}
+
+span:hover + .u-other__fukidashi-challenge {
   display: block !important;
 }
 

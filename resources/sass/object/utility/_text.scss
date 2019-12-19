@@ -1,1 +1,22 @@
 @charset "utf-8";
+@include pc {};
+@include sp {};
+
+.u-text {
+  &__base {
+    @include pc {
+      font-size: 1.6rem;
+    };
+    @include sp {
+      font-size: 1.3rem;
+    };
+  }
+  &__challenge {
+    @include pc {
+      font-size: 2rem;
+    };
+    @include sp {
+      font-size: 1.3rem;
+    };
+  }
+}

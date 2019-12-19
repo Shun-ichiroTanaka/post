@@ -1,12 +1,16 @@
 <template>
    <div>
        <button v-if="!challenged" type="button" class="c-button__show-social__challange" @click="challenge(postId)">
-            <p>チャレンジする</p>
-            <p class="u-other__fukidashi-chalange">この記事にチャレンジします</p>
+           <span>
+                <div>チャレンジする</div>
+           </span>
+            <p class="u-other__fukidashi-challenge">この記事にチャレンジします</p>
        </button>
        <button v-else type="button" class="c-button__show-social__unchallange text" @click="unchallenge(postId)">
-           <p>チャレンジをやめる</p>
-           <p class="u-other__fukidashi-challenge">この記事のチャレンジをやめます</p>
+           <span>
+                <div>チャレンジをやめる</div>
+           </span>
+            <p class="u-other__fukidashi-challenge">この記事のチャレンジをやめます</p>
        </button>
    </div>
 </template>

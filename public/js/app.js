@@ -2542,6 +2542,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['postId', 'userId', 'defaultChallenged', 'defaultchallengeCount'],
   data: function data() {
@@ -37302,9 +37306,9 @@ var render = function() {
             }
           },
           [
-            _c("p", [_vm._v("チャレンジする")]),
+            _vm._m(0),
             _vm._v(" "),
-            _c("p", { staticClass: "u-other__fukidashi-chalange" }, [
+            _c("p", { staticClass: "u-other__fukidashi-challenge" }, [
               _vm._v("この記事にチャレンジします")
             ])
           ]
@@ -37321,7 +37325,7 @@ var render = function() {
             }
           },
           [
-            _c("p", [_vm._v("チャレンジをやめる")]),
+            _vm._m(1),
             _vm._v(" "),
             _c("p", { staticClass: "u-other__fukidashi-challenge" }, [
               _vm._v("この記事のチャレンジをやめます")
@@ -37330,7 +37334,20 @@ var render = function() {
         )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [_c("div", [_vm._v("チャレンジする")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [_c("div", [_vm._v("チャレンジをやめる")])])
+  }
+]
 render._withStripped = true
 
 
