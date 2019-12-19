@@ -12,12 +12,86 @@
   };
   @include sp {};
   &__left {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    @include pc {};
+    @include sp {};
     @include pc {
       width: 25%;
-      background: #000;
       height: auto;
+      color: #000;
     };
     @include sp {};
+    &-title {
+      display: flex;
+      flex-direction: column;
+    }
+    &-header-list {
+      // display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      justify-content: flex-start;
+      @include pc {
+          a img {
+              display: flex;
+              overflow: hidden;
+              border-radius: .2em;
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+          }
+      };
+      @include sp {
+          margin: 30px auto 50px auto;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          a img {
+              display: none;
+          }
+      };
+
+      &__date {
+          color: gray;
+          @include pc {};
+          @include sp {
+              display: block;
+              padding-top: 10px;
+          };
+      }
+      &__name {
+          @include pc {
+              padding: 20px 0;
+              font-size: 1.5em;    
+          };
+          @include sp {
+              padding-top: 10px;  
+              font-size: 1rem;
+          };
+  
+          a {
+              color: rgb(65, 65, 65);
+              text-decoration: none;
+          }
+      }
+      &__time {
+          position: absolute;
+          right: 400px;
+          color: gray;
+          @include pc {};
+          @include sp {
+          };
+  
+      }
+    }
+    
+
   }
   &__right {
     @include pc {

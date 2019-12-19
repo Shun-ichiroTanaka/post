@@ -169,11 +169,11 @@
             background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             @include pc {
-                width: 200px;
-                font-size: 1.1rem;
+                width: 180px;
+                font-size: 1rem;
                 margin: 0 auto;
                 padding: 0.8em 1em;
-                margin: 80px 0 80px 30px;
+                margin: 80px 0 80px 10px;
             };
             @include sp {
                 padding: 0.8em 1em;
@@ -191,12 +191,12 @@
             color: #FF416C !important;
             background: #fff;  /* fallback for old browsers */
             @include pc {
-                width: 200px;
-                font-size: 1.1rem;
+                width: 180px;
+                font-size: 1rem;
                 border: 2px solid #FF416C;
                 margin: 0 auto;
                 padding: 0.8em 1em;
-                margin: 80px 0 80px 30px;
+                margin: 80px 0 80px 10px;
             };
             @include sp {
                 padding: 0.8em 1em;
