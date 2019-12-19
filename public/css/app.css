@@ -1296,6 +1296,7 @@ table {
   border-radius: 5px;
   font-size: 1rem;
   margin-right: 10px;
+  border: none;
 }
 
 @media (min-width: 767px) {
@@ -1316,6 +1317,7 @@ table {
   border-radius: 5px;
   font-size: 1rem;
   margin-right: 10px;
+  border: none;
 }
 
 @media (min-width: 767px) {
