@@ -60,15 +60,16 @@
     top: 0;
     right: 0;
     width: auto;
-    height: 300px;
     font-size: .9rem;
     text-align: center;
     cursor: auto;
     @include pc {
       margin-right: 50px;
+      height: 200px;
     };
     @include sp {
       margin-right: 20px;
+      height: 150px;
       li {
         line-height: 82px;
       }

@@ -44,6 +44,10 @@ Route::group(['middleware' => 'api'],function(){
     Route::post('/user/post/new', 'PostController@postStep');
     Route::post('/user/post/edit', 'PostController@update');
 
+    // いいね Axios
+    Route::post('/posts/{post}/challenge', 'ChallengeController@challenge');
+    Route::post('/posts/{post}/unchallenge', 'ChallengeController@unchallenge');
+    
 
 });
 

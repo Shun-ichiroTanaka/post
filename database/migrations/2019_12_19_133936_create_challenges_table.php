@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostTagTable extends Migration
+class CreateChallengesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,16 @@ class CreatePostTagTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_tag', function (Blueprint $table) {
-            $table->unsignedbigInteger('post_id');
-            $table->unsignedbigInteger('user_id');
-            $table->primary(['post_id','user_id']);
+        Schema::create('challenges', function (Blueprint $table) {
+            $table->bigIncrements('id');
 
-            // 外部キー制約
-            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->bigInteger('user_id')->unsigned()->index();
+            $table->bigInteger('post_id')->unsigned()->index();
+
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+
+            $table->timestamps();
         });
     }
 
@@ -31,6 +33,6 @@ class CreatePostTagTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_tag');
+        Schema::dropIfExists('challenges');
     }
 }

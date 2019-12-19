@@ -2543,17 +2543,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['postId', 'userId', 'defaultchallenged'],
+  props: ['postId', 'userId', 'defaultChallenged', 'defaultchallengeCount'],
   data: function data() {
     return {
-      challenged: false
+      challenged: false,
+      challengeCount: 0
     };
   },
   created: function created() {
-    this.challenged = this.defaultchallenged;
+    this.challenged = this.defaultChallenged;
+    this.challengeCount = this.defaultchallengeCount;
   },
   methods: {
-    like: function like(postId) {
+    challenge: function challenge(postId) {
       var _this = this;
 
       var url = "/api/posts/".concat(postId, "/challenge");
@@ -2561,10 +2563,11 @@ __webpack_require__.r(__webpack_exports__);
         user_id: this.userId
       }).then(function (response) {
         _this.challenged = true;
+        _this.challengeCount = response.data.challengeCount;
       }); // .catch(error => {
       // });
     },
-    unlike: function unlike(postId) {
+    unchallenge: function unchallenge(postId) {
       var _this2 = this;
 
       var url = "/api/posts/".concat(postId, "/unchallenge");
@@ -2572,6 +2575,7 @@ __webpack_require__.r(__webpack_exports__);
         user_id: this.userId
       }).then(function (response) {
         _this2.challenged = false;
+        _this2.challengeCount = response.data.challengeCount;
       }); // .catch(error => {
       // //   alert(error)
       // });
@@ -37289,7 +37293,7 @@ var render = function() {
       ? _c(
           "button",
           {
-            staticClass: "c-button__show-challange",
+            staticClass: "c-button__show-social__challange",
             attrs: { type: "button" },
             on: {
               click: function($event) {
@@ -37298,9 +37302,9 @@ var render = function() {
             }
           },
           [
-            _c("p", {}, [_vm._v("チャレンジする")]),
+            _c("p", [_vm._v("チャレンジする")]),
             _vm._v(" "),
-            _c("p", { staticClass: "u-other__fukidashi-like" }, [
+            _c("p", { staticClass: "u-other__fukidashi-chalange" }, [
               _vm._v("この記事にチャレンジします")
             ])
           ]
@@ -37308,7 +37312,7 @@ var render = function() {
       : _c(
           "button",
           {
-            staticClass: "c-button__show-unchallange text",
+            staticClass: "c-button__show-social__unchallange text",
             attrs: { type: "button" },
             on: {
               click: function($event) {
@@ -37317,10 +37321,10 @@ var render = function() {
             }
           },
           [
-            _c("p", {}, [_vm._v("チャレンジをやめる")]),
+            _c("p", [_vm._v("チャレンジをやめる")]),
             _vm._v(" "),
-            _c("p", { staticClass: "u-other__fukidashi-like" }, [
-              _vm._v("この記事へのチャレンジをやめます")
+            _c("p", { staticClass: "u-other__fukidashi-challenge" }, [
+              _vm._v("この記事のチャレンジをやめます")
             ])
           ]
         )

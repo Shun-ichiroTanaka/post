@@ -159,34 +159,53 @@
             @include pc {};
             @include sp {};
         }
-    }
-    &__show-challange {
-        display: block;
-        text-decoration: none;
-        border-radius: 3px;
-        cursor: pointer;
-        color: #FFF !important;
-        background: #FF416C;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        @include pc {
-            width: 200px;
-            margin: 0 auto;
-            padding: 0.8em 1em;
-            margin: 80px 0 80px 30px;
-        };
-        @include sp {
-            padding: 0.8em 1em;
-            width: 80%;
-            text-align: center;
-            margin: 0 auto;
-            margin-bottom: 50px;
-        };
-        :hover {
+        &__challange {
+            display: block;
+            text-decoration: none;
+            border-radius: 3px;
             cursor: pointer !important;
-            padding: 20px;
+            color: #FFF !important;
+            background: #FF416C;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            @include pc {
+                width: 200px;
+                margin: 0 auto;
+                padding: 0.8em 1em;
+                margin: 80px 0 80px 30px;
+            };
+            @include sp {
+                padding: 0.8em 1em;
+                width: 80%;
+                text-align: center;
+                margin: 0 auto;
+                margin-bottom: 50px;
+            };
+        }
+        &__unchallange {
+            display: block;
+            text-decoration: none;
+            border-radius: 3px;
+            cursor: pointer !important;
+            color: #FF416C !important;
+            background: #fff;  /* fallback for old browsers */
+            @include pc {
+                width: 200px;
+                border: 2px solid #FF416C;
+                margin: 0 auto;
+                padding: 0.8em 1em;
+                margin: 80px 0 80px 30px;
+            };
+            @include sp {
+                padding: 0.8em 1em;
+                width: 80%;
+                text-align: center;
+                margin: 0 auto;
+                margin-bottom: 50px;
+            };
         }
     }
+
     &-header {
         &__post {
             a {

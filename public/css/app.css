@@ -266,7 +266,6 @@ table {
   top: 0;
   right: 0;
   width: auto;
-  height: 300px;
   font-size: .9rem;
   text-align: center;
   cursor: auto;
@@ -275,12 +274,14 @@ table {
 @media (min-width: 767px) {
   .l-header__nav {
     margin-right: 50px;
+    height: 200px;
   }
 }
 
 @media (max-width: 767px) {
   .l-header__nav {
     margin-right: 20px;
+    height: 150px;
   }
 
   .l-header__nav li {
@@ -918,7 +919,7 @@ table {
 
 @media (min-width: 767px) {
   .c-post__show-right {
-    margin-top: 50px;
+    margin-top: 100px;
     width: 300px;
     min-height: 500px;
   }
@@ -1227,11 +1228,11 @@ table {
   text-align: center;
 }
 
-.c-button__show-challange {
+.c-button__show-social__challange {
   display: block;
   text-decoration: none;
   border-radius: 3px;
-  cursor: pointer;
+  cursor: pointer !important;
   color: #FFF !important;
   background: #FF416C;
   /* fallback for old browsers */
@@ -1242,7 +1243,7 @@ table {
 }
 
 @media (min-width: 767px) {
-  .c-button__show-challange {
+  .c-button__show-social__challange {
     width: 200px;
     margin: 0 auto;
     padding: 0.8em 1em;
@@ -1251,7 +1252,7 @@ table {
 }
 
 @media (max-width: 767px) {
-  .c-button__show-challange {
+  .c-button__show-social__challange {
     padding: 0.8em 1em;
     width: 80%;
     text-align: center;
@@ -1260,9 +1261,34 @@ table {
   }
 }
 
-.c-button__show-challange :hover {
+.c-button__show-social__unchallange {
+  display: block;
+  text-decoration: none;
+  border-radius: 3px;
   cursor: pointer !important;
-  padding: 20px;
+  color: #FF416C !important;
+  background: #fff;
+  /* fallback for old browsers */
+}
+
+@media (min-width: 767px) {
+  .c-button__show-social__unchallange {
+    width: 200px;
+    border: 2px solid #FF416C;
+    margin: 0 auto;
+    padding: 0.8em 1em;
+    margin: 80px 0 80px 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .c-button__show-social__unchallange {
+    padding: 0.8em 1em;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
 }
 
 .c-button-header__post a {
@@ -2894,6 +2920,34 @@ input[name="tab_item"] {
 }
 
 .u-other__fukidashi-stock :after {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -10px;
+  border: solid transparent;
+  border-color: rgba(51, 51, 51, 0);
+  border-bottom-color: #333;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+
+.u-other__fukidashi-challenge {
+  display: none;
+  min-width: 120px;
+  left: 65px;
+  top: 70px;
+  position: absolute;
+  padding: 10px;
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+  font-size: .7rem;
+}
+
+.u-other__fukidashi-challenge :after {
   position: absolute;
   bottom: 100%;
   left: 50%;

@@ -76,8 +76,18 @@
                 </div>
 
                 <div class="c-post__show-right">
-                    <challenge></challenge>
-                    {{-- <div><a href="" class="c-button__show-challange">チャレンジする</a></div> --}}
+                    @if (Auth::check())
+                        <challenge
+                            :post-id="{{ json_encode($step->id) }}"
+                            :user-id="{{ json_encode($userAuth->id) }}"
+                            :default-Challenged="{{ json_encode($defaultStocked) }}"
+                            :defaultchallenge-Count="{{ json_encode($defaultstockCount) }}"
+                        ></challenge>                       
+                    @else
+                        <a href="/login">
+                            <challenge :defaultchallenge-Count="{{ json_encode($defaultlikeCount) }}"></challenge>
+                        </a>
+                    @endif
                     <div class="step-app-side c-step__side">
                         {{-- 目次 --}}
                         <p>目次</p>
