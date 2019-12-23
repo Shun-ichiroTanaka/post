@@ -12,14 +12,13 @@ class Stock extends Model
 
     public function post()
     {
-        return $this->belongsTo(\App\Post::class);
-        return $this->hasMany('App\Stock');
+        // return $this->belongsTo(\App\Post::class);
+        return $this->hasMany('App\Post');
     }
 
     public function user()
     {
         return $this->belongsTo(\App\User::class);
-        return $this->hasMany('App\Stock');
     }
     
 }

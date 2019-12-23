@@ -69,57 +69,18 @@
                     {{-- Vue-Editor プラグイン --}}
 
 
-                    <div class="step-content">
-                        <div class="c-tabs__showdetails">
-                            {{-- @if (Auth::check()) --}}
-                            {{-- タブのタイトル --}}
-                            @if (!empty($step->step1))
-                                <input id="step1" type="radio" name="tab_item" checked>
-                                <label class="c-tabs__showdetails-item" for="step1">{!! $step->subtitle1 !!}</label>
-                            @endif
-                            
-                            @if (!empty($step->step2))
-                                <input id="step2" type="radio" name="tab_item">
-                                <label class="c-tabs__showdetails-item" for="step2">{!! $step->subtitle2 !!}</label>
-                            @endif
-    
-                            @if (!empty($step->step3))
-                                <input id="step3" type="radio" name="tab_item">
-                                <label class="c-tabs__showdetails-item" for="step3">{!! $step->subtitle3 !!}</label>
-                            @endif
-    
-                            @if (!empty($step->step4))
-                                <input id="step4" type="radio" name="tab_item">
-                                <label class="c-tabs__showdetails-item" for="step4">{!! $step->subtitle4 !!}</label>
-                            @endif
-                                  
-                            {{-- タブの中身 --}}
-                            @if (!empty($step->step1))
-                                <div class="c-tabs__showdetails-content" id="step1_content">
-                                    {!! $step->step1 !!}
-                                </div>
-                            @endif
-                            
-                            @if (!empty($step->step2))
-                                <div class="c-tabs__showdetails-content" id="step2_content">
-                                    {!! $step->step2 !!}
-                                </div>
-                            @endif
-    
-                            @if (!empty($step->step3))
-                                <div class="c-tabs__showdetails-content" id="step3_content">
-                                    {!! $step->step3 !!}
-                                </div>
-                            @endif
-    
-                            @if (!empty($step->step4))
-                                <div class="c-tabs__showdetails-content" id="step4_content">
-                                    {!! $step->step4 !!}
-                                </div>
-                            @endif
-                            {{-- @else
-                            @endif --}}
-                        </div>
+                    <div class="c-post__show-markdown">   
+                        <h2>{{ $step->subtitle1 }}</h2>                            
+                        {!! $step->step1 !!}
+
+                        <h2>{{ $step->subtitle2 }}</h2>   
+                        {!! $step->step2 !!}
+
+                        <h2>{{ $step->subtitle1 }}</h2>   
+                        {!! $step->step3 !!}
+
+                        <h2>{{ $step->subtitle1 }}</h2>   
+                        {!! $step->step4 !!}
                     </div>
                 </div>
 
@@ -138,8 +99,8 @@
                     @endif
                     <div class="step-app-side c-step__side">
                         {{-- 目次 --}}
-                        <p>目次</p>
-                        <div class="toc" data-toc="h1"></div>
+                        <p>STEP一覧</p>
+                        <div class="toc" data-toc="h2"></div>
                     </div>
                 </div>
             </div>

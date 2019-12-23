@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Post; // fillable使用
 use App\Like; //いいね
+use App\Stock;
+use App\Step;
+use App\Tag;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -27,60 +30,55 @@ class PostController extends Controller
     public function postStep(Request $request)
     {
 
-        // バリデーション
-        // $request->validate([
-        //     'title' => 'required|string|max:255',
-        //     'tags' => 'required|string|max:255',
-        //     'step1' => 'required|string',
-        //     'step2' => 'nullable|string',
-        //     'step3' => 'nullable|string',
-        //     'step4' => 'nullable|string',
-        //     'time' => 'required|string',
-        // ]);
-
-        // モデルを使って、DBに登録する値をセット
-        // $step = new Post;
-        // fillを使って一気にいれる
-        // $fillableを使っていないと変なデータが入り込んだ場合に勝手にDBが更新されてしまうので注意
-        // $step->fill($request->all())->save();
-
-        $tags = explode(' ', $request->tags);
-        $tag1 = $tags[0];
-        $tag2 = (isset($tags[1])) ? $tags[1] : null;
-        $tag3 = (isset($tags[2])) ? $tags[2] : null;
-        $tag4 = (isset($tags[3])) ? $tags[3] : null;
-        $tag5 = (isset($tags[4])) ? $tags[4] : null;
-
         // 二重送信対策
         $request->session()->regenerateToken();
 
-        $step = Post::create([
+        $post = Post::create([
             'user_id' => auth()->id(),
             'title' => $request->title,
-            'tag1' => $tag1,
-            'tag2' => $tag2,
-            'tag3' => $tag3,
-            'tag4' => $tag4,
-            'tag5' => $tag5,
-            'subtitle1' => $request->subtitle1,
-            'subtitle2' => $request->subtitle2,
-            'subtitle3' => $request->subtitle3,
-            'subtitle4' => $request->subtitle4,
-            'step1' => $request->step1,
-            'step2' => $request->step2,
-            'step3' => $request->step3,
-            'step4' => $request->step4,
-            'time' => $request->time
-
+            'clearTime' => $request->time,
         ]);
+
+        $steps_name = $request->steps_name;
+        $steps_body = $request->steps_body;
+        $step_ids = [];
+        foreach ($steps_name as $step_name) {
+            if(!empty($step_name)){
+                 $step = Step::firstOrCreate([
+                     'name' => $step_name,
+                 ]);
+                 $step_ids[] = $step->id;
+             }
+        }
+        foreach ($steps_body as $step_body) {
+            if(!empty($step_body)){
+                 $step = Step::firstOrCreate([
+                     'body' => $step_body,
+                 ]);
+                 $step_ids[] = $step->id;
+             }
+        }
+        // 中間テーブル
+        $post->steps()->attach($step_ids);  
+
+        $tags_name = $request->tags;
+        $tag_ids = [];
+        foreach ($tags_name as $tag_name) {
+            if(!empty($tag_name)){
+                 $tag = Tag::firstOrCreate([
+                     'name' => $tag_name,
+                 ]);
+                 $tag_ids[] = $tag->id;
+             }
+        }
+        // 中間テーブル
+        $post->tags()->attach($tag_ids);  
 
         // dd($request->all());
 
         //「投稿する」をクリックしたら投稿情報表示ページへリダイレクト
         // その時にsessionフラッシュにメッセージを入れる
-        return redirect("/post/{$step->id}")->with('flash_message', __('投稿しました!'));
-        // return response()->json(['success'=>'投稿に成功しました！']);
-        // return redirect("/")->with('flash_message', __('投稿しました!'));
+        return redirect("/post/{$post->id}")->with('flash_message', __('投稿しました!'));
     }
 
 

@@ -8,8 +8,8 @@
                 </div>
                 <div class="c-post__new-box">
                     <div class="c-post__new-box__tags">
-                        <input v-model="tags" id="tags" placeholder=" タグを半角スペース区切りで5つまで入力できます')" 　type="text" required>
-                        <!-- <tags-input
+                        <!-- <input v-model="tags" id="tags" placeholder=" タグを半角スペース区切りで5つまで入力できます" 　type="text" required> -->
+                        <tags-input
                             v-model="tags"
                             element-id="tags"
                             placeholder="タグを追加..."
@@ -21,7 +21,7 @@
                             :add-tags-on-space="true"
                             :limit="5"
                             :discard-search-text="'検索結果を表示しない'">
-                        </tags-input> -->
+                        </tags-input>
                     </div>
                     <div class="c-post__new-box__time">目標時間:
                         <select v-model="time">

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChallengesTable extends Migration
+class CreateSteps extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,16 @@ class CreateChallengesTable extends Migration
      */
     public function up()
     {
-        Schema::create('challenges', function (Blueprint $table) {
+        Schema::create('steps', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            $table->integer('challenge_page');
-            $table->integer('challenge_page_next');
-            $table->string('challenge_maxpage');
-            $table->string('viewfilename');
-            $table->string('view_nexturl');
-            $table->string('view_previousurl');
+            $table->string('name');
+            $table->text('body');
 
             $table->bigInteger('user_id')->unsigned()->index();
             $table->bigInteger('post_id')->unsigned()->index();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
-
             $table->timestamps();
         });
     }
@@ -40,6 +34,6 @@ class CreateChallengesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('challenges');
+        Schema::dropIfExists('steps');
     }
 }

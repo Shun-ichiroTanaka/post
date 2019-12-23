@@ -355,6 +355,9 @@
         
             }
         }
+        &-markdown {
+            @include markdown;
+        }
     }
 }
 

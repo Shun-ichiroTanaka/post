@@ -5,52 +5,21 @@
         {{-- <div id="demo"> --}}
         <div class="p-challenge">
             <div class="p-challenge__left">
-                <div class="p-challenge__left__header">
-                    <div class="p-challenge__left-header-list">
-                        <div>
-                            <a href="/user/{{$post->user_id}}">
-                                @if (empty($post->user->avatar))
-                                <img src="/img/avatar/user.svg" alt="avatar">
-                                @else
-                                <img src="{{ asset('/img/avatar/'.$post->user->avatar) }}" alt="avatar">
-                                @endif
-                            </a>
-                        </div>
-                        <div class="p-challenge__left-header-list__name"> <a
-                                href="/user/{{$post->user_id}}">{{ $post->user->name }}</a></div>
-                        <div class="p-challenge__left-header-list__date">{{ $post->created_at }}に投稿</div>
-                        @if ($post->time)
-                        <div class="p-challenge__left-header-list__time">目標時間 : {{ $post->time }}</div>
-                        @endif
+                <div>
+                    {{-- タイトル --}}
+                    <div class="p-challenge__left-title">{{$post->title}}</div>
+                    <div class="p-challenge__left-clear">
+                        <p>％完了</p>    
                     </div>
                 </div>
-                {{-- タイトル --}}
-                <div class="p-challenge__show-title">{{$post->title}}</div>
-                {{-- タグ --}}
-                <div class="p-challenge__show-tags">
-                    <div class="p-challenge__show-tags__item">{{$post->tag1}}</div>
-                    @if ($post->tag2)
-                    <div class="p-challenge__show-tags__item">{{$post->tag2}}</div>
-                    @endif
-                    @if ($post->tag3)
-                    <div class="p-challenge__show-tags__item">{{$post->tag3}}</div>
-                    @endif
-                    @if ($post->tag4)
-                    <div class="p-challenge__show-tags__item">{{$post->tag4}}</div>
-                    @endif
-                    @if ($post->tag5)
-                    <div class="p-challenge__show-tags__item">{{$post->tag5}}</div>
-                    @endif
-                </div>
-                <ul>
-                  <li>{{ $post->subtitle1 }}</li>
-                  <li>{{ $post->subtitle2 }}</li>
-                  <li>{{ $post->subtitle3 }}</li>
-                  <li>{{ $post->subtitle4 }}</li>
-                </ul>
 
-                <p>完了度</p>
-                <p>％</p>
+
+                <ul>
+                    <li>{{ $post->subtitle1 }}</li>
+                    <li>{{ $post->subtitle2 }}</li>
+                    <li>{{ $post->subtitle3 }}</li>
+                    <li>{{ $post->subtitle4 }}</li>
+                </ul>
             </div>
 
             <div class="p-challenge__right">

@@ -2569,12 +2569,11 @@ __webpack_require__.r(__webpack_exports__);
   props: ['postId', 'userId', 'defaultChallenged'],
   data: function data() {
     return {
-      challenged: false // challengeCount: 0,
-
+      challenged: false
     };
   },
   created: function created() {
-    this.challenged = this.defaultChallenged; // this.challengeCount = this.defaultchallengeCount
+    this.challenged = this.defaultChallenged;
   },
   methods: {
     challenge: function challenge(postId) {
@@ -2584,9 +2583,8 @@ __webpack_require__.r(__webpack_exports__);
       axios.post(url, {
         user_id: this.userId
       }).then(function (response) {
-        _this.challenged = true; //   this.challengeCount = response.data.challengeCount
-      }); // .catch(error => {
-      // });
+        _this.challenged = true;
+      });
     },
     unchallenge: function unchallenge(postId) {
       var _this2 = this;
@@ -2595,10 +2593,8 @@ __webpack_require__.r(__webpack_exports__);
       axios.post(url, {
         user_id: this.userId
       }).then(function (response) {
-        _this2.challenged = false; //   this.challengeCount = response.data.challengeCount
-      }); // .catch(error => {
-      // //   alert(error)
-      // });
+        _this2.challenged = false;
+      });
     }
   }
 });
@@ -37047,34 +37043,43 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "c-post__new-box" }, [
-              _c("div", { staticClass: "c-post__new-box__tags" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
+              _c(
+                "div",
+                { staticClass: "c-post__new-box__tags" },
+                [
+                  _c("tags-input", {
+                    attrs: {
+                      "element-id": "tags",
+                      placeholder: "タグを追加...",
+                      "existing-tags": [
+                        { key: "web-development", value: "Web Development" },
+                        { key: "php", value: "PHP" },
+                        { key: "javascript", value: "JavaScript" },
+                        { key: "ruby", value: "Ruby" },
+                        { key: "python", value: "Python" },
+                        { key: "マクロ経済学", value: "マクロ経済学" },
+                        { key: "ミクロ経済学", value: "ミクロ経済学" },
+                        { key: "ゲーム理論", value: "ゲーム理論" },
+                        { key: "html", value: "HTML" },
+                        { key: "css", value: "CSS" }
+                      ],
+                      typeahead: true,
+                      "add-tags-on-comma": true,
+                      "add-tags-on-space": true,
+                      limit: 5,
+                      "discard-search-text": "検索結果を表示しない"
+                    },
+                    model: {
                       value: _vm.tags,
+                      callback: function($$v) {
+                        _vm.tags = $$v
+                      },
                       expression: "tags"
                     }
-                  ],
-                  attrs: {
-                    id: "tags",
-                    placeholder:
-                      " タグを半角スペース区切りで5つまで入力できます')",
-                    type: "text",
-                    required: ""
-                  },
-                  domProps: { value: _vm.tags },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.tags = $event.target.value
-                    }
-                  }
-                })
-              ]),
+                  })
+                ],
+                1
+              ),
               _vm._v(" "),
               _c("div", { staticClass: "c-post__new-box__time" }, [
                 _vm._v("目標時間:\n                    "),
@@ -51353,7 +51358,7 @@ function getCookieValue(searchKey) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\n\n    clear: both;\n   ^\n      Properties are only allowed within rules, directives, mixin includes, or other properties.\n      in /Applications/MAMP/htdocs/Laravel/stepc/resources/sass/foundation/_mixin.scss (line 45, column 5)\n    at /Applications/MAMP/htdocs/Laravel/stepc/node_modules/webpack/lib/NormalModule.js:316:20\n    at /Applications/MAMP/htdocs/Laravel/stepc/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Applications/MAMP/htdocs/Laravel/stepc/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Applications/MAMP/htdocs/Laravel/stepc/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.callback (/Applications/MAMP/htdocs/Laravel/stepc/node_modules/sass-loader/dist/index.js:89:7)\n    at Object.done [as callback] (/Applications/MAMP/htdocs/Laravel/stepc/node_modules/neo-async/async.js:8067:18)\n    at options.error (/Applications/MAMP/htdocs/Laravel/stepc/node_modules/node-sass/lib/index.js:294:32)");
 
 /***/ }),
 

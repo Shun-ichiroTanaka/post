@@ -15,7 +15,7 @@ class Like extends Model
      */
     public function post()
     {
-        return $this->belongsTo(\App\Post::class);
+        // return $this->belongsTo(\App\Post::class);
         return $this->hasMany('App\Post');
     }
 
@@ -25,6 +25,5 @@ class Like extends Model
     public function user()
     {
         return $this->belongsTo(\App\User::class);
-        return $this->hasMany('App\User');
     }
 }

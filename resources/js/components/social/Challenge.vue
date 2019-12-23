@@ -21,12 +21,10 @@
         data() {
             return {
                 challenged: false,
-                // challengeCount: 0,
             };
         },
         created () {
             this.challenged = this.defaultChallenged
-            // this.challengeCount = this.defaultchallengeCount
         },
 
         methods: {
@@ -38,11 +36,7 @@
                 })
                 .then(response => {
                   this.challenged = true
-                //   this.challengeCount = response.data.challengeCount
                 })
-                // .catch(error => {
-
-                // });
             },
             unchallenge(postId) {
                 let url = `/api/posts/${postId}/unchallenge`
@@ -52,11 +46,7 @@
                 })
                 .then(response => {
                   this.challenged = false
-                //   this.challengeCount = response.data.challengeCount
                 })
-                // .catch(error => {
-                // //   alert(error)
-                // });
             }
         }
     }
