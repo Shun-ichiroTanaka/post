@@ -8,6 +8,7 @@ use App\Post; // fillable使用
 use App\Like; //いいね
 use App\Stock;
 use App\Step;
+use App\User;
 use App\Tag;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,41 +28,31 @@ class PostController extends Controller
     }
 
     // 新規投稿
-    public function postStep(Request $request)
+    public function newpost(Request $request)
     {
+        // $request->validate([
+        //     'step.*.title' => 'required',
+        //     'step.*.body' => 'required',
+        // ]);
 
         // 二重送信対策
         $request->session()->regenerateToken();
 
+        // タイトル、目標時間
         $post = Post::create([
             'user_id' => auth()->id(),
             'title' => $request->title,
-            'clearTime' => $request->time,
+            'clearTime' => $request->clearTime,
         ]);
 
-        $steps_name = $request->steps_name;
-        $steps_body = $request->steps_body;
-        $step_ids = [];
-        foreach ($steps_name as $step_name) {
-            if(!empty($step_name)){
-                 $step = Step::firstOrCreate([
-                     'name' => $step_name,
-                 ]);
-                 $step_ids[] = $step->id;
-             }
+        // ステップ内容
+        foreach ($request->step as $key => $value) {
+            Step::create($value);
         }
-        foreach ($steps_body as $step_body) {
-            if(!empty($step_body)){
-                 $step = Step::firstOrCreate([
-                     'body' => $step_body,
-                 ]);
-                 $step_ids[] = $step->id;
-             }
-        }
-        // 中間テーブル
-        $post->steps()->attach($step_ids);  
 
-        $tags_name = $request->tags;
+        // タグ
+        $post = new Post;
+        $tags_name = $request->input('tags');
         $tag_ids = [];
         foreach ($tags_name as $tag_name) {
             if(!empty($tag_name)){
@@ -72,9 +63,10 @@ class PostController extends Controller
              }
         }
         // 中間テーブル
-        $post->tags()->attach($tag_ids);  
-
-        // dd($request->all());
+        $post->tags()->attach($tag_ids);
+        
+        // var_dump($step);
+        dd($request->all());
 
         //「投稿する」をクリックしたら投稿情報表示ページへリダイレクト
         // その時にsessionフラッシュにメッセージを入れる

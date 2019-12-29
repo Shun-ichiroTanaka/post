@@ -33,6 +33,8 @@ require('./bootstrap');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 Vue.component('newpostform', require('./components/post/NewPostForm.vue').default);
+Vue.component('newposttag', require('./components/post/NewPostTag.vue').default);
+
 Vue.component('editpost', require('./components/post/EditPost.vue').default);
 Vue.component('allposts', require('./components/post/AllPosts.vue').default);
 

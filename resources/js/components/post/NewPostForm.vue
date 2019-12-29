@@ -3,9 +3,13 @@
     <div id="app">
         <form @submit.prevent="newpost">
             <div>
+                <!-- ①タイトル　-->
                 <div class="c-post__new-title">
                     <input v-model="title" placeholder=" タイトル（例：「1日5分!マクロ経済のオススメ勉強法」）" 　type="text" required>
                 </div>
+                 <!-- ①タイトル　-->
+
+                 <!-- ②タグ　-->
                 <div class="c-post__new-box">
                     <div class="c-post__new-box__tags">
                         <!-- <input v-model="tags" id="tags" placeholder=" タグを半角スペース区切りで5つまで入力できます" 　type="text" required> -->
@@ -24,7 +28,7 @@
                         </tags-input>
                     </div>
                     <div class="c-post__new-box__time">目標時間:
-                        <select v-model="time">
+                        <select v-model="clearTime">
                             <option selected value="指定しない">指定しない</option>
                             <option value="30分">30分</option>
                             <option value="1時間">1時間</option>
@@ -40,36 +44,23 @@
                         </select>
                     </div>
                 </div>
+                 <!-- ②タグ　-->
 
-                <form-wizard @on-complete="onComplete" color="#B79B5B" transition="bounce" back-button-text="戻る" next-button-text="ステップを追加.." finish-button-text="これ以上追加できません">
-                    <tab-content title="Step1">
-                        <div class="c-post__new-subtitle">
-                            <input v-model="subtitle1" placeholder="（例：「STEP1：まずはマクロ経済をザックリ理解しよう」" type="text" name="subtitle1">
-                        </div>
-                        <vue-editor v-model="step1" id="editor1" useCustomImageHandler @image-added="handleImageAdded" placeholder=""></vue-editor>
-                    </tab-content>
-                    <tab-content title="Step2">
-                        <div class="c-post__new-subtitle">
-                            <input v-model="subtitle2" placeholder="（例：「STEP2：次に必須の公式を押さえよう」）" type="text" name="subtitle2">
-                        </div>
-                        <vue-editor v-model="step2" id="editor2" useCustomImageHandler @image-added="handleImageAdded" placeholder=""></vue-editor>
-                    </tab-content>
-                    <tab-content title="Step3">
-                        <div class="c-post__new-subtitle">
-                            <input v-model="subtitle3" placeholder="（例：「STEP3：頻出の問題系統を押さえよう」）" type="text" name="subtitle3">
-                        </div>
-                        <vue-editor v-model="step3" id="editor3" useCustomImageHandler @image-added="handleImageAdded" placeholder=""></vue-editor>
-                    </tab-content>
-                    <tab-content title="Last Step" icon="fas fa-check">
-                        <div class="c-post__new-subtitle">
-                            <input v-model="subtitle4" placeholder="（例：「STEP4：試験までにこなしておくべき参考書一覧」）" type="text" name="subtitle4">
-                        </div>
-                        <vue-editor v-model="step4" id="editor4" useCustomImageHandler @image-added="handleImageAdded" placeholder=""></vue-editor>
-                    </tab-content>
-                </form-wizard>
+                 <!-- ③、④　各ステップタイトルとコンテンツ　-->
+                 <dir class="c-post__new-contents">
+                    <div class="c-post__new-subtitle">
+                        <input v-model="stepTitles" placeholder="（例：「STEP1：まずはマクロ経済をザックリ理解しよう」" type="text" name="subtitle1">
+                    </div>
+                    <vue-editor v-model="stepContents" id="editor1" useCustomImageHandler @image-added="handleImageAdded" placeholder=""></vue-editor>
+                 </dir>
+                <!-- ③、④　各ステップタイトルとコンテンツ　-->
+
+                <!-- ⑤　送信　-->
                 <div class="c-post__new-submit">
                     <button type="submit" @click="newpost">投稿する</button>
                 </div>
+                <!-- ⑤　送信　-->
+                
             </div>
         </form>
     </div>
@@ -78,7 +69,6 @@
 <script>
 import { VueEditor } from "vue2-editor";
 import axios from "axios";
-
 export default {
     name: 'NewPostForm',
     components: {
@@ -99,15 +89,9 @@ export default {
             // 投稿情報
             title: "",
             tags: [],
-            subtitle1: "",
-            subtitle2: "",
-            subtitle3: "",
-            subtitle4: "",
-            step1: "",
-            step2: "",
-            step3: "",
-            step4: "",
-            time: ""
+            stepTitles: [],
+            stepContents: [],
+            clearTime: ""
         };
 
     },
@@ -120,15 +104,9 @@ export default {
             var article = {
                 title: self.title,
                 tags: self.tags,
-                subtitle1: self.subtitle1,
-                subtitle2: self.subtitle2,
-                subtitle3: self.subtitle3,
-                subtitle4: self.subtitle4,
-                step1: self.step1,
-                step2: self.step2,
-                step3: self.step3,
-                step4: self.step4,
-                time: self.time,
+                stepTitles: self.stepTitles,
+                stepContents: self.stepContents,
+                clearTime: self.clearTime,
             };
 
             // ②パスを定義
@@ -151,10 +129,6 @@ export default {
                 params.append(key, this.formdata[key].data) //キーに値を追加↩
                 this.senddata = params //値セット↩
             }
-        },
-        // step完了
-        onComplete: function() {
-            // alert('全てのステップが完了しました！！');
         },
         handleImageAdded: function(file, Editor, cursorLocation, resetUploader) {
             let url = `/api/posts/${postId}/image`

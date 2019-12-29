@@ -27,7 +27,7 @@ class Post extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(\App\User::class);
     }
 
     public function steps()
@@ -52,7 +52,7 @@ class Post extends Model
 
     public function tags()
     {
-        return $this->hasMany('App\Tag');
+        return $this->belongsToMany('App\Tag');
     }
 
 }

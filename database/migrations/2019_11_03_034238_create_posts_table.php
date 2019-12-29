@@ -17,9 +17,9 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('clearTime');
+            $table->string('clearTime')->nullable();
 
-            $table->bigInteger('user_id')->unsigned()->index();
+            $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             // 自動でcreated_atとupdated_atの2つのカラムを用意

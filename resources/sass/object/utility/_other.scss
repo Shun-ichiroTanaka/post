@@ -122,3 +122,13 @@ span:hover + .u-other__fukidashi-stock {
 span:hover + .u-other__fukidashi-challenge {
     display: block !important;
 }
+
+.cke_inner {
+    @include pc {
+        width: 870px;
+        margin: 0 auto;
+    };
+    @include sp {
+        width: 100%;
+    };
+}

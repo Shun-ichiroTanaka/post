@@ -16,14 +16,6 @@ $media: 767px;
   }
 }
 
-// クリアフィックス（include）
-@mixin clearfix {
-  &:after {
-    content: "";
-    clear: both;
-    display: block;
-  }
-}
 
 @mixin auth-form__input {
   box-sizing: border-box;

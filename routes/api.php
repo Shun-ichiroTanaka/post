@@ -41,8 +41,8 @@ Route::group(['middleware' => 'api'],function(){
     Route::post('/posts/{post}/unstock', 'StockController@unstock');
 
     // 投稿
-    Route::post('/user/post/new', 'PostController@postStep');
-    Route::post('/user/post/edit', 'PostController@update');
+    // Route::post('/user/post/new', 'PostController@newpost');
+    // Route::post('/user/post/edit', 'PostController@update');
 
     // いいね Axios
     Route::post('/posts/{post}/challenge', 'ChallengeController@challenge');

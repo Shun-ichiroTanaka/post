@@ -25,9 +25,9 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
     Route::get('/curriculum/{id?}/{page?}', 'CurriculumController@viewcurriculum');
 
     Route::prefix('post')->group(function () {
-        Route::get('/new', 'PostController@index')->name('post.new');    
+        Route::get('/new', 'PostController@index')->name('post.new'); 
+        Route::post('/new', 'PostController@newpost')->name('post.newpost');   
         Route::delete('/destroy/{id}', 'PostController@destroy');    
-        // Route::post('/new', 'PostController@postStep')->name('post.newpost');
     });
 });
 

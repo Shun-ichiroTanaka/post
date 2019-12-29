@@ -60,6 +60,16 @@
         }
     }
     &__new {
+        &-contents {
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include pc {
+                width: 870px;
+            };
+            @include sp {};
+        }
         &-title {
             height: 100%;
             padding-bottom: 10px;
@@ -197,6 +207,12 @@
 
             }
         }
+         &-texteditor{
+            @include pc {
+                width: 870px;
+            };
+            @include sp {};
+         }
     }
     &__show {
         display: flex;
@@ -404,4 +420,11 @@
             display: flex;
         }
     }
+}
+
+#c-post__new-text {
+        @include pc {
+            width: 870px !important;
+        };
+        @include sp {};
 }
