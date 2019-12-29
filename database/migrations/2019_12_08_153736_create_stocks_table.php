@@ -16,8 +16,8 @@ class CreateStocksTable extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->bigInteger('user_id')->unsigned()->index();
-            $table->bigInteger('post_id')->unsigned()->index();
+            $table->unsignedbigInteger('user_id')->index();
+            $table->unsignedbigInteger('post_id')->index();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
