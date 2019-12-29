@@ -18,7 +18,7 @@ class CreateSteps extends Migration
             $table->string('name');
             $table->text('body');
 
-            $table->unsignedbigInteger('post_id');
+            $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->timestamps();
         });

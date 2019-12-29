@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('clearTime')->nullable();
 
-            $table->unsignedbigInteger('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             // 自動でcreated_atとupdated_atの2つのカラムを用意
