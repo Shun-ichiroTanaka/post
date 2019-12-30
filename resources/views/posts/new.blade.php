@@ -2,7 +2,7 @@
 @section('content')
 <div id="app">
     {{-- <newpostform></newpostform> --}}
-    <form method="post" action="/user/post/new" name="csrf-token">
+    <form method="post" action="/user/post/new">
         @csrf
         <div class="c-post__new">
 

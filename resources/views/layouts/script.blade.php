@@ -15,18 +15,5 @@
          $(this).parents('tr').remove();
     });
 </script>
-<script>
-    // ここからCSRFトークンを送信準備
-    var csrf = document.createElement('input');
-    // すでに存在しているname="csrf-token"のvalueの値を取得する。
-    var token = document.getElementsByName('csrf-token').value;
-    csrf.type = 'hidden';
-    csrf.name = 'csrf-token';
-    csrf.value = token;
-    form.appendChild(csrf);
-
-    // 送信！
-    form.submit();
-</script>
 {{-- vueを用いるためこの位置 --}}
-<script src=" {{ mix('js/app.js') }} "></script>
+<script src="{{ mix('js/app.js') }}"></script>

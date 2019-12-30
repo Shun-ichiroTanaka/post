@@ -1,14 +1,8 @@
 window.Vue = require('vue');
 
 import axios from "axios";
-import VueFormWizard from 'vue-form-wizard'
-import 'vue-form-wizard/dist/vue-form-wizard.min.css'
 import { VueEditor, Quill } from "vue2-editor";
-import VoerroTagsInput from '@voerro/vue-tagsinput';
 import '@firstandthird/toc';
-
-Vue.component('tags-input', VoerroTagsInput);
-Vue.use(VueFormWizard)
 
 /**
  * First we will load all of this project's JavaScript dependencies which
