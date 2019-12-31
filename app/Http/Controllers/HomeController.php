@@ -19,9 +19,10 @@ class HomeController extends Controller
     }
 
 
-    public function index()
+    public function index($id)
     {
-        return view('home');
+        $post = Post::where('id', $id)->first();
+        return view('home', compact('post'));
     }
 
     // トップページの一覧表示
@@ -40,7 +41,7 @@ class HomeController extends Controller
         ]);
 
         // compactを使うことによってビューに$articleが送られる
-        // return view('home', compact('articles'));
+        return view('home', compact('articles'));
     }
 }
 

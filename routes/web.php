@@ -16,6 +16,9 @@ Route::get('/user/{id}', 'UserController@profile')->name('user.profile');
 Route::post('/user/delete/{id}', 'PostController@delete');
 Route::post('/user/edit/{id}', 'PostController@edit');
 
+Route::get('post/{id}/twitter_card.svg', 'PostController@ogp');
+Route::get('/post/{id}', 'PostController@showStep');
+
 
 // 認証
 Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {

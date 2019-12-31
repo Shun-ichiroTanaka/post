@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <filter id="STEP" x="205" y="155" width="806" height="365" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="1200" height="630"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" clip-path="url(#clip-Web_1920_1)">
+    <rect width="1200" height="630" fill="#4bcfc8"/>
+    <g id="グループ_1" data-name="グループ 1" transform="translate(5 16)">
+      <g transform="matrix(1, 0, 0, 1, -5, -16)" filter="url(#STEP)">
+        <text id="STEP-2" data-name="STEP" transform="translate(608 445)" fill="#fff" font-size="300" font-family="ArialRoundedMTBold, Arial Rounded MT Bold"><tspan x="-393.896" y="0">STEP</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

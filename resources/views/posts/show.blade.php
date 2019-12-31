@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div id="app">
+@yield('addtionalMeta')
+
     <div class="c-post__show">
         {{-- <div id="demo"> --}}
             <div class="c-step">

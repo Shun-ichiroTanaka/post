@@ -48,7 +48,15 @@ class PostController extends Controller
         // ステップ内容
         foreach ($request->step as $key => $value) {
             Step::create($value);
+            Step::create([
+                'id' => $request->id,
+                // 'name' => $value->name,
+                // 'body' => $value->body,
+                'post_id' => $post->id
+            ]);
         }
+        var_dump($request);
+        dd($request->all());
 
         // タグ
         $post = new Post;
@@ -65,7 +73,7 @@ class PostController extends Controller
         // 中間テーブル
         $post->tags()->attach($tag_ids);
         
-        // var_dump($step);
+        var_dump($request);
         dd($request->all());
 
         //「投稿する」をクリックしたら投稿情報表示ページへリダイレクト
@@ -174,5 +182,47 @@ class PostController extends Controller
         // $this->authorize('destructive', $request);
         Post::find($request->id)->delete();
         return redirect()->back()->with('flash_message', __('投稿を削除しました!'));
+    }
+
+    public function ogp(Post $post)
+    {
+        // OGPのサイズ
+        $w = 600;
+        $h = 315;
+        // １行の文字数
+        $partLength = 10;
+
+        $fontSize = 30;
+        $fontPath = resource_path('font/mushin.otf');
+
+        // 画像を作成
+        $image = \imagecreatetruecolor($w, $h);
+        // 背景画像を描画
+        $bg = \imagecreatefromjpeg(resource_path('/twitter_card.svg'));
+        imagecopyresampled($image, $bg, 0, 0, 0, 0, $w, $h, 800, 533);
+
+        // 色を作成
+        $white = imagecolorallocate($image, 255, 255, 255);
+        $grey = imagecolorallocate($image, 128, 128, 128);
+
+        // 各行に分割
+        $parts = [];
+        $length = mb_strlen($post->title);
+        for ($start = 0; $start < $length; $start += $partLength) {
+            $parts[] = mb_substr($post->title, $start, $partLength);
+        }
+
+        // テキストの影を描画
+        $this->drawParts($image, $parts, $w, $h, $fontSize, $fontPath, $grey, 3);
+        // テキストを描画
+        $this->drawParts($image, $parts, $w, $h, $fontSize, $fontPath, $white);
+
+        ob_start();
+        imagepng($image);
+        $content = ob_get_clean();
+
+        // 画像としてレスポンスを返す
+        return response($content)
+            ->header('Content-Type', 'image/png');
     }
 }

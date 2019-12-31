@@ -18,4 +18,8 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    # シェア時にbotが来た際は全てhead.php?id=記事IDに誘導
+    RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit/[0-9]|Twitterbot|Pinterest)
+    RewriteRule archives/(\d*)$ https://onigiri-tabetai.jp/head.php?id=$1 [L]
 </IfModule>

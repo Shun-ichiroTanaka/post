@@ -12,7 +12,7 @@
                  <!-- ②タグ　-->
                 <div class="c-post__new-box">
                     <div class="c-post__new-box__tags">
-                        <!-- <input v-model="tags" id="tags" placeholder=" タグを半角スペース区切りで5つまで入力できます" 　type="text" required> -->
+                        <input v-model="tags" id="tags" placeholder=" タグを半角スペース区切りで5つまで入力できます" 　type="text" required>
                         <!-- <tags-input
                             v-model="tags"
                             element-id="tags"

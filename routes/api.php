@@ -23,7 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     // });
 
 Route::group(['middleware' => 'guest:api'], function () {
-    Route::get('/post/{id}', 'PostController@showStep');
+    // Route::get('/post/{id}', 'PostController@showStep');
 
     // Route::get('/', 'HomeController@showTopPage');
 

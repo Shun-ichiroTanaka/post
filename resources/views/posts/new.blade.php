@@ -15,15 +15,21 @@
             <!-- ②、③タグ、目標時間　-->
             <div class="c-post__new-box">
                 <div class="c-post__new-box__tags">
-                    　　@for ($i = 1; $i <= 5; $i++)
-                            <input type="text" name="tags[]" class="p-postEdit-form__input-tag @error('tags[]'.$i) is-error @enderror" value="{{ old('tags[]'.$i) }}" placeholder="カテゴリー">
-                        　　@error('tags[]'.$i)
-                        　　<span class="p-postEdit-form__errorMsg" role="alert">
-                            　　<strong>{{ $message }}</strong>
-                            </span>
-                    　　    @enderror
-                    　　@endfor
-                        {{-- <input name="tags[]" id="tags" placeholder=" タグを半角スペース区切りで5つまで入力できます" 　type="text" required> --}}
+                        <label for="tags">
+                            タグ
+                        </label>
+                        <input
+                            id="tags"
+                            name="tags"
+                            class="form-control {{ $errors->has('tags') ? 'is-invalid' : '' }}"
+                            value="{{ old('tags') }}"
+                            type="text"
+                        >
+                        @if ($errors->has('tags'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('tags') }}
+                            </div>
+                        @endif
                 </div>
                 <div class="c-post__new-box__time">目標時間:
                     <select name="clearTime">
