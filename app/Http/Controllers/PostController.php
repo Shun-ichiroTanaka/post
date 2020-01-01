@@ -11,6 +11,7 @@ use App\Step;
 use App\User;
 use App\Tag;
 use Illuminate\Support\Facades\Auth;
+use Hashids\Hashids;
 
 class PostController extends Controller
 {

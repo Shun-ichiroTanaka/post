@@ -2166,7 +2166,7 @@ table {
 .c-button__show-social__twitter {
   width: 30px;
   margin: 0 auto;
-  margin-top: 50px;
+  padding-top: 14px;
 }
 
 .c-button__show-social__twitter img {

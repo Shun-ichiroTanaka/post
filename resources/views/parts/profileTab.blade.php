@@ -63,7 +63,7 @@
         @endif
         @endforeach
     </div>
-    <div class="tab_content" id="like_content">
+    {{-- <div class="tab_content" id="like_content">
         @foreach ($likes as $like)
         @if (!empty($like->id))
         <div class="c-post__article-box">
@@ -89,7 +89,7 @@
         まだ投稿がありません
         @endif
         @endforeach
-    </div>
+    </div> --}}
     <div class="tab_content" id="tyarenzi-step_content">
         @foreach ($challenges as $challenge)
         @if (!empty($challenge->id))
@@ -118,7 +118,7 @@
         @endif
         @endforeach
     </div>
-    <div class="tab_content" id="stock_content">
+    {{-- <div class="tab_content" id="stock_content">
         @foreach ($stocks as $stock)
         @if (!empty($stock->id))
         <div class="c-post__article-box">
@@ -144,7 +144,7 @@
         まだ投稿がありません
         @endif
         @endforeach
-    </div>
+    </div> --}}
     {{-- @else
     @endif --}}
 </div>

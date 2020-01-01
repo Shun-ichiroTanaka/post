@@ -21,11 +21,17 @@
                             :default-Stocked="{{ json_encode($defaultStocked) }}"
                             :defaultstock-Count="{{ json_encode($defaultstockCount) }}"
                         ></stock>
+                        <div class="c-button__show-social__twitter">
+                            <a href="javascript:window.open('http://twitter.com/share?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');"><img src="/img/social/twitter.svg" alt="Twitterでシェアをする"></a>
+                        </div>
                         @else
                         <a href="/login">
                             <like :defaultlike-Count="{{ json_encode($defaultlikeCount) }}"></like>
                             <stock :defaultstock-Count="{{ json_encode($defaultstockCount) }}"></stock>
                         </a>
+                        <div class="c-button__show-social__twitter">
+                           <a href="javascript:window.open('http://twitter.com/share?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');"><img src="/img/social/twitter.svg" alt="Twitterでシェアをする"></a>
+                        </div>
                         @endif
                         {{-- <a href="#" class="c-button__show-social__twitter"><img src="{{ asset('/img/social/twitter.svg') }}" alt="twitter"></a> --}}
                     </div>
