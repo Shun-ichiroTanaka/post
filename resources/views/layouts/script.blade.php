@@ -1,10 +1,4 @@
-<script>
-  // var simplemde = new SimpleMDE({
-  //   element: $("#step")['*'],
-  //   toolbar: ["bold","strikethrough","quote","unordered-list","ordered-list","link","image","horizontal-rule", "table","preview","side-by-side","fullscreen"],
-  //   spellChecker: true
-  // });
-
+<script type="application/javascript">
   var i = 0;
     $("#add").click(function(){
         ++i;
@@ -14,7 +8,8 @@
     $(document).on('click', '.remove-tr', function(){  
          $(this).parents('tr').remove();
     });
-
 </script>
-{{-- vueを用いるためこの位置 --}}
-<script src="{{ mix('js/app.js') }}"></script>
+
+{{-- vue --}}
+<script type="javascript" src="{{ mix('js/app.js') }}"></script>
+

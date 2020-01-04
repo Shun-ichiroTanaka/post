@@ -1,7 +1,6 @@
 window.Vue = require('vue');
 
 import axios from "axios";
-import { VueEditor, Quill } from "vue2-editor";
 import '@firstandthird/toc';
 
 /**
