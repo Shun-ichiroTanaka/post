@@ -207,12 +207,84 @@
 
             }
         }
-         &-texteditor{
+        &-texteditor{
+        @include pc {
+            width: 870px;
+        };
+        @include sp {};
+        }
+        &-table {
             @include pc {
                 width: 870px;
+                margin: 0 auto;
+                table {
+                    width: 870px;
+                    margin: 0;
+                    padding: 0;
+                }
+                tbody {
+                    display: flex !important;
+                    flex-direction: column;
+                }
             };
             @include sp {};
-         }
+            &__step {
+                @include pc {
+                    margin-top: 20px;
+                };
+                @include sp {};
+                td {
+                    color: rgb(153, 153, 153);
+                    &:first-child {
+                        @include pc {
+                            width: 200px;
+                            text-align: center;
+                        };
+                    }
+                    &:nth-child(2) {
+                        @include pc {
+                            width: 655px;
+                            text-align: center;
+                        };
+                    }
+                    vertical-align: top;
+                    text-align: center;
+                    @include pc {
+                        width: 870px; 
+                    };
+                    @include sp {};
+                    input{
+                        display: flex;
+                        border: 0;
+                        vertical-align: top;
+                        @include pc {
+                            width: 200px;
+                            padding: 5px;
+                        };
+                        @include sp {};
+                    }
+                    textarea {
+                        outline: none;
+                        resize: none;
+                        padding: 10px;
+                        border: 0;
+                        @include pc {
+                            width: 620px;
+                            height: 200px;
+                            font-size: 1.2rem;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            margin-left: 20px;
+                            margin-right: 0;
+                        };
+                        @include sp {};
+                    }
+                }
+                &:last-child{
+                    margin-bottom: 20px;
+                }
+            }
+        }
     }
     &__show {
         display: flex;

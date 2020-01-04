@@ -59,18 +59,19 @@
                     <textarea name="step_body" class="form-control"></textarea>
                 </div>
             </dir> --}}
-
-            <table class="table table-bordered" id="postTable">
-                <tr>
-                    <td>ステップタイトル</td>
-                    <td>本文</td>
-                    <td><button type="button" name="add" id="add" class="btn btn-success">Add More</button></td>
-                </tr>
-                <tr>
-                    <td><input name="step[0][name]" placeholder="（例：「STEP1：まずはマクロ経済をザックリ理解しよう」" type="text"></td>
-                    <td><textarea name="step[0][body]" id="step[0][body]" class="form-control"></textarea></td>
-                </tr>
-            </table>
+            <div class="c-post__new-table">
+                <table class="table table-bordered" id="postTable">
+                    <tr class="c-post__new-table__step">
+                        <td>ステップタイトル</td>
+                        <td>本文</td>
+                    </tr>
+                    <tr class="c-post__new-table__step">
+                        <td><input name="step[0][name]" placeholder="例：まずは全体をザックリ理解しよう" type="text"></td>
+                        <td><textarea name="step[0][body]" id="step[0][body]"></textarea></td>
+                        <td><button type="button" name="add" id="add" class="c-button__post-add">Stepを追加</button></td>
+                    </tr>
+                </table>
+            </div>
             <!-- ④　各ステップタイトルとコンテンツ　-->
 
 

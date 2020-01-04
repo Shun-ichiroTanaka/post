@@ -2,7 +2,7 @@
   var i = 0;
     $("#add").click(function(){
         ++i;
-        $("#postTable").append('<tr><td><input type="text" name="step['+i+'][name]" placeholder="Enter step_title" class="form-control" /></td><td><textarea id="step" name="step['+i+'][body]" placeholder="Enter step_body" class="form-control"></textarea></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>');
+        $("#postTable").append('<tr class="c-post__new-table__step"><td><input type="text" name="step['+i+'][name]" placeholder="例：まずは全体をザックリ理解しよう"/></td><td><textarea id="step" name="step['+i+'][body]"></textarea></td><td><button type="button" class="c-button__post-remove remove-tr">Stepを削除</button></td></tr>');
     });
    
     $(document).on('click', '.remove-tr', function(){  
