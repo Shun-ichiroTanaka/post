@@ -16,7 +16,7 @@ class Step extends Model
 
     public function post()
     {
-        return $this->belongsToMany('App\Post');
+        return $this->belongsTo(\App\Post::class);
     }
 
     public function user()

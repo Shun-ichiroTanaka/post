@@ -17,7 +17,9 @@ class Post extends Model
         'id',
         'title',
         'clearTime',
-        'user_id'
+        'user_id',
+        'post_id',
+        'tag_id'
     ];
 
     // モデルからその属性が取り除かれる（カラムが増えてもほとんど変更しなくて良い）
@@ -39,8 +41,8 @@ class Post extends Model
     {
         return $this->hasMany('App\Like');
     }
-
-     public function stocks()
+    
+    public function stocks()
     {
         return $this->hasMany('App\Stock');
     }
@@ -52,7 +54,7 @@ class Post extends Model
 
     public function tags()
     {
-        return $this->belongsToMany('App\Tag');
+        return $this->hasMany('App\Tag');
     }
 
 }

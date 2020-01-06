@@ -15,14 +15,6 @@ use Hashids\Hashids;
 
 class PostController extends Controller
 {
-    // public function __construct()
-    // {
-    //     // can(Policy)の、destructiveメソッドの、postに対しての制約をmiddleware指定する。
-    //     // edit, update, destoryに対してのみmiddlewareを適用する。
-    //     $this->middleware('can:destructive,post')
-    //          ->only(['edit', 'update', 'delete']);
-    // }
-
     public function index()
     {
         return view('posts.new');
@@ -51,8 +43,8 @@ class PostController extends Controller
             Step::create($value);
             Step::create([
                 'id' => $request->id,
-                // 'name' => $value->name,
-                // 'body' => $value->body,
+                'name' => $value->name,
+                'body' => $value->body,
                 'post_id' => $post->id
             ]);
         }
