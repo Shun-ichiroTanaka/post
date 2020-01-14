@@ -21,13 +21,8 @@ class PostController extends Controller
     }
 
     // 新規投稿
-    public function newpost(Request $request)
+    public function newpost(Request $request, Post $post)
     {
-        // $request->validate([
-        //     'step.*.title' => 'required',
-        //     'step.*.body' => 'required',
-        // ]);
-
         // 二重送信対策
         $request->session()->regenerateToken();
 
@@ -40,38 +35,43 @@ class PostController extends Controller
 
         // ステップ内容
         foreach ($request->step as $key => $value) {
-            Step::create($value);
-            Step::create([
-                'id' => $request->id,
-                'name' => $value->name,
-                'body' => $value->body,
-                'post_id' => $post->id
+            $i = $key;
+
+            $step = Step::create([
+                'name' => $request->step[$i]['name'],
+                'body' => $request->step[$i]['body'],
+                'post_id' => $post->id,
             ]);
+            $i++;
+
+            var_dump($step->name);
+            var_dump($step->body);
+            
         }
-        var_dump($request);
-        dd($request->all());
+        // var_dump($request);
+        // dd($request->all());
 
         // タグ
-        $post = new Post;
-        $tags_name = $request->input('tags');
-        $tag_ids = [];
-        foreach ($tags_name as $tag_name) {
-            if(!empty($tag_name)){
-                 $tag = Tag::firstOrCreate([
-                     'name' => $tag_name,
-                 ]);
-                 $tag_ids[] = $tag->id;
-             }
-        }
-        // 中間テーブル
-        $post->tags()->attach($tag_ids);
+        // $post = new Post;
+        // $tags_name = $request->input('tags');
+        // $tag_ids = [];
+        // foreach ($tags_name as $tag_name) {
+        //     if(!empty($tag_name)){
+        //          $tag = Tag::firstOrCreate([
+        //              'name' => $tag_name,
+        //          ]);
+        //          $tag_ids[] = $tag->id;
+        //      }
+        // }
+        // // 中間テーブル
+        // $post->tags()->attach($tag_ids);
         
-        var_dump($request);
-        dd($request->all());
+        // var_dump($request);
+        // dd($request->all());
 
         //「投稿する」をクリックしたら投稿情報表示ページへリダイレクト
         // その時にsessionフラッシュにメッセージを入れる
-        return redirect("/post/{$post->id}")->with('flash_message', __('投稿しました!'));
+        // return redirect("/post/{$post->id}")->with('flash_message', __('投稿しました!'));
     }
 
 

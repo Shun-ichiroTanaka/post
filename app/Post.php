@@ -18,7 +18,6 @@ class Post extends Model
         'title',
         'clearTime',
         'user_id',
-        'post_id',
         'tag_id'
     ];
 
