@@ -40,7 +40,6 @@ class PostController extends Controller
                 'name' => $step['name'],
                 'body' => $step['body'],
                 'post_id' => $post->id,
-
             ]);
         }
 
@@ -123,40 +122,34 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::where('id', $id)->first();
-        return view('posts.edit', compact('post'));
+        $steps = $post->steps()->get();
+        return view('posts.edit', [
+            'post' => $post,
+            'steps' => $steps,
+        ]);
     }
 
     public function update(Request $request, Post $post)
     {
-        if (Auth::user()) {
-                $tags = explode(' ', $request->tags);
-                $tag1 = $tags[0];
-                $tag2 = (isset($tags[1])) ? $tags[1] : null;
-                $tag3 = (isset($tags[2])) ? $tags[2] : null;
-                $tag4 = (isset($tags[3])) ? $tags[3] : null;
-                $tag5 = (isset($tags[4])) ? $tags[4] : null;
-        
+        if (Auth::user()) {        
                 // 二重送信対策
                 $request->session()->regenerateToken();
         
                 $post = Post::updateOrCreate([
                     'user_id' => auth()->id(),
                     'title' => $request->title,
-                    'tag1' => $tag1,
-                    'tag2' => $tag2,
-                    'tag3' => $tag3,
-                    'tag4' => $tag4,
-                    'tag5' => $tag5,
-                    'subtitle1' => $request->subtitle1,
-                    'subtitle2' => $request->subtitle2,
-                    'subtitle3' => $request->subtitle3,
-                    'subtitle4' => $request->subtitle4,
-                    'step1' => $request->step1,
-                    'step2' => $request->step2,
-                    'step3' => $request->step3,
-                    'step4' => $request->step4,
-                    'time' => $request->time
+                    'clearTime' => $request->clearTime,
                 ]);
+
+                // ステップ内容
+                foreach ($request['step'] as $step) {
+                    //   var_dump($step['name']);
+                    Step::updateOrCreate([
+                        'name' => $step['name'],
+                        'body' => $step['body'],
+                        'post_id' => $post->id,
+                    ]);
+                }
                 // $post->save();
         } else {
             return redirect()->back();

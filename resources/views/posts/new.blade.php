@@ -82,6 +82,5 @@
             <!-- ⑤　送信　-->
             </td>
     </form>
-
 </div>
 @endsection

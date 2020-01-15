@@ -78,8 +78,6 @@
 
 
                     <div class="c-post__show-markdown">   
-                        {{-- <h2>{{ $step->name }}</h2>                             --}}
-                        {{-- {!! $step->step1 !!} --}}
                         @foreach ($steps as $step)
                             <h2 class="">{{$step->name}}</h2>
                             <div class="">{{$step->body}}</div>
