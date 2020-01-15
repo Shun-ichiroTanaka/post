@@ -10,13 +10,13 @@
                     <div class="c-button__show-social">
                         @if (Auth::check())
                         <like
-                            :post-id="{{ json_encode($step->id) }}"
+                            :post-id="{{ json_encode($post->id) }}"
                             :user-id="{{ json_encode($userAuth->id) }}"
                             :default-Liked="{{ json_encode($defaultLiked) }}"
                             :defaultlike-Count="{{ json_encode($defaultlikeCount) }}"
                         ></like>
                         <stock
-                            :post-id="{{ json_encode($step->id) }}"
+                            :post-id="{{ json_encode($post->id) }}"
                             :user-id="{{ json_encode($userAuth->id) }}"
                             :default-Stocked="{{ json_encode($defaultStocked) }}"
                             :defaultstock-Count="{{ json_encode($defaultstockCount) }}"
@@ -41,61 +41,52 @@
                     <div class="c-post__show-main__header">
                         <div class="c-post__show-main__header-list">
                             <div>
-                                <a href="/user/{{$step->user_id}}">
-                                    @if (empty($step->user->avatar))
-                                    <img src="/img/avatar/user.svg" alt="avatar">
+                                <a href="/user/{{$post->user_id}}">
+                                    @if (empty($post->user->avatar))
+                                        <img src="/img/avatar/user.svg" alt="avatar">
                                     @else
-                                    <img src="{{ asset('/img/avatar/'.$step->user->avatar) }}" alt="avatar">
+                                        <img src="{{ asset('/img/avatar/'.$post->user->avatar) }}" alt="avatar">
                                     @endif
                                 </a>
                             </div>
-                            <div class="c-post__show-main__header-list__name"> <a href="/user/{{$step->user_id}}">{{ $step->user->name }}</a></div>
-                            <div class="c-post__show-main__header-list__date">{{ $step->created_at }}に投稿</div>
-                            @if ($step->time)
-                                <div class="c-post__show-main__header-list__time">目標時間 : {{ $step->time }}</div>
+                            <div class="c-post__show-main__header-list__name"> <a href="/user/{{$post->user_id}}">{{ $post->user->name }}</a></div>
+                            <div class="c-post__show-main__header-list__date">{{ $post->created_at }}に投稿</div>
+                            @if ($post->clearTime)
+                                <div class="c-post__show-main__header-list__time">目標時間 : {{ $post->clearTime }}</div>
                             @endif
                         </div>
                     </div>
                     {{-- タイトル --}}
-                    <div class="c-post__show-title">{{$step->title}}</div>
+                    <div class="c-post__show-title">{{$post->title}}</div>
                     {{-- タグ --}}
                     <div class="c-post__show-tags">
-                        <div class="c-post__show-tags__item">{{$step->tag1}}</div>
-                        @if ($step->tag2)
-                        <div class="c-post__show-tags__item">{{$step->tag2}}</div>
+                        <div class="c-post__show-tags__item">{{$post->tag1}}</div>
+                        @if ($post->tag2)
+                        <div class="c-post__show-tags__item">{{$post->tag2}}</div>
                         @endif
-                        @if ($step->tag3)
-                        <div class="c-post__show-tags__item">{{$step->tag3}}</div>
+                        @if ($post->tag3)
+                        <div class="c-post__show-tags__item">{{$post->tag3}}</div>
                         @endif
-                        @if ($step->tag4)
-                        <div class="c-post__show-tags__item">{{$step->tag4}}</div>
+                        @if ($post->tag4)
+                        <div class="c-post__show-tags__item">{{$post->tag4}}</div>
                         @endif
-                        @if ($step->tag5)
-                        <div class="c-post__show-tags__item">{{$step->tag5}}</div>
+                        @if ($post->tag5)
+                        <div class="c-post__show-tags__item">{{$post->tag5}}</div>
                         @endif
                     </div>
                     {{-- Vue-Editor プラグイン --}}
 
 
                     <div class="c-post__show-markdown">   
-                        <h2>{{ $step->subtitle1 }}</h2>                            
-                        {!! $step->step1 !!}
-
-                        <h2>{{ $step->subtitle2 }}</h2>   
-                        {!! $step->step2 !!}
-
-                        <h2>{{ $step->subtitle1 }}</h2>   
-                        {!! $step->step3 !!}
-
-                        <h2>{{ $step->subtitle1 }}</h2>   
-                        {!! $step->step4 !!}
+                        {{-- <h2>{{ $step->name }}</h2>                             --}}
+                        {{-- {!! $step->step1 !!} --}}
                     </div>
                 </div>
 
                 <div class="c-post__show-right">
                     @if (Auth::check())
                         <challenge
-                            :post-id="{{ json_encode($step->id) }}"
+                            :post-id="{{ json_encode($post->id) }}"
                             :user-id="{{ json_encode($userAuth->id) }}"
                             :default-Challenged="{{ json_encode($defaultStocked) }}"
                             :defaultchallenge-Count="{{ json_encode($defaultstockCount) }}"

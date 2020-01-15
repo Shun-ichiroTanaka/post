@@ -43,10 +43,8 @@ class PostController extends Controller
                 'post_id' => $post->id,
             ]);
             $i++;
-
-            var_dump($step->name);
-            var_dump($step->body);
-            
+            // var_dump($step->name);
+            // var_dump($step->body);  
         }
         // var_dump($request);
         // dd($request->all());
@@ -71,7 +69,7 @@ class PostController extends Controller
 
         //「投稿する」をクリックしたら投稿情報表示ページへリダイレクト
         // その時にsessionフラッシュにメッセージを入れる
-        // return redirect("/post/{$post->id}")->with('flash_message', __('投稿しました!'));
+        return redirect("/post/{$post->id}")->with('flash_message', __('投稿しました!'));
     }
 
 
@@ -80,17 +78,18 @@ class PostController extends Controller
     {
         if (Auth::check()) {
             $userAuth = \Auth::user();
-            $step = Post::where('id', $id)->first();
+            $post = Post::where('id', $id)->first();
+            $step = Step::where('id', $id)->first();
 
-            $defaultlikeCount = count($step->likes);
-            $defaultstockCount = count($step->stocks);
-            $defaultLiked = $step->likes->where('user_id', $userAuth->id)->first();
+            $defaultlikeCount = count($post->likes);
+            $defaultstockCount = count($post->stocks);
+            $defaultLiked = $post->likes->where('user_id', $userAuth->id)->first();
             if(is_countable($defaultLiked) == 0) {
                 $defaultLiked == false;
             } else {
                 $defaultLiked == true;
             }
-            $defaultStocked = $step->stocks->where('user_id', $userAuth->id)->first();
+            $defaultStocked = $post->stocks->where('user_id', $userAuth->id)->first();
             if(is_countable($defaultStocked) == 0) {
                 $defaultLiked == false;
             } else {
@@ -98,6 +97,7 @@ class PostController extends Controller
             }
 
             return view('posts.show', [
+            'post' => $post,
             'step' => $step,
             'userAuth' => $userAuth,
             'defaultLiked' => $defaultLiked,
@@ -107,13 +107,15 @@ class PostController extends Controller
             ]);
 
         }else {
-            $step = Post::where('id', $id)->first();
-            $defaultlikeCount = count($step->likes);
-            $defaultstockCount = count($step->stocks);
-            $defaultLiked = $step->likes;
-            $defaultStocked = $step->stocks;
+            $post = Post::where('id', $id)->first();
+            $step = Step::where('id', $id)->first();
+            $defaultlikeCount = count($post->likes);
+            $defaultstockCount = count($post->stocks);
+            $defaultLiked = $post->likes;
+            $defaultStocked = $post->stocks;
 
             return view('posts.show', [
+            'post' => $post,
             'step' => $step,
             'defaultLiked' => $defaultLiked,
             'defaultStocked' => $defaultStocked,
