@@ -129,31 +129,28 @@ class PostController extends Controller
         ]);
     }
 
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        if (Auth::user()) {        
-                // 二重送信対策
-                $request->session()->regenerateToken();
-        
-                $post = Post::updateOrCreate([
-                    'user_id' => auth()->id(),
-                    'title' => $request->title,
-                    'clearTime' => $request->clearTime,
-                ]);
+            // 投稿呼び出し
+            $post = Post::find($id);
 
-                // ステップ内容
-                foreach ($request['step'] as $step) {
-                    //   var_dump($step['name']);
-                    Step::updateOrCreate([
-                        'name' => $step['name'],
-                        'body' => $step['body'],
-                        'post_id' => $post->id,
-                    ]);
-                }
-                // $post->save();
-        } else {
-            return redirect()->back();
-        }
+            // post保存
+            $post->title = $request->title;
+            $post->clearTime = $request->clearTime;
+            $post->save();
+
+            // ステップ保存
+            $step = Post::find($id);
+            foreach ($request['step'] as $step) {
+                //   var_dump($step['name']);              
+                $step->name = $request->$step['name'];
+                $step->body = $request->$step['body'];
+                $step->save();
+            }
+
+            // リダイレクト
+            return redirect()->back()->with('flash_message', __('投稿を更新しました!'));
+
     }
 
     // 投稿削除

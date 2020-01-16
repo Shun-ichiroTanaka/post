@@ -60,10 +60,6 @@
                         <tr class="c-post__new-table__step">
                             <td><input name="step[0][name]" value="{{ $step['name'] }}" placeholder="例：まずは全体をザックリ理解しよう" type="text"></td>
                             <td><textarea name="step[0][body]" id="step[0][body]">{{ $step['body'] }}</textarea></td>
-                            <td>
-                                <button type="button" name="add" id="add" class="c-button__post-add">Stepを追加</button>
-                                <button type="button" class="c-button__post-remove remove-tr">Stepを削除</button>
-                            </<td>
                         </tr>
                     @endforeach
                 </table>
