@@ -41,12 +41,12 @@
                         @if(Auth::user()->id === $article->user_id)
                         <div class="u-flex">
                             {{-- 削除ボタン --}}
-                            <form method="post" action="/user/delete/{{$article->id}}">
+                            <form method="post" action="/post/delete/{{$article->id}}">
                                 {{ csrf_field() }}
                                 <button id="c-button_post-delete" type="submit" onclick='return confirm("記事を削除しますか？");'>削除</button>
                             </form>
                             {{-- 編集ボタン --}}
-                            <form method="post" action="/user/edit/{{$article->id}}">
+                            <form method="get" action="/post/edit/{{$article->id}}">
                                 {{ csrf_field() }}
                                 <button id="c-button_post-edit" type="submit">編集</button>
                             </form>

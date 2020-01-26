@@ -4,7 +4,6 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 
 Route::get('/', 'HomeController@showTopPage')->name('home');
-Route::get('/post/{id}', 'PostController@showStep')->name('post.showpost');
 
 Route::get('/challenge/{id}', 'ChallengeController@index')->name('challenge.index');
 Route::get('/challenge/{id}', 'ChallengeController@index')->name('challenge.index');
@@ -12,13 +11,12 @@ Route::get('/challenge/{id}', 'ChallengeController@index')->name('challenge.inde
 
 
 Route::get('/user/{id}', 'UserController@profile')->name('user.profile');
+Route::post('/user/edit/{id}', 'PostController@update');
 
-Route::post('/user/delete/{id}', 'PostController@delete');
-Route::post('/user/edit/{id}', 'PostController@edit');
-
-Route::get('post/{id}/twitter_card.svg', 'PostController@ogp');
-Route::get('/post/{id}', 'PostController@showStep');
-
+Route::get('/post/{id}', 'PostController@showStep')->name('post.showpost');
+Route::post('/post/delete/{id}', 'PostController@delete');
+Route::get('/post/edit/{id}', 'PostController@edit');
+Route::post('post/edit/{id}', 'PostController@update')->name('user.update'); 
 
 // 認証
 Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
@@ -29,8 +27,10 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
 
     Route::prefix('post')->group(function () {
         Route::get('/new', 'PostController@index')->name('post.new'); 
-        Route::post('/new', 'PostController@newpost')->name('post.newpost');   
-        Route::delete('/destroy/{id}', 'PostController@destroy');    
+        Route::post('/new', 'PostController@newpost')->name('post.newpost');
+        Route::post('/delete/{id}', 'PostController@delete');
+        // Route::get('/edit/{id}', 'PostController@edit')->name('post.edit');
+        
     });
 });
 

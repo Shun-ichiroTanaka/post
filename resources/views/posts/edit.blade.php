@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div id="app">
-    <form method="post" action="/user/post/new">
+    <form method="post" action="post.update">
         @csrf
         <div class="c-post__new">
 

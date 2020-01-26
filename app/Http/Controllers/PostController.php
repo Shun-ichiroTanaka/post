@@ -118,11 +118,19 @@ class PostController extends Controller
 
     }
     // 投稿編集
-    // ユーザー情報を含めたviewファイルを返す
     public function edit($id)
     {
+        // var_dump($id);
+
         $post = Post::where('id', $id)->first();
-        $steps = $post->steps()->get();
+        $steps = $post->steps;
+        // var_dump($post);
+        // var_dump($steps);
+        // var_dump($steps);
+        // dd($step);
+        // dd($post);
+
+        // viewでモデルの情報を返す
         return view('posts.edit', [
             'post' => $post,
             'steps' => $steps,
@@ -133,23 +141,31 @@ class PostController extends Controller
     {
             // 投稿呼び出し
             $post = Post::find($id);
+            // $steps = Step::find($id);
 
-            // post保存
+            // // post保存
+            $post = new Post;
+            $post->user_id = auth()->id();
             $post->title = $request->title;
             $post->clearTime = $request->clearTime;
             $post->save();
 
-            // ステップ保存
-            $step = Post::find($id);
+
+            // // ステップ保存
             foreach ($request['step'] as $step) {
-                //   var_dump($step['name']);              
+                //   var_dump($step['name']);    
+                $step = new Step;          
                 $step->name = $request->$step['name'];
                 $step->body = $request->$step['body'];
-                $step->save();
             }
+            $step->save();
+            // var_dump($step);
+            // dd($step);
+            // dump($step);
+
 
             // リダイレクト
-            return redirect()->back()->with('flash_message', __('投稿を更新しました!'));
+            return redirect("/post/{$post->id}")->with('flash_message', __('投稿を更新しました!'));
 
     }
 
