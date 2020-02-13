@@ -56,12 +56,14 @@
                         <td>ステップタイトル</td>
                         <td>本文</td>
                     </tr>
-                    @foreach ($steps as $step)
-                        <tr class="c-post__new-table__step">
-                            <td><input name="step[0][name]" value="{{ $step['name'] }}" placeholder="例：まずは全体をザックリ理解しよう" type="text"></td>
-                            <td><textarea name="step[0][body]" id="step[0][body]">{{ $step['body'] }}</textarea></td>
-                        </tr>
-                    @endforeach
+                    {{-- @if (is_array($post->steps)) --}}
+                        @foreach ($post->steps as $step)
+                            <tr class="c-post__new-table__step">
+                                <td><input name="step_name[]" value="{{ $step['name'] }}" placeholder="例：まずは全体をザックリ理解しよう" type="text"></td>
+                                <td><textarea name="step_body[]">{{ $step['body'] }}</textarea></td>
+                            </tr>
+                        @endforeach
+                    {{-- @endif --}}
                 </table>
             </div>
             <!-- ④　各ステップタイトルとコンテンツ　-->

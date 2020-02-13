@@ -117,27 +117,17 @@ class PostController extends Controller
         }
 
     }
-    // 投稿編集
+    // 編集
     public function edit($id)
-    {
-        // var_dump($id);
-
+    {   // viewでモデルの情報を返す
         $post = Post::where('id', $id)->first();
-        $steps = $post->steps;
-        // var_dump($post);
-        // var_dump($steps);
-        // var_dump($steps);
-        // dd($step);
-        // dd($post);
-
-        // viewでモデルの情報を返す
         return view('posts.edit', [
             'post' => $post,
-            'steps' => $steps,
         ]);
     }
-
-    public function update(Request $request, $id)
+    
+    // 更新
+    public function update(Request $request, $id, Post $post,Step $step)
     {
             // 投稿呼び出し
             $post = Post::find($id);
@@ -148,20 +138,20 @@ class PostController extends Controller
             $post->user_id = auth()->id();
             $post->title = $request->title;
             $post->clearTime = $request->clearTime;
-            $post->save();
+            // $post->save();
 
 
-            // // ステップ保存
-            foreach ($request['step'] as $step) {
-                //   var_dump($step['name']);    
-                $step = new Step;          
-                $step->name = $request->$step['name'];
-                $step->body = $request->$step['body'];
+            // ステップ保存
+            $i = 0;
+            foreach ((array)$request['step'] as $step) {
+                $step = new Step;
+                $step->name = $request->step_name[$i];
+                $step->body = $request->step_body[$i];
+                // var_dump($step);
+            $i++;
             }
+            // dd($request);
             $step->save();
-            // var_dump($step);
-            // dd($step);
-            // dump($step);
 
 
             // リダイレクト
